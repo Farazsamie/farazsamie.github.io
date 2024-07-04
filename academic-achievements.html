@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Faraz Samie Academic Achievements</title>
+    <link rel="stylesheet" href="academic-achievements.css"/>
+</head>
+<body>
+    <nav>
+        <a href="#">HomePage</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container"></div>
+
+    <section id="section-1">
+        <h1>KJNDJNCJNDJNCKJNSNSJNXJNCDNDJCDJCNJNCNDJNCJNC</h1>
+        <p>hCDJNJDNJNDJNCJNDKJNSXJXJDCJNJNKJCJCDJ</p>
+    </section>
+
+    <section id="section-2">
+        <img class="img" src="image1.jpg" alt="Image 1">
+        <img class="img" src="image2.jpg" alt="Image 2">
+    </section>
+
+    <section id="section-3">
+        <h1>KJNDJNCJNDJNCKJNSNSJNXJNCDNDJCDJCNJNCNDJNCJNC</h1>
+        <p>hCDJNJDNJNDJNCJNDKJNSXJXJDCJNJNKJCJCDJ</p>
+    </section>
+
+    <section id="section-4">
+        <img class="img" src="image3.jpg" alt="Image 3">
+        <img class="img" src="image4.jpg" alt="Image 4">
+    </section>
+
+    <section id="section-5">
+        <h1>KJNDJNCJNDJNCKJNSNSJNXJNCDNDJCDJCNJNCNDJNCJNC</h1>
+        <p>hCDJNJDNJNDJNCJNDKJNSXJXJDCJNJNKJCJCDJ</p>
+    </section>
+
+    <div class="timeline">
+        <div class="scroller"><p>[<span>Drag</span>]</p></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(Draggable);
+        window.onload = function () {
+            const timeline = document.querySelector(".timeline");
+            const scroller = document.querySelector(".scroller");
+            const container = document.querySelector(".container");
+            const scrollerWidth = scroller.offsetWidth;
+            const timelineWidth = timeline.offsetWidth;
+            const gap = parseInt(window.getComputedStyle(document.body).fontSize);
+            const maxDragX = timelineWidth - scrollerWidth - 2 * gap;
+
+            for (let i = 0; i < 50; i++) {
+                const marker = document.createElement("div");
+                marker.classList.add("marker");
+                timeline.appendChild(marker);
+            }
+
+            Draggable.create(scroller, {
+                type: "x",
+                bounds: {
+                    minX: gap,
+                    maxX: maxDragX,
+                },
+                onDrag: function () {
+                    let progress = (this.x - gap) / maxDragX;
+                    let containerX = -400 * (timelineWidth / 100) * progress;
+                    gsap.to(container, {
+                        x: containerX,
+                        duration: 1,
+                        ease: "power3.out",
+                    });
+                },
+            });
+        };
+    </script>
+</body>
+</html>
+
