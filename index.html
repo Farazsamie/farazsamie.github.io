@@ -9,9 +9,10 @@
 </head>
 <body>
     <nav>
-        <a href="#">WelcomePage</a>
-        <a href="#">Contact</a>
+        <a href="#"> WelcomePage </a>
+        <a href="#"> Contact </a>
     </nav>
+
     <div class="slider-content">
         <div class="slide-number">
             <div class="prefix">
@@ -135,7 +136,7 @@ elements.forEach((elem) => {
                 });
                 gsap.to(slide, {
                     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                    duration: 2,
+                    duration: 1,
                     ease: "power4.inOut",
                     onComplete: () => {
                         isAnimating = false;
@@ -160,14 +161,14 @@ elements.forEach((elem) => {
 
                 gsap.to(slide, {
                     clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-                    duration: 2,
+                    duration: 0.5,
                     ease: "power4.inOut",
                 });
 
                 gsap.to(img, {
                     scale: 2,
                     top: "4em",
-                    duration: 1,
+                    duration: 0.5,
                     ease: "power3.inOut",
                 });
 
@@ -181,21 +182,20 @@ elements.forEach((elem) => {
                 }, "<");
             }
 
-            // Issue is over here
             window.addEventListener("wheel", (e) => {
-                if (isAnimating) return;
-                if (e.deltaY > 0 & currentSlideIndex < slides.length - 1) {
-                    // Scrolling down logic 
-                    showSlide(currentSlideIndex + 1);
-                    currentSlideIndex++;
-                } else if (e.deltaY < 0 & currentSlideIndex > 0) {
-                    // Scrolling up logic: Show previous slide
-                    showSlide(currentSlideIndex - 1);
-                    currentSlideIndex--;
-                }
-            });
-                
-        });
+                 if (isAnimating) return;
+                 if (e.deltaY > 0 && currentSlideIndex < slides.length - 1) {
+            // Scrolling down logic 
+                  showSlide(currentSlideIndex + 1);
+                  currentSlideIndex++;
+                 } else if (e.deltaY < 0 && currentSlideIndex > slides.length + 1) {
+                    if (isAnimating) return; // Move this condition here
+            // Scrolling up logic: Show previous slide
+                 showSlide(currentSlideIndex - 1);
+                 currentSlideIndex--;
+        }
+    });
+ });
     </script>
 </body>
 </html>

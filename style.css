@@ -33,7 +33,7 @@ nav{
     height: 100%;
     overflow: hidden;
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-    transition: clip-path 0.75s ease, transform 0.75s ease; 
+    transition: clip-path 0.60s ease, transform 0.60s ease; 
 }
 
 #slide-1 {
@@ -101,7 +101,7 @@ img {
 a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.15s;
 }
 
 a:hover {

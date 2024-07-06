@@ -1,14 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body{
+html, body {
     width: 100%;
     height: 100%;
     background: black;
     color: aliceblue;
+    overflow: hidden; /* Prevent vertical scrolling */
 }
 
 img {
@@ -17,16 +18,17 @@ img {
     object-fit: cover;
 }
 
-.container{
+.container {
     position: absolute;
     top: 0;
     left: 0;
-    width: 500vw;
+    width: 500vw; /* Adjust this based on the total number of sections */
     height: 90vh;
     display: flex;
+    overflow: hidden; /* Prevent horizontal and vertical scrolling */
 }
 
-nav{
+nav {
     position: fixed;
     top: 0;
     width: 100vw;
@@ -43,7 +45,7 @@ a {
     font-size: 12px;
 }
 
-.timeline{
+.timeline {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -78,21 +80,21 @@ span {
     padding: 0 3em;
 }
 
-
 section {
-position: relative;
-width: 100vw;
-height: 100%;
-padding: 6em 2em 0 2em;
-display: flex;
-gap: 2em;
-overflow: hidden;
+    position: relative;
+    width: 100vw; /* Each section takes full width of the viewport */
+    height: 100%;
+    padding: 6em 2em 0 2em;
+    display: flex;
+    gap: 2em;
+    overflow: hidden;
 }
 
 .img {
     width: 100%;
     height: 100%;
 }
+
 h1 {
     width: 50%;
     font-family: "PP Neue Montreal";
@@ -121,10 +123,9 @@ p {
     flex: 1;
 } 
 
-
 .img-1, 
 .img-5,  
 .img-7,
 .img-9 {
     flex: 2;
-} 
+}
