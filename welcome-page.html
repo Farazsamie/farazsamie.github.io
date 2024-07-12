@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Faraz Samie Welcome Page</title>
+    <link rel="icon" href="images/img1.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="welcome-page.css"/> <!-- Add the stylesheet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+</head>
+<body>
+    <main>
+        <div class="content"> 
+            <img src="" alt="Image 1" class="content__img"> <!-- Added src and alt attributes -->
+            <img src="" alt="Image 2" class="content__img">
+            <img src="" alt="Image 3" class="content__img">
+
+            <h3 class="content__title">Hi! My Name is Faraz Samie. Welcome to My Portfolio</h3>
+        </div>
+    </main>
+    <script src="js/imageloaded.pkgd.min.js"></script> <!-- Corrected script syntax -->
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        const body = document.body;
+
+        const MathUtils = {
+            lerp: (a, b, n) => (1-n) * a + n * b,
+            distance: (x1, y1, x2, y2) => Math.hypot(x2-x1, y2-y1)
+        };
+
+        const getMousePos = (ev) => {
+            let posx = 0;
+            let posy = 0;
+            if (!ev) ev = window.event; 
+            if (ev.pageX || ev.pageY) {
+                posx = ev.pageX;
+                posy = ev.pageY;
+            } else if (ev.clientX || ev.clientY){
+                posx = ev.clientX + body.scrollLeft + document.documentElement.scrollLeft;
+                posy = ev.clientY + body.scrollTop + document.documentElement.scrollTop;
+            }
+            return { x: posx, y: posy };
+        };
+
+        let mousePos = { x: 0, y: 0 }; // Defined mousePos
+        let lastMousePos = { x: 0, y: 0 }; // Defined lastMousePos
+        let cacheMousePos = { x: 0, y: 0 }; // Defined cacheMousePos
+
+        window.addEventListener("mousemove", (ev) => (mousePos = getMousePos(ev)));
+
+        const getMouseDistance = () => 
+            MathUtils.distance(mousePos.x, mousePos.y, lastMousePos.x, lastMousePos.y); 
+
+        class Image {
+            constructor(el) {
+                this.DOM = { el: el };
+                this.defaultStyles = {
+                    scale: 1,
+                    x: 0,
+                    y: 0,
+                    opacity: 0,
+                }; 
+                this.getRect();
+            }
+
+            getRect() {
+                this.rect = this.DOM.el.getBoundingClientRect();
+            }
+
+            isActive() {
+                return TweenMax.isTweening(this.DOM.el) || this.DOM.el.style.opacity != 0; 
+            }
+        }
+
+        class ImageTrail {
+            constructor() {
+                this.DOM = { content: document.querySelector('.content') };
+                this.images = [];
+                [...this.DOM.content.querySelectorAll("img")].forEach((img) => 
+                    this.images.push(new Image(img))
+                );
+                this.imagesTotal = this.images.length;
+                this.imgPosition = 0;
+                this.zIndexVal = 1;
+                this.threshold = 100; 
+                requestAnimationFrame(() => this.render());
+            }
+
+            render() {
+                let distance = getMouseDistance();
+                cacheMousePos.x = MathUtils.lerp(
+                    cacheMousePos.x || mousePos.x, 
+                    mousePos.x, 
+                    0.1
+                ); 
+
+                cacheMousePos.y = MathUtils.lerp(
+                    cacheMousePos.y || mousePos.y, 
+                    mousePos.y, 
+                    0.1
+                ); 
+
+                if (distance > this.threshold) {
+                    this.showNextImage();
+                    ++this.zIndexVal;
+                    this.imgPosition =
+                        this.imgPosition < this.imagesTotal - 1 ? this.imgPosition + 1 : 0; 
+
+                    lastMousePos = { ...mousePos };
+                }
+
+                let isIdle = true;
+                for (let img of this.images) {
+                    if (img.isActive()) {
+                        isIdle = false;
+                        break;
+                    }
+                }
+
+                if (isIdle && this.zIndexVal != 1) {
+                    this.zIndexVal = 1; 
+                }
+
+                requestAnimationFrame(() => this.render());
+            }
+
+            showNextImage() {
+                const img = this.images[this.imgPosition]; 
+                TweenMax.killTweensOf(img.DOM.el);
+
+                new TimelineMax()
+                    .set(
+                        img.DOM.el, {
+                            startAt: { opacity: 0, scale: 1 },
+                            opacity: 1,
+                            scale: 1,
+                            zIndex: this.zIndexVal,
+                            x: cacheMousePos.x - img.rect.width / 2,
+                            y: cacheMousePos.y - img.rect.height / 2,
+                        },
+                        0
+                    )
+                    .to(
+                        img.DOM.el,
+                        0.9,
+                        {
+                            ease: Expo.easeOut, 
+                            x: mousePos.x - img.rect.width / 2, 
+                            y: mousePos.y - img.rect.height / 2,
+                        },
+                        0
+                    )
+                    .to(
+                        img.DOM.el,
+                        1, 
+                        {
+                            ease: Power1.easeOut,
+                            opacity: 0,
+                        },
+                        0.4
+                    )
+                    .to(
+                        img.DOM.el,
+                        1,
+                        {
+                            ease: Quint.easeOut,
+                            scale: 0.2,
+                        },
+                        0.4
+                    );
+            }
+        }
+
+        const preloadImages = () => {
+            return new Promise((resolve) => {
+                imagesLoaded(document.querySelectorAll(".content__img"), resolve); 
+            });
+        };
+
+        preloadImages().then(() => {
+            new ImageTrail();
+        });
+    </script>
+</body>
+</html>
