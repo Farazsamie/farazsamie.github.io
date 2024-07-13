@@ -4,11 +4,21 @@
 
 html, body {
     height: 100%;
+    overflow: hidden;
 }
 
 body {
-    color: black;
-    background-color: #ff0000;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    color: var(--secondary);
+    background-color: var(--bg);
+}
+
+:root {
+    --bg: #d7d2c9;
+    --primary: #d34d48;
+    --secondary: #5b392f;
+    --white: #f6f4f0;
 }
 
 .content {
@@ -32,44 +42,6 @@ body {
     top: 0;
     left: 0;
     opacity: 0;
-}
-
-@media screen and (min-width: 50em) {
-    body {
-        overflow: hidden;
-    }
-    .content {
-        height: 100vh;
-        overflow: hidden;
-    }
-}
-
-:root {
-    --bg: #d7d2c9;
-    --primary: #d34d48;
-    --secondary: #5b392f;
-    --white: #f6f4f0;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    font-family: "Roboto Mono", monospace;
-    font-size: 1rem;
-    overflow: hidden;
-    color: var(--secondary);
-    background-color: var(--bg);
-}
-
-img {
-    width: 100%;
-    display: block;
 }
 
 .wrapper {
@@ -102,10 +74,7 @@ h2 {
     text-transform: uppercase;
 }
 
-h1 > * {
-    top: 120%;
-}
-
+h1 > *,
 h2 > * {
     top: 120%;
 }
@@ -157,22 +126,15 @@ form input {
     font-size: clamp(0.75rem, 2vw, 1rem);
     color: var(--secondary);
     background-color: var(--bg);
+    border: none;
+    outline: none;
+    flex: 1;
+    padding-right: 0.25rem;
 }
 
 form input::placeholder {
     color: var(--secondary);
     text-transform: uppercase;
-}
-
-form input,
-form button {
-    border: none;
-    outline: none;
-}
-
-form input {
-    flex: 1;
-    padding-right: 0.25rem;
 }
 
 form button {
@@ -183,6 +145,8 @@ form button {
     background-color: var(--primary);
     padding: 0.25rem 0.5rem;
     text-transform: uppercase;
+    border: none;
+    outline: none;
 }
 
 p {
@@ -229,3 +193,11 @@ p a {
     bottom: 0;
     left: 0;
 }
+
+@media screen and (min-width: 50em) {
+    .content {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
