@@ -1,230 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Faraz Samie Welcome Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faraz Samie | Welcome Page</title>
     <link rel="icon" href="images/img1.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="welcome-page.css"/> <!-- Add the stylesheet -->
+    <link rel="stylesheet" href="welcome-page.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 </head>
 <body>
-
     <div class="container"> 
-        <div class="hero-image-wrapper">
+        <div class="hero-image-wrapper wrapper">
             <div class="bg-img">
-                <img src="images/hero-bg.jpg" alt="Background Image"/>
+                <img src="images/img4.jpg" alt="Background Image">
             </div>
             <div class="front-img">
-                <img src="images/hero-front.jpg" alt="Front Image"/>
+                <img src="images/img4.jpg" alt="Front Image">
             </div>
         </div>
         <div class="content-wrapper wrapper"> 
             <nav>
-                <p> Welcome to the site <a href="#"> Learn More</a></p>
-                <button> Close</button>
+                    <h1>Hi, My Name is Faraz. Welcome To My Resume Portfolio </h1>
             </nav>
             <header>
                 <div class="h2">
-                    <h2>Subscribe</h2>
+                    <h2>Please Enter Full Name</h2>
                     <div class="header-revealer"></div>
                 </div>
                 <div class="h1">
-                    <h1>to get access</h1>
+                    <h1>to View </h1>
                     <div class="header-revealer"></div>
                 </div>
                 <div class="form-wrapper">
                     <form action="">
-                        <input type="email" placeholder="Your email"/>
-                        <button>Subscribe</button>
+                        <input type="email" placeholder="Full Name">
+                        <button>Enter </button> <a href="menu-page.html"></a>
                     </form>
-                    <p> 
-                        Stay updated with the latest news and offers.
-                    </p>
+                    <p> Press: <a href="menu-page.html">MenuPage</a> If You Would Like To Skip This Step </p>
                 </div>
             </header>
             <footer>
-                <p>Welcome to the <span>club</span></p>
+                <p> <span> Faraz Samie | Webiste Portfolio</span></p>
             </footer>
         </div>
     </div>
 
-    <main>
-        <div class="content"> 
-            <img src="images/content1.jpg" alt="Image 1" class="content__img">
-            <img src="images/content2.jpg" alt="Image 2" class="content__img">
-            <img src="images/content3.jpg" alt="Image 3" class="content__img">
-            <h3 class="content__title">Hi! My Name is Faraz</h3>
-        </div>
-    </main>
-
-    <script src="js/imageloaded.pkgd.min.js"></script>
-    <script src="js/TweenMax.min.js"></script>
-    <script src="js/script.js"></script>
     <script>
-        const body = document.body;
-
-        const MathUtils = {
-            lerp: (a, b, n) => (1 - n) * a + n * b,
-            distance: (x1, y1, x2, y2) => Math.hypot(x2 - x1, y2 - y1)
-        };
-
-        const getMousePos = (ev) => {
-            let posx = 0;
-            let posy = 0;
-            if (!ev) ev = window.event; 
-            if (ev.pageX || ev.pageY) {
-                posx = ev.pageX;
-                posy = ev.pageY;
-            } else if (ev.clientX || ev.clientY){
-                posx = ev.clientX + body.scrollLeft + document.documentElement.scrollLeft;
-                posy = ev.clientY + body.scrollTop + document.documentElement.scrollTop;
-            }
-            return { x: posx, y: posy };
-        };
-
-        let mousePos = { x: 0, y: 0 };
-        let lastMousePos = { x: 0, y: 0 };
-        let cacheMousePos = { x: 0, y: 0 };
-
-        window.addEventListener("mousemove", (ev) => (mousePos = getMousePos(ev)));
-
-        const getMouseDistance = () => 
-            MathUtils.distance(mousePos.x, mousePos.y, lastMousePos.x, lastMousePos.y);
-
-        class Image {
-            constructor(el) {
-                this.DOM = { el: el };
-                this.defaultStyles = {
-                    scale: 1,
-                    x: 0,
-                    y: 0,
-                    opacity: 0,
-                }; 
-                this.getRect();
-            }
-
-            getRect() {
-                this.rect = this.DOM.el.getBoundingClientRect();
-            }
-
-            isActive() {
-                return TweenMax.isTweening(this.DOM.el) || this.DOM.el.style.opacity != 0; 
-            }
-        }
-
-        class ImageTrail {
-            constructor() {
-                this.DOM = { content: document.querySelector('.content') };
-                this.images = [];
-                [...this.DOM.content.querySelectorAll("img")].forEach((img) => 
-                    this.images.push(new Image(img))
-                );
-                this.imagesTotal = this.images.length;
-                this.imgPosition = 0;
-                this.zIndexVal = 1;
-                this.threshold = 100; 
-                requestAnimationFrame(() => this.render());
-            }
-
-            render() {
-                let distance = getMouseDistance();
-                cacheMousePos.x = MathUtils.lerp(
-                    cacheMousePos.x || mousePos.x, 
-                    mousePos.x, 
-                    0.1
-                ); 
-
-                cacheMousePos.y = MathUtils.lerp(
-                    cacheMousePos.y || mousePos.y, 
-                    mousePos.y, 
-                    0.1
-                ); 
-
-                if (distance > this.threshold) {
-                    this.showNextImage();
-                    ++this.zIndexVal;
-                    this.imgPosition =
-                        this.imgPosition < this.imagesTotal - 1 ? this.imgPosition + 1 : 0; 
-
-                    lastMousePos = { ...mousePos };
-                }
-
-                let isIdle = true;
-                for (let img of this.images) {
-                    if (img.isActive()) {
-                        isIdle = false;
-                        break;
-                    }
-                }
-
-                if (isIdle && this.zIndexVal != 1) {
-                    this.zIndexVal = 1; 
-                }
-
-                requestAnimationFrame(() => this.render());
-            }
-
-            showNextImage() {
-                const img = this.images[this.imgPosition]; 
-                TweenMax.killTweensOf(img.DOM.el);
-
-                new TimelineMax()
-                    .set(
-                        img.DOM.el, {
-                            startAt: { opacity: 0, scale: 1 },
-                            opacity: 1,
-                            scale: 1,
-                            zIndex: this.zIndexVal,
-                            x: cacheMousePos.x - img.rect.width / 2,
-                            y: cacheMousePos.y - img.rect.height / 2,
-                        },
-                        0
-                    )
-                    .to(
-                        img.DOM.el,
-                        0.9,
-                        {
-                            ease: Expo.easeOut, 
-                            x: mousePos.x - img.rect.width / 2, 
-                            y: mousePos.y - img.rect.height / 2,
-                        },
-                        0
-                    )
-                    .to(
-                        img.DOM.el,
-                        1, 
-                        {
-                            ease: Power1.easeOut,
-                            opacity: 0,
-                        },
-                        0.4
-                    )
-                    .to(
-                        img.DOM.el,
-                        1,
-                        {
-                            ease: Quint.easeOut,
-                            scale: 0.2,
-                        },
-                        0.4
-                    );
-            }
-        }
-
-        const preloadImages = () => {
-            return new Promise((resolve) => {
-                imagesLoaded(document.querySelectorAll(".content__img"), resolve); 
-            });
-        };
-
-        preloadImages().then(() => {
-            new ImageTrail();
-        });
-
-        gsap.from(".hero-image-wrapper, .content-wrapper, .front-img", 2, {
+        gsap.from(".hero-image-wrapper, .content-wrapper, .front-img", {
             delay: 1,
+            duration: 2,
             clipPath: "inset(0 100% 0 0)",
             ease: "power4.inOut",
             stagger: {
@@ -232,8 +57,9 @@
             }
         });
 
-        gsap.from("img", 3, {
+        gsap.from("img", {
             delay: 1.5,
+            duration: 3,
             scale: 2,
             ease: "power4.inOut",
             stagger: {
@@ -241,9 +67,11 @@
             },
         });
 
-        gsap.to("header h1, header h2", 1, {
+        gsap.to("header h1, header h2", {
             delay: 3,
+            duration: 1,
             top: 0,
+            ease: "power3.out"
         });
     </script>
 </body>
