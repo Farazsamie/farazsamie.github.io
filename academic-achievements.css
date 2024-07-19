@@ -7,8 +7,8 @@
 html, body {
     width: 100%;
     height: 100%;
-    background: black;
-    color: aliceblue;
+    background: rgb(70, 145, 90);
+    color: #125437;
     overflow: hidden; /* Prevent vertical scrolling */
 }
 
@@ -39,7 +39,7 @@ nav {
 
 a {
     text-decoration: none;
-    color: aliceblue;
+    color: #125437;
     font-family: "Akkurat Mono";
     text-transform: uppercase;
     font-size: 12px;
@@ -69,7 +69,7 @@ a {
     transform: translate(0%, -50%);
     font-family: "Akkurat Mono";
     text-transform: uppercase;
-    background: black;
+    background: rgba(255, 255, 255, 0);
     cursor: pointer;
     line-height: 120%;
 }
