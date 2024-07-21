@@ -48,4 +48,3 @@ document.addEventListener("click", (e) => {
 function isItem(target) {
     return target.closest(".item");
 }
-
