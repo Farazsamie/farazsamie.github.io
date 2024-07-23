@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Faraz Samie | Research</title>
-    <link rel="icon" href="images/img1.png" type="image/png">
+    <link rel="icon" href="images/1.png" type="image/png">
     <link rel="stylesheet" href="projects.css"/>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
@@ -13,59 +13,125 @@
         <a href="index.html">HomePage</a>
         <a href="#">Contact</a>
     </div>
-    <div class="footer">
-        <p> Faraz Samie | 2024 Research </p>
-    </div>
-    <div class="overlay">
-        <div class="overlay-header">
-            <div class="col">
-                <h1 id="item-name">Item Name</h1>
-                <p id="item-category">Item Category</p>
-            </div>
-            <div class="col">
-                <p id="close-btn">Close</p>
-            </div>
-        </div>
-        <div class="item-details">
-            <p>
-                <a href="#" id="item-link">
-                    <i class="ph-bold ph-arrow-up right"></i> View Site
-                </a>
-            </p>
-            <p id="item-copy">
-                hbcbdhbbxlahbfbhbhbfabchhcfebhcbhhcbhechbdhhbchbchbehbb
-            </p>
-        </div>
-        <div class="img-container">
-            <img src="images/3.png" id="item-img" alt=""/>
-        </div>
-    </div>
+
     <div class="container">
-        <div class="items">
+        <div id="Projects" class="content">
+            <h3> Project Portfolio </h3>
+            <div class="overlay">
+                <div class="overlay-header">
 
-            <div class="item">
-                <div class="item-index">01</div>
-                <div class="item-name">Item Name 1</div>
-                <div class="item-year">2024</div>
+                    <div class="col">
+                        <h1 id="item-name">Item Name</h1>
+                        <p id="item-category">Item Category</p>
+                    </div>
+
+                    <div class="col">
+                        <p id="close-btn">Close</p>
+                    </div>
+                </div>
+                <div class="item-details">
+                    <p>
+                        <a href="#" id="item-link">
+                            <i class="ph-bold ph-arrow-up right"></i> View Site
+                        </a>
+                    </p>
+                    <p id="item-copy">
+                        hbcbdhbbxlahbfbhbhbfabchhcfebhcbhhcbhechbdhhbchbchbehbb
+                    </p>
+                </div>
+                <div class="img-container">
+                    <img src="images/3.png" id="item-img" alt=""/>
+                </div>
             </div>
+            <div class="items">
+                <div class="item">
+                    <div class="item-index">01</div>
+                    <div class="item-name">Item Name 1</div>
+                    <div class="item-year">2024</div>
+                </div>
 
-            <div class="item">
-                <div class="item-index">02</div>
-                <div class="item-name">Item Name 2</div>
-                <div class="item-year">2024</div>
+                <div class="item">
+                    <div class="item-index">02</div>
+                    <div class="item-name">Item Name 2</div>
+                    <div class="item-year">2024</div>
+                </div>
+
+                <div class="item">
+                    <div class="item-index">03</div>
+                    <div class="item-name">Item Name 3</div>
+                    <div class="item-year">2024</div>
+                </div>
             </div>
+        </div>
 
-            <div class="item">
-                <div class="item-index">03</div>
-                <div class="item-name">Item Name 3</div>
-                <div class="item-year">2024</div>
+        <div id="Research" class="content" style="display:none;">
+            <h3> Research Publications</h3>
+            <div class="overlay">
+                <div class="overlay-header">
+                    <div class="col">
+                        <h1 id="item-name">Item Name</h1>
+                        <p id="item-category">Item Category</p>
+                    </div>
+                    <div class="col">
+                        <p id="close-btn">Close</p>
+                    </div>
+                </div>
+                <div class="item-details">
+                    <p>
+                        <a href="#" id="item-link">
+                            <i class="ph-bold ph-arrow-up right"></i> View Site
+                        </a>
+                    </p>
+                    <p id="item-copy">
+                        hbcbdhbbxlahbfbhbhbfabchhcfebhcbhhcbhechbdhhbchbchbehbb
+                    </p>
+                </div>
+                <div class="img-container">
+                    <img src="images/3.png" id="item-img" alt=""/>
+                </div>
             </div>
+            <div class="items">
+                <div class="item">
+                    <div class="item-index">01</div>
+                    <div class="item-name">Item Name 1</div>
+                    <div class="item-year">2024</div>
+                </div>
 
+                <div class="item">
+                    <div class="item-index">02</div>
+                    <div class="item-name">Item Name 2</div>
+                    <div class="item-year">2024</div>
+                </div>
+
+                <div class="item">
+                    <div class="item-index">03</div>
+                    <div class="item-name">Item Name 3</div>
+                    <div class="item-year">2024</div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="footer">
+        
+        <p onclick="openTab('Projects')">View Project Portfolio | 2024</p>
+        <p onclick="openTab('Research')">View Research Publications | 2024</p>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script type="module" src="research-data.js"></script>
-    <script type="module" src="research-main.js"></script>
+    <script type="module" src="projects-data.js"></script>
+    <script type="module" src="projects-main.js"></script>
+    <script>
+        function openTab(tabName) {
+            var content = document.getElementsByClassName("content");
+            for (var i = 0; i < content.length; i++) {
+                content[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
 </body>
 </html>
+
+
 

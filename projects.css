@@ -10,8 +10,8 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: "Calibri";
-    background-color: black;
-    color: azure;
+    background-color: #EFE4DD;
+    color: #1e1d1d;
 }
 
 h1{
@@ -21,7 +21,7 @@ h1{
 
 a {
     text-decoration: none;
-    color: black;
+    color: #1e1d1d;
 }
 
 .container {
@@ -81,7 +81,7 @@ a {
     height: 700px;
     padding: 2em;
     background: whitesmoke;
-    color: black;
+    color: #1e1d1d;
     overflow-x: hidden;
     overflow-y: scroll;
     z-index: 2;
