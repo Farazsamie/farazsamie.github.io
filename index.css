@@ -7,8 +7,15 @@
 html, body {
     height: 100%;
     overflow: hidden;
-    font-family: "Garamond";
-}
+    @media screen {
+        
+    }font-face {
+        font-family: 'McKinsey Sans';
+    src: url('fonts/McKinseySans-Regular.woff2') format('woff2'),
+         url('fonts/McKinseySans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}}
 
 nav {
     position: fixed;
@@ -115,4 +122,4 @@ a:hover {
     .slide-link {
         right: 10%;
     }
-}
+};
