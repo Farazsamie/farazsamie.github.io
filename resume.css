@@ -1,6 +1,6 @@
 :root {
     --bg: #fffff9;
-    --primary: #512322;
+    --primary: #189368;
     --secondary: #464545;
     --white: #fffff9;
 }
@@ -12,7 +12,7 @@
     font-family: "Gangsar";
     text-transform: uppercase;
     font-weight: lighter;
-    font-size: 35px;
+    font-size: 40px;
 }
 
 html, body {
@@ -47,7 +47,7 @@ html, body {
     position: relative;
     width: 100%;
     height: 100%;
-    z-index: -2;
+    z-index: 2;
 }
 
 .hero-image-wrapper .front-img {
@@ -76,7 +76,7 @@ html, body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .content-wrapper nav p {
@@ -118,12 +118,12 @@ header h2 {
 }
 
 header h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--secondary);
 }
 
 header h1 {
-    font-size: 80px;
+    font-size: 125px;
 }
 
 .form-wrapper {
@@ -144,25 +144,27 @@ header h1 {
     border: none;
     outline: none;
     padding: 10px;
-    font-size: 25px;
+    font-size: 30px;
     border-bottom: 1px solid black;
+    position: relative;
 }
 
 .form-wrapper form input::placeholder {
     color: black;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
+    position: relative;
 }
 
 .form-wrapper form button {
     background: var(--bg);
     outline: none;
-    border: 2px solid black; /* Adjusted from 20px for better visibility */
-    padding: 1.5em 3em;
+    padding: 1.5em 5em;
+    position: relative;
     text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 10px;
+    font-weight: 50;
     color: var(--primary);
     cursor: pointer; /* Added cursor pointer for better UX */
 }
@@ -175,7 +177,7 @@ header h1 {
 .form-wrapper p {
     padding: 2em 0;
     width: 70%;
-    font-size: 14px;
+    font-size: 30px;
     line-height: 1.5;
     color: var(--secondary);
 }
@@ -186,7 +188,7 @@ footer span {
     font-family: "Gangsar";
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    font-size: 1rem;
+    font-size: 0.5rem;
     font-weight: lighter;
 }
 
