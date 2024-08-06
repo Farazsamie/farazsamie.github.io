@@ -1,4 +1,4 @@
-import { data } from "./projects-data.js";
+import { data } from "./research-data.js";
 
 const overlay = document.querySelector(".overlay");
 const closeBtn = document.querySelector("#close-btn");

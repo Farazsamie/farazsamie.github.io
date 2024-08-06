@@ -36,7 +36,7 @@ a {
 .nav {
     position: fixed;
     width: 100%;
-    padding: 2em;
+    padding: 1em;
     display: flex;
     justify-content: space-between;
 }
@@ -83,7 +83,7 @@ a {
     overflow-y: scroll;
     z-index: 2;
     will-change: bottom;
-    transform: translateZ(0) rotate(20deg);
+    transform: translateZ(0) rotate(0deg);
     transform-origin: bottom center;
 }
 
