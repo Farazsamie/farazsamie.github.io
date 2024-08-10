@@ -28,15 +28,18 @@ img {
     overflow: hidden; /* Prevent horizontal and vertical scrolling */
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    padding: 2em;
+.nav {
+    padding: 0px 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
+header nav {
+    display: flex;
+    gap: 1300px;
+    padding-top: 10px;
+}
 a {
     text-decoration: none;
     color: #125437;

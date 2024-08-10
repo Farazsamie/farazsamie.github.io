@@ -10,7 +10,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: "Aenoik";
-    background-color: #EFE4DD;
+    background-color: #FFFFFA;
     color: #1e1d1d;
 }
 
@@ -34,11 +34,16 @@ a {
 }
 
 .nav {
-    position: fixed;
-    width: 100%;
-    padding: 1em;
+    padding: 0px 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    gap: 1300px;
+    padding-top: 10px;
 }
 
 .footer {
