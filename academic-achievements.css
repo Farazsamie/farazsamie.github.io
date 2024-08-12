@@ -7,8 +7,11 @@
 html, body {
     width: 100%;
     height: 100%;
-    background: rgb(70, 145, 90);
+    /* background: #46915a;
     color: #125437;
+    */
+    background: #504946;
+    color: #211710;
     overflow: hidden; /* Prevent vertical scrolling */
 }
 
@@ -37,12 +40,17 @@ img {
 
 header nav {
     display: flex;
-    gap: 1300px;
+    width: 100%; /* Makes the nav take the full width of the container */
     padding-top: 10px;
 }
+
+header nav a:first-child {
+    margin-right: auto; /* Pushes the first link to the left */
+}
+
 a {
     text-decoration: none;
-    color: #125437;
+    color: #211710;
     font-family: "Akkurat Mono";
     text-transform: uppercase;
     font-size: 12px;
@@ -107,8 +115,8 @@ section {
 
 .title-section h3 {
     font-family: "PP Neue Montreal";
-    font-weight: 300;
-    font-size: 20px;
+    font-weight: 200;
+    font-size: 22px;
     margin-top: 0.5em;
 }
 
@@ -119,15 +127,19 @@ section {
     font-weight: lighter;
 }
 
-.content h3 {
-    font-family: Arial, Helvetica, sans-serif;
+.content u {
+    font-family: "Times New Roman', Times, serif";
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-style: underline; 
 }
 
 p {
     width: 60%;
     font-family: "PP Neue Montreal";
     font-weight: 400;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 ul {
