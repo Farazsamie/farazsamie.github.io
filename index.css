@@ -97,6 +97,23 @@ img {
     text-transform: uppercase;
 }
 
+.slide-link link a {
+    background: var(--bg);
+    outline: none;
+    padding: 1.5em 5em;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 50;
+    color: var(--primary);
+    cursor: pointer; /* Added cursor pointer for better UX */
+}
+
+.slide-link link a:hover {
+    background: var(--primary);
+    color: var(--bg);
+}
+
 .prefix,
 .names,
 .link {

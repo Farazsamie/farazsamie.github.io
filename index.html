@@ -9,22 +9,10 @@
     <link rel="stylesheet" href="index.js"/>
 </head>
 <body>
-    <header>
-        <div class="nav">
-            <div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="resume.html">Resume</a>
-             </nav>
-            </div>
-        </div>
-    </header>
 
     <div class="slider-content">
         
-            <div class="prefix">
-            </div>
-
+            <div class="prefix"></div>
 
         <div class="slide-name">
             <div class="names">
@@ -80,6 +68,29 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
+
+
+
+
+document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let btnWidth = btn.clientWidth;
+        let btnHeight = btn.clientHeight;
+        let transX = (x - btnWidth / 2);
+        let transY = (y - btnHeight / 2);
+        
+        btn.style.transform = `translate(${transX}px, ${transY}px)`;
+    });
+
+    btn.addEventListener('mouseout', (e) => {
+        btn.style.transform = 'translate(0, 0)';
+    });
+});
+
+
+
 
         gsap.from(".slider-content", {
             delay: 1,
