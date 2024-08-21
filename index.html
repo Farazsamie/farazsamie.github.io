@@ -6,7 +6,7 @@
     <title>Faraz Samie | Home Page</title>
     <link rel="icon" href="images/icon.png" type="image/png">
     <link rel="stylesheet" href="index.css"/>
-    <link rel="stylesheet" href="index.js"/>
+    <link rel="script" href="index.js"/>
 </head>
 <body>
 
@@ -71,6 +71,7 @@
 
 
 
+    /* hover effect to buttons */
 
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
@@ -90,7 +91,7 @@ document.querySelectorAll('.btn').forEach(btn => {
 });
 
 
-
+    /* page loading */ 
 
         gsap.from(".slider-content", {
             delay: 1,
@@ -119,6 +120,7 @@ document.querySelectorAll('.btn').forEach(btn => {
             ease: "power3.out"
         });
 
+        /* core slide logic */ 
         document.addEventListener("DOMContentLoaded", function() {
             const slides = document.querySelectorAll(".slide");
             let currentSlideIndex = 0;
