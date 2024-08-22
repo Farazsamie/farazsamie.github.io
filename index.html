@@ -61,9 +61,26 @@
     <svg><path d="" class="trail" style="stroke: #f0ffff;"></path></svg>
     <svg><path d="" class="trail" style="stroke: #f0ffff;"></path></svg>
 
+    <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000;">
+        <path class="trail" d="" style="stroke: #f0ffff; stroke-width: 5; fill: none;"></path>
+        <!-- Add more paths here if needed -->
+    </svg>
     
 
-
+    svg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 1000;
+    }
+    path {
+        stroke: #f0ffff;
+        stroke-width: 5;
+        fill: none;
+    }
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -244,6 +261,41 @@ document.querySelectorAll('.btn').forEach(btn => {
                 }
             });
         });
+
+
+    
+        const trails = document.querySelectorAll(".trail");
+        const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+        const totalPointsArray = [40];
+
+        window.addEventListener("mousemove", (event) => {
+            smoothPointer.x = event.clientX;
+            smoothPointer.y = event.clientY;
+        });
+
+        function updatePath() {
+            trails.forEach((path, index) => {
+                if (!path.points) path.points = [];
+                path.points.unshift({ ...smoothPointer });
+
+                if (path.points.length > totalPointsArray[index]) {
+                    path.points.pop();
+                }
+
+                let d = `M ${path.points[0].x} ${path.points[0].y}`;
+                for (let i = 1; i < path.points.length; i++) {
+                    d += ` L ${path.points[i].x} ${path.points[i].y}`;
+                }
+
+                path.setAttribute("d", d);
+            });
+
+            requestAnimationFrame(updatePath);
+        }
+
+        updatePath();
+
     </script>
 </body>
 </html>
