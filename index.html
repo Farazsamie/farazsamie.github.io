@@ -6,7 +6,6 @@
     <title>Faraz Samie | Home Page</title>
     <link rel="icon" href="images/icon.png" type="image/png">
     <link rel="stylesheet" href="index.css"/>
-    <link rel="script" href="index.js"/>
 </head>
 <body>
 
@@ -52,45 +51,95 @@
     </div>
     <div style="height:400vh"></div>
 
-    <svg><path d="" class="trail" style="stroke: #f0ffff;"></path></svg>
-    <svg><path d="" class="trail" style="stroke: #f0ffff;"></path></svg>
-    <svg><path d="" class="trail" style="stroke: #f0ffff;"></path></svg>
-    <svg><path d="" class="trail" style="stroke: #f0ffff;"></path></svg>
-    <svg><path d="" class="trail" style="stroke: #f0ffff;"></path></svg>
-    <svg><path d="" class="trail" style="stroke: #f0ffff;"></path></svg>
-    <svg><path d="" class="trail" style="stroke: #f0ffff;"></path></svg>
-    <svg><path d="" class="trail" style="stroke: #f0ffff;"></path></svg>
-
-    <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000;">
-        <path class="trail" d="" style="stroke: #f0ffff; stroke-width: 5; fill: none;"></path>
-        <!-- Add more paths here if needed -->
-    </svg>
     
 
-    svg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none;
-        z-index: 1000;
-    }
-    path {
-        stroke: #f0ffff;
-        stroke-width: 5;
-        fill: none;
-    }
+
+
+
 
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script>
+    <svg 
+    style="position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    z-index: 1000;">
+    <path class="trail" d="" style="stroke: rgba(30, 27, 24, 0.3); stroke-width: 40; fill: none;"></path>
+</svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    
+
+    // Mouse trail logic
+    const trails = document.querySelectorAll(".trail");
+    const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+    // Set shorter trail length (smaller number of points)
+    const totalPointsArray = [20]; // Reduced from 40 to 20
+
+    // Delay the start of the mouse trail to match page loading animations
+    setTimeout(() => {
+        window.addEventListener("mousemove", (event) => {
+            smoothPointer.x = event.clientX;
+            smoothPointer.y = event.clientY;
+        });
+
+        function updatePath() {
+            trails.forEach((path, index) => {
+                if (!path.points) path.points = [];
+                path.points.unshift({ ...smoothPointer });
+
+                if (path.points.length > totalPointsArray[index]) {
+                    path.points.pop();
+                }
+
+                let d = `M ${path.points[0].x} ${path.points[0].y}`;
+                for (let i = 1; i < path.points.length; i++) {
+                    d += ` L ${path.points[i].x} ${path.points[i].y}`;
+                }
+
+                path.setAttribute("d", d);
+            });
+
+            requestAnimationFrame(updatePath);
+        }
+
+        updatePath();
+    }, 3500); // Delay matches the end of the page loading animations (adjust as needed)
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
     /* hover effect to buttons */
 
-document.querySelectorAll('.btn').forEach(btn => {
+document.querySelectorAll('.slide-link').forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
         let x = e.offsetX;
         let y = e.offsetY;
@@ -248,54 +297,17 @@ document.querySelectorAll('.btn').forEach(btn => {
             }
 
             window.addEventListener("wheel", (e) => {
-                if (isAnimating) return;
-                if (e.deltaY > 0 && currentSlideIndex < slides.length - 1) {
-                    // Scrolling down logic 
-                    showSlide(currentSlideIndex + 1);
-                    currentSlideIndex++;
-                } else if (e.deltaY < 0 && currentSlideIndex > 0) {
-                    if (isAnimating) return; // Move this condition here
-                    // Scrolling up logic: Show previous slide
-                    hideSlide(currentSlideIndex);
-                    currentSlideIndex--;
-                }
-            });
+    if (isAnimating) return;
+    if (e.deltaY > 0 && currentSlideIndex < slides.length - 1) {
+        showSlide(currentSlideIndex + 1);
+        currentSlideIndex++;
+    } else if (e.deltaY < 0 && currentSlideIndex > 0) {
+        hideSlide(currentSlideIndex);
+        currentSlideIndex--;
+    }
+});
+
         });
-
-
-    
-        const trails = document.querySelectorAll(".trail");
-        const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-
-        const totalPointsArray = [40];
-
-        window.addEventListener("mousemove", (event) => {
-            smoothPointer.x = event.clientX;
-            smoothPointer.y = event.clientY;
-        });
-
-        function updatePath() {
-            trails.forEach((path, index) => {
-                if (!path.points) path.points = [];
-                path.points.unshift({ ...smoothPointer });
-
-                if (path.points.length > totalPointsArray[index]) {
-                    path.points.pop();
-                }
-
-                let d = `M ${path.points[0].x} ${path.points[0].y}`;
-                for (let i = 1; i < path.points.length; i++) {
-                    d += ` L ${path.points[i].x} ${path.points[i].y}`;
-                }
-
-                path.setAttribute("d", d);
-            });
-
-            requestAnimationFrame(updatePath);
-        }
-
-        updatePath();
-
     </script>
 </body>
 </html>
