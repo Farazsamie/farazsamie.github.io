@@ -38,7 +38,7 @@ nav {
     pointer-events: auto; /* Enable pointer events for the content container */
 }
 
-.slide-link a {
+.slide-link a, .slide-name a {
     pointer-events: auto; /* Ensure links are clickable */
     cursor: pointer; /* Indicate they are clickable */
 }
@@ -126,14 +126,22 @@ img {
     transition: 0.3s, color 0.3s, border 0.3s;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Adjusted for a button-like appearance */
     text-decoration: none; /* Removes the underline */
+    border-radius: 5px;
+}
+
+.link a {
+    background: linear-gradient(90deg, #5cba5d 50%);
+    background-size: 200%;
+    background-position: right;
+    transition: background-position 0.4s ease;
 }
 
 .link a:hover {
-    background: #fffff1;
+    background-position: left;
     color: #292624;
     border: 2px solid #292624;
-    text-decoration: none; /* Removes the underline */
 }
+
 
 
 

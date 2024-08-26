@@ -278,6 +278,24 @@ document.querySelectorAll('.slide-link').forEach(btn => {
 });
 
         });
+
+
+
+
+        document.querySelectorAll('.slide-link a').forEach(button => {
+    button.addEventListener('pointerenter', () => {
+        document.querySelectorAll('.trail').forEach(trail => {
+            trail.style.display = 'none'; // Hide the mouse trail
+        });
+    });
+
+    button.addEventListener('pointerleave', () => {
+        document.querySelectorAll('.trail').forEach(trail => {
+            trail.style.display = 'block'; // Show the mouse trail again
+        });
+    });
+});
+
     </script>
 </body>
 </html>
