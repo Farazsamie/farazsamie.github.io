@@ -34,9 +34,15 @@ nav {
     height: 100vh;
 }
 
-.slider, .slider-content {
-    pointer-events: none;
+.slider-content {
+    pointer-events: auto; /* Enable pointer events for the content container */
 }
+
+.slide-link a {
+    pointer-events: auto; /* Ensure links are clickable */
+    cursor: pointer; /* Indicate they are clickable */
+}
+
 
 
 
@@ -109,23 +115,27 @@ img {
 
 /* problem with button here*/ 
 .link a {
-    background: var(--bg);
-    outline: none;
-    padding: 1.5em 5em;
-    position: relative;
+    background: #5cba5d;
+    padding: 0.5em 3em;
     text-transform: uppercase;
-    clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
-    font-size: 12px;
-    font-weight: 50;
-    color: var(--primary);
-    cursor: pointer; /* Added cursor pointer for better UX */
-    transition: color 0.15s;
+    font-size: 13px;
+    font-weight: 200;
+    color: #fffff1;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s, color 0.3s, border 0.3s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Adjusted for a button-like appearance */
+    text-decoration: none; /* Removes the underline */
 }
 
-.slide-link link a:hover {
-    background: var(--primary);
-    color: var(--bg);
+.link a:hover {
+    background: #fffff1;
+    color: #292624;
+    border: 2px solid #292624;
+    text-decoration: none; /* Removes the underline */
 }
+
+
 
 .prefix,
 .names,
