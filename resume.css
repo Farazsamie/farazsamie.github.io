@@ -157,7 +157,7 @@ header h1 {
     position: relative;
 }
 
-.form-wrapper form button {
+.form-wrapper form a {
     background: var(--bg);
     outline: none;
     padding: 1.5em 5em;
@@ -167,11 +167,15 @@ header h1 {
     font-weight: 50;
     color: var(--primary);
     cursor: pointer; /* Added cursor pointer for better UX */
+    text-decoration: none;
+    border: 2px solid black; /* Add this line to create a black border */
 }
 
-.form-wrapper form button:hover {
+
+.form-wrapper form a:hover {
     background: var(--primary);
     color: var(--bg);
+    text-decoration: none;
 }
 
 .form-wrapper p {
