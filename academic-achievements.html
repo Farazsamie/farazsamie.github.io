@@ -173,6 +173,24 @@
                 },
             });
         };
+       
+        window.addEventListener('wheel', function(event) {
+            const container = document.querySelector('.container');
+            if (event.deltaY !== 0) {  // Check if the scroll is vertical
+                container.scrollLeft += event.deltaY;  // Apply vertical scroll value to horizontal scroll
+                event.preventDefault();  // Prevent default vertical scroll
+            }
+        });
+
+        window.addEventListener('wheel', function(event) {
+    const container = document.querySelector('.container');
+    if (event.target.tagName.toLowerCase() !== 'a' && event.deltaY !== 0) {
+        container.scrollLeft += event.deltaY;
+        event.preventDefault();
+    }
+});
+
+    </script>
     </script>
 </body>
 </html>
