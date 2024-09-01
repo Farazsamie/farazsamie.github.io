@@ -69,18 +69,51 @@
         <p> Faraz Samie | Research Publications  </p>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     
-    <script type="module" src="research-data.js"></script>
-    <script type="module" src="research-main.js"></script>
+    <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000;">
+        <circle class="trail" cx="0" cy="0" r="15" style="stroke: #2926244d; fill: #2926244d;"></circle>
+    </svg>
+
     <script>
-        function openTab(tabName) {
-            var content = document.getElementsByClassName("content");
-            for (var i = 0; i < content.length; i++) {
-                content[i].style.display = "none";
-            }
-            document.getElementById(tabName).style.display = "block";
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mouse trail logic
+            const trail = document.querySelector(".trail");
+            const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+            const pointerSpeed = 0.2;
+
+            // Delay the start of the mouse trail to match page loading animations
+            setTimeout(() => {
+                window.addEventListener("mousemove", (event) => {
+                    smoothPointer.x += (event.clientX - smoothPointer.x) * pointerSpeed;
+                    smoothPointer.y += (event.clientY - smoothPointer.y) * pointerSpeed;
+                    trail.setAttribute("cx", smoothPointer.x);
+                    trail.setAttribute("cy", smoothPointer.y);
+                });
+
+                function updateTrail() {
+                    trail.setAttribute("cx", smoothPointer.x);
+                    trail.setAttribute("cy", smoothPointer.y);
+
+                    requestAnimationFrame(updateTrail);
+                }
+
+                updateTrail();
+            }, 3000); // Delay matches the end of the page loading animations (adjust as needed)
+        });
+
+        document.querySelectorAll('.slide-link a').forEach(button => {
+            button.addEventListener('pointerenter', () => {
+                document.querySelector(".trail").style.display = 'none'; // Hide the mouse trail
+            });
+
+            button.addEventListener('pointerleave', () => {
+                document.querySelector(".trail").style.display = 'block'; // Show the mouse trail again
+            });
+        });
     </script>
 </body>
 </html>
+
+
+
+
