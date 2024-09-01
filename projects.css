@@ -12,6 +12,9 @@ body {
     font-family: "Aenoik";
     background-color: #504946;
     color: #000000;
+    height: 100%;
+    overflow: hidden;
+    cursor: none; /* Hide the mouse cursor */
 }
 
 h1{
@@ -34,10 +37,13 @@ a {
 }
 
 .nav {
-    padding: 0px 10px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 1em;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    z-index: 1000; /* Ensures the nav is on top */
 }
 
 header nav {
@@ -153,4 +159,21 @@ img {
 .overlay {
     width: 100%;
     height: 100%;
+}
+
+
+
+svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.trail {
+    stroke-width: 0;
+    fill: #2926244d;
 }
