@@ -12,6 +12,7 @@ body {
     color: #0e0d0d;
     font-family: "Aenoik";
     overflow: hidden; /* Prevent vertical scrolling */
+    cursor: none; /* Hide the mouse cursor */
 }
 
 img {
@@ -169,4 +170,20 @@ ul {
 .img-7,
 .img-9 {
     flex: 0.5;
+}
+
+
+svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.trail {
+    stroke-width: 0;
+    fill: #2926244d;
 }
