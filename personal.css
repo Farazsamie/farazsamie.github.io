@@ -25,13 +25,14 @@ header nav {
 .hero {
     display: flex;
     height: 100vh;
-    margin-top: 100px; /* Adjust this value based on the height of your nav */
+    margin-top: 100px; /* Adjust based on the height of your nav */
     text-align: left;
 }
 
 .hero .left, .hero .right {
     flex: 1;
     position: relative;
+    width: 50%; /* Ensures each side takes up half the screen */
 }
 
 .hero .left {
@@ -40,9 +41,20 @@ header nav {
 }
 
 .hero .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: left;
-    text-decoration: none;
+    padding: 20px; /* Adds padding to the content */
 }
+
+.hero .introduction {
+    max-width: 80%; /* Keeps the text from stretching too wide */
+    margin: 0 auto; /* Centers the text within the right section */
+    text-align: left;
+    font-size: 18px; /* Increase font size for better readability */
+}
+
 
 
 html, body {
