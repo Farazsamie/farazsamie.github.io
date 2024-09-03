@@ -19,12 +19,14 @@ header nav {
     display: flex;
     gap: 1300px;
     padding-top: 10px;
+    text-decoration: none;
 }
-
 
 .hero {
     display: flex;
     height: 100vh;
+    margin-top: 100px; /* Adjust this value based on the height of your nav */
+    text-align: left;
 }
 
 .hero .left, .hero .right {
@@ -38,7 +40,8 @@ header nav {
 }
 
 .hero .right {
-    
+    text-align: left;
+    text-decoration: none;
 }
 
 
@@ -48,7 +51,6 @@ html, body {
     background: var(--color-bg);
     font-family: "PP Supply Sans";
 }
-
 
 p {
     font-size: 14px;
@@ -82,7 +84,7 @@ img {
 }
 
 .img-container.left {
-    text-align: right;
+    text-align: left;
 }
 
 .img-container p {
@@ -94,11 +96,13 @@ img {
 }
 
 #row-1 {
-    height: 200px;
+    height: 600px;
+    width: 600px;
 }
 
 #row-2 {
-    height: 500px;
+    height: 600px;
+    width: 600px;
 }
 
 .col:nth-child(1) {
@@ -111,7 +115,7 @@ img {
     flex: 5;
 }
 
-.img-container.right img {
+.img-container.left img {
     clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
 }
 

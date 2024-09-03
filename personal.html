@@ -18,26 +18,35 @@
             </div>
         </div>
     </header>
+
+    
     <div class="hero">
         <div class="left"></div>
+            <img src="images/2.png">
         <div class="right"></div>
+             <div class="introduction">
+             <p>Hi</p>
+             </div>
     </div>
-
 
     <div class="container">
         <div class="row" id="row-1">
             <div class="col">
-                <div class="img-container right">
-                    <img src="images/2.png" alt=""/>
-                    <p>Image One</p>
+                <div class="img-container left">
+                    <img src="images/2.png"/>
+                </div>
+                <div class="text right">
+                    <p>Hi</p>
                 </div>
             </div>
         </div>
         <div class="row" id="row-2">
             <div class="col">
                 <div class="img-container left">
-                    <img src="images/1.png" alt=""/>
-                    <p>Image Two</p>
+                    <img src="images/1.png"/>
+                    <div class="text right">
+                        <p>Hi</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,7 +64,7 @@
                     rect.top >= 0 &&
                     rect.left >= 0 &&
                     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    rect.left <= (window.innerWidth || document.documentElement.clientWidth)
                 );
             }
 
@@ -71,7 +80,7 @@
                 }
             });
 
-            gsap.utils.toArray(".img-container.right img").forEach((img) => {
+            gsap.utils.toArray(".img-container.left img").forEach((img) => {
                 gsap.to(img, {
                     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
                     scrollTrigger: {
