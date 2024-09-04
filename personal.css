@@ -4,28 +4,48 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #fffffA;
+    font-family: "PP Supply Sans";
+}
+
+p {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform:uppercase;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/**/
+
 .nav {
     position: fixed;
     top: 0;
     width: 100vw;
-    padding: 1em;
+    padding: 0.5em;
     display: flex;
     justify-content: space-between;
     z-index: 1000; /* Ensures the nav is on top */
-    text-decoration: none;
 }
 
 header nav {
     display: flex;
     gap: 1300px;
-    padding-top: 10px;
-    text-decoration: none;
+    padding-top: 5px;
 }
 
+/**/
 .hero {
     display: flex;
     height: 100vh;
-    margin-top: 100px; /* Adjust based on the height of your nav */
+    margin-top: 0px; /* Adjust based on the height of your nav */
     text-align: left;
 }
 
@@ -36,45 +56,18 @@ header nav {
 }
 
 .hero .left {
-    background: url('images/1.jpg') no-repeat center center;
     background-size: cover;
 }
 
 .hero .right {
     display: flex;
-    align-items: center;
     justify-content: center;
     text-align: left;
-    padding: 20px; /* Adds padding to the content */
+    padding-top: 65px;
+    padding-left: 10px;
 }
 
-.hero .introduction {
-    max-width: 80%; /* Keeps the text from stretching too wide */
-    margin: 0 auto; /* Centers the text within the right section */
-    text-align: left;
-    font-size: 18px; /* Increase font size for better readability */
-}
-
-
-
-html, body {
-    width: 100%;
-    height: 100%;
-    background: var(--color-bg);
-    font-family: "PP Supply Sans";
-}
-
-p {
-    font-size: 14px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/**/
 
 .container {
     width: 100%;
@@ -91,30 +84,34 @@ img {
 }
 
 .img-container {
-    width: fit-content;
+    width: auto;
     height: 100%;
 }
 
 .img-container.left {
-    text-align: left;
+    height: auto;
 }
 
+.img-container.left-2 {
+    width: 100vh;;
+    height: auto;
+}
 .img-container p {
     position: relative;
     padding: 5px 0;
     color: var(--color-text);
     opacity: 1;
-    transition: opacity 0.3s, transform 0.3s;
+    transition: opacity 0.15s, transform 0.15s;
 }
 
 #row-1 {
-    height: 600px;
-    width: 600px;
+    height: 500px;
+    width: 715px;
 }
 
 #row-2 {
-    height: 600px;
-    width: 600px;
+    height: 500px;
+    width: 722px;
 }
 
 .col:nth-child(1) {
@@ -133,9 +130,4 @@ img {
 
 .img-container.left img {
     clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-}
-
-.whitespace {
-    width: 100%;
-    height: 300px;
 }
