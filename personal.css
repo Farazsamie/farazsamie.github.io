@@ -101,7 +101,7 @@ header nav {
     padding: 5px 0;
     color: var(--color-text);
     opacity: 1;
-    transition: opacity 0.15s, transform 0.15s;
+    transition: opacity 0.25s, transform 0.25s;
 }
 
 #row-1 {
@@ -111,7 +111,12 @@ header nav {
 
 #row-2 {
     height: 500px;
-    width: 722px;
+    width: 715px;
+}
+
+#row-3 {
+    height: 500px;
+    width: 715px;
 }
 
 .col:nth-child(1) {
