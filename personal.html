@@ -48,6 +48,7 @@
                     <img src="images/1.png"/>
                 </div>
                     <div class="text right">
+                        <h3>intro</h3>
                         <p>Hi</p>
                     </div>
             </div>
@@ -127,6 +128,32 @@
                     },
                 });
             });
+
+            gsap.utils.toArray(".img-container.left img").forEach((img) => {
+    gsap.to(img, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        scrollTrigger: {
+            trigger: img,
+            start: "top 75%",   // Adjusted for slower opening/closing
+            end: "bottom 30%",  // Extended to delay closing on scroll up
+            scrub: 1.5,         // Slower transitions with scrub
+        },
+    });
+});
+
+gsap.utils.toArray(".img-container.left img").forEach((img) => {
+    gsap.to(img, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        scrollTrigger: {
+            trigger: img,
+            start: "top 90%",
+            end: "bottom 80%",
+            scrub: 0.5,  // Faster transition
+        },
+    });
+});
+
+
         });
     </script>
 </body>
