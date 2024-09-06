@@ -124,7 +124,7 @@ padding-top: 150px;
 
 #row-2 {
     height: 675px;
-    width: 715px;
+    width: 705px;
 }
 
 #row-3 {
@@ -148,4 +148,19 @@ padding-top: 150px;
 
 .img-container.left img {
     clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+}
+
+svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.trail {
+    stroke-width: 0;
+    fill: #2926244d;
 }
