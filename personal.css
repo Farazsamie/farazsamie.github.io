@@ -11,11 +11,39 @@ html, body {
     font-family: "PP Supply Sans";
 }
 
-p {
+.text.one p {
     font-size: 15px;
     font-weight: 500;
     text-transform:uppercase;
+    padding-left: 40px;
+    padding-top: 25px;
 }
+
+.text.two p {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform:uppercase;
+    padding-left: 40px;
+    padding-top: 25px;
+}
+
+.text.three p {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform:uppercase;
+    padding-left: 40px;
+    padding-top: 25px;
+}
+
+.text.four p {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform:uppercase;
+    padding-left: 40px;
+    padding-top: 25px;
+}
+
+
 
 img {
     width: 100%;
@@ -119,17 +147,17 @@ padding-top: 150px;
 
 #row-1 {
     height: 675px;
-    width: 715px;
+    width: 710px;
 }
 
 #row-2 {
     height: 675px;
-    width: 705px;
+    width: 677px;
 }
 
 #row-3 {
     height: 675px;
-    width: 715px;
+    width: 710px;
 }
 
 .col:nth-child(1) {
