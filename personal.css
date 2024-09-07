@@ -61,12 +61,16 @@ img {
     display: flex;
     justify-content: space-between;
     z-index: 1000; /* Ensures the nav is on top */
+    text-decoration: none;
+    color: black;
 }
 
 header nav {
     display: flex;
     gap: 1300px;
     padding-top: 5px;
+    text-decoration: none;
+    color: black;
 }
 
 /**/
@@ -140,7 +144,7 @@ padding-top: 150px;
 
 
 .row {
-    width: 100%;
+    width: 710px;
     height: 675px; /* Ensure all rows are the same size */
     display: flex;
 }
