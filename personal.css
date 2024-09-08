@@ -61,14 +61,17 @@ img {
     display: flex;
     justify-content: space-between;
     z-index: 1000; /* Ensures the nav is on top */
-    text-decoration: none;
-    color: black;
 }
 
 header nav {
     display: flex;
     gap: 1300px;
     padding-top: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav a{
     text-decoration: none;
     color: black;
 }
