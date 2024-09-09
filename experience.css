@@ -164,7 +164,7 @@ img{
 
 @media (max-width: 900px) {
     .slider-nav {
-        width: 40%;
+        width: 40%; 
     }
 
     .slide .img {
