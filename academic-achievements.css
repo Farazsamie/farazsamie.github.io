@@ -16,9 +16,13 @@ body {
 }
 
 img {
-    width: 100%;
+    width: 60%;
     height: 100%;
-    object-fit: cover;
+}
+
+.img-1{
+    width: 60%;
+    height: 100%;
 }
 
 .container {
@@ -153,7 +157,7 @@ ul {
 
 
 #section-4 {
-    display: flex;
+    display:flex;
     justify-content: space-between;
 }
 
