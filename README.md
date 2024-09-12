@@ -1,1 +1,1 @@
-# check out my website @ farazsamie.github.io
+# view my portfolio progress @farazsamie.github.io
