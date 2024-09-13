@@ -15,7 +15,7 @@ body {
 }
 
 img {
-    width: 60%;
+    width: 50%;
     height: 100%;
 } 
 
@@ -157,7 +157,8 @@ ul {
 
 #section-4 {
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-2, 
