@@ -17,12 +17,10 @@ body {
 img {
     width: 50%;
     height: 100%;
+    gap: 10px;
 } 
 
-.img-1{
-    width: 60%;
-    height: 100%;
-}
+
 
 .container {
     position: absolute;
@@ -156,9 +154,13 @@ ul {
 
 
 #section-4 {
-    display:flex;
+    display:flexbox;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: auto;
+    gap: 40px;
+    
 }
 
 .img-2, 
@@ -166,7 +168,7 @@ ul {
 .img-4,  
 .img-6, 
 .img-9 {
-    flex: 0.5;
+    flex: 0;
 } 
 
 .img-1, 
