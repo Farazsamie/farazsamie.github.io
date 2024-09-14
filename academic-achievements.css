@@ -147,7 +147,7 @@ ul {
 
 
 #section-4 {
-    display:flex;
+    display: flex;
     justify-content:center;
     align-items: center;
     width: auto;
@@ -156,21 +156,23 @@ ul {
 
 
 #section-5 {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
     height: auto;
+    padding-right: 500px;
 }
 
 .img {
-    width: 50%;
-    height: 100%;
+    width: 700px;
+    height: 1000px;
 }
 
 .img-1 {
-    width: 50%;
-    height: 100%;
+    padding-top: 80px;
+    width: 700px;
+    height: 700px;
 }
 
 
