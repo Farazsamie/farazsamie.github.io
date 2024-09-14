@@ -8,25 +8,18 @@ html,
 body {
     width: 100vw;
     height: 100vh;
-    background: #433e3a;
+    background: #383737;
     color: #0e0d0d;
     font-family: "Aenoik";
     overflow: hidden; /* Prevent vertical scrolling */
 }
-
-img {
-    width: 50%;
-    height: 100%;
-    gap: 10px;
-} 
-
 
 
 .container {
     position: absolute;
     top: 0;
     left: 0;
-    width: 500vw; /* Adjust this based on the total number of sections */
+    width: 800vw; /* Adjust this based on the total number of sections */
     height: 90vh;
     display: flex;
     overflow: hidden; /* Prevent horizontal and vertical scrolling */
@@ -155,28 +148,31 @@ ul {
 
 #section-4 {
     display:flex;
+    justify-content:center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+
+#section-5 {
+    display:flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: auto;
     height: auto;
-    gap: 40px;
-    
 }
 
-.img-2, 
-.img-3, 
-.img-4,  
-.img-6, 
-.img-9 {
-    flex: 0;
-} 
-
-.img-1, 
-.img-5,  
-.img-7,
-.img-9 {
-    flex: 0.5;
+.img {
+    width: 50%;
+    height: 100%;
 }
+
+.img-1 {
+    width: 50%;
+    height: 100%;
+}
+
 
 
 svg {
