@@ -161,21 +161,27 @@ ul {
     align-items: center;
     width: auto;
     height: auto;
-    padding-right: 500px;
+}
+
+.section-6 {
+    padding: 600px;
 }
 
 .img {
     width: 700px;
-    height: 1000px;
+    height: 520px;
+    object-fit: contain;
 }
 
 .img-1 {
-    padding-top: 80px;
     width: 700px;
-    height: 700px;
+    height: 520px;
+    object-fit: contain;
 }
 
-
+.section-padding {
+    padding-right: 100px;
+}
 
 svg {
     position: fixed;
