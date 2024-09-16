@@ -212,13 +212,14 @@ footer span::after {
 }
 
 
-.contact-button {
-    position: relative;
-    font-family: "Gangsar";
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 0.5rem;
-    font-weight: lighter;
+.fa-linkedin {
+    font-size: 40px;
+    margin-left: 800px;
+}
+
+.fa-github {
+    font-size: 40px;
+    margin-left: 800px;
 }
 
 header .h1,
