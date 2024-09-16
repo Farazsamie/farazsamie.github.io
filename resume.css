@@ -211,6 +211,16 @@ footer span::after {
     background: var(--primary);
 }
 
+
+.contact-button {
+    position: relative;
+    font-family: "Gangsar";
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.5rem;
+    font-weight: lighter;
+}
+
 header .h1,
 header .h2 {
     position: relative;
