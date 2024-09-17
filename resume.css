@@ -223,10 +223,11 @@ footer span::after {
 .fa-linkedin, .fa-github {
     font-size: 40px;
     margin: 0 10px; /* Add some space between the icons */
+    color: #20201b;
 }
 
 .fa-linkedin:hover, .fa-github:hover {
-    background-color: #189368;
+    background:#464545;
 }
 
 header .h1,
