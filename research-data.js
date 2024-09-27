@@ -1,6 +1,6 @@
 const data = [
     {
-        itemName: "Something",
+        itemName: "SVB",
         itemCategory: "something else",
         itemLink: "something",
         itemCopy: "uncvdssuvnnnnunrn",
