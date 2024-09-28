@@ -129,6 +129,7 @@ header h1 {
 .form-wrapper {
     margin-top: auto; /* Align form at the bottom of the content-wrapper */
     width: 100%; /* Ensure the form takes full width */
+
 }
 
 .form-wrapper form {
@@ -176,6 +177,7 @@ header h1 {
     background: var(--primary);
     color: var(--bg);
     text-decoration: none;
+    transition: 0.3s ease; /* Smooth transition for the background */
 }
 
 .form-wrapper p {
@@ -229,13 +231,13 @@ footer span::after {
 }
 
 .fa-linkedin:hover{
-    background:#189368;
+    background:#44ac88;
     border-radius: 40%;
 } 
 
 
 .fa-github:hover {
-    background:#189368;
+    background:#44ac88;
     border-radius: 50%;
 }
 
