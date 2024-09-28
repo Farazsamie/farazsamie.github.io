@@ -222,16 +222,21 @@ footer span::after {
 
 .fa-linkedin, .fa-github {
     font-size: 40px;
-    margin: 0 10px; /* Add some space between the icons */
+    margin: 0 5px; /* Add some space between the icons */
     color: #20201b;
+    display: inline-block; /* Ensures proper alignment */
+    transition: 0.3s ease; /* Smooth transition for the background */
 }
 
-.fa-linkedin:hover, .fa-github:hover {
-    background:#464545;
+.fa-linkedin:hover{
+    background:#189368;
+    border-radius: 40%;
+} 
 
-    
-    size: 10px;
-    shape-margin: 0%;
+
+.fa-github:hover {
+    background:#189368;
+    border-radius: 50%;
 }
 
 header .h1,
