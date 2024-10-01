@@ -54,5 +54,19 @@ document.addEventListener("DOMContentLoaded", function(){
         delay: 0.125,
         });
     });
+});
 }
+
+for (let 1 = 0; 1 < numberofItems; ¡++) I
+const navItemWrapper = document. createElement ("div");
+navItemWrapper.classList.add ("nav-item-wrapper");
+if (i === 0) {
+navItemWrapper.classList. add ("active");
+const navItem = document. createElement ("div");
+navItem. classList. add ("nav-item");
+navItemWrapper. appendChild(navItem); sliderNav. appendChild (navItemWrapper) ;
+
+}
+
+
 });
