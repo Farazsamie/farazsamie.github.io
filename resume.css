@@ -269,3 +269,41 @@ header h1, header h2 {
     overflow: clip;
     clip-path: inset(0 0 0 0);
 }
+
+
+
+/* Ensure the button is properly styled */
+#viewButton {
+    background: var(--bg);
+    outline: none;
+    padding: 1.5em 5em;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 50;
+    color: var(--primary);
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid black;
+    display: inline-block; /* Ensure it's an inline-block element */
+    margin-left: 10px; /* Add some space between the input and button */
+}
+
+#viewButton:hover {
+    background: var(--primary);
+    color: var(--bg);
+    transition: 0.3s ease;
+}
+
+/* Make sure the form's display settings don't hide the button */
+.form-wrapper form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.form-wrapper form input {
+    width: 65%; /* Adjusted to fit the button next to it */
+    border-bottom: 1px solid black;
+    font-size: 30px;
+}
