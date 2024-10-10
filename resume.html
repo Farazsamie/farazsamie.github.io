@@ -59,6 +59,18 @@
         </div>
     </div>
 
+
+
+    <svg 
+    style="position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    z-index: 1000;">
+    <path class="trail" d="" style="stroke: #2926244d; stroke-width: 35; fill: none;"></path>
+    </svg>
+
     <script>
 
 
@@ -74,6 +86,66 @@
      }
 }
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+
+    // Mouse trail logic
+    const trails = document.querySelectorAll(".trail");
+    const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+    // Set shorter trail length (smaller number of points)
+    const totalPointsArray = [2.5]; // Reduced from 40 to 20
+
+    // Delay the start of the mouse trail to match page loading animations
+    setTimeout(() => {
+        window.addEventListener("mousemove", (event) => {
+            smoothPointer.x = event.clientX;
+            smoothPointer.y = event.clientY;
+        });
+
+        function updatePath() {
+            trails.forEach((path, index) => {
+                if (!path.points) path.points = [];
+                path.points.unshift({ ...smoothPointer });
+
+                if (path.points.length > totalPointsArray[index]) {
+                    path.points.pop();
+                }
+
+                let d = `M ${path.points[0].x} ${path.points[0].y}`;
+                for (let i = 1; i < path.points.length; i++) {
+                    d += ` L ${path.points[i].x} ${path.points[i].y}`;
+                }
+
+                path.setAttribute("d", d);
+            });
+
+            requestAnimationFrame(updatePath);
+        }
+
+        updatePath();
+    }, 4000); // Delay matches the end of the page loading animations (adjust as needed)
+});
+
+    /* hover effect to buttons */
+
+document.querySelectorAll('.slide-link').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let btnWidth = btn.clientWidth;
+        let btnHeight = btn.clientHeight;
+        let transX = (x - btnWidth / 2);
+        let transY = (y - btnHeight / 2);
+        
+        btn.style.transform = `translate(${transX}px, ${transY}px)`;
+    });
+
+    btn.addEventListener('mouseout', (e) => {
+        btn.style.transform = 'translate(0, 0)';
+    });
+});
 
         gsap.from(".hero-image-wrapper, .content-wrapper, .front-img", {
             delay: 1,
@@ -101,6 +173,22 @@
             top: 0,
             ease: "power3.out"
         });
+
+
+
+        document.querySelectorAll('.slide-link a').forEach(button => {
+    button.addEventListener('pointerenter', () => {
+        document.querySelectorAll('.trail').forEach(trail => {
+            trail.style.display = 'none'; // Hide the mouse trail
+        });
+    });
+
+    button.addEventListener('pointerleave', () => {
+        document.querySelectorAll('.trail').forEach(trail => {
+            trail.style.display = 'block'; // Show the mouse trail again
+        });
+    });
+});
 
     </script>
 </body>
