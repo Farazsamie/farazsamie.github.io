@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const slidesContainer = document.querySelector(".slides");
     const bgOverlay = document.querySelector(".bg-overlay");
     const slideTitle = document.querySelector(".slide-title");
-    const numberOfItems = 30;
+    const numberOfItems = 4;
     let currentIndex = 0;
 
     function getRandomColor() {
