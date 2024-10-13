@@ -1,7 +1,9 @@
 const titles = [
-    ["SVB", "Example"],  // Add actual titles that match the number of letters per slide
+    ["SVB", "Example"],  
     ["Something", "Else"],
-    ["Other", "Slide"]
+    ["Other", "Slide"],
+    ["Fourth", "Slide"],  // Continue adding entries to match your number of slides
+    // ...add more titles to match the numberOfItems (30)
 ];
 
 export { titles };
