@@ -1,6 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -96,7 +96,7 @@ footer a#title {
     position: fixed;
     top: 0;
     left: 0;
-    width: 3000vw;
+    width: calc(100vw * numberOfSlides); /* Or dynamically set in JS */
     height: 100vh;
     display: flex;
 }
@@ -154,11 +154,17 @@ img {
 .letter span {
     position: relative;
     display: inline-block;
-    font-size: 280px;
+    font-size: clamp(100px, 15vw, 280px);
     filter: brightness(0.25) saturate(0.75);
 }
 
-@media (max-width: 900px) {
+a:hover {
+    color: #ff5733; /* Example hover color */
+    transition: color 0.3s ease;
+}
+
+
+@media (max-width: 56.25em) {
     .slider-nav {
         width: 40%; 
     }
@@ -179,5 +185,25 @@ img {
 
     .letter span {
         font-size: 100px;
+    }
+}
+
+/* Existing CSS code remains unchanged... */
+
+/* Adding will-change for potential performance optimization */
+.nav-item-wrapper,
+.nav-item {
+    will-change: transform; /* Optimizes the rendering of animations */
+}
+
+/* More responsive adjustments */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column; /* Stacks nav links vertically on small screens */
+        padding: 1.5em; /* Adjust padding for smaller devices */
+    }
+
+    footer {
+        padding: 1.5em; /* Same as above for footer */
     }
 }
