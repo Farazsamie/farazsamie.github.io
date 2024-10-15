@@ -1,4 +1,4 @@
-import { titles } from "./experience-data.js";
+import { titles } from "./experience-data";
 
 document.addEventListener("DOMContentLoaded", function () {
     // Register GSAP plugin

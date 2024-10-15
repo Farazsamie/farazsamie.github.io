@@ -96,7 +96,7 @@ footer a#title {
     position: fixed;
     top: 0;
     left: 0;
-    width: calc(100vw * numberOfSlides); /* Or dynamically set in JS */
+    width: calc(100vw); /* Or dynamically set in JS */
     height: 100vh;
     display: flex;
 }
