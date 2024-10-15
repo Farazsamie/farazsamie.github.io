@@ -25,27 +25,52 @@
 
     <div class="bg-overlay"></div>
 
+    
     <div class="slider-nav"></div>
 
     <div class="slides"></div>
 
     <div class="slide-title">
         <div class="slide-title-row">
-            <div class="letter"></div>
-            <div class="letter"></div>
-            <div class="letter"></div>
-            <div class="letter"></div>
+            <div class="letter">Adidas</div>
         </div>
         <div class="slide-title-row">
-            <div class="letter"></div>
-            <div class="letter"></div>
-            <div class="letter"></div>
-            <div class="letter"></div>
+            <div class="letter">Sales </div>
+        </div>
+        <div class="slide-title-row">
+            <div class="letter">Associate</div>
         </div>
     </div>
+
+
+    <div class="slide-description">
+        <p>
+            As a Sales Associate at Adidas, I worked in a fast-paced retail environment, 
+            engaging with customers to help them find products that met their needs. 
+            I was responsible for managing inventory, organizing merchandise, and maintaining 
+            excellent customer service. My role also included processing transactions and 
+            working collaboratively with the team to meet sales goals.
+        </p>
+    </div>
+</div>
+</div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
     <script type="module" src="./script.js"></script>
+
+
+    <script>
+        // Example animation using GSAP for title letters
+        gsap.from(".letter", {
+            opacity: 0,
+            y: 50,
+            stagger: 0.1,
+            duration: 1,
+            ease: "power2.out"
+        });
+    </script>
+
 </body>
 </html>
