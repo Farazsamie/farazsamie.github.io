@@ -18,55 +18,64 @@
             <a href="resume.html">Resume</a>
         </nav>
 
-        <div class="slides"></div> <!-- Slide container -->
-        <div class="slider-nav"></div> <!-- Navigation container -->
-        <div class="slide-description"></div>
-
         <footer>
             <h2 id="title">EXPERIENCE</h2>
             <p>Faraz Samie 2024</p>
         </footer>
+
+        <div class="slides"></div> <!-- Slide container -->
+        <div class="slider-nav"></div> <!-- Navigation container -->
+        <div class="slide-description"></div>
+        <div class="titles"></div>
+        <div class="bg-overlay"></div>  <!-- Background overlay for color transition -->
     </div>
 
-    <div class="bg-overlay"></div> <!-- Overlay -->
-
-    <!-- JavaScript code is now inline here -->
     <script>
         const titles = [
-            ["Adidas", "Sales Associate at Adidas"],  
-            ["Google", "Software Engineer at Google"],
-            ["Tesla", "Engineer at Tesla"],
-            ["Apple", "Product Manager at Apple"],
+            ["Adidas", "Sales Associate"],  
+            ["UC San Diego Hedge Fund Club", "Equity Analyst"],
         ];
 
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () { 
             // Register GSAP plugin
-            gsap.registerPlugin(CustomEase);
+            gsap.registerPlugin(CustomEase); 
+            // Ensures that the script runs after the HTML content has been fully loaded.
 
             // Create a custom easing function for animations
             CustomEase.create(
                 "hop",
                 "M0,0 C0.071,0.505 0.192,0.726 0.318,0.852 0.45,0.984 0.504,1 1,1"
             );
+            // Creates a custom easing function
 
-            // DOM Elements
+
             const sliderNav = document.querySelector(".slider-nav");
+            //navigation dots
             const slidesContainer = document.querySelector(".slides");
+            //actual slides will be placed
             const bgOverlay = document.querySelector(".bg-overlay");
+            //background color changes.
             const slideTitle = document.querySelector(".slide-title");
+            //title of each slide
 
-            // Dynamically set the number of items based on the titles array length
+           
             const numberOfItems = titles.length;
+            //Stores the number of slides based on the length of the titles array
             let currentIndex = 0;
+            //Tracks the currently active slide.
 
-            // Configurations for animation
+          
             const ANIMATION_DURATION = 1.5;
+            //Controls how long the slide animations take.
             const LETTER_STAGGER_DELAY = 0.125;
+            //Defines the delay between each letter's animation within a title.
 
-            // Function to update the title letters on each slide
+    
             function updateTitle(newIndex, color) {
                 const title = titles[newIndex];
+                //Updates the title on the active slide based on newIndex
                 const titleRows = slideTitle.querySelectorAll(".slide-title-row");
+                //The rows in the title that will be animated.
 
                 titleRows.forEach((row, rowIndex) => {
                     row.querySelectorAll(".letter").forEach((letter, letterIndex) => {
@@ -95,14 +104,22 @@
                     });
                 });
             }
+            //For each letter in the title:
+            // Removes the previous letter if it exists.
+            //Creates a new span element for each letter.
+            //Sets its position off-screen (150px right or left) using gsap.set.
+            //Animates it back into place with gsap.to, applying the custom "hop" ease.
+            //direction: Controls the animation direction depending on whether the new slide index is greater or less than the current one.
 
-            // Function to create navigation items and slides dynamically
+            
             function createSlidesAndNav() {
                 titles.forEach((_, i) => {
-                    // Create nav item
+                    // creates both the slides and navigation dots
                     const navItemWrapper = document.createElement("div");
                     navItemWrapper.classList.add("nav-item-wrapper");
                     if (i === 0) navItemWrapper.classList.add("active"); // Set first item as active
+
+                    //Creates a navigation dot for each slide
 
                     const navItem = document.createElement("div");
                     navItem.classList.add("nav-item");
@@ -112,7 +129,8 @@
 
                     navItemWrapper.addEventListener("click", () => handleNavClick(i));
 
-                    // Create slide
+                    
+
                     const slide = document.createElement("div");
                     slide.classList.add("slide");
                     if (i === 0) slide.classList.add("active");
@@ -129,20 +147,23 @@
                     slidesContainer.appendChild(slide);
                 });
             }
+            //Creates a div for each slide, adds an image from the ./images/ directory, and appends it to the .slides container.
 
-            // Handle navigation clicks
             function handleNavClick(index) {
-                if (index === currentIndex) return;
+                //Handles navigation dot clicks.
 
                 document.querySelectorAll(".nav-item-wrapper").forEach((nav) => nav.classList.remove("active"));
                 document.querySelectorAll(".nav-item-wrapper")[index].classList.add("active");
 
+                //Removes the active class from all nav dots, then applies it to the clicked one.
                 const translateXValue = -index * 100;
                 gsap.to(slidesContainer, {
                     x: `${translateXValue}vw`,
                     duration: ANIMATION_DURATION,
                     ease: "hop"
                 });
+
+                //Moves the .slides container horizontally to show the selected slide using a percentage-based translation
 
                 const newColor = getRandomColor();
                 gsap.to(bgOverlay, {
@@ -151,18 +172,24 @@
                     ease: "hop"
                 });
 
+                //Changes the background color of the .bg-overlay to a random color when the user clicks a nav dot.
+        
                 updateTitle(index, newColor);
                 currentIndex = index;
+                //Updates the slide title and changes the currentIndex to the new slide.
             }
 
             // Initialize: create slides and nav items, and set the initial title
             createSlidesAndNav();
             updateTitle(0, getComputedStyle(bgOverlay).backgroundColor);
+            //Initializes the slider by creating the slides and nav items. Sets the first title and background color.
+
 
             function getRandomColor() {
                 return "#" + Math.floor(Math.random() * 16777215).toString(16);
             }
         });
+        //Generates a random hexadecimal color for the background transitions.
     </script>
 </body>
 </html>
