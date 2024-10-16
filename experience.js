@@ -24,14 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
      const ANIMATION_DURATION = 1.5;
      const LETTER_STAGGER_DELAY = 0.125;
  
-     // Helper function to generate random hex color
-     function getRandomColor() {
-         const letters = "0123456789ABCDEF";
-         return `#${Array.from({ length: 6 })
-             .map(() => letters[Math.floor(Math.random() * 16)])
-             .join('')}`;
-     }
- 
      // Function to update the title letters on each slide
      function updateTitle(newIndex, color) {
          const title = titles[newIndex];
@@ -94,9 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
              imgWrapper.classList.add("img");
  
              // Create and append image
-             const img = document.createElement("img");
-             img.src = `./assets/img${i + 1}.jpg`; // Dynamic image path
-             img.alt = `Slide Image ${i + 1}`;
+             const img = document.createElement("img"); // Create img element
+            img.src = "./images/2.png";  // Set the image source
+            img.alt = "";  // Set the alt text, if any
+
+            // Then append the img element to a parent, e.g., imgWrapper:
+            imgWrapper.appendChild(img);
+            slidesContainer.appendChild(imgWrapper);  // Ensure it's appended to a visible container
+
  
              imgWrapper.appendChild(img);
              slide.appendChild(imgWrapper);
