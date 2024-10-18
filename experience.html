@@ -26,7 +26,7 @@
         <div class="slides"></div> <!-- Slide container -->
         <div class="slider-nav"></div> <!-- Navigation container -->
         <div class="slide-description"></div>
-        <div class="titles"></div>
+        <div class="slide-title"></div>
         <div class="bg-overlay"></div>  <!-- Background overlay for color transition -->
     </div>
 
@@ -72,38 +72,47 @@
 
     
             function updateTitle(newIndex, color) {
-                const title = titles[newIndex];
-                //Updates the title on the active slide based on newIndex
-                const titleRows = slideTitle.querySelectorAll(".slide-title-row");
-                //The rows in the title that will be animated.
+    const title = titles[newIndex]; // Get the new title (array of [title, subtitle])
 
-                titleRows.forEach((row, rowIndex) => {
-                    row.querySelectorAll(".letter").forEach((letter, letterIndex) => {
-                        const existingSpan = letter.querySelector("span");
-                        if (existingSpan) {
-                            letter.removeChild(existingSpan); // Remove old letter
-                        }
+    // Clear the existing title
+    slideTitle.innerHTML = ""; 
 
-                        const newSpan = document.createElement("span");
-                        const direction = newIndex > currentIndex ? 150 : -150; // Slide direction
+    // Create title rows (one for title, one for subtitle)
+    title.forEach((text, rowIndex) => {
+        const titleRow = document.createElement("div");
+        titleRow.classList.add("slide-title-row");
 
-                        gsap.set(newSpan, {
-                            x: direction,
-                            color: color
-                        });
+        // Create each letter as a separate span
+        text.split("").forEach((char, letterIndex) => {
+            const letter = document.createElement("div");
+            letter.classList.add("letter");
 
-                        newSpan.textContent = title[rowIndex]?.[letterIndex] || "";
-                        letter.appendChild(newSpan);
+            const newSpan = document.createElement("span");
+            const direction = newIndex > currentIndex ? 150 : -150; // Slide direction
 
-                        gsap.to(newSpan, {
-                            x: 0,
-                            duration: 1,
-                            ease: "hop",
-                            delay: LETTER_STAGGER_DELAY
-                        });
-                    });
-                });
-            }
+            gsap.set(newSpan, {
+                x: direction,
+                color: color
+            });
+
+            newSpan.textContent = char;
+            letter.appendChild(newSpan);
+            titleRow.appendChild(letter);
+
+            // Animate each letter
+            gsap.to(newSpan, {
+                x: 0,
+                duration: 1,
+                ease: "hop",
+                delay: letterIndex * LETTER_STAGGER_DELAY
+            });
+        });
+
+        // Append title row to the slideTitle element
+        slideTitle.appendChild(titleRow);
+    });
+}
+
             //For each letter in the title:
             // Removes the previous letter if it exists.
             //Creates a new span element for each letter.
