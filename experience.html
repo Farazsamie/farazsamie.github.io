@@ -129,18 +129,14 @@
 
                     navItemWrapper.addEventListener("click", () => handleNavClick(i));
 
-                    
-
                     const slide = document.createElement("div");
                     slide.classList.add("slide");
                     if (i === 0) slide.classList.add("active");
 
                     const imgWrapper = document.createElement("div");
-                    imgWrapper.classList.add("img");
+        
 
                     const img = document.createElement("img");
-                    img.src = `./images/img${i + 1}.jpg`;
-                    img.alt = `Slide Image ${i + 1}`;
 
                     imgWrapper.appendChild(img);
                     slide.appendChild(imgWrapper);
