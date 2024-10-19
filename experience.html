@@ -77,41 +77,70 @@
     // Clear the existing title
     slideTitle.innerHTML = ""; 
 
-    // Create title rows (one for title, one for subtitle)
-    title.forEach((text, rowIndex) => {
-        const titleRow = document.createElement("div");
-        titleRow.classList.add("slide-title-row");
+    // Create title row for the title (first item in the array)
+    const titleRow = document.createElement("div");
+    titleRow.classList.add("slide-title-row", "title");
 
-        // Create each letter as a separate span
-        text.split("").forEach((char, letterIndex) => {
-            const letter = document.createElement("div");
-            letter.classList.add("letter");
+    title[0].split("").forEach((char, letterIndex) => {
+        const letter = document.createElement("div");
+        letter.classList.add("letter");
 
-            const newSpan = document.createElement("span");
-            const direction = newIndex > currentIndex ? 150 : -150; // Slide direction
+        const newSpan = document.createElement("span");
+        const direction = newIndex > currentIndex ? 150 : -150; // Slide direction
 
-            gsap.set(newSpan, {
-                x: direction,
-                color: color
-            });
-
-            newSpan.textContent = char;
-            letter.appendChild(newSpan);
-            titleRow.appendChild(letter);
-
-            // Animate each letter
-            gsap.to(newSpan, {
-                x: 0,
-                duration: 1,
-                ease: "hop",
-                delay: letterIndex * LETTER_STAGGER_DELAY
-            });
+        gsap.set(newSpan, {
+            x: direction,
+            color: color
         });
 
-        // Append title row to the slideTitle element
-        slideTitle.appendChild(titleRow);
+        newSpan.textContent = char;
+        letter.appendChild(newSpan);
+        titleRow.appendChild(letter);
+
+        // Animate each letter
+        gsap.to(newSpan, {
+            x: 0,
+            duration: 1,
+            ease: "hop",
+            delay: letterIndex * LETTER_STAGGER_DELAY
+        });
     });
+
+    // Create subtitle row for the position (second item in the array)
+    const subtitleRow = document.createElement("div");
+    subtitleRow.classList.add("slide-title-row", "subtitle");
+
+    title[1].split("").forEach((char, letterIndex) => {
+        const letter = document.createElement("div");
+        letter.classList.add("letter");
+
+        const newSpan = document.createElement("span");
+        const direction = newIndex > currentIndex ? 150 : -150; // Slide direction
+
+        gsap.set(newSpan, {
+            x: direction,
+            color: color
+        });
+
+        newSpan.textContent = char;
+        letter.appendChild(newSpan);
+        subtitleRow.appendChild(letter);
+
+        // Animate each letter
+        gsap.to(newSpan, {
+            x: 0,
+            duration: 1,
+            ease: "hop",
+            delay: letterIndex * LETTER_STAGGER_DELAY
+        });
+    });
+
+    // Append title and subtitle rows to the slideTitle element
+    slideTitle.appendChild(titleRow);
+    slideTitle.appendChild(subtitleRow);
 }
+
+            
 
             //For each letter in the title:
             // Removes the previous letter if it exists.

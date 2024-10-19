@@ -135,6 +135,20 @@ img {
     display: inline-block;
 }
 
+
+.slide-title-row.title {
+    font-size: 24px; /* Adjust size for the title */
+    font-weight: bold;
+    margin-bottom: 10px; /* Adds spacing between title and subtitle */
+    text-align: center; /* Center-align the text */
+}
+
+.slide-title-row.subtitle {
+    font-size: 18px; /* Adjust size for the position */
+    font-weight: normal;
+    text-align: center;
+}
+
 /* Style each letter */
 .slide-title-row .letter {
     display: inline-block;
@@ -149,16 +163,17 @@ img {
 }
 
 .letter {
-    flex: 1;
+    flex: 0;
     height: 100%;
-    padding-left: 2em;
+    padding-left: 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    margin: 0 0.2em;
 }
 
 .letter span {
     position: relative;
     display: inline-block;
-    font-size: clamp(100px, 15vw, 280px);
+    font-size: 50px;
     filter: brightness(0.25) saturate(0.75);
 }
 
@@ -178,14 +193,20 @@ a:hover {
         height: 75%;
     }
 
-    .slide-title {
-        left: 47.5%;
-        height: 40%;
-    }
 
-    .slide-title-row:nth-child(2) {
-        left: 0;
+
+    .slide-title-row.title {
+        position: relative;
+        top: 20px; /* Moves the title down */
+        left: 30px; /* Moves the title to the right */
     }
+    
+    .slide-title-row.subtitle {
+        position: relative;
+        top: 40px; /* Moves the position lower */
+        left: 30px; /* Moves the position to the right */
+    }
+    
 
     .letter span {
         font-size: 100px;
