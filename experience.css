@@ -233,3 +233,7 @@ a:hover {
         padding: 1.5em; /* Same as above for footer */
     }
 }
+
+.trail {
+    pointer-events: none;
+}
