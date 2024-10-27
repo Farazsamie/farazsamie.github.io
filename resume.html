@@ -22,111 +22,83 @@
         </div>
         <div class="content-wrapper wrapper"> 
             <header>
-                <div 
-                    class = "h3"> 
-                    <h3> Please  Enter Email </h3
-                    class="h2">
-                    <h2>To View </h2>
+                <div class="h3"> 
+                    <h3>Please Enter Email</h3>
+                    <div class="h2">
+                        <h2>To View</h2>
+                    </div>
                     <div class="header-revealer"></div>
                 </div>
                 <div class="h1">
-                    <h1> Resume</h1>
+                    <h1>Resume</h1>
                     <div class="header-revealer"></div>
                 </div>
                 <div class="form-wrapper">
-                    <form id="emailForm" action="">
-                        <input type="Email" id="emailInput" placeholder="Email">
-                        <a href="pdf/Faraz Samie 2024 Resume.pdf" download="">View</a>
+                    <form id="emailForm" action="#">
+                        <input type="email" id="emailInput" placeholder="Email" required>
+                        <button type="button" onclick="validateEmail()">View</button>
                         <a href="index.html">Home</a>
                     </form>
                 </div>
             </header> 
 
             <div class="icon-container">
-            <a href="https://www.linkedin.com/in/farazsamie/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/Farazsamie" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
+                <a href="https://www.linkedin.com/in/farazsamie/" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Farazsamie" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
             </div>
 
             <footer>
-                <p><span>Faraz Samie | 2024 Resume </span></p>
-
-                
+                <p><span>Faraz Samie | 2024 Resume</span></p>
             </footer>
         </div>
     </div>
-
-
 
     <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000;">
         <circle class="trail" cx="0" cy="0" r="15" style="stroke: #2926244d; fill: #2926244d;"></circle>
     </svg>
 
-
     <script>
         function validateEmail() {
-        const emailInput = document.getElementById('emailInput').value;
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email regex pattern
+            const emailInput = document.getElementById('emailInput').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (emailPattern.test(emailInput)) {
-        // Redirect to resume PDF if email is valid
-        window.location.href = 'pdf/Faraz Samie 2024 Resume.pdf';
-     } else {
-            alert('Please enter a valid email address');
-     }
-}
-
-
+            if (emailPattern.test(emailInput)) {
+                window.location.href = 'pdf/Faraz Samie 2024 Resume.pdf';
+            } else {
+                alert('Please enter a valid email address');
+            }
+        }
 
         document.addEventListener("DOMContentLoaded", function() {
-            // Mouse trail logic
             const trail = document.querySelector(".trail");
             const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
             const pointerSpeed = 0.2;
 
-            // Delay the start of the mouse trail to match page loading animations
             setTimeout(() => {
                 window.addEventListener("mousemove", (event) => {
                     smoothPointer.x += (event.clientX - smoothPointer.x) * pointerSpeed;
                     smoothPointer.y += (event.clientY - smoothPointer.y) * pointerSpeed;
-                    trail.setAttribute("cx", smoothPointer.x);
-                    trail.setAttribute("cy", smoothPointer.y);
                 });
 
                 function updateTrail() {
                     trail.setAttribute("cx", smoothPointer.x);
                     trail.setAttribute("cy", smoothPointer.y);
-
                     requestAnimationFrame(updateTrail);
                 }
-
                 updateTrail();
-            }, 2000); // Delay matches the end of the page loading animations (adjust as needed)
+            }, 2000);
         });
-
-        document.querySelectorAll('.slide-link a').forEach(button => {
-            button.addEventListener('pointerenter', () => {
-                document.querySelector(".trail").style.display = 'none'; // Hide the mouse trail
-            });
-
-            button.addEventListener('pointerleave', () => {
-                document.querySelector(".trail").style.display = 'block'; // Show the mouse trail again
-            });
-        });
-
-
 
         gsap.from(".hero-image-wrapper, .content-wrapper, .front-img", {
             delay: 1,
             duration: 2,
             clipPath: "inset(0 100% 0 0)",
             ease: "power4.inOut",
-            stagger: {
-                amount: 0.5,
-            }
+            stagger: { amount: 0.5 }
         });
 
         gsap.from("img", {
@@ -134,9 +106,7 @@
             duration: 3,
             scale: 2,
             ease: "power4.inOut",
-            stagger: {
-                amount: 0.25,
-            },
+            stagger: { amount: 0.25 }
         });
 
         gsap.to("header h1, header h2", {
@@ -145,24 +115,6 @@
             top: 0,
             ease: "power3.out"
         });
-
-
-
-        document.querySelectorAll('.slide-link a').forEach(button => {
-    button.addEventListener('pointerenter', () => {
-        document.querySelectorAll('.trail').forEach(trail => {
-            trail.style.display = 'none'; // Hide the mouse trail
-        });
-    });
-
-    button.addEventListener('pointerleave', () => {
-        document.querySelectorAll('.trail').forEach(trail => {
-            trail.style.display = 'block'; // Show the mouse trail again
-        });
-    });
-});
-
     </script>
 </body>
 </html>
-

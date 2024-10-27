@@ -307,3 +307,20 @@ header h1, header h2 {
     border-bottom: 1px solid black;
     font-size: 30px;
 }
+
+
+
+svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.trail {
+    stroke-width: 0;
+    fill: #2926244d;
+}
