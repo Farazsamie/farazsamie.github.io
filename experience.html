@@ -37,9 +37,6 @@
         <circle class="trail" cx="0" cy="0" r="15" style="stroke: #2926244d; fill: #2926244d;"></circle>
     </svg>
 
-    <circle class="trail" cx="0" cy="0" r="15" style="stroke: #2926244d; fill: #2926244d; pointer-events: none;"></circle>
-
-
     <script>
          
         const titles = [
@@ -239,44 +236,27 @@
 
 
 
-
-   
-       
         document.addEventListener("DOMContentLoaded", function() {
-            // Mouse trail logic
             const trail = document.querySelector(".trail");
             const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-            const pointerSpeed = 0.2;
+            const pointerSpeed = 0.3;
 
-            // Delay the start of the mouse trail to match page loading animations
             setTimeout(() => {
                 window.addEventListener("mousemove", (event) => {
                     smoothPointer.x += (event.clientX - smoothPointer.x) * pointerSpeed;
                     smoothPointer.y += (event.clientY - smoothPointer.y) * pointerSpeed;
-                    trail.setAttribute("cx", smoothPointer.x);
-                    trail.setAttribute("cy", smoothPointer.y);
                 });
 
                 function updateTrail() {
                     trail.setAttribute("cx", smoothPointer.x);
                     trail.setAttribute("cy", smoothPointer.y);
-
                     requestAnimationFrame(updateTrail);
                 }
-
                 updateTrail();
-            }, 2000); // Delay matches the end of the page loading animations (adjust as needed)
+            }, 2000);
         });
 
-        document.querySelectorAll('.slide-link a').forEach(button => {
-            button.addEventListener('pointerenter', () => {
-                document.querySelector(".trail").style.display = 'none'; // Hide the mouse trail
-            });
 
-            button.addEventListener('pointerleave', () => {
-                document.querySelector(".trail").style.display = 'block'; // Show the mouse trail again
-            });
-        });
     </script>
 </body>
 </html>
