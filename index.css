@@ -169,3 +169,8 @@ a {
     pointer-events: none;
     z-index: 1000;
 }
+
+.trail {
+    stroke-width: 0;
+    fill: #2926244d;
+}

@@ -24,13 +24,13 @@
         </div>
         <div class="slide-link">
             <div class="link">
-                <div><a href="academic-achievements.html">Learn More</a></div>
-                <div><a href="experience.html">Learn More</a></div>
-                <div><a href="projects.html">Learn More</a></div>
-                <div><a href="research.html"> Learn More</a></div>
-                <div><a href="personal.html">Learn More</a></div>
+                <div><a href="academic-achievements.html" class="slide-button" id="btn-academic">Learn More</a></div>
+                <div><a href="experience.html" class="slide-button" id="btn-experience">Learn More</a></div>
+                <div><a href="projects.html" class="slide-button" id="btn-projects">Learn More</a></div>
+                <div><a href="research.html" class="slide-button" id="btn-research"> Learn More</a></div>
+                <div><a href="personal.html" class="slide-button" id="btn-personal">Learn More</a></div>
             </div>
-        </div>
+        </div>        
     </div>
     <div class="slider">
         <div class="slide" id="slide-1">
@@ -60,187 +60,173 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        /* hover effect to buttons */
-        document.querySelectorAll('.slide-link').forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                let x = e.offsetX;
-                let y = e.offsetY;
-                let btnWidth = btn.clientWidth;
-                let btnHeight = btn.clientHeight;
-                let transX = (x - btnWidth / 2);
-                let transY = (y - btnHeight / 2);
-                
-                btn.style.transform = `translate(${transX}px, ${transY}px)`;
-            });
-    
-            btn.addEventListener('mouseout', (e) => {
-                btn.style.transform = 'translate(0, 0)';
-            });
+    /* hover effect to buttons */
+    document.querySelectorAll('.slide-link').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            let x = e.offsetX;
+            let y = e.offsetY;
+            let btnWidth = btn.clientWidth;
+            let btnHeight = btn.clientHeight;
+            let transX = (x - btnWidth / 2);
+            let transY = (y - btnHeight / 2);
+            
+            btn.style.transform = `translate(${transX}px, ${transY}px)`;
         });
-    
-        /* page loading */ 
-        gsap.from(".slider-content", {
-            delay: 1,
-            duration: 2,
-            clipPath: "inset(0 100% 0 0)",
-            ease: "power4.inOut",
-            stagger: {
-                amount: 0.5,
-            }
+
+        btn.addEventListener('mouseout', (e) => {
+            btn.style.transform = 'translate(0, 0)';
         });
-    
-        gsap.from("img", {
-            delay: 1.5,
-            duration: 3,
-            scale: 2,
-            ease: "power4.inOut",
-            stagger: {
-                amount: 0.25,
-            },
-        });
-    
-        gsap.to("header h1, header h2", {
-            delay: 3,
-            duration: 1,
-            top: 0,
-            ease: "power3.out"
-        });
-    
-        /* core slide logic */ 
-        const slides = document.querySelectorAll(".slide");
-        let currentSlideIndex = 0;
-        let isAnimating = false;
-        let currentTopValue = 0;
-        const elements = [
-            {selector: ".prefix", delay: 0},
-            {selector: ".names", delay: 0.00015},
-            {selector: ".link", delay: 0.00003},
-        ];
-    
-        // Function to show a specific slide
-        function showSlide(index) {
-            if (index < 0 || index >= slides.length) return; // Prevent out-of-bounds
-            isAnimating = true;
-            slides.forEach((slide, i) => {
-                slide.style.transform = `translateX(${(i - index) * 100}%)`;
-            });
-            setTimeout(() => {
-                isAnimating = false;
-            }, 500); // Adjust this to match the CSS transition duration
-        }
-    
-        elements.forEach((elem) => {
-            console.log(`Animating ${elem.selector} to y: ${currentTopValue}px`);
-            gsap.to(document.querySelector(elem.selector), {
-                y: `${currentTopValue}px`,
-                duration: 1.75,
-                ease: "power4.inOut",
-            }, 0);
-        });
-    
-        slides.forEach((slide, idx) => {
-            if (idx !== 0) {
-                const img = slide.querySelector("img");
-                gsap.set(img, {scale: 2, top: "4em"});
-            }
-        });
-    
-        function showSlide(index) {
-            if (isAnimating) return;
-            isAnimating = true;
-            const slide = slides[index];
-            const img = slide.querySelector("img");
-    
-            currentTopValue -= 30; // position text lands on (dont adjust)
-    
-            elements.forEach((elem) => {
-                gsap.to(document.querySelector(elem.selector), {
-                    y: `${currentTopValue}px`,
-                    duration: 1.75, // speed of text
-                    ease: "power4.inOut",
-                });
-            });
-    
-            gsap.to(img, {
-                scale: 1,
-                top: "0%",
-                duration: 1,
-                ease: "power3.inOut",
-            });
-            gsap.to(slide, {
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                duration: 1,
-                ease: "power4.inOut",
-                onComplete: () => {
-                    isAnimating = false;
-                },
-            }, "<");
-        }
-    
-        function hideSlide(index) {
-            if (isAnimating) return;
-            isAnimating = true;
-            const slide = slides[index];
-            const img = slide.querySelector("img");
-    
-            currentTopValue += 30;
-            elements.forEach((elem) => {
-                gsap.to(document.querySelector(elem.selector), {
-                    y: `${currentTopValue}px`,
-                    duration: 1,
-                    ease: "power4.inOut",
-                });
-            });
-    
-            gsap.to(slide, {
-                clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-                duration: 0.5,
-                ease: "power4.inOut",
-            });
-    
-            gsap.to(img, {
-                scale: 2,
-                top: "4em",
-                duration: 0.5,
-                ease: "power3.inOut",
-            });
-    
-            gsap.to(slide, {
-                clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-                duration: 1,
-                ease: "power4.inOut",
-                onComplete: () => {
-                    isAnimating = false;
-                },
-            }, "<");
-        }
-    
-        window.addEventListener("wheel", (e) => {
-            if (isAnimating) return;
-            if (e.deltaY > 0 && currentSlideIndex < slides.length - 1) {
-                showSlide(currentSlideIndex + 1);
-                currentSlideIndex++;
-            } else if (e.deltaY < 0 && currentSlideIndex > 0) {
-                hideSlide(currentSlideIndex);
-                currentSlideIndex--;
-            }
+
+        // Enable button clickability
+        btn.addEventListener('click', () => {
+            alert("Button clicked!");
         });
     });
 
+    /* page loading */
+    gsap.from(".slider-content", {
+        delay: 1,
+        duration: 2,
+        clipPath: "inset(0 100% 0 0)",
+        ease: "power4.inOut",
+        stagger: {
+            amount: 0.5,
+        }
+    });
+
+    gsap.from("img", {
+        delay: 1.5,
+        duration: 3,
+        scale: 2,
+        ease: "power4.inOut",
+        stagger: {
+            amount: 0.25,
+        },
+    });
+
+    gsap.to("header h1, header h2", {
+        delay: 3,
+        duration: 1,
+        top: 0,
+        ease: "power3.out"
+    });
+
+    /* core slide logic */
+    const slides = document.querySelectorAll(".slide");
+    let currentSlideIndex = 0;
+    let isAnimating = false;
+    let currentTopValue = 0;
+    const elements = [
+        {selector: ".prefix", delay: 0},
+        {selector: ".names", delay: 0.00015},
+        {selector: ".link", delay: 0.00003},
+    ];
+
+    // Initialize the slide transforms and gsap set functions for all slides except the first
+    slides.forEach((slide, idx) => {
+        if (idx !== 0) {
+            const img = slide.querySelector("img");
+            gsap.set(img, {scale: 2, top: "4em"});
+        }
+    });
+
+    // Function to show a specific slide
+    function showSlide(index) {
+        if (isAnimating || index < 0 || index >= slides.length) return;
+        isAnimating = true;
+        const slide = slides[index];
+        const img = slide.querySelector("img");
+
+        currentTopValue -= 30; // position text lands on
+
+        // Move text elements
+        elements.forEach((elem) => {
+            gsap.to(document.querySelector(elem.selector), {
+                y: `${currentTopValue}px`,
+                duration: 1.75, // speed of text
+                ease: "power4.inOut",
+            });
+        });
+
+        
+        // Transition the image scale and position
+        gsap.to(img, {
+            scale: 1,
+            top: "0%",
+            duration: 1,
+            ease: "power3.inOut",
+        });
+
+        // Animate the slide reveal
+        gsap.to(slide, {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            duration: 1,
+            ease: "power4.inOut",
+            onComplete: () => {
+                isAnimating = false;
+            },
+        }, "<");
+    }
+
+    // Function to hide a specific slide
+    function hideSlide(index) {
+        if (isAnimating || index < 0 || index >= slides.length) return;
+        isAnimating = true;
+        const slide = slides[index];
+        const img = slide.querySelector("img");
+
+        currentTopValue += 30;
+
+        // Move text elements
+        elements.forEach((elem) => {
+            gsap.to(document.querySelector(elem.selector), {
+                y: `${currentTopValue}px`,
+                duration: 1,
+                ease: "power4.inOut",
+            });
+        });
+
+        // Transition to hide image and slide
+        gsap.to(img, {
+            scale: 2,
+            top: "4em",
+            duration: 0.5,
+            ease: "power3.inOut",
+        });
+
+        gsap.to(slide, {
+            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+            duration: 0.5,
+            ease: "power4.inOut",
+            onComplete: () => {
+                isAnimating = false;
+            },
+        }, "<");
+    }
+
+    // Wheel event listener to navigate slides
+    window.addEventListener("wheel", (e) => {
+        if (isAnimating) return;
+        if (e.deltaY > 0 && currentSlideIndex < slides.length - 1) {
+            showSlide(currentSlideIndex + 1);
+            currentSlideIndex++;
+        } else if (e.deltaY < 0 && currentSlideIndex > 0) {
+            hideSlide(currentSlideIndex);
+            currentSlideIndex--;
+        }
+    
+    });
+
+    
+});
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+    // Debounce function to control scroll-triggered events for smooth transitions
+    let debounceTimeout;
+    function debounce(fn, delay) {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(fn, delay); }
 
 
 
@@ -248,7 +234,7 @@
     document.addEventListener("DOMContentLoaded", function() {
             const trail = document.querySelector(".trail");
             const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-            const pointerSpeed = 0.4;
+            const pointerSpeed = 0.3;
 
             setTimeout(() => {
                 window.addEventListener("mousemove", (event) => {
@@ -265,4 +251,5 @@
             }, 2000);
         });
     </script>
-    
+    </body>
+    </html>
