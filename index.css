@@ -154,7 +154,13 @@ a {
 
 /**/
 
-svg {
+.path {
+    stroke-width: 2; /* Adjust to a smaller size */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.svg {
     position: absolute;
     top: 0;
     left: 0;
