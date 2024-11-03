@@ -59,18 +59,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    /* hover effect to buttons */
-    document.querySelectorAll('.slide-link').forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            let x = e.offsetX;
-            let y = e.offsetY;
-            let btnWidth = btn.clientWidth;
-            let btnHeight = btn.clientHeight;
-            let transX = (x - btnWidth / 2);
-            let transY = (y - btnHeight / 2);
+document.addEventListener("DOMContentLoaded", function() {
+/* hover effect to buttons */
+document.querySelectorAll('.slide-link').forEach(btn => {
+btn.addEventListener('mousemove', (e) => {
+    let x = e.offsetX;
+    let y = e.offsetY;
+    let btnWidth = btn.clientWidth;
+    let btnHeight = btn.clientHeight;
+    let transX = (x - btnWidth / 2);
+    let transY = (y - btnHeight / 2);
             
-            btn.style.transform = `translate(${transX}px, ${transY}px)`;
+btn.style.transform = `translate(${transX}px, ${transY}px)`;
         });
 
         btn.addEventListener('mouseout', (e) => {
@@ -220,16 +220,11 @@
     
 });
 
-
-
     // Debounce function to control scroll-triggered events for smooth transitions
     let debounceTimeout;
     function debounce(fn, delay) {
         clearTimeout(debounceTimeout);
         debounceTimeout = setTimeout(fn, delay); }
-
-
-
 
     document.addEventListener("DOMContentLoaded", function() {
             const trail = document.querySelector(".trail");
