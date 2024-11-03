@@ -45,8 +45,6 @@ nav {
 }
 
 
-
-
 .slide {
     position: absolute;
     bottom: 0;
@@ -96,18 +94,15 @@ img {
     top: 100%;
     right: 13%;
     transform: translate(-50%, -50%);
-}
-
-.slide-name {
-    font-size: 15px;
+    font-size: 13px;
     color: #fffff1;
     line-height: 30px;
     clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
     text-transform: uppercase;
 }
 
-.slide-link {
-    font-size: 13px;
+.slide-name {
+    font-size: 15px;
     color: #fffff1;
     line-height: 30px;
     clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
@@ -122,27 +117,17 @@ img {
     font-size: 13px;
     font-weight: 200;
     color: #fffff1;
-    cursor: pointer;
     border: 2px solid transparent;
-    transition: 0.3s, color 0.3s, border 0.3s;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Adjusted for a button-like appearance */
     text-decoration: none; /* Removes the underline */
     border-radius: 5px;
-}
-
-.link a {
-    background: linear-gradient(90deg, #5cba5d 50%);
-    background-size: 200%;
-    background-position: right;
-    transition: background-position 0.4s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    position: relative;
 }
 
 .link a:hover {
-    background-position: left;
-    color: #292624;
-    border: 2px solid #292624;
+    border-color: #292624; /* Border color on hover */
 }
-
 
 
 
@@ -168,6 +153,7 @@ a {
 };
 
 /**/
+
 svg {
     position: absolute;
     top: 0;
@@ -175,12 +161,5 @@ svg {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 2000;
-}
-
-path {
-    fill: none;
-    stroke-width: 50;
-    stroke-linecap: round;
-    stroke-linejoin:round ;
+    z-index: 1000;
 }
