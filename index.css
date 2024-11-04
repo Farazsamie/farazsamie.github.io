@@ -101,6 +101,13 @@ img {
     text-transform: uppercase;
 }
 
+.slide-link:hover {
+    border-color: #292624; /* Border color on hover */
+    background-color: #292624;
+    color: #292624;
+}
+
+
 .slide-name {
     font-size: 15px;
     color: #fffff1;
@@ -121,12 +128,27 @@ img {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Adjusted for a button-like appearance */
     text-decoration: none; /* Removes the underline */
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition: 0.3s ease;
     position: relative;
 }
 
 .link a:hover {
     border-color: #292624; /* Border color on hover */
+    background-color: #292624;
+    color: #fffff1; /* Make text color consistent on hover */
+}
+
+.slide-button {
+    pointer-events: none;
+    position: relative;
+    z-index: 1002; /* Set higher than surrounding elements */
+    border: none;
+    cursor: pointer;
+}
+
+.slide-button:hover {
+    background-color: #292624;
+    color: white;
 }
 
 
