@@ -215,7 +215,30 @@
                 }
                 updateTrail();
             }, 2000);
-        });
+    });
+
+
+    window.addEventListener("load", function() {
+    const trail = document.querySelector(".trail");
+
+    // Make the mouse trail visible once the page is fully loaded
+    trail.style.visibility = "visible";
+
+    const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    const pointerSpeed = 0.4;
+
+    window.addEventListener("mousemove", (event) => {
+        smoothPointer.x += (event.clientX - smoothPointer.x) * pointerSpeed;
+        smoothPointer.y += (event.clientY - smoothPointer.y) * pointerSpeed;
+    });
+
+    function updateTrail() {
+        trail.setAttribute("cx", smoothPointer.x);
+        trail.setAttribute("cy", smoothPointer.y);
+        requestAnimationFrame(updateTrail);
+    }
+    updateTrail();
+});
 
     </script>
     </body>
