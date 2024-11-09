@@ -102,9 +102,7 @@ img {
 }
 
 .slide-link:hover {
-    border-color: #292624; /* Border color on hover */
     background-color: #292624;
-    color: #292624;
 }
 
 
