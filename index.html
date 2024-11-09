@@ -52,8 +52,13 @@
     <div style="height:400vh"></div>
 
     
+    
+    <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;">
+        <circle class="trail" cx="0" cy="0" r="15" style="stroke: #2926244d; fill: #2926244d;"></circle>
+    </svg>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <script>
 
@@ -191,6 +196,26 @@
     
     });
 
+    // Mousetrail
+    document.addEventListener("DOMContentLoaded", function() {
+            const trail = document.querySelector(".trail");
+            const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+            const pointerSpeed = 0.4;
+
+            setTimeout(() => {
+                window.addEventListener("mousemove", (event) => {
+                    smoothPointer.x += (event.clientX - smoothPointer.x) * pointerSpeed;
+                    smoothPointer.y += (event.clientY - smoothPointer.y) * pointerSpeed;
+                });
+
+                function updateTrail() {
+                    trail.setAttribute("cx", smoothPointer.x);
+                    trail.setAttribute("cy", smoothPointer.y);
+                    requestAnimationFrame(updateTrail);
+                }
+                updateTrail();
+            }, 2000);
+        });
     </script>
     </body>
     </html>
