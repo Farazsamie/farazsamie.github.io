@@ -117,12 +117,12 @@ img {
 /* problem with button here*/ 
 .link a {
     background: #5cba5d;
-    padding: 0.5em 3em;
+    padding: 0.9em 6em;
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 200;
     color: #fffff1;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Adjusted for a button-like appearance */
     text-decoration: none; /* Removes the underline */
     border-radius: 5px;
