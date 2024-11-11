@@ -85,7 +85,7 @@ img {
 .slide-name {
     position: absolute;
     top: 100%;
-    left: 16%;
+    left: 13%;
     transform: translate(-50%, -50%);
 }
 
@@ -118,6 +118,7 @@ img {
 .link a {
     background: #5cba5d;
     padding: 0.9em 6em;
+    padding-top: 6px;
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 200;
@@ -137,14 +138,12 @@ img {
 }
 
 .slide-button {
-    pointer-events: none;
-    position: relative;
-    z-index: 1002; /* Set higher than surrounding elements */
+    position:relative;
     border: none;
-    cursor: pointer;
 }
 
 .slide-button:hover {
+    pointer-events: auto;
     background-color: #292624;
     color: white;
 }
