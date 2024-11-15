@@ -164,6 +164,16 @@ padding-top: 150px;
     width: 677px;
 }
 
+#row-4 {
+    height: 675px;
+    width: 670px;
+}
+
+#row-5 {
+    height: 675px;
+    width: 747px;
+}
+
 .col:nth-child(1) {
     flex: 3;
     display: flex;
