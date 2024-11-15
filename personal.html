@@ -65,6 +65,30 @@
             </div>
         </div>
 
+        
+        <div class="row" id="row-4">
+            <div class="col">
+                <div class="img-container left">
+                    <img src="images/4.png"/>
+                </div>
+                <div class="text four">
+                    <p>Music</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" id="row-5">
+            <div class="col">
+                <div class="img-container left">
+                    <img src="images/4.png"/>
+                </div>
+                <div class="text four">
+                    <p>Entertainment</p>
+                </div>
+            </div>
+        </div>
+
 
         
     </div>
@@ -75,10 +99,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 
-    <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000;"></svg>
+    <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000;">
         <circle class="trail" cx="0" cy="0" r="15" style="stroke: #2926244d; fill: #2926244d;"></circle>
     </svg>
-
 
     <script>
         
@@ -170,6 +193,33 @@ gsap.utils.toArray(".img-container.left img").forEach((img) => {
 
 });
 
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+            const trail = document.querySelector(".trail");
+            const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+            const pointerSpeed = 0.3;
+
+            setTimeout(() => {
+                window.addEventListener("mousemove", (event) => {
+                    smoothPointer.x += (event.clientX - smoothPointer.x) * pointerSpeed;
+                    smoothPointer.y += (event.clientY - smoothPointer.y) * pointerSpeed;
+                });
+
+                function updateTrail() {
+                    trail.setAttribute("cx", smoothPointer.x);
+                    trail.setAttribute("cy", smoothPointer.y);
+                    requestAnimationFrame(updateTrail);
+                }
+                updateTrail();
+            }, 2000);
+        });
     </script>
 </body>
 </html>
