@@ -192,3 +192,9 @@ svg {
     stroke-width: 0;
     fill: #2926244d;
 }
+
+
+a:hover {
+    color: #ff5733; /* Example hover color */
+    transition: color 0.3s ease;
+}
