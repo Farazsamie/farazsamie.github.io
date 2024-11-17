@@ -104,9 +104,12 @@ header nav {
 
 /**/
 .text  {
-padding-top: 150px;
+padding-top: 200px;
 }
 
+.description{
+    padding-top: 250px;
+}
 
 /**/
 
@@ -151,28 +154,29 @@ padding-top: 150px;
 
 #row-1 {
     height: 675px;
-    width: 715px;
+    width: 815px;
 }
 
 #row-2 {
     height: 675px;
-    width: 682px;
+    width: 782px;
 }
 
 #row-3 {
     height: 675px;
-    width: 677px;
+    width: 749px;
 }
 
 #row-4 {
     height: 675px;
-    width: 670px;
+    width: 742px;
 }
 
 #row-5 {
     height: 675px;
-    width: 747px;
+    width: 820px;
 }
+
 
 .col:nth-child(1) {
     flex: 3;
