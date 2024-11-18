@@ -11,21 +11,14 @@ html, body {
     font-family: "PP Supply Sans";
 }
 
-.text p {
-    font-size: 15px;
+.text {
+    font-size: 16px;
     font-weight: 500;
-    text-transform:uppercase;
-    padding-left: 40px;
-    padding-top: 25px;
 }
 
-
-
-
-.description p {
+.description {
     font-size: 15px;
-    font-weight: 500;
-    padding-left: 40px;
+    font-weight: 200;
 }
 
 img {
@@ -88,10 +81,12 @@ header nav {
 /**/
 .text  {
 padding-top: 200px;
+padding-left: 0%;
 }
 
 .description{
-    padding-top: 250px;
+    padding-top: 235px;
+    padding-left: 0%;
 }
 
 /**/
