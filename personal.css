@@ -11,31 +11,7 @@ html, body {
     font-family: "PP Supply Sans";
 }
 
-.text.one p {
-    font-size: 15px;
-    font-weight: 500;
-    text-transform:uppercase;
-    padding-left: 40px;
-    padding-top: 25px;
-}
-
-.text.two p {
-    font-size: 15px;
-    font-weight: 500;
-    text-transform:uppercase;
-    padding-left: 40px;
-    padding-top: 25px;
-}
-
-.text.three p {
-    font-size: 15px;
-    font-weight: 500;
-    text-transform:uppercase;
-    padding-left: 40px;
-    padding-top: 25px;
-}
-
-.text.four p {
+.text p {
     font-size: 15px;
     font-weight: 500;
     text-transform:uppercase;
@@ -44,6 +20,13 @@ html, body {
 }
 
 
+
+
+.description p {
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 40px;
+}
 
 img {
     width: 100%;
