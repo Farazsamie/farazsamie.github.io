@@ -84,8 +84,9 @@ padding-top: 200px;
 padding-left: 10px;
 }
 
-.description{
-    padding-top: 250px;
+.title{
+    padding-top: 100px;
+    padding-left: 5px;
 }
 
 /**/
@@ -131,27 +132,28 @@ padding-left: 10px;
 
 #row-1{
     height: 675px;
-    width: 790px;
+    width: 900px;
+    position: relative;
 }
 
 #row-2 {
     height: 675px;
-    width: 767px;
+    width: 832px;
 }
 
 #row-3 {
     height: 675px;
-    width: 762px;
+    width: 818px;
 }
 
 #row-4 {
     height: 675px;
-    width: 761px;
+    width: 815px;
 }
 
 #row-5 {
     height: 675px;
-    width: 812px;
+    width: 960px;
 }
 
 
