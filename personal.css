@@ -16,9 +16,9 @@ html, body {
     font-weight: 500;
 }
 
-.description {
-    font-size: 15px;
-    font-weight: 200;
+.title {
+    font-size: 30px;
+    font-weight: 500;
 }
 
 img {
@@ -81,12 +81,11 @@ header nav {
 /**/
 .text  {
 padding-top: 200px;
-padding-left: 0%;
+padding-left: 10px;
 }
 
 .description{
-    padding-top: 235px;
-    padding-left: 0%;
+    padding-top: 250px;
 }
 
 /**/
