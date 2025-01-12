@@ -58,6 +58,10 @@ header nav {
     padding: 2em;
 }
 
+.footer p {
+    font-size: 18px;
+}
+
 .items {
     position: absolute;
     width: 50%;
