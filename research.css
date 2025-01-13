@@ -21,9 +21,6 @@ h1{
     margin-bottom: 0.5em;
 }
 
-nav {
-    color:#fffffA;
-}
 
 a {
     text-decoration: none;
@@ -47,6 +44,8 @@ a {
     display: flex;
     justify-content: space-between;
     z-index: 1000; /* Ensures the nav is on top */
+    background-color:#3936322d;
+
 }
 
 header nav {
@@ -60,6 +59,7 @@ header nav {
     bottom: 0;
     right: 0;
     padding: 2em;
+    background-color:#39363237;
 }
 
 .footer p {
