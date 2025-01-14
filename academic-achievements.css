@@ -115,7 +115,7 @@ section {
 
 .content u {
     font-family: "Times New Roman', Times, serif";
-    font-size: 19px;
+    font-size: 30px;
     font-weight: 500;
     font-style: normal;
     font-style: underline; 
@@ -126,6 +126,13 @@ p {
     font-family: "PP Neue Montreal";
     font-weight: 400;
     font-size: 18px;
+}
+
+.p2{
+    font-family: "PP Neue Montreal";
+    font-weight: 400;
+    font-size: 20px;
+
 }
 
 ul {
