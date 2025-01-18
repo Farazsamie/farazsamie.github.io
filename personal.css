@@ -129,25 +129,10 @@ padding-top: 200px;
     display: flex;
 }
 
-#row-1{
+#roww {
     height: 675px;
     width: 900px;
     position: relative;
-}
-
-#row-2 {
-    height: 675px;
-    width: 832px;
-}
-
-#row-3 {
-    height: 675px;
-    width: 818px;
-}
-
-#row-4 {
-    height: 675px;
-    width: 815px;
 }
 
 
