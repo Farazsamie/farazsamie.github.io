@@ -19,6 +19,7 @@ html, body {
 .title {
     font-size: 30px;
     font-weight: 500;
+    left: 80px;
 }
 
 img {
