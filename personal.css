@@ -150,11 +150,6 @@ padding-top: 200px;
     width: 815px;
 }
 
-#row-5 {
-    height: 675px;
-    width: 960px;
-}
-
 
 .col:nth-child(1) {
     flex: 3;
