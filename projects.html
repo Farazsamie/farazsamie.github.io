@@ -24,146 +24,124 @@
 
         <div class="slides"></div> <!-- Slide container -->
         <div class="slider-nav"></div> <!-- Navigation container -->
-        <div class="slide-description"></div>
-        <div class="slide-title"></div>
+        <div class="slide-title"></div> <!-- Slide title container -->
+        <div class="slide-description"></div> <!-- Text description area -->
+        <div class="slide-link"></div> <!-- Link area -->
         <div class="bg-overlay"></div>  <!-- Background overlay for color transition -->
     </div>
-
-
 
     <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000;">
         <circle class="trail" cx="0" cy="0" r="15" style="stroke: #2926244d; fill: #2926244d;"></circle>
     </svg>
 
     <script>
-         
         const titles = [
-            ["Data Analytics", "UCSD Basketball Data"],  
-            ["Computer Science", "Personal Resume Code"],
+            ["Data Analytics", "UCSD Basketball Data", "Analyzed performance metrics and created dashboards for the basketball team.", "https://github.com"],
+            ["Computer Science", "Personal Resume Code", "Developed an interactive resume website showcasing coding projects.", "https://personal-resume.com"]
         ];
 
-        document.addEventListener("DOMContentLoaded", function () { 
-            // Register GSAP plugin
-            gsap.registerPlugin(CustomEase); 
-            // Ensures that the script runs after the HTML content has been fully loaded.
-
-            // Create a custom easing function for animations
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.registerPlugin(CustomEase);
             CustomEase.create(
                 "hop",
                 "M0,0 C0.071,0.505 0.192,0.726 0.318,0.852 0.45,0.984 0.504,1 1,1"
             );
-            // Creates a custom easing function
-
 
             const sliderNav = document.querySelector(".slider-nav");
-            //navigation dots
             const slidesContainer = document.querySelector(".slides");
-            //actual slides will be placed
             const bgOverlay = document.querySelector(".bg-overlay");
-            //background color changes.
             const slideTitle = document.querySelector(".slide-title");
-            //title of each slide
+            const slideDescription = document.querySelector(".slide-description"); // Description container
+            const slideLink = document.querySelector(".slide-link"); // Link container
 
-           
             const numberOfItems = titles.length;
-            //Stores the number of slides based on the length of the titles array
             let currentIndex = 0;
-            //Tracks the currently active slide.
 
-          
             const ANIMATION_DURATION = 1.5;
-            //Controls how long the slide animations take.
             const LETTER_STAGGER_DELAY = 0.125;
-            //Defines the delay between each letter's animation within a title.
 
-    
             function updateTitle(newIndex, color) {
-    const title = titles[newIndex]; // Get the new title (array of [title, subtitle])
+                const title = titles[newIndex];
+                slideTitle.innerHTML = "";
+                slideDescription.innerHTML = "";
+                slideLink.innerHTML = "";
 
-    // Clear the existing title
-    slideTitle.innerHTML = ""; 
+                const titleRow = document.createElement("div");
+                titleRow.classList.add("slide-title-row", "title");
 
-    // Create title row for the title (first item in the array)
-    const titleRow = document.createElement("div");
-    titleRow.classList.add("slide-title-row", "title");
+                title[0].split("").forEach((char, letterIndex) => {
+                    const letter = document.createElement("div");
+                    letter.classList.add("letter");
 
-    title[0].split("").forEach((char, letterIndex) => {
-        const letter = document.createElement("div");
-        letter.classList.add("letter");
+                    const newSpan = document.createElement("span");
+                    const direction = newIndex > currentIndex ? 150 : -150;
 
-        const newSpan = document.createElement("span");
-        const direction = newIndex > currentIndex ? 150 : -150; // Slide direction
+                    gsap.set(newSpan, {
+                        x: direction,
+                        color: color
+                    });
 
-        gsap.set(newSpan, {
-            x: direction,
-            color: color
-        });
+                    newSpan.textContent = char;
+                    letter.appendChild(newSpan);
+                    titleRow.appendChild(letter);
 
-        newSpan.textContent = char;
-        letter.appendChild(newSpan);
-        titleRow.appendChild(letter);
+                    gsap.to(newSpan, {
+                        x: 0,
+                        duration: 1,
+                        ease: "hop",
+                        delay: letterIndex * LETTER_STAGGER_DELAY
+                    });
+                });
 
-        // Animate each letter
-        gsap.to(newSpan, {
-            x: 0,
-            duration: 1,
-            ease: "hop",
-            delay: letterIndex * LETTER_STAGGER_DELAY
-        });
-    });
+                const subtitleRow = document.createElement("div");
+                subtitleRow.classList.add("slide-title-row", "subtitle");
 
-    // Create subtitle row for the position (second item in the array)
-    const subtitleRow = document.createElement("div");
-    subtitleRow.classList.add("slide-title-row", "subtitle");
+                title[1].split("").forEach((char, letterIndex) => {
+                    const letter = document.createElement("div");
+                    letter.classList.add("letter");
 
-    title[1].split("").forEach((char, letterIndex) => {
-        const letter = document.createElement("div");
-        letter.classList.add("letter");
+                    const newSpan = document.createElement("span");
+                    const direction = newIndex > currentIndex ? 150 : -150;
 
-        const newSpan = document.createElement("span");
-        const direction = newIndex > currentIndex ? 150 : -150; // Slide direction
+                    gsap.set(newSpan, {
+                        x: direction,
+                        color: color
+                    });
 
-        gsap.set(newSpan, {
-            x: direction,
-            color: color
-        });
+                    newSpan.textContent = char;
+                    letter.appendChild(newSpan);
+                    subtitleRow.appendChild(letter);
 
-        newSpan.textContent = char;
-        letter.appendChild(newSpan);
-        subtitleRow.appendChild(letter);
+                    gsap.to(newSpan, {
+                        x: 0,
+                        duration: 1,
+                        ease: "hop",
+                        delay: letterIndex * LETTER_STAGGER_DELAY
+                    });
+                });
 
-        // Animate each letter
-        gsap.to(newSpan, {
-            x: 0,
-            duration: 1,
-            ease: "hop",
-            delay: letterIndex * LETTER_STAGGER_DELAY
-        });
-    });
+                slideTitle.appendChild(titleRow);
+                slideTitle.appendChild(subtitleRow);
 
-    // Append title and subtitle rows to the slideTitle element
-    slideTitle.appendChild(titleRow);
-    slideTitle.appendChild(subtitleRow);
-}
+                // Add description below the subtitle
+                const description = document.createElement("p");
+                description.textContent = title[2];
+                slideDescription.appendChild(description);
 
-            
+                // Add link below the description
+                const link = document.createElement("a");
+                link.href = title[3];
+                link.textContent = "Learn More";
+                link.target = "_blank";
+                link.style.color = color; // Match the color of the slide
+                slideLink.appendChild(link);
+            }
 
-            //For each letter in the title:
-            // Removes the previous letter if it exists.
-            //Creates a new span element for each letter.
-            //Sets its position off-screen (150px right or left) using gsap.set.
-            //Animates it back into place with gsap.to, applying the custom "hop" ease.
-            //direction: Controls the animation direction depending on whether the new slide index is greater or less than the current one.
-
-            
             function createSlidesAndNav() {
                 titles.forEach((_, i) => {
-                    // creates both the slides and navigation dots
                     const navItemWrapper = document.createElement("div");
                     navItemWrapper.classList.add("nav-item-wrapper");
-                    if (i === 0) navItemWrapper.classList.add("active"); // Set first item as active
-
-                    //Creates a navigation dot for each slide
+                    if (i === 0) navItemWrapper.classList.add("active");
 
                     const navItem = document.createElement("div");
                     navItem.classList.add("nav-item");
@@ -178,7 +156,6 @@
                     if (i === 0) slide.classList.add("active");
 
                     const imgWrapper = document.createElement("div");
-        
 
                     const img = document.createElement("img");
 
@@ -187,23 +164,17 @@
                     slidesContainer.appendChild(slide);
                 });
             }
-            //Creates a div for each slide, adds an image from the ./images/ directory, and appends it to the .slides container.
 
             function handleNavClick(index) {
-                //Handles navigation dot clicks.
-
                 document.querySelectorAll(".nav-item-wrapper").forEach((nav) => nav.classList.remove("active"));
                 document.querySelectorAll(".nav-item-wrapper")[index].classList.add("active");
 
-                //Removes the active class from all nav dots, then applies it to the clicked one.
                 const translateXValue = -index * 100;
                 gsap.to(slidesContainer, {
                     x: `${translateXValue}vw`,
                     duration: ANIMATION_DURATION,
                     ease: "hop"
                 });
-
-                //Moves the .slides container horizontally to show the selected slide using a percentage-based translation
 
                 const newColor = getRandomColor();
                 gsap.to(bgOverlay, {
@@ -212,34 +183,19 @@
                     ease: "hop"
                 });
 
-                //Changes the background color of the .bg-overlay to a random color when the user clicks a nav dot.
-        
                 updateTitle(index, newColor);
                 currentIndex = index;
-                //Updates the slide title and changes the currentIndex to the new slide.
             }
 
-            // Initialize: create slides and nav items, and set the initial title
             createSlidesAndNav();
             updateTitle(0, getComputedStyle(bgOverlay).backgroundColor);
-            //Initializes the slider by creating the slides and nav items. Sets the first title and background color.
-
 
             function getRandomColor() {
                 return "#" + Math.floor(Math.random() * 16777215).toString(16);
             }
         });
-        //Generates a random hexadecimal color for the background transitions.
 
-
-
-
-
-
-
-
-
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const trail = document.querySelector(".trail");
             const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
             const pointerSpeed = 0.4;
@@ -258,8 +214,6 @@
                 updateTrail();
             }, 1);
         });
-
-
     </script>
 </body>
 </html>
