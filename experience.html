@@ -28,7 +28,6 @@
         <div class="slider-nav"></div> <!-- Navigation container -->
         <div class="slide-title"></div> <!-- Slide title container -->
         <div class="slide-description"></div> <!-- Text description area -->
-        <div class="slide-link"></div> <!-- Link area -->
         <div class="bg-overlay"></div>  <!-- Background overlay for color transition -->
     </div>
 
@@ -38,8 +37,8 @@
 
     <script>
         const titles = [
-            ["Research Assistant: Financial Economics ", "University of California, San Diego", "Analyzed performance metrics and created dashboards for the basketball team.", "https://github.com"],
-            ["Private Equity Intern", "Indus", "Developed an interactive resume website showcasing coding projects.", "https://personal-resume.com"]
+            ["Research Assistant: Financial Economics ", "University of California, San Diego", "Analyzed performance metrics and created dashboards for the basketball team."],
+            ["Private Equity Intern", "Indus", "Developed an interactive resume website showcasing coding projects."]
         ];
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -54,7 +53,6 @@
             const bgOverlay = document.querySelector(".bg-overlay");
             const slideTitle = document.querySelector(".slide-title");
             const slideDescription = document.querySelector(".slide-description"); // Description container
-            const slideLink = document.querySelector(".slide-link"); // Link container
 
             const numberOfItems = titles.length;
             let currentIndex = 0;
@@ -66,7 +64,6 @@
                 const title = titles[newIndex];
                 slideTitle.innerHTML = "";
                 slideDescription.innerHTML = "";
-                slideLink.innerHTML = "";
 
                 const titleRow = document.createElement("div");
                 titleRow.classList.add("slide-title-row", "title");
@@ -129,14 +126,6 @@
                 const description = document.createElement("p");
                 description.textContent = title[2];
                 slideDescription.appendChild(description);
-
-                // Add link below the description
-                const link = document.createElement("a");
-                link.href = title[3];
-                link.textContent = "Learn More";
-                link.target = "_blank";
-                link.style.color = color; // Match the color of the slide
-                slideLink.appendChild(link);
             }
 
             function createSlidesAndNav() {
