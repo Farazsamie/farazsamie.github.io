@@ -30,7 +30,7 @@ nav {
 
 footer {
     bottom: 0%;
-    font-size: 13.5px;
+    font-size: 14px;
 }
 
 a {
@@ -43,7 +43,7 @@ a {
 
 footer a#title {
     position: relative;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -123,7 +123,7 @@ img {
 
 /* Style the slide title container */
 .slide-title {
-    padding-top: 50px;
+    padding-top: 60px;
     text-align: left;
     padding-left: 35px;
     margin: 20px 0;
@@ -145,7 +145,7 @@ img {
 }
 
 .slide-title-row.subtitle {
-    font-size: 18px; /* Adjust size for the position */
+    font-size: 10px; /* Adjust size for the position */
     font-weight: normal;
     text-align: center;
 }
@@ -172,9 +172,8 @@ img {
 }
 
 .letter span {
-    position: relative;
     display: inline-block;
-    font-size: 50px;
+    font-size: 35px;
     filter: brightness(0.25) saturate(0.75);
 }
 
