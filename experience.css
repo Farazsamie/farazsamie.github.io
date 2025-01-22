@@ -140,7 +140,7 @@ img {
 .slide-title-row.title {
     font-size: 10px; /* Adjust size for the title */
     font-weight: bold;
-    margin-bottom: 10px; /* Adds spacing between title and subtitle */
+    margin-bottom: 20px; /* Adds spacing between title and subtitle */
     text-align: center; /* Center-align the text */
 }
 
@@ -154,7 +154,7 @@ img {
 .slide-title-row .letter {
     display: inline-block;
     font-size: inherit; /* Ensures it inherits from the parent */
-    margin: 0 2px; /* Add spacing between letters */
+
 }
 
 
@@ -231,7 +231,6 @@ a:hover {
         padding: 1.5em; /* Same as above for footer */
     }
 }
-
 
 
 svg {
