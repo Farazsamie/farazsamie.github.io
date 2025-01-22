@@ -172,7 +172,6 @@ img {
 }
 
 .letter span {
-    display: inline-block;
     font-size: 35px;
     filter: brightness(0.25) saturate(0.75);
 }
