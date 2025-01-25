@@ -121,9 +121,13 @@ img {
     object-fit: cover;
 }
 
+
+
+
+
 /* Style the slide title container */
 .slide-title {
-    padding-top: 60px;
+    padding-top: 100px;
     text-align: left;
     padding-left: 35px;
     margin: 20px 0;
@@ -137,30 +141,29 @@ img {
 }
 
 
+
+
+
 .slide-title-row.title {
     font-size: 10px; /* Adjust size for the title */
     font-weight: bold;
-    margin-bottom: 20px; /* Adds spacing between title and subtitle */
-    text-align: center; /* Center-align the text */
+    margin-bottom: 50px; /* Adds spacing between title and subtitle */
 }
 
 .slide-title-row.subtitle {
     font-size: 10px; /* Adjust size for the position */
     font-weight: normal;
-    text-align: center;
+    text-align: left;
 }
 
 /* Style each letter */
 .slide-title-row .letter {
     display: inline-block;
     font-size: inherit; /* Ensures it inherits from the parent */
-
 }
-
 
 .slide-title-row:nth-child(2) {
     position: relative;
-    left: 4em;
 }
 
 .letter {
