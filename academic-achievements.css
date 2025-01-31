@@ -19,7 +19,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 800vw; /* Adjust this based on the total number of sections */
+    width: 300vw; /* Adjust this based on the total number of sections */
     height: 90vh;
     display: flex;
     overflow: hidden; /* Prevent horizontal and vertical scrolling */
