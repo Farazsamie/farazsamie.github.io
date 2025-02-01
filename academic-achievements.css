@@ -51,7 +51,7 @@ header nav {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw;
+    width: 50vw;
     height: 10vh;
     padding: 2.25em 1em;
     display: flex;
@@ -63,6 +63,7 @@ header nav {
     position: absolute;
     top: 50%;
     left: 0;
+    width: fit-content;
     transform: translate(0%, -50%);
     font-family: "Akkurat Mono";
     text-transform: uppercase;
