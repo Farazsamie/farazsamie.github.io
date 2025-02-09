@@ -110,7 +110,9 @@ padding-top: 200px;
     height: 100%;
 }
 
-
+.img-container-left{
+    
+}
 
 .img-container p {
     position: relative;
@@ -121,17 +123,6 @@ padding-top: 200px;
 }
 
 
-.row {
-    width: 500px;
-    height: 675px; /* Ensure all rows are the same size */
-    display: flex;
-}
-
-#roww {
-    height: 675px;
-    width: 900px;
-    position: relative;
-}
 
 
 .col:nth-child(1) {
