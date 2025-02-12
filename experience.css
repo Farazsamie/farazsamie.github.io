@@ -159,7 +159,7 @@ img {
     margin-bottom:10px; /* Adds spacing between title and subtitle */
 }
 
-.slide-title-row.subtitle {
+.slide-subtitle {
     font-size: 5px; /* Adjust size for the position */
     font-weight:bold;
     text-decoration: wavy;
@@ -213,7 +213,7 @@ a:hover {
         left: 30px; /* Moves the title to the right */
     }
     
-    .slide-title-row.subtitle {
+    .slide-subtitle {
         position: relative;
         top: 40px; /* Moves the position lower */
         left: 30px; /* Moves the position to the right */

@@ -27,6 +27,7 @@
         <div class="slides"></div> <!-- Slide container -->
         <div class="slider-nav"></div> <!-- Navigation container -->
         <div class="slide-title"></div> <!-- Slide title container -->
+        <div class="slide-subtitle"></div>
         <div class="slide-description"></div> <!-- Text description area -->
         <div class="slide-image"></div> 
         <div class="bg-overlay"></div>  <!-- Background overlay for color transition -->
@@ -41,11 +42,10 @@
             ["Research Assistant: Financial Economics ", "UC San Diego", 
             "Analyzed performance metrics and created dashboards for the basketball team."],
 
-
-            ["Private Equity Intern", "Indus GF", 
+            ["Risk Management", "Hedge Fund UCSD", 
             "Developed an interactive resume website showcasing coding projects."]
 
-            ["Risk Management", "Hedge Fund UCSD", 
+            ["Private Equity Intern", "Indus GF", 
             "Developed an interactive resume website showcasing coding projects."]
         ];
 
@@ -60,6 +60,7 @@
             const slidesContainer = document.querySelector(".slides");
             const bgOverlay = document.querySelector(".bg-overlay");
             const slideTitle = document.querySelector(".slide-title");
+            const slidesubtitle = document.querySelector(".slide-subtitle");
             const slideDescription = document.querySelector(".slide-description"); // Description container
 
             const numberOfItems = titles.length;
@@ -101,7 +102,7 @@
                 });
 
                 const subtitleRow = document.createElement("div");
-                subtitleRow.classList.add("slide-title-row", "subtitle");
+                subtitleRow.classList.add( "subtitle");
 
                 title[1].split("").forEach((char, letterIndex) => {
                     const letter = document.createElement("div");
@@ -128,7 +129,7 @@
                 });
 
                 slideTitle.appendChild(titleRow);
-                slideTitle.appendChild(subtitleRow);
+                slidesubtitle.appendChild(subtitleRow);
 
                 // Add description below the subtitle
                 const description = document.createElement("p");
