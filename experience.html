@@ -23,11 +23,9 @@
             <p>Faraz Samie 2025</p>
         </footer>
 
-
         <div class="slides"></div> <!-- Slide container -->
         <div class="slider-nav"></div> <!-- Navigation container -->
-        <div class="slide-title"></div> <!-- Slide title container -->
-        <div class="slide-subtitle"></div>
+        <div class="slide-title"></div> <!-- Contains both title and subtitle -->
         <div class="slide-description"></div> <!-- Text description area -->
         <div class="slide-image"></div> 
         <div class="bg-overlay"></div>  <!-- Background overlay for color transition -->
@@ -43,7 +41,7 @@
             "Analyzed performance metrics and created dashboards for the basketball team."],
 
             ["Risk Management", "Hedge Fund UCSD", 
-            "Developed an interactive resume website showcasing coding projects."]
+            "Developed an interactive resume website showcasing coding projects."],
 
             ["Private Equity Intern", "Indus GF", 
             "Developed an interactive resume website showcasing coding projects."]
@@ -60,8 +58,7 @@
             const slidesContainer = document.querySelector(".slides");
             const bgOverlay = document.querySelector(".bg-overlay");
             const slideTitle = document.querySelector(".slide-title");
-            const slidesubtitle = document.querySelector(".slide-subtitle");
-            const slideDescription = document.querySelector(".slide-description"); // Description container
+            const slideDescription = document.querySelector(".slide-description");
 
             const numberOfItems = titles.length;
             let currentIndex = 0;
@@ -74,21 +71,17 @@
                 slideTitle.innerHTML = "";
                 slideDescription.innerHTML = "";
 
+                // Title Animation
                 const titleRow = document.createElement("div");
                 titleRow.classList.add("slide-title-row", "title");
 
                 title[0].split("").forEach((char, letterIndex) => {
                     const letter = document.createElement("div");
                     letter.classList.add("letter");
-
                     const newSpan = document.createElement("span");
                     const direction = newIndex > currentIndex ? 150 : -150;
 
-                    gsap.set(newSpan, {
-                        x: direction,
-                        color: color
-                    });
-
+                    gsap.set(newSpan, { x: direction, color: color });
                     newSpan.textContent = char;
                     letter.appendChild(newSpan);
                     titleRow.appendChild(letter);
@@ -101,21 +94,17 @@
                     });
                 });
 
+                // Subtitle Animation
                 const subtitleRow = document.createElement("div");
-                subtitleRow.classList.add( "subtitle");
+                subtitleRow.classList.add("slide-title-row", "subtitle");
 
                 title[1].split("").forEach((char, letterIndex) => {
                     const letter = document.createElement("div");
                     letter.classList.add("letter");
-
                     const newSpan = document.createElement("span");
                     const direction = newIndex > currentIndex ? 150 : -150;
 
-                    gsap.set(newSpan, {
-                        x: direction,
-                        color: color
-                    });
-
+                    gsap.set(newSpan, { x: direction, color: color });
                     newSpan.textContent = char;
                     letter.appendChild(newSpan);
                     subtitleRow.appendChild(letter);
@@ -128,10 +117,11 @@
                     });
                 });
 
+                // Append both title and subtitle to the same container
                 slideTitle.appendChild(titleRow);
-                slidesubtitle.appendChild(subtitleRow);
+                slideTitle.appendChild(subtitleRow);
 
-                // Add description below the subtitle
+                // Description
                 const description = document.createElement("p");
                 description.textContent = title[2];
                 slideDescription.appendChild(description);
@@ -145,7 +135,6 @@
 
                     const navItem = document.createElement("div");
                     navItem.classList.add("nav-item");
-
                     navItemWrapper.appendChild(navItem);
                     sliderNav.appendChild(navItemWrapper);
 
@@ -154,13 +143,6 @@
                     const slide = document.createElement("div");
                     slide.classList.add("slide");
                     if (i === 0) slide.classList.add("active");
-
-                    const imgWrapper = document.createElement("div");
-
-                    const img = document.createElement("img");
-
-                    imgWrapper.appendChild(img);
-                    slide.appendChild(imgWrapper);
                     slidesContainer.appendChild(slide);
                 });
             }
@@ -169,9 +151,8 @@
                 document.querySelectorAll(".nav-item-wrapper").forEach((nav) => nav.classList.remove("active"));
                 document.querySelectorAll(".nav-item-wrapper")[index].classList.add("active");
 
-                const translateXValue = -index * 100;
                 gsap.to(slidesContainer, {
-                    x: `${translateXValue}vw`,
+                    x: `${-index * 100}vw`,
                     duration: ANIMATION_DURATION,
                     ease: "hop"
                 });
@@ -188,13 +169,17 @@
             }
 
             createSlidesAndNav();
-            updateTitle(0, getComputedStyle(bgOverlay).backgroundColor);
+            // Initial random color for first load
+            const initialColor = getRandomColor();
+            gsap.set(bgOverlay, { backgroundColor: initialColor });
+            updateTitle(0, initialColor);
 
             function getRandomColor() {
                 return "#" + Math.floor(Math.random() * 16777215).toString(16);
             }
         });
 
+        // Mouse trail (unchanged)
         document.addEventListener("DOMContentLoaded", function () {
             const trail = document.querySelector(".trail");
             const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
