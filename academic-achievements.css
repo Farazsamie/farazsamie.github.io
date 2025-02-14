@@ -206,3 +206,15 @@ a:hover {
     color: #ff5733; /* Example hover color */
     transition: color 0.3s ease;
 }
+
+.gap{
+    padding-top: 30px;
+}
+
+.gap-2{
+    padding-top:10px;
+}
+
+.content p{
+    font-size: 17px;
+}
