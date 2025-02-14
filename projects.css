@@ -138,10 +138,27 @@ img {
 
 
 .slide-title-row.title {
-    font-size: 20px; /* Adjust size for the title */
+    font-size: 10px;
     font-weight: bold;
-    margin-bottom: 10px; /* Adds spacing between title and subtitle */
-    text-align: center; /* Center-align the text */
+    margin-bottom: 30px; /* Increased spacing between title and subtitle */
+    display: block; /* Ensure title and subtitle stack vertically */
+}
+
+.slide-title-row.subtitle {
+    font-size: 5px;
+    font-weight: bold;
+    display: block; /* Ensure subtitle appears below title */
+    margin-top: 20px; /* Additional spacing if needed */
+}
+
+/* Add word spacing */
+.slide-title-row .word {
+    margin-right: 1.5em; /* Space between words */
+    display: inline-block;
+}
+
+.slide-title-row .letter {
+    display: inline-block;
 }
 
 .slide-title-row.subtitle {
