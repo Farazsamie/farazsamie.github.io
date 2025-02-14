@@ -214,6 +214,47 @@
                 updateTrail();
             }, 1);
         });
+
+
+
+
+        // Modify both title and subtitle animation sections like this:
+function updateTitle(newIndex, color) {
+    // ... existing code ...
+
+    // Title Animation - Modified for word spacing
+    const titleRow = document.createElement("div");
+    titleRow.classList.add("slide-title-row", "title");
+
+    title[0].split(" ").forEach((word) => { // Split by spaces for words
+        const wordDiv = document.createElement("div");
+        wordDiv.classList.add("word");
+        
+        word.split("").forEach((char, letterIndex) => {
+            // ... existing letter animation code ...
+            wordDiv.appendChild(letter);
+        });
+        
+        titleRow.appendChild(wordDiv);
+    });
+
+    // Subtitle Animation - Modified for word spacing
+    const subtitleRow = document.createElement("div");
+    subtitleRow.classList.add("slide-title-row", "subtitle");
+
+    title[1].split(" ").forEach((word) => { // Split by spaces for words
+        const wordDiv = document.createElement("div");
+        wordDiv.classList.add("word");
+        
+        word.split("").forEach((char, letterIndex) => {
+            // ... existing letter animation code ...
+            wordDiv.appendChild(letter);
+        });
+        
+        subtitleRow.appendChild(wordDiv);
+    });
+
+}
     </script>
 </body>
 </html>
