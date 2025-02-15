@@ -93,9 +93,6 @@
                     });
                 });
 
-                const subtitleRow = document.createElement("div");
-                subtitleRow.classList.add("slide-title-row", "subtitle");
-
                 title[1].split("").forEach((char, letterIndex) => {
                     const letter = document.createElement("div");
                     letter.classList.add("letter");
@@ -110,7 +107,6 @@
 
                     newSpan.textContent = char;
                     letter.appendChild(newSpan);
-                    subtitleRow.appendChild(letter);
 
                     gsap.to(newSpan, {
                         x: 0,
@@ -121,9 +117,8 @@
                 });
 
                 slideTitle.appendChild(titleRow);
-                slideTitle.appendChild(subtitleRow);
 
-                // Add description below the subtitle
+                // Add description
                 const description = document.createElement("p");
                 description.textContent = title[2];
                 slideDescription.appendChild(description);
@@ -215,12 +210,7 @@
             }, 1);
         });
 
-
-
-
-        // Modify both title and subtitle animation sections like this:
 function updateTitle(newIndex, color) {
-    // ... existing code ...
 
     // Title Animation - Modified for word spacing
     const titleRow = document.createElement("div");
@@ -236,22 +226,6 @@ function updateTitle(newIndex, color) {
         });
         
         titleRow.appendChild(wordDiv);
-    });
-
-    // Subtitle Animation - Modified for word spacing
-    const subtitleRow = document.createElement("div");
-    subtitleRow.classList.add("slide-title-row", "subtitle");
-
-    title[1].split(" ").forEach((word) => { // Split by spaces for words
-        const wordDiv = document.createElement("div");
-        wordDiv.classList.add("word");
-        
-        word.split("").forEach((char, letterIndex) => {
-            // ... existing letter animation code ...
-            wordDiv.appendChild(letter);
-        });
-        
-        subtitleRow.appendChild(wordDiv);
     });
 
 }
