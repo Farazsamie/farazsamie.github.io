@@ -10,6 +10,14 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
 </head>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faraz Samie - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
+</head>
 <body>
     <div class="container">
         <nav>
@@ -22,11 +30,11 @@
             <p>Faraz Samie 2024</p>
         </footer>
 
-        <div class="slides"></div> <!-- Slide container -->
-        <div class="slider-nav"></div> <!-- Navigation container -->
-        <div class="slide-title"></div> <!-- Slide title container -->
-        <div class="slide-description"></div> <!-- Text description area -->
-        <div class="slide-link"></div> <!-- Link area -->
+        <div class="slides"></div>  <!-- Slide container -->
+        <div class="slider-nav"></div>  <!-- Navigation container -->
+        <div class="slide-title"></div>  <!-- Slide title container -->
+        <div class="slide-description"></div>  <!-- Text description area -->
+        <div class="slide-link"></div>  <!-- Link area -->
         <div class="bg-overlay"></div>  <!-- Background overlay for color transition -->
     </div>
 
@@ -35,28 +43,23 @@
     </svg>
 
     <script>
-        const titles = [
-            ["Data Analytics", "UCSD Basketball Data", "Analyzed performance metrics and created dashboards for the basketball team.", "https://github.com"],
-            ["Computer Science", "Personal Resume Code", "Developed an interactive resume website showcasing coding projects.", "https://personal-resume.com"]
-        ];
-
         document.addEventListener("DOMContentLoaded", function () {
             gsap.registerPlugin(CustomEase);
-            CustomEase.create(
-                "hop",
-                "M0,0 C0.071,0.505 0.192,0.726 0.318,0.852 0.45,0.984 0.504,1 1,1"
-            );
+            CustomEase.create("hop", "M0,0 C0.071,0.505 0.192,0.726 0.318,0.852 0.45,0.984 0.504,1 1,1");
+
+            const titles = [
+                ["UCSD Basketball Data", "Analyzed performance metrics and created dashboards for the basketball team.", "https://github.com"],
+                ["Portfolio Website", "Developed an interactive resume website showcasing coding projects.", "https://personal-resume.com"]
+            ];
 
             const sliderNav = document.querySelector(".slider-nav");
             const slidesContainer = document.querySelector(".slides");
             const bgOverlay = document.querySelector(".bg-overlay");
             const slideTitle = document.querySelector(".slide-title");
-            const slideDescription = document.querySelector(".slide-description"); // Description container
-            const slideLink = document.querySelector(".slide-link"); // Link container
+            const slideDescription = document.querySelector(".slide-description");
+            const slideLink = document.querySelector(".slide-link");
 
-            const numberOfItems = titles.length;
             let currentIndex = 0;
-
             const ANIMATION_DURATION = 1.5;
             const LETTER_STAGGER_DELAY = 0.125;
 
@@ -69,66 +72,44 @@
                 const titleRow = document.createElement("div");
                 titleRow.classList.add("slide-title-row", "title");
 
-                title[0].split("").forEach((char, letterIndex) => {
-                    const letter = document.createElement("div");
-                    letter.classList.add("letter");
+                title[0].split(" ").forEach((word) => {
+                    const wordDiv = document.createElement("div");
+                    wordDiv.classList.add("word");
 
-                    const newSpan = document.createElement("span");
-                    const direction = newIndex > currentIndex ? 150 : -150;
+                    word.split("").forEach((char, letterIndex) => {
+                        const letter = document.createElement("div");
+                        letter.classList.add("letter");
 
-                    gsap.set(newSpan, {
-                        x: direction,
-                        color: color
+                        const newSpan = document.createElement("span");
+                        const direction = newIndex > currentIndex ? 150 : -150;
+
+                        gsap.set(newSpan, { x: direction, color: color });
+                        newSpan.textContent = char;
+                        letter.appendChild(newSpan);
+                        wordDiv.appendChild(letter);
+
+                        gsap.to(newSpan, {
+                            x: 0,
+                            duration: 1,
+                            ease: "hop",
+                            delay: letterIndex * LETTER_STAGGER_DELAY
+                        });
                     });
 
-                    newSpan.textContent = char;
-                    letter.appendChild(newSpan);
-                    titleRow.appendChild(letter);
-
-                    gsap.to(newSpan, {
-                        x: 0,
-                        duration: 1,
-                        ease: "hop",
-                        delay: letterIndex * LETTER_STAGGER_DELAY
-                    });
-                });
-
-                title[1].split("").forEach((char, letterIndex) => {
-                    const letter = document.createElement("div");
-                    letter.classList.add("letter");
-
-                    const newSpan = document.createElement("span");
-                    const direction = newIndex > currentIndex ? 150 : -150;
-
-                    gsap.set(newSpan, {
-                        x: direction,
-                        color: color
-                    });
-
-                    newSpan.textContent = char;
-                    letter.appendChild(newSpan);
-
-                    gsap.to(newSpan, {
-                        x: 0,
-                        duration: 1,
-                        ease: "hop",
-                        delay: letterIndex * LETTER_STAGGER_DELAY
-                    });
+                    titleRow.appendChild(wordDiv);
                 });
 
                 slideTitle.appendChild(titleRow);
 
-                // Add description
                 const description = document.createElement("p");
-                description.textContent = title[2];
+                description.textContent = title[1];
                 slideDescription.appendChild(description);
 
-                // Add link below the description
                 const link = document.createElement("a");
-                link.href = title[3];
-                link.textContent = "Learn More";
+                link.href = title[2];
+                link.textContent = "Learn More →";
                 link.target = "_blank";
-                link.style.color = color; // Match the color of the slide
+                link.style.color = color;
                 slideLink.appendChild(link);
             }
 
@@ -143,7 +124,6 @@
 
                     navItemWrapper.appendChild(navItem);
                     sliderNav.appendChild(navItemWrapper);
-
                     navItemWrapper.addEventListener("click", () => handleNavClick(i));
 
                     const slide = document.createElement("div");
@@ -151,8 +131,9 @@
                     if (i === 0) slide.classList.add("active");
 
                     const imgWrapper = document.createElement("div");
-
                     const img = document.createElement("img");
+
+
 
                     imgWrapper.appendChild(img);
                     slide.appendChild(imgWrapper);
@@ -186,7 +167,7 @@
             updateTitle(0, getComputedStyle(bgOverlay).backgroundColor);
 
             function getRandomColor() {
-                return "#" + Math.floor(Math.random() * 16777215).toString(16);
+                return `#${Math.random().toString(16).slice(2, 8).padEnd(6, "0")}`;
             }
         });
 
@@ -209,26 +190,6 @@
                 updateTrail();
             }, 1);
         });
-
-function updateTitle(newIndex, color) {
-
-    // Title Animation - Modified for word spacing
-    const titleRow = document.createElement("div");
-    titleRow.classList.add("slide-title-row", "title");
-
-    title[0].split(" ").forEach((word) => { // Split by spaces for words
-        const wordDiv = document.createElement("div");
-        wordDiv.classList.add("word");
-        
-        word.split("").forEach((char, letterIndex) => {
-            // ... existing letter animation code ...
-            wordDiv.appendChild(letter);
-        });
-        
-        titleRow.appendChild(wordDiv);
-    });
-
-}
     </script>
 </body>
 </html>
