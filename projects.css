@@ -123,12 +123,21 @@ img {
 
 /* Style the slide title container */
 .slide-title {
-    padding-top: 50px;
+    padding-top: 115px;
     text-align: left;
     padding-left: 35px;
     margin: 20px 0;
     color: #000; /* Set the default color */
     font-family: Arial, sans-serif; /* Set the font-family */
+}
+
+.slide-description {
+    padding-left: 40px;
+}
+
+.slide-link {
+    padding-left: 40px;
+    padding-top: 40px;
 }
 
 /* Style individual rows of the title */
@@ -200,6 +209,10 @@ a:hover {
     transition: color 0.3s ease;
 }
 
+.slide-link:hover{
+    color: #ff5733; /* Example hover color */
+    transition: color 0.3s ease;
+}
 
 @media (max-width: 56.25em) {
     .slider-nav {
