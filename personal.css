@@ -17,6 +17,28 @@ html, body {
     font-weight: 500;
 }
 
+
+.title-1 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.title-2 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.title-3 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.title-4 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
 img {
     width: 650px;
     height: 700px;
@@ -85,7 +107,27 @@ header nav {
 
 .title{
     padding-top: 100px;
-    padding-left: 5px;
+    padding-left: 25px;
+}
+
+.title-1 {
+    padding-top: 100px;
+    padding-right: 250px;
+}
+
+.title-2 {
+    padding-top: 100px;
+    padding-right: 180px;
+}
+
+.title-3 {
+    padding-top: 100px;
+    padding-right: 150px;
+}
+
+.title-4 {
+    padding-top: 100px;
+    padding-right: 260px;
 }
 
 /**/
