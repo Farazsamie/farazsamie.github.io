@@ -45,13 +45,6 @@ img {
     object-fit: cover;
 }
 
-.text  {
-    padding-top: 200px; 
-    padding-right:40px;
-    padding-left: 20px;
-    font-size: 16px;
-    font-weight: 500;
-    }
     
 /**/
 
@@ -110,9 +103,22 @@ header nav {
     padding-left: 25px;
 }
 
+.text{
+    padding-top: 200px; 
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .title-1 {
     padding-top: 100px;
     padding-right: 250px;
+}
+
+.text-1 {
+    padding-right: 250px;
+    padding-top: 200px; 
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .title-2 {
@@ -120,15 +126,37 @@ header nav {
     padding-right: 180px;
 }
 
+.text-2 {
+    padding-right: 180px;
+    padding-top: 200px; 
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .title-3 {
     padding-top: 100px;
     padding-right: 150px;
+}
+
+.text-3 {
+    padding-right: 150px;
+    padding-top: 200px; 
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .title-4 {
     padding-top: 100px;
     padding-right: 260px;
 }
+
+.text-4 {
+    padding-right: 260px;
+    padding-top: 200px; 
+    font-size: 16px;
+    font-weight: 500;
+}
+
 
 /**/
 
