@@ -106,12 +106,12 @@ header nav {
 
 .img-container {
     width: auto;
-    height: 100%;
+    height: fill;
 }
 
 .img-container-left{
     width: 10px;
-    height: 10px;
+    height: fill;
 }
 
 .img-container p {
