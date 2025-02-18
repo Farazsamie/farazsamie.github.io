@@ -12,33 +12,6 @@ html, body {
 }
 
 
-.title {
-    font-size: 30px;
-    font-weight: 500;
-}
-
-
-.title-1 {
-    font-size: 30px;
-    font-weight: 500;
-}
-
-.title-2 {
-    font-size: 30px;
-    font-weight: 500;
-}
-
-.title-3 {
-    font-size: 30px;
-    font-weight: 500;
-}
-
-.title-4 {
-    font-size: 30px;
-    font-weight: 500;
-}
-
-
 img {
     width: 650px;
     height: 700px;
@@ -74,8 +47,9 @@ header nav {
 /**/
 .hero {
     display: flex;
+    align-items: center;
     height: 100vh;
-    margin-top: 0px; /* Adjust based on the height of your nav */
+    position: relative; /* Ensures absolute positioning works correctly */
 }
 
 .hero .left, .hero .right {
@@ -98,64 +72,49 @@ header nav {
 
 /**/
 
-.title{
-    padding-top: 100px;
-    padding-left: 25px;
+
+.intro-text{
+    padding-left: 20px;
+    padding-right: 10px;
+    text-align: left;
+
 }
 
-.text{
-    padding-top: 200px; 
+
+.title, .text,
+.title-1, .text-1,
+.title-2, .text-2,
+.title-3, .text-3,
+.title-4, .text-4 {
+    position: absolute;
+    left: 51%; /* Move text container to the middle */
+}
+
+
+.title {
+    font-size: 30px;
+    font-weight: 500;
+    top: 20%; /* Adjust spacing */
+}
+
+.text {
+    font-size: 15px;
+    font-weight: 500;
+    top: 40%; /* Moves text lower than title */
+}
+
+.title-1, .title-2, .title-3, .title-4 {
+    font-size: 30px;
+    font-weight: 500;
+    top: 20%;
+}
+
+.text-1, .text-2, .text-3, .text-4 {
     font-size: 16px;
     font-weight: 500;
+    top: 40%;
 }
 
-.title-1 {
-    padding-top: 100px;
-    padding-right: 250px;
-}
-
-.text-1 {
-    padding-right: 250px;
-    padding-top: 200px; 
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.title-2 {
-    padding-top: 100px;
-    padding-right: 180px;
-}
-
-.text-2 {
-    padding-right: 180px;
-    padding-top: 200px; 
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.title-3 {
-    padding-top: 100px;
-    padding-right: 150px;
-}
-
-.text-3 {
-    padding-right: 150px;
-    padding-top: 200px; 
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.title-4 {
-    padding-top: 100px;
-    padding-right: 260px;
-}
-
-.text-4 {
-    padding-right: 260px;
-    padding-top: 200px; 
-    font-size: 16px;
-    font-weight: 500;
-}
 
 
 /**/
