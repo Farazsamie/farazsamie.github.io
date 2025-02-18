@@ -11,14 +11,12 @@ html, body {
     font-family: "PP Supply Sans";
 }
 
-
 img {
     width: 650px;
     height: 700px;
     object-fit: cover;
 }
-
-    
+ 
 /**/
 
 .nav {
@@ -72,14 +70,11 @@ header nav {
 
 /**/
 
-
 .intro-text{
     padding-left: 20px;
     padding-right: 10px;
     text-align: left;
-
 }
-
 
 .title, .text,
 .title-1, .text-1,
@@ -89,7 +84,6 @@ header nav {
     position: absolute;
     left: 51%; /* Move text container to the middle */
 }
-
 
 .title {
     font-size: 30px;
@@ -114,8 +108,6 @@ header nav {
     font-weight: 500;
     top: 40%;
 }
-
-
 
 /**/
 
@@ -150,9 +142,6 @@ header nav {
     opacity: 1;
     transition: opacity 0.25s, transform 0.25s;
 }
-
-
-
 
 .col:nth-child(1) {
     flex: 3;
