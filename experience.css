@@ -279,3 +279,26 @@ svg {
     stroke-width: 0;
     fill: #2926244d;
 }
+
+
+
+.slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 5vw;
+}
+
+.slide-img-container {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.slide-img-container img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: right;
+}

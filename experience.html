@@ -41,10 +41,10 @@
             CustomEase.create("hop", "M0,0 C0.071,0.505 0.192,0.726 0.318,0.852 0.45,0.984 0.504,1 1,1");
 
             const titles = [
-                ["Undergraduate Research Assistant", "UC San Diego", "Analyzed performance metrics and created dashboards for the basketball team."],
-                ["Risk Management", "Hedge Fund UCSD", "Developed an interactive resume website showcasing coding projects."],
-                ["Private Equity Intern", "Indus", "Developed an interactive resume website showcasing coding projects."]
-            ];
+    ["Undergraduate Research Assistant", "UC San Diego", "Analyzed...", "img1.jpg"],
+    ["Risk Management", "Hedge Fund UCSD", "Developed...", "img2.jpg"],
+    ["Private Equity Intern", "Indus", "Developed...", "img3.jpg"]
+];
 
             const sliderNav = document.querySelector(".slider-nav");
             const slidesContainer = document.querySelector(".slides");
@@ -150,8 +150,22 @@
                     slide.classList.add("slide");
                     if (i === 0) slide.classList.add("active");
                     slidesContainer.appendChild(slide);
+        
+                    
+                    // Create image container
+                    const imgContainer = document.createElement("div");
+                    imgContainer.className = "slide-img-container";
+                    const img = document.createElement("img");
+                    img.src = titles[i][3];
+                    img.alt = "Experience visual";
+                    imgContainer.appendChild(img);
+                    slide.appendChild(imgContainer);
+
+                    slidesContainer.appendChild(slide);
                 });
             }
+
+
 
             function handleNavClick(index) {
                 document.querySelectorAll(".nav-item-wrapper").forEach((nav) => nav.classList.remove("active"));
@@ -172,6 +186,21 @@
 
                 updateTitle(index, newColor);
                 currentIndex = index;
+
+
+                    // Reset image position
+                gsap.set(slidesContainer.children[index].querySelector("img"), {
+                    x: index > currentIndex ? 700 : -50,
+                    opacity: 0
+                });
+    
+                // Animate image in
+                gsap.to(slidesContainer.children[index].querySelector("img"), {
+                    x: 0,
+                    opacity: 1,
+                    duration: ANIMATION_DURATION,
+                    ease: "hop"
+                });
             }
 
             createSlidesAndNav();
