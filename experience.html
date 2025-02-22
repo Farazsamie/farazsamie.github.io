@@ -184,13 +184,13 @@
 
                 updateTitle(index, newColor);
                 
-                // ✅ Fix the image animation order
+               
                 let img = slidesContainer.children[index].querySelector("img");
 
                 let direction = index > currentIndex ? 700 : -50;
                 gsap.set(img, { x: direction, opacity: 0 });
 
-                currentIndex = index; // ✅ Move this before animation!
+                currentIndex = index; 
 
                 gsap.to(img, {
                     x: 0,

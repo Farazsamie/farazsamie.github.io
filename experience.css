@@ -93,16 +93,20 @@ footer a#title {
 
 .slides {
     position: fixed;
+    width: 300vw;
+    transition: transform 0.25s ease-in-out;
+    overflow: hidden;
     top: 0;
     left: 0;
-    width: calc(100vw); /* Or dynamically set in JS */
+    width: calc(100vw); 
     height: 100vh;
     display: flex;
 }
 
 .slide {
-    flex: 1;
+    flex: 0 0 100vw;
     width: 100vw;
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
