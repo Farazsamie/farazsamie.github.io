@@ -160,22 +160,20 @@
                     img.alt = "Experience visual";
                     imgContainer.appendChild(img);
                     slide.appendChild(imgContainer);
-
-                    slidesContainer.appendChild(slide);
                 });
             }
 
 
 
             function handleNavClick(index) {
-                document.querySelectorAll(".nav-item-wrapper").forEach((nav) => nav.classList.remove("active"));
-                document.querySelectorAll(".nav-item-wrapper")[index].classList.add("active");
+    document.querySelectorAll(".nav-item-wrapper").forEach((nav) => nav.classList.remove("active"));
+    document.querySelectorAll(".nav-item-wrapper")[index].classList.add("active");
 
-                gsap.to(slidesContainer, {
-                    x: `${-index * 100}vw`,
-                    duration: ANIMATION_DURATION,
-                    ease: "hop"
-                });
+    gsap.to(slidesContainer, {
+        x: `-${index * 100}vw`,  // Fix slide positioning
+        duration: ANIMATION_DURATION,
+        ease: "hop"
+    });
 
                 const newColor = getRandomColor();
                 gsap.to(bgOverlay, {
@@ -185,23 +183,23 @@
                 });
 
                 updateTitle(index, newColor);
-                currentIndex = index;
+                
+                // ✅ Fix the image animation order
+                let img = slidesContainer.children[index].querySelector("img");
 
+                let direction = index > currentIndex ? 700 : -50;
+                gsap.set(img, { x: direction, opacity: 0 });
 
-                    // Reset image position
-                gsap.set(slidesContainer.children[index].querySelector("img"), {
-                    x: index > currentIndex ? 700 : -50,
-                    opacity: 0
-                });
-    
-                // Animate image in
-                gsap.to(slidesContainer.children[index].querySelector("img"), {
+                currentIndex = index; // ✅ Move this before animation!
+
+                gsap.to(img, {
                     x: 0,
                     opacity: 1,
                     duration: ANIMATION_DURATION,
                     ease: "hop"
                 });
             }
+
 
             createSlidesAndNav();
             updateTitle(0, getRandomColor());
