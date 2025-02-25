@@ -288,3 +288,18 @@ svg {
     display: inline-block;
     margin: 0 2px;
 }
+
+
+/* Style for the Learn More link */
+.slide-link a {
+    text-decoration: none;
+    color: #000000; /* Default color */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.slide-link a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline;
+    transform: scale(1.05); /* Slightly enlarges the text */
+}
