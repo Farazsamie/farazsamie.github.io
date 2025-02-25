@@ -294,12 +294,18 @@ svg {
 .slide-link a {
     text-decoration: none;
     color: #000000; /* Default color */
-    transition: all 0.3s ease-in-out;
+    transition: all 0.01s ease-in-out;
+    position: relative;
+    pointer-events: auto;
+    z-index: 10; /* Ensure it’s above other elements */
+    font-size: 12px;
 }
 
 /* Hover effect */
 .slide-link a:hover {
-    color: #0056b3; /* Darker blue on hover */
-    text-decoration: underline;
+    color: #000000; /* Darker blue on hover */
+    font-weight: bolder;
     transform: scale(1.05); /* Slightly enlarges the text */
+    text-decoration: underline;
 }
+
