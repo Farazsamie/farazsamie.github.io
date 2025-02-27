@@ -27,7 +27,6 @@
         <div class="slider-nav"></div> <!-- Navigation container -->
         <div class="slide-title"></div> <!-- Contains both title and subtitle -->
         <div class="slide-description"></div> <!-- Text description area -->
-        <div class="slide-image"></div> 
         <div class="bg-overlay"></div>  <!-- Background overlay for color transition -->
     </div>
 
@@ -151,16 +150,6 @@
                     slide.classList.add("slide");
                     if (i === 0) slide.classList.add("active");
                     slidesContainer.appendChild(slide);
-        
-                    
-                    // Create image container
-                    const imgContainer = document.createElement("div");
-                    imgContainer.className = "slide-img-container";
-                    const img = document.createElement("img");
-                    img.src = titles[i][3];
-                    img.alt = "Experience visual";
-                    imgContainer.appendChild(img);
-                    slide.appendChild(imgContainer);
                 });
             }
 
