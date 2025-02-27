@@ -166,10 +166,10 @@ img {
 
 
 .slide-title-row.subtitle {
-    font-size: 2.5px;
-    font-weight: light;
-    display: block; /* Ensure subtitle appears below title */
-    margin-top: 20px; /* Additional spacing if needed */
+    font-size: 10px; /* Adjust to desired size */
+    font-weight: lighter;
+    display: block; 
+    margin-top: 20px;
 }
 
 /* Add word spacing */
@@ -183,8 +183,8 @@ img {
 }
 
 .slide-subtitle {
-    font-size: 5px; /* Adjust size for the position */
-    font-weight:bold;
+    font-size: 38px; /* Adjust size for better readability */
+    font-weight: bold;
     text-decoration: wavy;
     text-align: left;
 }
@@ -207,9 +207,14 @@ img {
     margin: 0 0.2em;
 }
 
-.letter span {
-    font-size: 35px;
-    filter: brightness(0.25) saturate(0.75);
+/* Title Size */
+.slide-title-row.title .letter span {
+    font-size: 40px !important; /* Adjust to desired size */
+}
+
+/* Subtitle Size */
+.slide-title-row.subtitle .letter span {
+    font-size: 30px !important; /* Adjust to desired size */
 }
 
 a:hover {
