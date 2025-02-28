@@ -212,11 +212,13 @@ img {
 /* Title Size */
 .slide-title-row.title .letter span {
     font-size: 35px !important; /* Adjust to desired size */
+    color: #000;
 }
 
 /* Subtitle Size */
 .slide-title-row.subtitle .letter span {
     font-size: 28px !important; /* Adjust to desired size */
+    color: black;
 }
 
 a:hover {
