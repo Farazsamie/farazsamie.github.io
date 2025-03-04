@@ -90,6 +90,7 @@ header nav {
     flex: 2;
 }
 
+
 .overlay {
     position: absolute;
     bottom: -1200px;
@@ -97,18 +98,22 @@ header nav {
     width: 70%;
     height: 700px;
     padding: 2em;
-    background: #fffffA;
-    color: #000000;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    z-index: 2;
-    will-change: bottom;
-    transform: translateZ(0) rotate(20deg);
-    transform-origin: bottom center;
+    background: #fffffa;
+    z-index: 2; /* Base z-index */
+    /* ... rest of your existing overlay styles ... */
 }
 
-.overlay::-webkit-scrollbar {
-    display: none;
+.overlay.active {
+    z-index: 1000; /* Active state z-index */
+}
+
+#item-link {
+    position: relative; /* Ensure it's not covered by overlay */
+    z-index: 1001; /* Make sure the link is above the overlay */
+}
+
+a {
+    z-index: 999;  /* Ensure it's above the overlay and clickable */
 }
 
 .img-container {
@@ -195,4 +200,43 @@ a:hover {
 .item-name:hover {
     color: #ff5733; /* Example hover color */
     transition: color 0.3s ease;
+}
+
+/* Add these updates to your CSS */
+.item {
+    display: flex;
+    padding: 1em 0.6em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.item:hover {
+    background: rgba(0,0,0,0.05);
+    transform: translateX(10px);
+}
+
+.item-name {
+    flex: 2;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+#item-title {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+#item-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em 1em;
+    background: #292624;
+    color: white !important;
+    border-radius: 4px;
+}
+
+#item-link:hover {
+    background: #ff5733;
 }
