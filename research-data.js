@@ -1,24 +1,8 @@
 const data = [
     {
-        itemName: "SVB",
-        itemCategory: "something else",
+        itemName: "Reesearch Overview: BNPL on Your Credit Card",
+        itemCategory: "Reesearch Overview",
         itemLink: "something",
-        itemCopy: "uncvdssuvnnnnunrn",
-        itemImg: "img",
-    },
-    {
-        itemName: "Something",
-        itemCategory: "something else",
-        itemLink: "something",
-        itemCopy: "uncvdssuvnnnnunrn",
-        itemImg: "img",
-    },
-    {
-        itemName: "Something",
-        itemCategory: "something else",
-        itemLink: "something",
-        itemCopy: "uncvdssuvnnnnunrn",
-        itemImg: "img",
     },
 ];
 
