@@ -1,7 +1,7 @@
 const data = [
     {
-        itemName: "Reesearch Overview: BNPL on Your Credit Card",
-        itemCategory: "Reesearch Overview",
+        itemName: "Research Overview: BNPL on Your Credit Card",
+        itemCategory: "Research Overview",
         itemLink: "something",
     },
 ];
