@@ -184,17 +184,94 @@
     }
 
     // Wheel event listener to navigate slides
-    window.addEventListener("wheel", (e) => {
-        if (isAnimating) return;
-        if (e.deltaY > 0 && currentSlideIndex < slides.length - 1) {
-            showSlide(currentSlideIndex + 1);
-            currentSlideIndex++;
-        } else if (e.deltaY < 0 && currentSlideIndex > 0) {
-            hideSlide(currentSlideIndex);
+    // Wheel event listener to navigate slides
+window.addEventListener("wheel", (e) => {
+    if (isAnimating) return;
+    if (e.deltaY > 0 && currentSlideIndex < slides.length - 1) {
+        showSlide(currentSlideIndex + 1);
+        currentSlideIndex++;
+    } else if (e.deltaY < 0 && currentSlideIndex > 0) {
+        // Hide current slide, then show previous slide
+        hideSlide(currentSlideIndex, () => {
             currentSlideIndex--;
-        }
-    
+            showSlide(currentSlideIndex, true); // Pass a flag indicating reverse direction
+        });
+    }
+});
+
+// Modified showSlide function to handle reverse animations
+function showSlide(index, isReverse = false) {
+    if (isAnimating || index < 0 || index >= slides.length) return;
+    isAnimating = true;
+    const slide = slides[index];
+    const img = slide.querySelector("img");
+
+    // Adjust text position only when moving forward
+    if (!isReverse) {
+        currentTopValue -= 30;
+    }
+
+    elements.forEach((elem) => {
+        gsap.to(document.querySelector(elem.selector), {
+            y: `${currentTopValue}px`,
+            duration: 1.75,
+            ease: "power4.inOut",
+        });
     });
+
+    // Transition the image scale and position
+    gsap.to(img, {
+        scale: 1,
+        top: "0%",
+        duration: 1,
+        ease: "power3.inOut",
+    });
+
+    // Animate the slide reveal
+    gsap.to(slide, {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        duration: 1,
+        ease: "power4.inOut",
+        onComplete: () => {
+            isAnimating = false;
+        },
+    }, "<");
+}
+
+// Modified hideSlide function to accept callback
+function hideSlide(index, onComplete) {
+    if (isAnimating || index < 0 || index >= slides.length) return;
+    isAnimating = true;
+    const slide = slides[index];
+    const img = slide.querySelector("img");
+
+    currentTopValue += 30;
+
+    elements.forEach((elem) => {
+        gsap.to(document.querySelector(elem.selector), {
+            y: `${currentTopValue}px`,
+            duration: 1,
+            ease: "power4.inOut",
+        });
+    });
+
+    gsap.to(img, {
+        scale: 2,
+        top: "4em",
+        duration: 0.5,
+        ease: "power3.inOut",
+    });
+
+    gsap.to(slide, {
+        clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+        duration: 0.5,
+        ease: "power4.inOut",
+        onComplete: () => {
+            isAnimating = false;
+            if (onComplete) onComplete();
+        },
+    }, "<");
+}
 
     // Mousetrail
     document.addEventListener("DOMContentLoaded", function() {
