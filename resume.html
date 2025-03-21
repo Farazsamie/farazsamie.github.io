@@ -55,6 +55,12 @@
                 <p><span>Faraz Samie | 2024 Resume</span></p>
             </footer>
         </div>
+
+        <div id="restriction-sign">
+            <p>Access Restricted:</p>
+            <p>Screen Size Isn't Supported</p>
+        </div>
+
     </div>
 
     <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000;">
@@ -115,6 +121,22 @@
             top: 0,
             ease: "power3.out"
         });
+
+
+
+
+
+        function checkScreenSize() {
+            const restrictionSign = document.getElementById('restriction-sign');
+            if (window.innerWidth < 1000 || window.innerWidth > 1600) {
+                restrictionSign.style.display = 'flex';
+            } else {
+                restrictionSign.style.display = 'none';
+            }
+        }
+        
+        window.addEventListener('resize', checkScreenSize);
+        window.addEventListener('load', checkScreenSize);
     </script>
 </body>
 </html>
