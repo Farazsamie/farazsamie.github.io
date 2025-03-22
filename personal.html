@@ -66,6 +66,11 @@
             <p> From the moment I picked up my first weight to the countless hours spent watching and playing sports, physical challenges have always been a driving force in my life. Weightlifting pushes me to my limits, demanding discipline, resilience, and mental toughness, while sports like basketball, cricket, golf, and boxing keep me engaged—whether it’s the explosive drives of Derrick Rose or the blistering pace of Naseem Shah. More than just strength and performance, both weightlifting and sports provide an outlet to challenge myself, clear my mind, and find balance in my daily life. </p>
         </div>
     </div>
+
+    <div id="restriction-sign">
+        <p>Access Restricted:</p>
+        <p>Screen Size Isn't Supported</p>
+    </div>
         
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -193,6 +198,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 updateTrail();
             }, 1);
         });
+
+
+
+
+
+        function checkScreenSize() {
+            const restrictionSign = document.getElementById('restriction-sign');
+            if (window.innerWidth < 1000 || window.innerWidth > 1600) {
+                restrictionSign.style.display = 'flex';
+            } else {
+                restrictionSign.style.display = 'none';
+            }
+        }
+        
+        window.addEventListener('resize', checkScreenSize);
+        window.addEventListener('load', checkScreenSize);
     </script>
 </body>
 </html>

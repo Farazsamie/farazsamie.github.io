@@ -28,6 +28,12 @@
         <div class="slide-title"></div> <!-- Contains both title and subtitle -->
         <div class="slide-description"></div> <!-- Text description area -->
         <div class="bg-overlay"></div>  <!-- Background overlay for color transition -->
+
+
+        <div id="restriction-sign">
+            <p>Access Restricted:</p>
+            <p>Screen Size Isn't Supported</p>
+        </div>
     </div>
 
     <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000;">
@@ -220,6 +226,25 @@
                 updateTrail();
             }, 1);
         });
+
+
+
+
+
+
+
+
+        function checkScreenSize() {
+            const restrictionSign = document.getElementById('restriction-sign');
+            if (window.innerWidth < 1000 || window.innerWidth > 1600) {
+                restrictionSign.style.display = 'flex';
+            } else {
+                restrictionSign.style.display = 'none';
+            }
+        }
+        
+        window.addEventListener('resize', checkScreenSize);
+        window.addEventListener('load', checkScreenSize);
     </script>
 </body>
 </html>
