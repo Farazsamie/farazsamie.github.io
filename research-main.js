@@ -40,6 +40,7 @@ document.addEventListener('click', (e) => {
 });
 
 function updateOverlay(dataItem) {
+    console.log(dataItem); // Debugging step
     document.querySelector("#item-title").textContent = dataItem.itemName;
     document.querySelector("#item-category").textContent = dataItem.itemCategory;
     document.querySelector("#item-link").href = dataItem.itemLink;
