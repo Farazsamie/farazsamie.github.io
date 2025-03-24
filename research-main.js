@@ -45,4 +45,5 @@ function updateOverlay(dataItem) {
     document.querySelector("#item-link").href = dataItem.itemLink;
     document.querySelector("#item-copy").textContent = dataItem.itemCopy;
     document.querySelector("#item-img").src = dataItem.itemImg;
+    document.querySelector("#item-description").textContent = dataItem.itemDescription;
 }
