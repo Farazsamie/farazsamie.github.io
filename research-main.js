@@ -42,9 +42,8 @@ document.addEventListener('click', (e) => {
 function updateOverlay(dataItem) {
     console.log(dataItem); // Debugging step
     document.querySelector("#item-title").textContent = dataItem.itemName;
-    document.querySelector("#item-category").textContent = dataItem.itemCategory;
+    document.querySelector("#item-description").textContent = dataItem.itemDescription;
     document.querySelector("#item-link").href = dataItem.itemLink;
     document.querySelector("#item-copy").textContent = dataItem.itemCopy;
     document.querySelector("#item-img").src = dataItem.itemImg;
-    document.querySelector("#item-description").textContent = dataItem.itemDescription;
 }
