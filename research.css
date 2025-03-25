@@ -10,7 +10,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: "Aenoik";
-    background-color: #A7A096;
+    background-color: #ebe8e250;
     color: #000000;
     height: 100%;
     overflow: hidden;
@@ -44,7 +44,7 @@ a {
     display: flex;
     justify-content: space-between;
     z-index: 1000; /* Ensures the nav is on top */
-    background-color:#A79F92;
+    background-color:#ebe8e280;
 
 }
 
@@ -59,7 +59,7 @@ header nav {
     bottom: 0;
     right: 0;
     padding: 2em;
-    background-color:#A79F92;
+    background-color:#ebe8e280;
 }
 
 .footer p {
@@ -135,13 +135,12 @@ img {
 }
 
 .col:nth-child(2) {
-    flex: 2;
+    flex: 3;
 }
 
 #close-btn {
     cursor: pointer;
     opacity: 0.5;
-    padding-left: 30em;
 }
 
 .item-details {
