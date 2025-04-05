@@ -57,33 +57,23 @@ nav {
 }
 
 #slide-1 {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    background-color: #7c756d;
+    background-color: #58534e;
 }
 
 #slide-2 {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    background-color: #f78000;
+    background-color: #555351;
 }
 
 #slide-3 {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    background-color: #9c9287;
+    background-color: #474542;
 }
 
 #slide-4 {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    background-color: #9c9287;
+    background-color: #58544d;
 }
 
 #slide-5 {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    background-color: #9c9287;
-}
-
-#slide-6 {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    background-color: #9c9287;
+    background-color: #d9ceb9;
 }
 
 img {
