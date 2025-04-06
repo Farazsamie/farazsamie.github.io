@@ -57,7 +57,7 @@ nav {
 }
 
 #slide-1 {
-    background-color: #58534e;
+    background-color: #807a72;
 }
 
 #slide-2 {
@@ -65,15 +65,15 @@ nav {
 }
 
 #slide-3 {
-    background-color: #474542;
-}
-
-#slide-4 {
     background-color: #58544d;
 }
 
+#slide-4 {
+    background-color: #6f6a66; 
+}
+
 #slide-5 {
-    background-color: #d9ceb9;
+    background-color: #aa9f8b;
 }
 
 img {
