@@ -10,8 +10,8 @@
 <body>
 
 
-    <div id="landing-image">
-        <img src="images/1.png" alt="Welcome Image" />
+    <div id="landing-image"> 
+        <p>Faraz Samie Portfolio</p>
     </div>
 
     <div class="slider-content"> 
@@ -65,32 +65,42 @@
 
 
     /* page loading */
+
     gsap.from(".slider-content", {
-        delay: 1,
-        duration: 2,
-        clipPath: "inset(0 100% 0 0)",
-        ease: "power4.inOut",
-        stagger: {
-            amount: 0.5,
-        }
-    });
+    delay: 1,
+    duration: 2,
+    clipPath: "inset(0 100% 0 0)",
+    ease: "power4.inOut",
+    stagger: {
+        amount: 0.5,
+    }
+});
 
-    gsap.from("img", {
-        delay: 1.5,
-        duration: 3,
-        scale: 2,
-        ease: "power4.inOut",
-        stagger: {
-            amount: 0.25,
-        },
-    });
+gsap.from("img", {
+    delay: 1.5,
+    duration: 3,
+    scale: 2,
+    ease: "power4.inOut",
+    stagger: {
+        amount: 0.25,
+    },
+});
 
-    gsap.to("header h1, header h2", {
-        delay: 3,
-        duration: 1,
-        top: 0,
-        ease: "power3.out"
-    });
+gsap.to("header h1, header h2", {
+    delay: 3,
+    duration: 1,
+    top: 0,
+    ease: "power3.out"
+});
+
+// Animate the <p> to disappear to the right
+gsap.to("#landing-image p", {
+    delay: 1,  // Adjust the delay if needed
+    duration: 2,  // Adjust the duration for the animation
+    xPercent: 100,  // Move the text completely out of view to the right
+    ease: "power4.inOut",
+});
+
 
     /* core slide logic */
     const slides = document.querySelectorAll(".slide");
