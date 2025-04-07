@@ -46,18 +46,18 @@ nav {
 
 
 .slide {
-    position: absolute;
     bottom: 0;
-    left: 0;
+
     width: 100%;
     height: 100%;
     overflow: hidden;
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-    transition: clip-path 0.60s ease, transform 0.60s ease; 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: clip-path 0.6s ease, transform 0.6s ease;
 }
 
+
 #slide-1 {
-    background-color: #807a72;
+    background-color: #3d3b38; /* Ensure this is visible */
 }
 
 #slide-2 {
@@ -75,6 +75,7 @@ nav {
 #slide-5 {
     background-color: #aa9f8b;
 }
+
 
 img {
     width: 100%;
@@ -111,7 +112,7 @@ img {
     right: 0.25%;
     transform: translate(-50%, -50%);
     font-size: 13px;
-    color: #fffff1;
+    color: #fffff5;
     line-height: 30px;
     clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
     text-transform: uppercase;
@@ -124,7 +125,7 @@ img {
 
 .slide-name {
     font-size: 15.5px;
-    color: #fffff1;
+    color: #fffff5;
     line-height: 30px;
     clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
     text-transform: uppercase;
@@ -138,7 +139,7 @@ img {
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 200;
-    color: #fffff1;
+    color: #fffff5;
     border: 3px solid transparent;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Adjusted for a button-like appearance */
     text-decoration: none; /* Removes the underline */
@@ -150,7 +151,7 @@ img {
 .link a:hover {
     border-color: #23201e; /* Border color on hover */
     background-color: #23201e;
-    color: #fffff1; /* Make text color consistent on hover */
+    color: #fffff5; /* Make text color consistent on hover */
 }
 
 .slide-button {
@@ -161,7 +162,7 @@ img {
 .slide-button:hover {
     pointer-events: auto;
     background-color: #292624;
-    color: white;
+    color: #fffff5;
 }
 
 
@@ -174,7 +175,7 @@ img {
 }
 
 a {
-    color: #fffff1;
+    color: #fffff5;
 }
 
 /**/
@@ -211,7 +212,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #fffffA;
+    background: #fffff5;
     color: #000000;
     display: flex;
     align-items: left;
@@ -224,5 +225,6 @@ a {
 }
 
 .landing-image p {
-    font-size: 200px;
+    font-size: 40px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
