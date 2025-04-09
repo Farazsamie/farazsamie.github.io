@@ -215,3 +215,12 @@ a:hover {
     font-size: 10px;
     padding-left: 100px;
 }
+
+a {
+    color: rgb(0, 0, 0);        /* Sets the text color to blue */
+    text-decoration: none; /* Removes the underline */
+  }
+  
+  a:hover {
+    color: rgb(81, 71, 71);         /* Changes the color to red when hovered */
+  }
