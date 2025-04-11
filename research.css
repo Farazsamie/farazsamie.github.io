@@ -5,6 +5,7 @@
 }
 
 html, 
+
 body {
     width: 100vw;
     height: 100vh;
@@ -12,9 +13,8 @@ body {
     font-family: "Aenoik";
     background-color: #5e5757b6;
     color: #000000;
-    height: 100%;
-    overflow: hidden;
 }
+
 
 h1{
     font-weight: 500;
@@ -30,11 +30,12 @@ a {
 .container {
     width: 100%;
     height: 100%;
-    display: fixed;
+    position: fixed;
     justify-content: flex-end;
     align-items: flex-start;
     padding: 2em;
 }
+
 
 .nav {
     position: fixed;
@@ -117,10 +118,16 @@ a {
 }
 
 img {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
 }
+
+.img-container {
+    min-height: 100px;
+    position: relative;
+}
+
 
 .overlay-header {
     width: 100%;
@@ -148,6 +155,8 @@ img {
     display: flex;
     justify-content: space-between;
     padding: 1em 0 4em 0;
+    position: relative;
+    z-index: 10;
 }
 
 .item-details p:nth-child(1) {
@@ -232,6 +241,8 @@ a:hover {
     background: #292624;
     color: white;
     border-radius: 4px;
+    z-index: 1001;
+    position: relative;
 }
 
 #item-link:hover {
