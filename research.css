@@ -134,9 +134,10 @@ img {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start; /* <--- change from flex-end to flex-start */
     padding: 2em 0;
 }
+
 
 .col:nth-child(1) {
     flex: 3;
@@ -231,8 +232,13 @@ a:hover {
 #item-title {
     font-size: 2em;
     margin-bottom: 0.5em;
-    padding-top: 2em;
+    padding-top: 100px; /* Set to 0 or a smaller value */
 }
+
+.spacing {
+    padding-top: 100px; /* Reduce if it's too much space */
+}
+
 
 #item-link {
     display: inline-flex;
