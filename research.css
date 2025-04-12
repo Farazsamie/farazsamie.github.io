@@ -11,7 +11,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: "Aenoik";
-    background-color: #5e5757b6;
+    background-color: #5e5858b6;
     color: #000000;
 }
 
@@ -232,7 +232,7 @@ a:hover {
 #item-title {
     font-size: 2em;
     margin-bottom: 0.5em;
-    padding-top: 100px; /* Set to 0 or a smaller value */
+    padding-top: 10s0px; /* Set to 0 or a smaller value */
 }
 
 .spacing {
