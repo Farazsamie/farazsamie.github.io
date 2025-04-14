@@ -80,7 +80,7 @@ header nav {
 .item {
     display: flex;
     padding: 0.5em 0.6em;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 .item-index {
