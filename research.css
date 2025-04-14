@@ -91,6 +91,13 @@ header nav {
     flex: 2;
 }
 
+#item-copy {
+    padding: 5px;
+    max-height: 20vh; /* 20% of the viewport height */
+    line-height: 1.2; /* Controls the space between lines */
+    white-space: wrap; /* Prevents text from wrapping to the next line */
+    font-size: 1em;
+}
 
 .overlay {
     position: absolute;
@@ -238,6 +245,7 @@ a:hover {
 .spacing {
     padding-top: 100px; /* Reduce if it's too much space */
 }
+
 
 
 #item-link {
