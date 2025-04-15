@@ -131,7 +131,7 @@ img {
 
 /* Style the slide title container */
 .slide-title {
-    padding-top: 140px;
+    padding-top: 100px;
     text-align: left;
     padding-left: 35px;
     margin: 20px 0;
@@ -148,10 +148,10 @@ img {
 
 .slide-description{
 
-    font-size: 16px; /* Adjust size for the position */
+    font-size:18px; /* Adjust size for the position */
     font-family:Arial, Helvetica, sans-serif;
     font-weight:550;
-    font-style: italic;
+    font-style:normal;
     text-align: left;
     padding-left: 40px;
     padding-top: 20px;
@@ -160,7 +160,7 @@ img {
 
 
 .slide-title-row.title {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bold;
     margin-bottom: 30px; /* Increased spacing between title and subtitle */
     display: block; /* Ensure title and subtitle stack vertically */
