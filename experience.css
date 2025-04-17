@@ -53,7 +53,7 @@ footer a#title {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: aliceblue;
+    background-color: #f0f8ff;
     filter: brightness(0.75);
     opacity: 0.5;
 }
@@ -116,7 +116,7 @@ footer a#title {
 .slide {
     width: 50%;
     height: 50%;
-    opacity: 0.5;
+    opacity: 0.15;
     position: absolute;
     left: 0;
 }
