@@ -188,30 +188,29 @@ img {
 
 
 
-.slide-bp{
-    font-size:18px; /* Adjust size for the position */
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight:550;
-    font-style:normal;
-    text-align: left;
-    padding-left: 100px;
-    padding-top: 20px;
-}
+    .slide-BP{
+        font-size:18px; /* Adjust size for the position */
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight:550;
+        text-align: left;
+        padding-left: 40px;
+        padding-top: 20px;
+    }
 
-.slide-title-row.title {
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 30px; /* Increased spacing between title and subtitle */
-    display: block; /* Ensure title and subtitle stack vertically */
-}
+    .slide-title-row.title {
+        font-size: 11px;
+        font-weight: bold;
+        margin-bottom: 30px; /* Increased spacing between title and subtitle */
+        display: block; /* Ensure title and subtitle stack vertically */
+    }
 
 
-.slide-title-row.subtitle {
-    font-size: 10px; /* Adjust to desired size */
-    font-weight: lighter;
-    display: block; 
-    margin-top: 20px;
-}
+    .slide-title-row.subtitle {
+        font-size: 10px; /* Adjust to desired size */
+        font-weight: lighter;
+        display: block; 
+        margin-top: 20px;
+    }
 
 /* Add word spacing */
 .slide-title-row .word {
