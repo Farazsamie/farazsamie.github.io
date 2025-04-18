@@ -160,13 +160,41 @@ img {
 
 }
 
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #785032; /* starting brown tone */
+    z-index: -1;
+    transition: background-color 0.5s ease;
+  }
+
+  #restriction-sign {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #111;
+    color: #fff;
+    font-size: 1.5rem;
+    z-index: 9999;}
+
+
+
 .slide-bp{
     font-size:18px; /* Adjust size for the position */
     font-family:Arial, Helvetica, sans-serif;
     font-weight:550;
     font-style:normal;
     text-align: left;
-    padding-left: 40px;
+    padding-left: 100px;
     padding-top: 20px;
 }
 
