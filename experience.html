@@ -27,7 +27,8 @@
     <div class="slider-nav"></div>
     <div class="slide-title"></div>
     <div class="slide-description"></div>
-    <div class="slide-BP"></div>
+    <div class="slide-BP1"></div>
+    <div class="slide-BP2"></div>
     <div class="bg-overlay"></div>
 
     <div id="restriction-sign">
@@ -67,7 +68,8 @@
       const sliderNav = document.querySelector(".slider-nav");
       const slideTitle = document.querySelector(".slide-title");
       const slideDescription = document.querySelector(".slide-description");
-      const slideBP = document.querySelector(".slide-BP");
+      const slideBP1 = document.querySelector(".slide-BP1");
+      const slideBP2 = document.querySelector(".slide-BP2");
       const bgOverlay = document.querySelector(".bg-overlay");
 
       let currentIndex = 0;
@@ -85,7 +87,8 @@
         const title = titles[newIndex];
         slideTitle.innerHTML = "";
         slideDescription.innerHTML = "";
-        slideBP.innerHTML = "";
+        slideBP1.innerHTML = "";
+        slideBP2.innerHTML = "";
 
         const createRow = (text, className) => {
           const row = document.createElement("div");
@@ -123,9 +126,13 @@
         desc.textContent = title[2];
         slideDescription.appendChild(desc);
 
-        const bp = document.createElement("p");
-        bp.textContent = title[3];
-        slideBP.appendChild(bp);
+        const bp1 = document.createElement("p");
+        bp1.textContent = title[3];
+        slideBP1.appendChild(bp1);
+
+        const bp2 = document.createElement("p");
+        bp2.textContent = title[3];
+        slideBP2.appendChild(bp2);
       }
 
       function createSlidesAndNav() {
