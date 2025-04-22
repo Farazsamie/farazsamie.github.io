@@ -26,6 +26,7 @@ nav, footer {
  
 nav {
     top: 0;
+    position:fixed;
 }
 
 footer {
@@ -128,12 +129,9 @@ img {
 }
 
 
-
-
-
 /* Style the slide title container */
 .slide-title {
-    padding-top: 100px;
+    padding-top: 75px;
     text-align: left;
     padding-left: 35px;
     margin: 20px 0;
@@ -149,14 +147,13 @@ img {
 
 
 .slide-description{
-
-    font-size:18px; /* Adjust size for the position */
+    font-size:15px; /* Adjust size for the position */
     font-family:Arial, Helvetica, sans-serif;
     font-weight:550;
     font-style:normal;
     text-align: left;
     padding-left: 40px;
-    padding-top: 20px;
+    padding-top: 10px;
 
 }
 
@@ -188,13 +185,20 @@ img {
 
 
 
-    .slide-BP{
-        font-size:18px; /* Adjust size for the position */
+    .slide-BP1{
+        font-size:14px; /* Adjust size for the position */
         font-family:Arial, Helvetica, sans-serif;
-        font-weight:550;
         text-align: left;
         padding-left: 40px;
-        padding-top: 20px;
+        padding-top: 5px;
+    }
+
+    .slide-BP2{
+        font-size:14px; /* Adjust size for the position */
+        font-family:Arial, Helvetica, sans-serif;
+        text-align: left;
+        padding-left: 40px;
+        padding-top: 5px;
     }
 
     .slide-title-row.title {
