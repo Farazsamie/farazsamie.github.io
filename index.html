@@ -17,6 +17,9 @@
 
     </div>
 
+
+    <div class="top"></div>
+
     <div class="slider-content"> 
             <div class="prefix"></div>
         <div class="slide-name">
@@ -81,7 +84,7 @@
 
 gsap.from("img", {
     delay: 1.5,
-    duration: 3,
+    duration: 2,
     scale: 2,
     ease: "power4.inOut",
     stagger: {
@@ -91,24 +94,36 @@ gsap.from("img", {
 
 gsap.to("header h1, header h2", {
     delay: 3,
-    duration: 1,
+    duration: 2,
     top: 0,
     ease: "power3.out"
 });
 
 // Animate the <p> to disappear to the right
 gsap.to(".landing-page p", {
-    delay: 1,  // Adjust the delay if needed
-    duration: 2,  // Adjust the duration for the animation
+    delay: 2,  // Adjust the delay if needed
+    duration: 3,  // Adjust the duration for the animation
     xPercent: 100,  // Move the text completely out of view to the right
     ease: "power4.inOut",
 });
 
 gsap.to(".landing-page p1", {
-    delay: 1,  // Adjust the delay if needed
-    duration: 2,  // Adjust the duration for the animation
+    delay: 2,  // Adjust the delay if needed
+    duration: 3,  // Adjust the duration for the animation
     xPercent: 100,  // Move the text completely out of view to the right
     ease: "power4.inOut",
+});
+
+
+gsap.to(".landing-page .intro-text", {
+  delay: 2,
+  duration: 3,
+  xPercent: 100,
+  opacity: 0,
+  ease: "power4.inOut",
+  onComplete: () => {
+    document.querySelector(".landing-page .intro-text").style.display = "none";
+  }
 });
 
 
