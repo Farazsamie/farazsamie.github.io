@@ -9,10 +9,12 @@
 </head>
 <body>
 
-
-    <div class="landing-image">
+    <div class="landing-page">
         <p>Faraz Samie</p> 
         <p>Professional Portfolio</p>
+
+        <p class="intro-text">Hi, My Name Is Faraz. Welcome To My Portfolio</p>
+
     </div>
 
     <div class="slider-content"> 
@@ -95,12 +97,20 @@ gsap.to("header h1, header h2", {
 });
 
 // Animate the <p> to disappear to the right
-gsap.to(".landing-image p", {
+gsap.to(".landing-page p", {
     delay: 1,  // Adjust the delay if needed
     duration: 2,  // Adjust the duration for the animation
     xPercent: 100,  // Move the text completely out of view to the right
     ease: "power4.inOut",
 });
+
+gsap.to(".landing-page p1", {
+    delay: 1,  // Adjust the delay if needed
+    duration: 2,  // Adjust the duration for the animation
+    xPercent: 100,  // Move the text completely out of view to the right
+    ease: "power4.inOut",
+});
+
 
     /* core slide logic */
     const slides = document.querySelectorAll(".slide");
@@ -328,8 +338,6 @@ function hideSlide(index, onComplete) {
     }
     updateTrail();
 
-
-
     function checkScreenSize() {
             const restrictionSign = document.getElementById('restriction-sign');
             if (window.innerWidth < 1000 || window.innerWidth > 1600) {
@@ -342,6 +350,14 @@ function hideSlide(index, onComplete) {
         window.addEventListener('resize', checkScreenSize);
         window.addEventListener('load', checkScreenSize);
 });
+
+        if (window.innerWidth < 1000 || window.innerWidth > 1600) {
+            restrictionSign.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        } else {
+            restrictionSign.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
     </script>
     </body>
