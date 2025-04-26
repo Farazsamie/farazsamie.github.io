@@ -210,15 +210,15 @@ a {
 }
 
 .landing-page p {
-    font-size: 40px;
+    font-size: 32px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #3d3b38;
     padding-left: 10px;
-    padding-top: 20px;
+    padding-top: 5px;
 }
 
 .landing-page .intro-text {
-    font-size: 45px;
+    font-size: 37px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-left: 10px;
     position: absolute; /* Position it absolutely */
