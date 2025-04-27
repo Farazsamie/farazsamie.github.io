@@ -11,7 +11,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: "Aenoik";
-    background-color: #514b49b3;
+    background-color: #4a4746b3;
     color: #000000;
 }
 
@@ -45,7 +45,7 @@ a {
     display: flex;
     justify-content: space-between;
     z-index: 1000; /* Ensures the nav is on top */
-    background-color:#4d4646dd;
+    background-color:#433f3fdd;
 
 }
 
@@ -60,7 +60,7 @@ header nav {
     bottom: 0;
     right: 0;
     padding: 2em;
-    background-color:#4d4646dd;
+    background-color:#433f3fdd;
 }
 
 .footer p {
@@ -211,8 +211,7 @@ a:hover {
 }
 
 .item-name:hover {
-    color: #202020; /* Example hover color */
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
     font-style: italic;
 }
 
@@ -226,8 +225,7 @@ a:hover {
 }
 
 .item:hover {
-    background: #ffffff05;
-    transform: translateX(10px);
+    transform: translateX(20px);
 }
 
 .item-name {
