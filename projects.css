@@ -327,3 +327,19 @@ svg {
     font-size: 10px;
     padding-left: 100px;
 }
+
+.slide-BP1{
+    font-size:14px; /* Adjust size for the position */
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 5px;
+}
+
+.slide-BP2{
+    font-size:14px; /* Adjust size for the position */
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 5px;
+}

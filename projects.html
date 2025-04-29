@@ -26,7 +26,8 @@
         <div class="slider-nav"></div>  <!-- Navigation container -->
         <div class="slide-title"></div>  <!-- Slide title container -->
         <div class="slide-description"></div>  <!-- Text description area -->
-        <div class="slide-BP"></div>  <!-- Text description area -->
+        <div class="slide-BP1"></div>
+        <div class="slide-BP2"></div>
         <div class="slide-link"></div>  <!-- Link area -->
         <div class="bg-overlay"></div>  <!-- Background overlay for color transition -->
 
@@ -48,8 +49,8 @@
             CustomEase.create("hop", "M0,0 C0.071,0.505 0.192,0.726 0.318,0.852 0.45,0.984 0.504,1 1,1");
 
             const titles = [
-                ["UCSD Basketball Data", "Analyzed performance metrics and created dashboards for the basketball team.", "https://github.com"],
-                ["Portfolio Website", "Developed a responsive and interactive professional portfolio website by utilizing coding languages: HTML, CSS, and JavaScript. Through this project, I highlighted my academics, professional experience, project portfolio, research academia, and personal interests.", "https://github.com/Farazsamie/farazsamie.github.io"]
+                ["UCSD Basketball Data", "Analyzed performance metrics and created dashboards for the basketball team.", "https://github.com", "342", "234"],
+                ["Portfolio Website", "Developed a responsive and interactive professional portfolio website by utilizing coding languages: HTML, CSS, and JavaScript. Through this project, I highlighted my academics, professional experience, project portfolio, research academia, and personal interests.", "https://github.com/Farazsamie/farazsamie.github.io","342", "234"]
             ];
 
             const sliderNav = document.querySelector(".slider-nav");
@@ -57,7 +58,8 @@
             const bgOverlay = document.querySelector(".bg-overlay");
             const slideTitle = document.querySelector(".slide-title");
             const slideDescription = document.querySelector(".slide-description");
-            const slideBP = document.querySelector(".slide-bp");
+            const slideBP1 = document.querySelector(".slide-BP1");
+            const slideBP2 = document.querySelector(".slide-BP2");
             const slideLink = document.querySelector(".slide-link");
 
             let currentIndex = 0;
@@ -69,6 +71,8 @@
                 slideTitle.innerHTML = "";
                 slideDescription.innerHTML = "";
                 slideLink.innerHTML = "";
+                slideBP1.innerHTML = "";
+                slideBP2.innerHTML = "";
 
                 const titleRow = document.createElement("div");
                 titleRow.classList.add("slide-title-row", "title");
@@ -111,6 +115,14 @@
                 link.textContent = "Learn More →";
                 link.target = "_blank";
                 slideLink.appendChild(link);
+
+                const bp1 = document.createElement("p");
+                bp1.textContent = title[3];
+                slideBP1.appendChild(bp1);
+
+                const bp2 = document.createElement("p");
+                bp2.textContent = title[4];
+                slideBP2.appendChild(bp2);
             }
 
             function createSlidesAndNav() {
