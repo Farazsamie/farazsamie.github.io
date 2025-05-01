@@ -240,3 +240,16 @@ a {
     background-color: #fffff5;
     padding-top: 100px;
 }
+
+
+.line {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* optional spacing between lines */
+}
+
+.intro small {
+    font-size: 0.25em; /* adjust smaller font size as needed */
+    opacity: 0.9; /* optional: slight transparency */
+    line-height: 1;
+}

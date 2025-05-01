@@ -13,9 +13,19 @@
         <p>Faraz Samie</p> 
         <p>Professional Portfolio</p>
 
-        <p class="intro-text">Hi, My Name Is Faraz. Welcome To My Portfolio</p>
+        <div class="intro">
+            <p class="line">Hi, My Name Is Faraz.</p>
+            <p class="line">Welcome To My Portfolio</p>
+            <p class="small">
+                I have a passion for data analytics, Islamic finance, and risk management, 
+                and understanding how they can be affected by quantum computing.
+            </p>
+        </div>
 
     </div>
+    
+
+    
 
     <div class="slider-content"> 
             <div class="prefix"></div>
@@ -89,9 +99,10 @@ gsap.from("img", {
     },
 });
 
+
 gsap.to("header h1, header h2", {
     delay: 3,
-    duration: 2,
+    duration: 3,
     top: 0,
     ease: "power3.out"
 });
