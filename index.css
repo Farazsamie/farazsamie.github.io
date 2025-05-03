@@ -58,7 +58,6 @@ nav {
 #slide-1 {
     /*595C58, 6E7D6B, 6B6966, 3d3b38*/
     background-color: #413d3a;
-    ; 
 }
 
 
@@ -150,8 +149,6 @@ img {
     color: #fffff5;
 }
 
-
-
 .prefix,
 .names,
 .link {
@@ -212,17 +209,13 @@ a {
 .landing-page p {
     font-size: 32px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #3d3b38;
     padding-left: 10px;
-    padding-top: 5px;
 }
 
-.landing-page .intro-text {
-    font-size: 37px;
+.landing-page .intro {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-left: 10px;
     position: absolute; /* Position it absolutely */
-    bottom: 30px; /* Place at bottom of container */
     background-color: #3d3b38; /* Match the background color */
     margin: 0; /* Remove any default margins */
     width: 100%; /* Make it full width */
@@ -236,20 +229,57 @@ a {
     overflow: hidden; /* Hide overflow content */
 }
 
-.top {
-    background-color: #fffff5;
-    padding-top: 100px;
+
+.landing-page .intro {
+    top: 60px;
 }
 
-
-.line {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em; /* optional spacing between lines */
+/* ----------------------- */
+.landing-page .intro .one{
+    font-size: 40px;
+    color: #000000;
 }
 
-.intro small {
-    font-size: 0.25em; /* adjust smaller font size as needed */
-    opacity: 0.9; /* optional: slight transparency */
-    line-height: 1;
+.landing-page .intro .one {
+    display: block;
+    max-width: 69%; /* or set a specific width */
 }
+/* ----------------------- */
+
+.landing-page .intro .two{
+    font-size: 40px;
+    color: #000000;
+}
+
+.landing-page .intro .two {
+    display: block;
+    max-width: 77%; /* or set a specific width */
+}
+
+/* ----------------------- */
+.landing-page .intro .three {
+    font-size: 20px;
+    white-space: normal !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    color: #000000;
+}
+
+.landing-page .intro .three {
+    display: block;
+    max-width: 48%; /* or set a specific width */
+}
+.landing-page .intro .three {
+    border: 1px solid #000000;
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+
+.landing-page .footer {
+    padding-bottom: 100px;
+}
+
+.spacing{
+    padding-bottom: 500px;
+}
+
