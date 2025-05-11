@@ -50,10 +50,21 @@ header nav {
     position: relative; /* Ensures absolute positioning works correctly */
 }
 
+.hero {
+    flex-direction: row;
+    gap: 2rem; /* Optional spacing */
+    margin: 0;
+    padding: 0;
+}
+
 .hero .left, .hero .right {
     flex: 1;
     position: relative;
     width: 50%; /* Ensures each side takes up half the screen */
+}
+
+body {
+    overflow-x: hidden;
 }
 
 .hero .left {
@@ -128,6 +139,17 @@ header nav {
 .img-container {
     width: auto;
     height: fill;
+}
+
+.img-container img {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .img-container-left{
