@@ -48,24 +48,16 @@
                 <div><a href="personal.html" class="slide-button" id="btn-personal">Learn More</a></div>
             </div>
         </div>        
+
+        <div class="green-box"></div>
     </div>
     
     <div class="slider">
         <div class="slide" id="slide-1"> </div>
-        <div class="white-space"></div>
-
         <div class="slide" id="slide-2"></div>
-        <div class="white-space"></div>
-
         <div class="slide" id="slide-3"></div>
-        <div class="white-space"></div>
-
         <div class="slide" id="slide-4"></div>
-        <div class="white-space"></div>
-
         <div class="slide" id="slide-5"></div>
-        <div class="white-space"></div>
-
     </div>
 
 
@@ -395,6 +387,19 @@ function hideSlide(index, onComplete) {
             restrictionSign.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+
+
+
+
+// GREEN BOX DRAFT
+        const greenBox = document.querySelector('.green-box');
+
+        // Resize after 1 second
+        setTimeout(() => {
+        greenBox.style.width = '150px';
+        greenBox.style.height = '300px';
+        }, 1000);
+
 
     </script>
     </body>
