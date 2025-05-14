@@ -139,63 +139,84 @@
       }
 
       function createSlidesAndNav() {
-        titles.forEach((_, i) => {
-          const navItemWrapper = document.createElement("div");
-          navItemWrapper.classList.add("nav-item-wrapper");
-          if (i === 0) navItemWrapper.classList.add("active");
+      titles.forEach((_, i) => {
+        const navItemWrapper = document.createElement("div");
+        navItemWrapper.classList.add("nav-item-wrapper");
+        if (i === 0) navItemWrapper.classList.add("active");
 
-          const navItem = document.createElement("div");
-          navItem.classList.add("nav-item");
-          navItemWrapper.appendChild(navItem);
-          sliderNav.appendChild(navItemWrapper);
+        const navItem = document.createElement("div");
+        navItem.classList.add("nav-item");
+        navItemWrapper.appendChild(navItem);
+        sliderNav.appendChild(navItemWrapper);
 
-          navItemWrapper.addEventListener("click", () => handleNavClick(i));
+        navItemWrapper.addEventListener("click", () => handleNavClick(i));
 
-          const slide = document.createElement("div");
-          slide.classList.add("slide");
-          if (i === 0) slide.classList.add("active");
+        const slide = document.createElement("div");
+        slide.classList.add("slide");
+        if (i === 0) slide.classList.add("active");
 
-          const img = document.createElement("img");
-          img.src = ""; // Replace with your image
-          img.alt = `Slide ${i}`;
-          slide.appendChild(img);
-
-          slidesContainer.appendChild(slide);
-        });
-      }
+        // Create image container div
+        const imgContainer = document.createElement("div");
+        imgContainer.classList.add("slide-img-container");
+        
+        const img = document.createElement("img");
+        img.src = `image${i+1}.jpg`; // Replace with your image paths
+        img.alt = `Slide ${i}`;
+        img.style.opacity = i === 0 ? "1" : "0"; // Only show first image initially
+        imgContainer.appendChild(img);
+        
+        slide.appendChild(imgContainer);
+        slidesContainer.appendChild(slide);
+      });
+    }
 
       function handleNavClick(index) {
-        document.querySelectorAll(".nav-item-wrapper").forEach(nav => nav.classList.remove("active"));
-        document.querySelectorAll(".nav-item-wrapper")[index].classList.add("active");
+      document.querySelectorAll(".nav-item-wrapper").forEach(nav => nav.classList.remove("active"));
+      document.querySelectorAll(".nav-item-wrapper")[index].classList.add("active");
 
-        gsap.to(slidesContainer, {
-          x: `-${index * 100}vw`,
-          duration: ANIMATION_DURATION,
-          ease: "hop"
-        });
+      gsap.to(slidesContainer, {
+        x: '-${index * 100}vw',
+        duration: ANIMATION_DURATION,
+        ease: "hop"
+      });
 
-        const newColor = getRandomColor();
-        gsap.to(bgOverlay, {
-          backgroundColor: newColor,
-          duration: ANIMATION_DURATION,
-          ease: "hop"
-        });
+      const newColor = getRandomColor();
+      gsap.to(bgOverlay, {
+        backgroundColor: newColor,
+        duration: ANIMATION_DURATION,
+        ease: "hop"
+      });
 
-        updateTitle(index);
+      updateTitle(index);
 
-        const img = slidesContainer.children[index].querySelector("img");
-        const direction = index > currentIndex ? 700 : -50;
-        gsap.set(img, { x: direction, opacity: 0 });
-
-        currentIndex = index;
-
+      // Hide all images first
+      document.querySelectorAll(".slide-img-container img").forEach(img => {
         gsap.to(img, {
-          x: 0,
-          opacity: 1,
-          duration: ANIMATION_DURATION,
-          ease: "hop"
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.out"
         });
-      }
+      });
+      
+      // Get the current image to show
+      const currentSlide = slidesContainer.children[index];
+      const img = currentSlide.querySelector(".slide-img-container img");
+      
+      // Set initial position for animation
+      const direction = index > currentIndex ? 100 : -100; // Coming from right if moving forward
+      gsap.set(img, { x: direction, opacity: 0 });
+
+      currentIndex = index;
+
+      // Animate the image
+      gsap.to(img, {
+        x: 0,
+        opacity: 1,
+        duration: ANIMATION_DURATION,
+        ease: "hop",
+        delay: 0.2 // Small delay to ensure previous images fade out first
+      });
+    }
 
       const initialColor = getRandomColor();
       gsap.set(bgOverlay, { backgroundColor: initialColor });

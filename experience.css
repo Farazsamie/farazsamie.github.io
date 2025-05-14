@@ -105,14 +105,15 @@ footer a#title {
 }
 
 .slide {
-    flex: 0 0 100vw;
-    width: 100vw;
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 0 0 100vw;
+  width: 100vw;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 
 .slide {
     width: 50%;
@@ -344,25 +345,40 @@ svg {
 
 
 .slide {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 0 5vw;
+  flex: 0 0 100vw;
+  width: 100vw;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .slide-img-container {
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  position: absolute;
+  right: 40px; /* Position on right side */
+  height: 500px; /* Adjust height as needed */
+  width: 300px; /* Adjust width as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Make sure image is above background */
 }
 
 .slide-img-container img {
-    height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    object-position: right;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: opacity 0.5s ease; /* Smooth transition for opacity changes */
 }
+
+.slide-title, .slide-description, .slide-BP1, .slide-BP2 {
+  max-width: calc(100% - 50px); /* Leave space for image on right */
+  position: relative;
+  z-index: 2;
+}
+
+
+
 
 #restriction-sign {
     position: fixed;
