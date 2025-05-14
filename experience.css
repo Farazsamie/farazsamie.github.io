@@ -326,7 +326,6 @@ a:hover {
     }
 }
 
-
 svg {
     position: fixed;
     top: 0;
@@ -341,8 +340,6 @@ svg {
     stroke-width: 0;
     fill: #2926244d;
 }
-
-
 
 .slide {
   flex: 0 0 100vw;
@@ -376,9 +373,6 @@ svg {
   position: relative;
   z-index: 2;
 }
-
-
-
 
 #restriction-sign {
     position: fixed;
