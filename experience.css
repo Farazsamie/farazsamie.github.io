@@ -118,7 +118,7 @@ footer a#title {
 .slide {
     width: 50%;
     height: 50%;
-    opacity: 0.15;
+
     position: absolute;
     left: 0;
 }
@@ -352,12 +352,13 @@ svg {
 
 .slide-img-container {
   position: absolute;
-  right: 40px; /* Position on right side */
-  height: 500px; /* Adjust height as needed */
+  top: 32.5%;
+  right: 75px; /* Position on right side */
+  height: 250px; /* Adjust height as needed */
   width: 300px; /* Adjust width as needed */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 1; /* Make sure image is above background */
 }
 
