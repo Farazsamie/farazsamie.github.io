@@ -11,12 +11,6 @@ html, body {
     font-family: "PP Supply Sans";
 }
 
-img {
-    width: 650px;
-    height: 700px;
-    object-fit: cover;
-}
- 
 /**/
 
 .nav {
@@ -93,7 +87,7 @@ body {
 .title-3, .text-3,
 .title-4, .text-4 {
     position: absolute;
-    left: 51%; /* Move text container to the middle */
+    left: 52%; /* Move text container to the middle */
 }
 
 .title {
@@ -136,20 +130,21 @@ body {
     height: 100%;
 }
 
-.img-container {
-    width: auto;
-    height: fill;
-}
 
 .img-container img {
     margin: 0;
     padding: 0;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+.img-container img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.hero {
+  margin-bottom: 100px; /* Add spacing between sections */
 }
 
 .img-container-left{
@@ -165,14 +160,46 @@ img {
     transition: opacity 0.25s, transform 0.25s;
 }
 
-.col:nth-child(1) {
-    flex: 3;
-    display: flex;
-    justify-content: flex-end;
+.col img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-.col:nth-child(2) {
-    flex: 5;
+.img-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.hero {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.hero .img-container {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero .img-container img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .img-container.left img {
@@ -192,17 +219,6 @@ svg {
     pointer-events: none;
     z-index: 1000;
 }
-
-.trail {
-    stroke-width: 0;
-    fill: #2926244d;
-}
-
-a:hover {
-    color: #ff5733; /* Example hover color */
-    transition: color 0.3s ease;
-}
-
 
 .text-1{
     padding-right: 15px;
@@ -239,10 +255,10 @@ a:hover {
 }
 
 a {
-    color: rgb(0, 0, 0);        /* Sets the text color to blue */
+    color: #000000;        /* Sets the text color to blue */
     text-decoration: none; /* Removes the underline */
   }
   
   a:hover {
-    color: rgb(81, 71, 71);         /* Changes the color to red when hovered */
+    color: #ff5733;         /* Changes the color to red when hovered */
   }
