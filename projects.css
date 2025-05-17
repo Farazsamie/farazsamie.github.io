@@ -274,11 +274,6 @@ svg {
     z-index: 1000;
 }
 
-.trail {
-    stroke-width: 0;
-    fill: #2926244d;
-}
-
 .slide-title-row .word {
     margin-right: 1.5em;
     display: inline-block;
