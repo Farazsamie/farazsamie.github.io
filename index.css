@@ -294,12 +294,12 @@ a {
 
 
 .green-box {
-  position: absolute; /* or 'fixed' if you want it to stay on screen during scroll */
+  position: fixed; /* or 'fixed' if you want it to stay on screen during scroll */
   top: 8%;            /* 15% from the top of the parent or viewport */
   left: 2.5%;          /* 15% from the right of the parent or viewport */
   width: 60px;
   height: 200px;
   background-color: #4f944fda;
-
-transition: width 0.3s ease, height 0.3s ease; /* animate size */
+  transition: width 1s ease, height 1s ease;
+  z-index: 9999; /* make sure it’s not hidden behind other elements */
 }

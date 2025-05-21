@@ -393,13 +393,22 @@ function hideSlide(index, onComplete) {
 
 
 // GREEN BOX DRAFT
-        const greenBox = document.querySelector('.green-box');
+const greenBox = document.querySelector('.green-box');
 
-        // Resize after 1 second
-        setTimeout(() => {
-        greenBox.style.width = '150px';
-        greenBox.style.height = '300px';
-        }, 1000);
+    function resizeBox() {
+      const newWidth = 100 + Math.floor(Math.random() * 100);  // 100–200px
+      const newHeight = 100 + Math.floor(Math.random() * 100); // 100–200px
+      greenBox.style.width = `${newWidth}px`;
+      greenBox.style.height = `${newHeight}px`;
+    }
+
+    // Resize every 2 seconds
+    setInterval(resizeBox, 2000);
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const greenBox = document.querySelector('.green-box');
+
+});
 
 
     </script>
