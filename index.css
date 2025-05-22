@@ -295,11 +295,22 @@ a {
 
 .green-box {
   position: fixed; /* or 'fixed' if you want it to stay on screen during scroll */
-  top: 8%;            /* 15% from the top of the parent or viewport */
+  top: 5%;            /* 15% from the top of the parent or viewport */
   left: 2.5%;          /* 15% from the right of the parent or viewport */
-  width: 60px;
+  width: 50px;
   height: 200px;
   background-color: #4f944fda;
   transition: width 1s ease, height 1s ease;
   z-index: 9999; /* make sure it’s not hidden behind other elements */
+}
+
+.green-box-two{
+    position: fixed; /* or 'fixed' if you want it to stay on screen during scroll */
+    top: 5%;            /* 15% from the top of the parent or viewport */
+    left: 5.625%;          /* 15% from the right of the parent or viewport */
+    width: 50px;
+    height: 200px;
+    background-color: #4f944fda;
+    transition: width 1s ease, height 1s ease;
+    z-index: 9999; /* make sure it’s not hidden behind other elements */
 }

@@ -51,6 +51,8 @@
         </div>        
 
         <div class="green-box"></div>
+        <div class="green-box-two"></div>
+
     </div>
     
     <div class="slider">
@@ -139,6 +141,41 @@ gsap.to(".landing-page .intro-text", {
   onComplete: () => {
     document.querySelector(".landing-page .intro-text").style.display = "none";
   }
+});
+
+// GREEN BOX DRAFT
+document.addEventListener("DOMContentLoaded", () => {
+  const greenBox = document.querySelector('.green-box');
+
+  function resizeBox() {
+    const newHeight = 100 + Math.floor(Math.random() * 100); // 100–200px
+    greenBox.style.height = `${newHeight}px`;
+    // Width is fixed via CSS or set once
+  }
+
+  // Optionally fix the width once here
+  greenBox.style.width = '50px';
+
+  // Resize height every 2 seconds
+  setInterval(resizeBox, 999);
+});
+
+
+// GREEN BOX DRAFT TWO
+document.addEventListener("DOMContentLoaded", () => {
+  const greenBox = document.querySelector('.green-box-two');
+
+  function resizeBox() {
+    const newHeight = 100 + Math.floor(Math.random() * 100); // 100–200px
+    greenBox.style.height = `${newHeight}px`;
+    // Width is fixed via CSS or set once
+  }
+
+  // Optionally fix the width once here
+  greenBox.style.width = '50px';
+
+  // Resize height every 2 seconds
+  setInterval(resizeBox, 777);
 });
 
 
@@ -388,27 +425,6 @@ function hideSlide(index, onComplete) {
             restrictionSign.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-
-
-
-
-// GREEN BOX DRAFT
-const greenBox = document.querySelector('.green-box');
-
-    function resizeBox() {
-      const newWidth = 100 + Math.floor(Math.random() * 100);  // 100–200px
-      const newHeight = 100 + Math.floor(Math.random() * 100); // 100–200px
-      greenBox.style.width = `${newWidth}px`;
-      greenBox.style.height = `${newHeight}px`;
-    }
-
-    // Resize every 2 seconds
-    setInterval(resizeBox, 2000);
-
-    document.addEventListener("DOMContentLoaded", () => {
-  const greenBox = document.querySelector('.green-box');
-
-});
 
 
     </script>
