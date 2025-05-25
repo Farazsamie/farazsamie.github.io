@@ -52,6 +52,7 @@
 
         <div class="green-box"></div>
         <div class="green-box-two"></div>
+        <div class="green-box-three"></div>
 
     </div>
     
@@ -148,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const greenBox = document.querySelector('.green-box');
 
   function resizeBox() {
-    const newHeight = 100 + Math.floor(Math.random() * 100); // 100–200px
+    const newHeight = 50 + Math.floor(Math.random() * 200); // 100–200px
     greenBox.style.height = `${newHeight}px`;
     // Width is fixed via CSS or set once
   }
@@ -157,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
   greenBox.style.width = '50px';
 
   // Resize height every 2 seconds
-  setInterval(resizeBox, 999);
+  setInterval(resizeBox, 888);
 });
 
 
@@ -166,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const greenBox = document.querySelector('.green-box-two');
 
   function resizeBox() {
-    const newHeight = 100 + Math.floor(Math.random() * 100); // 100–200px
+    const newHeight = 50 + Math.floor(Math.random() * 200); // 100–200px
     greenBox.style.height = `${newHeight}px`;
     // Width is fixed via CSS or set once
   }
@@ -175,7 +176,24 @@ document.addEventListener("DOMContentLoaded", () => {
   greenBox.style.width = '50px';
 
   // Resize height every 2 seconds
-  setInterval(resizeBox, 777);
+  setInterval(resizeBox, 666);
+});
+
+// GREEN BOX DRAFT THREE
+document.addEventListener("DOMContentLoaded", () => {
+  const greenBox = document.querySelector('.green-box-three');
+
+  function resizeBox() {
+    const newHeight = 50 + Math.floor(Math.random() * 200); // 100–200px
+    greenBox.style.height = `${newHeight}px`;
+    // Width is fixed via CSS or set once
+  }
+
+  // Optionally fix the width once here
+  greenBox.style.width = '50px';
+
+  // Resize height every 2 seconds
+  setInterval(resizeBox, 444);
 });
 
 
