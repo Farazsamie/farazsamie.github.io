@@ -445,6 +445,20 @@ function hideSlide(index, onComplete) {
         }
 
 
+
+
+        function checkScreenSize() {
+            const restrictionSign = document.getElementById('restriction-sign');
+            if (window.innerWidth < 1000 || window.innerWidth > 1600) {
+                restrictionSign.style.display = 'flex';
+            } else {
+                restrictionSign.style.display = 'none';
+            }
+        }
+        
+        window.addEventListener('resize', checkScreenSize);
+        window.addEventListener('load', checkScreenSize);
+
     </script>
     </body>
     </html> 
