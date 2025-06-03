@@ -319,7 +319,7 @@ a {
 .green-box-three{
     position: fixed; /* or 'fixed' if you want it to stay on screen during scroll */
     top: 5%;            /* 15% from the top of the parent or viewport */
-    left: 10%;          /* 15% from the right of the parent or viewport */
+    left: 9%;          /* 15% from the right of the parent or viewport */
     width: 50px;
     height: 200px;
     background-color: #4f944f;
