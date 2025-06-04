@@ -10,20 +10,21 @@ html, body {
 }
 
 .container {
-    width: 100vw;
+    width: 100vw;  /* Change from 150vh to 100vw */
     height: 100vh;
     overflow: hidden;
 }
 
 nav, footer {
     position: fixed;
-    width: calc(100vw - 4em);  /* Full width minus some padding */
-    left: 2em;  /* Center it with left margin */
-    padding: 2.75em;
+    width: 100vw;
+    left: 0;  /* Start from the very left edge */
+    padding: 2.75em;  /* Keep your original padding */
     display: flex;
     justify-content: space-between;
     z-index: 2;
 }
+
  
 nav {
     top: 0;
