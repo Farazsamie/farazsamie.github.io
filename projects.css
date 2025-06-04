@@ -15,7 +15,24 @@ html, body {
     overflow: hidden;
 }
 
-nav, footer {
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000; 
+}
+
+header nav {
+    display: flex;
+    gap: 1300px;
+    padding-top: 10px;
+}
+
+
+footer {
     position: fixed;
     width: 100vw;
     left: 0;  /* Start from the very left edge */
@@ -23,10 +40,6 @@ nav, footer {
     display: flex;
     justify-content: space-between;
     z-index: 2;
-}
-
-nav {
-    top: 0;
 }
 
 footer {
@@ -246,17 +259,18 @@ a:hover {
     will-change: transform; /* Optimizes the rendering of animations */
 }
 
-/* More responsive adjustments */
+/* More responsive adjustments 
 @media (max-width: 768px) {
     .nav {
-        flex-direction: column; /* Stacks nav links vertically on small screens */
-        padding: 1.5em; /* Adjust padding for smaller devices */
+        flex-direction: column; 
+        padding: 1.5em; 
     }
 
     footer {
-        padding: 1.5em; /* Same as above for footer */
+        padding: 1.5em; 
     }
 }
+    */
 
 svg {
     position: fixed;
