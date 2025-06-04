@@ -25,7 +25,6 @@ nav, footer {
     z-index: 2;
 }
 
- 
 nav {
     top: 0;
 }
@@ -55,7 +54,7 @@ footer a#title {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(120, 80, 50); /* Set initial color to avoid gray flash */;
+    background-color: #785032; /* Set initial color to avoid gray flash */;
     filter: brightness(0.75);
     opacity: 0.5;
 }
@@ -147,7 +146,6 @@ img {
     display: inline-block;
 }
 
-
 .slide-title-row.title {
     font-size: 10px;
     font-weight: bold;
@@ -184,7 +182,6 @@ img {
     font-size: inherit; /* Ensures it inherits from the parent */
     margin: 0 2px; /* Add spacing between letters */
 }
-
 
 .slide-title-row:nth-child(2) {
     position: relative;
@@ -226,8 +223,6 @@ a:hover {
         height: 75%;
     }
 
-
-
     .slide-title-row.title {
         position: relative;
         top: 20px; /* Moves the title down */
@@ -239,14 +234,11 @@ a:hover {
         top: 40px; /* Moves the position lower */
         left: 30px; /* Moves the position to the right */
     }
-    
 
     .letter span {
         font-size: 100px; 
     }
 }
-
-/* Existing CSS code remains unchanged... */
 
 /* Adding will-change for potential performance optimization */
 .nav-item-wrapper,
@@ -285,7 +277,6 @@ svg {
     display: inline-block;
     margin: 0 2px;
 }
-
 
 /* Style for the Learn More link */
 .slide-link a {
