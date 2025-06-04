@@ -15,36 +15,19 @@ html, body {
     overflow: hidden;
 }
 
-.nav {
+
+nav, footer {
     position: fixed;
-    top: 0;
-    width: 100vw;
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    z-index: 1000; 
-}
-
-header nav {
-    display: flex;
-    gap: 1300px;
-    padding-top: 10px;
-}
-
-
-footer {
-    position: fixed;
-    width: 100vw;
-    left: 0;  /* Start from the very left edge */
-    padding: 2.75em;  /* Keep your original padding */
+    width: 190vh;
+    padding: 2.75em;
     display: flex;
     justify-content: space-between;
     z-index: 2;
 }
-
-footer {
-    bottom: 0%;
-    font-size: 13.5px;
+ 
+nav {
+    top: 0;
+    position:fixed;
 }
 
 a {
@@ -259,7 +242,7 @@ a:hover {
     will-change: transform; /* Optimizes the rendering of animations */
 }
 
-/* More responsive adjustments 
+/* More responsive adjustments */ 
 @media (max-width: 768px) {
     .nav {
         flex-direction: column; 
@@ -270,7 +253,7 @@ a:hover {
         padding: 1.5em; 
     }
 }
-    */
+
 
 svg {
     position: fixed;
