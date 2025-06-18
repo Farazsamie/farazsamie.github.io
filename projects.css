@@ -15,8 +15,7 @@ html, body {
     overflow: hidden;
 }
 
-
-nav, footer {
+nav {
     position: fixed;
     width: 190vh;
     padding: 2.75em;
@@ -24,11 +23,37 @@ nav, footer {
     justify-content: space-between;
     z-index: 2;
 }
+
+.title-wrapper {
+    padding-top: 80px; /* Adjust as needed */
+    padding-left: 30px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1em 2.75em;
+    text-align: right; /* Aligns text inside to the right */
+    right: 5%;
+    z-index: 2;
+    background: transparent;
+}
+
  
 nav {
+    position: fixed;
     top: 0;
-    position:fixed;
+    left: 0;
+    width: 100vw; /* Use full viewport width */
+    padding: 2.75em;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    background: transparent; /* Optional */
+    box-sizing: border-box;
 }
+
 
 a {
     text-decoration: none;
@@ -130,7 +155,18 @@ img {
 
 .slide-description {
     padding-left: 40px;
+    padding-right: 20px;
+    max-width: 90vw;
 }
+
+.slide-description p {
+    max-width: 90%;
+    word-wrap: break-word;
+    white-space: normal;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
 
 .slide-link {
     padding-left: 40px;
