@@ -130,6 +130,9 @@ body {
     height: 100%;
 }
 
+.welcome-image{
+    width:115%;
+}
 
 .img-container img {
     margin: 0;
