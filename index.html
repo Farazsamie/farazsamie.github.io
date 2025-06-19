@@ -11,10 +11,6 @@
 
     <div class="landing-page">
 
-        <div class="img">
-            <img src="" alt="">    
-        </div>
-
         <div class="intro">
             <p class="one">Welcome To My Portfolio</p>
             <p class="two">My Name's Faraz</p>
@@ -95,7 +91,7 @@
 
     /* page loading */
     gsap.from(".slider-content", {
-    delay: 2.5,
+    delay: 1.25,
     duration: 2.5,
     clipPath: "inset(0 100% 0 0)",
     ease: "power4.inOut",
@@ -103,15 +99,6 @@
         amount: 0.5,
     }
 });
-
- 
-gsap.to([".img"], {
-    delay: 2.5,
-    duration: 2,
-    xPercent: 100,
-    ease: "power4.inOut"
-});
-
 
 gsap.to("header h1, header h2", {
     delay: 2,
@@ -122,14 +109,14 @@ gsap.to("header h1, header h2", {
 
 // Animate the <p> to disappear to the right
 gsap.to(".landing-page p", {
-    delay: 2.5 ,  // Adjust the delay if needed
+    delay: 1.25 ,  // Adjust the delay if needed
     duration: 2.5 ,  // Adjust the duration for the animation
     xPercent: 100,  // Move the text completely out of view to the right
     ease: "power4.inOut",
 });
 
 gsap.to(".landing-page p1", {
-    delay: 2.5 ,  // Adjust the delay if needed
+    delay: 1.25 ,  // Adjust the delay if needed
     duration: 2.5 ,  // Adjust the duration for the animation
     xPercent: 100,  // Move the text completely out of view to the right
     ease: "power4.inOut",
