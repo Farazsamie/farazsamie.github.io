@@ -15,7 +15,17 @@ html, body {
     overflow: hidden;
 }
 
-nav, footer {
+footer {
+    position: fixed;
+    font-size: 14px;
+    bottom: 10%;
+    width: 100%;
+    padding: 1em 2.75em;
+    z-index: 2;
+    background: transparent;
+}
+ 
+nav {
     position: fixed;
     width: 190vh;
     padding: 2.75em;
@@ -23,15 +33,13 @@ nav, footer {
     justify-content: space-between;
     z-index: 2;
 }
- 
-nav {
-    top: 0;
-    position:fixed;
-}
 
-footer {
-    bottom: 0%;
-    font-size: 14px;
+.slide-description,
+.slide-BP1,
+.slide-BP2 {
+  margin-right: 350px; /* Add space so text doesn't go under image */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 a {
