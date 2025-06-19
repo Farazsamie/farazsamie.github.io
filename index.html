@@ -20,6 +20,11 @@
                 will transform these industries.
             </p>
         </div>
+
+        <div class="img">
+            <img src="images/loading1.jpg" alt="">    
+            </div>
+
             <div class = "footer">
             <p>Faraz Samie</p> 
             <p>Professional Portfolio | 2025</p> 
@@ -88,7 +93,6 @@
 
 
     /* page loading */
-
     gsap.from(".slider-content", {
     delay: 2.5,
     duration: 2.5,
@@ -99,14 +103,12 @@
     }
 });
 
-gsap.from("img", {
-    delay: 1.5,
+
+gsap.to([".img"], {
+    delay: 2.5,
     duration: 2,
-    scale: 2,
-    ease: "power4.inOut",
-    stagger: {
-        amount: 0.25,
-    },
+    xPercent: 100,
+    ease: "power4.inOut"
 });
 
 
