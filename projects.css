@@ -25,12 +25,13 @@ nav {
 }
 
 .title-wrapper {
-    padding-top: 80px; /* Adjust as needed */
+    padding-top: 60px; /* Adjust as needed */
     padding-left: 30px;
 }
 
 footer {
     position: fixed;
+    font-weight: bold;
     bottom: 0;
     width: 100%;
     padding: 1em 2.75em;
@@ -145,7 +146,7 @@ img {
 
 /* Style the slide title container */
 .slide-title {
-    padding-top: 100px;
+    padding-top: 50px;
     text-align: left;
     padding-left: 35px;
     margin: 20px 0;
