@@ -219,7 +219,7 @@ img {
     .slide-title-row.title {
         font-size: 11px;
         font-weight: bold;
-        margin-bottom: 30px; /* Increased spacing between title and subtitle */
+        margin-bottom: 2.5px; /* Increased spacing between title and subtitle */
         display: block; /* Ensure title and subtitle stack vertically */
     }
 
