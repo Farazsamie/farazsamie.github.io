@@ -37,7 +37,7 @@ nav {
 .slide-description,
 .slide-BP1,
 .slide-BP2 {
-  margin-right: 150px; /* Add space so text doesn't go under image */
+  margin-right: 150px; 
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
