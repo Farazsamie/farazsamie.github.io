@@ -36,9 +36,8 @@ footer {
     font-weight:500;
     bottom: 2.5%;
     width: 100%;
-    padding: 1em 2.75em;
     text-align: left; /* Aligns text inside to the right */
-    left:5%;
+    left:2.5%;
     z-index: 2;
     background: transparent;
 }
