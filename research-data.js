@@ -1,11 +1,19 @@
 const data = [
 
     {
-        itemName: "Texas Stock Exchange | Market Operations Analysis ",
+        itemName: "Texas Stock Exchange: Market Operations Analysis ",
         itemDescription: "Category: Research Analysis",
         itemCopy: "The paper examines the foundational systems supporting the TXSE, with a particular focus on trade support infrastructure, clearing and settlement processes, and regulatory compliance mechanisms. Leveraging market microstructure theory, execution analysis, and post-trade modeling, the authors develop an empirically informed framework designed to optimize TXSE’s performance and competitiveness. The study integrates Python-based monitoring tools and operational optimization models to evaluate TXSE’s capacity to handle high-volume trading environments. Set against the backdrop of shifting corporate geographies and evolving capital markets, this research makes a timely contribution to the discourse on regional stock exchanges and market infrastructure innovation. This overview aims to encapsulate the study’s objectives, methodological strategies, and principal insights, situating TXSE’s operational blueprint within the broader landscape of U.S. financial market structure and regulatory evolution.", // Optional copy for extra text
         itemLink: "images/RP2P.pdf",
         itemImg: "images/RP2IMG.png"
+    },
+
+    {
+        itemName: "Taiwan Semiconductor Manufacturing Company: Financial Cost Optimization ",
+        itemDescription: "Category: Research Analysis",
+        itemCopy: "This report examines cost optimization opportunities during the critical ramp up phase of Taiwan Semiconductor Manufacturing Company’s (TSMC) Arizona N4 fabrication facility. By presenting com- prehensive financial modeling and scenario analysis, we can identify key cost drivers including under- utilized capacity, which represents unused production capabilities, elevated U.S. labor costs, and yield optimization challenges which restricts the maximizing the output. Our driver based forecast model which link operational activities to financial outcomes ultimately demonstrates potential cost reductions of 15-25% through strategic interventions including automation investments, workforce optimization, and enhanced yield management. The analysis provides actionable recommendations for financial analysts to create measurable value.",
+        itemLink: "images/RP3P.pdf",
+        itemImg: "images/RP3IMG.png"
     },
 
     {
