@@ -409,39 +409,23 @@ function hideSlide(index, onComplete) {
 
 
     function checkScreenSize() {
-        const restrictionSign = document.getElementById('restriction-sign');
+  const width = window.innerWidth;
+  const restrictionSign = document.getElementById('restriction-sign');
 
-        const width = window.innerWidth;
+  console.log("Window width:", width); // Log for debugging
 
-        // Delay check by 3 seconds on load only
-        if (!checkScreenSize.hasRunOnce) {
-        checkScreenSize.hasRunOnce = true;
+  if (width < 768) {
+    restrictionSign.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  } else {
+    restrictionSign.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+}
 
-        setTimeout(() => {
-            if (width < 500 || width > 1600) {
-            restrictionSign.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            } else {
-            restrictionSign.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            }
-        }, 3000);
-        } else {
-        // Handle resize instantly
-        if (width < 500 || width > 1600) {
-            restrictionSign.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        } else {
-            restrictionSign.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        }
-    }
+window.addEventListener('load', checkScreenSize);
+window.addEventListener('resize', checkScreenSize);
 
-    // Only run once on load
-    window.addEventListener('load', checkScreenSize);
-    // Run instantly on resize
-    window.addEventListener('resize', checkScreenSize);
 
 
 </script>
