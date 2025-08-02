@@ -427,23 +427,23 @@ function hideSlide(index, onComplete) {
     window.addEventListener('resize', checksmallscreen);
 
 
-    function checkbigscreen() {
-    const width = window.innerWidth;
-    const restrictionSign = document.getElementById('big-sign');
+    //function checkbigscreen() {
+    //const width = window.innerWidth;
+    //const restrictionSign = document.getElementById('big-sign');
 
-    console.log("Window width:", width); // Log for debugging
+    //console.log("Window width:", width); // Log for debugging
 
-    if (width > 1600) {
-        restrictionSign.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    } else {
-        restrictionSign.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-    }
+    //if (width > 1600) {
+        //restrictionSign.style.display = 'flex';
+        //document.body.style.overflow = 'hidden';
+    //} else {
+        //restrictionSign.style.display = 'none';
+        //document.body.style.overflow = 'auto';
+    //}
+    //}
 
-    window.addEventListener('load', checkbigscreen);
-    window.addEventListener('resize', checkbigscreen);
+    //window.addEventListener('load', checkbigscreen);
+    //window.addEventListener('resize', checkbigscreen);
 
 
 </script>
