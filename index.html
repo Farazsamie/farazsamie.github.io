@@ -409,23 +409,41 @@ function hideSlide(index, onComplete) {
 
 
     function checkScreenSize() {
-  const width = window.innerWidth;
-  const restrictionSign = document.getElementById('restriction-sign');
+    const width = window.innerWidth;
+    const restrictionSign = document.getElementById('restriction-sign');
 
-  console.log("Window width:", width); // Log for debugging
+    console.log("Window width:", width); // Log for debugging
 
-  if (width < 768) {
-    restrictionSign.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  } else {
-    restrictionSign.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-}
+    if (width < 800) {
+        restrictionSign.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    } else {
+        restrictionSign.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    }
 
-window.addEventListener('load', checkScreenSize);
-window.addEventListener('resize', checkScreenSize);
+    window.addEventListener('load', checkScreenSize);
+    window.addEventListener('resize', checkScreenSize);
 
+
+    function checkScreenSize() {
+    const width = window.innerWidth;
+    const restrictionSign = document.getElementById('restriction-sign-1');
+
+    console.log("Window width:", width); // Log for debugging
+
+    if (width < 800) {
+        restrictionSign.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    } else {
+        restrictionSign.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    }
+
+    window.addEventListener('load', checkScreenSize);
+    window.addEventListener('resize', checkScreenSize);
 
 
 </script>
