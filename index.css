@@ -187,7 +187,7 @@ a {
     z-index: 1000;
 }
 
-#restriction-sign {
+#small-sign {
     position: fixed;
     top: 0;
     left: 0;
@@ -207,7 +207,7 @@ a {
 }
 
 
-#restriction-sign-1 {
+#big-sign {
     position: fixed;
     top: 0;
     left: 0;
