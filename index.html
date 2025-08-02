@@ -16,6 +16,12 @@
             <p class="two">My Name's Faraz</p>
             <p class="three">With foundational background in data analytics, finance and economics, </p>
             <p class="four">I’m a continuous learner intrigued by how emerging technologies will transform these industries.</p> 
+
+            <div class="intro-box-second">
+                <div class="intro-box-4"></div>
+                <div class="intro-box-5"></div>
+                <div class="intro-box-6"></div>
+            </div>
         </div>
 
         <div class = "footer">
@@ -129,6 +135,57 @@ gsap.to(".landing-page .intro-text", {
     document.querySelector(".landing-page .intro-text").style.display = "none";
   }
 });
+
+
+
+gsap.to(".intro-box-1", {
+    delay: 0.75,
+    duration: 1.25,
+    xPercent: 100, // slides it out to the right
+    ease: "power4.inOut",
+});
+
+gsap.to(".intro-box-2", {
+    delay: 1.25,
+    duration: 1.25,
+    xPercent: 100,
+    ease: "power4.inOut",
+});
+
+gsap.to(".intro-box-3", {
+    delay: 1.3,
+    duration: 2,
+    xPercent: 100,
+    ease: "power4.inOut",
+});
+
+
+
+gsap.to(".intro-box-4", {
+    delay: 0.75,
+    duration: 1.25,
+    xPercent: 100, // slides it out to the right
+    ease: "power4.inOut",
+});
+
+gsap.to(".intro-box-5", {
+    delay: 1.25,
+    duration: 1.25,
+    xPercent: 100,
+    ease: "power4.inOut",
+});
+
+gsap.to(".intro-box-6", {
+    delay: 1.3,
+    duration: 2,
+    xPercent: 100,
+    ease: "power4.inOut",
+});
+
+
+
+
+
 
 // GREEN BOX DRAFT
 document.addEventListener("DOMContentLoaded", () => {
