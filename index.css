@@ -236,7 +236,7 @@ a {
     min-height: 100vh;
     }
 
-/* ----------------------- */
+/* ----------------------- *//* ----------------------- */
 .landing-page .intro .one{
     font-size: 40px;
     color: #000000;
@@ -259,24 +259,28 @@ a {
 }
 
 /* ----------------------- */
-.landing-page .intro .three {
-    font-size: 20px;
-    white-space: normal !important;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    color: #000000;
-    /*text-align: right;  This aligns the text to the right */
+.landing-page .intro .three{
+    font-size: 16px;
+    color: #000000; 
 }
 
 .landing-page .intro .three {
     display: block;
-    width: 48%; /* or set a specific width */
+    max-width: 62%; /* or set a specific width */
 }
-.landing-page .intro .three {
-    border: 1px solid #000000;
-    padding-bottom: 1px;
-    padding-top: 1px;
+/* ----------------------- */
+
+.landing-page .intro .four{
+    font-size: 16px;
+    color: #000000; 
 }
+
+.landing-page .intro .four {
+    display: block;
+    max-width: 50%; /* or set a specific width */
+}
+
+/* ----------------------- *//* ----------------------- */
 
 .landing-page .footer {
     color: #000000;
