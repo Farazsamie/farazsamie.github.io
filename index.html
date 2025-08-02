@@ -406,7 +406,7 @@ function hideSlide(index, onComplete) {
 
     function checkScreenSize() {
             const restrictionSign = document.getElementById('restriction-sign');
-            if (window.innerWidth < 500 || window.innerWidth > 1600) {
+            if (window.innerWidth < 200 || window.innerWidth > 1600) {
                 restrictionSign.style.display = 'flex';
             } else {
                 restrictionSign.style.display = 'none';
@@ -417,7 +417,7 @@ function hideSlide(index, onComplete) {
         window.addEventListener('load', checkScreenSize);
 });
 
-        if (window.innerWidth < 500 || window.innerWidth > 1600) {
+        if (window.innerWidth < 200 || window.innerWidth > 1600) {
             restrictionSign.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         } else {
@@ -430,7 +430,7 @@ function hideSlide(index, onComplete) {
 
         function checkScreenSize() {
             const restrictionSign = document.getElementById('restriction-sign');
-            if (window.innerWidth < 500 || window.innerWidth > 1600) {
+            if (window.innerWidth < 200 || window.innerWidth > 1600) {
                 restrictionSign.style.display = 'flex';
             } else {
                 restrictionSign.style.display = 'none';
