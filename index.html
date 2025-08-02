@@ -408,13 +408,11 @@ function hideSlide(index, onComplete) {
 });
 
 
-    function checkSmallScreen() {
-    const width = window.innerWidth;
-    const restrictionSign = document.getElementById('small-sign');
+    function checkDevice() {
+    const isPhone = window.matchMedia("(max-width: 767px)").matches;
+    const restrictionSign = document.getElementById('restriction-sign');
 
-    console.log("Window width:", width); // Log for debugging
-
-    if (width < 768) {
+    if (isPhone) {
         restrictionSign.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     } else {
@@ -423,8 +421,9 @@ function hideSlide(index, onComplete) {
     }
     }
 
-    window.addEventListener('load', checksmallscreen);
-    window.addEventListener('resize', checksmallscreen);
+    window.addEventListener('load', checkDevice);
+    window.addEventListener('resize', checkDevice);
+
 
 
     //function checkbigscreen() {
