@@ -370,16 +370,16 @@ a {
 
 .intro-box-1 {
     right: 0;
-    width: 10%; 
-    background-color: #23201e;
+    width: 4%; 
+    background-color: #3d3b38;
     z-index: 3;
     height: 68.5%;
 }
 
 .intro-box-2 {
     right: 0;
-    width: 25%;
-    background-color: #534e4a;
+    width: 30%;
+    background-color: #3f3d3a;
     z-index: 2;
     height: 68.5%;
 
@@ -387,8 +387,8 @@ a {
 
 .intro-box-3 {
     right: 0;
-    width: 40%;
-    background-color: #413d3a;
+    width: 45%;
+    background-color: #403e3b;
     z-index: 1;
     height: 68.5%;
 
@@ -397,7 +397,7 @@ a {
 
 
 
-.intro-box-4,
+
 .intro-box-5,
 .intro-box-6 {
     position: absolute;
@@ -407,29 +407,20 @@ a {
     border-color: #3d3b38;
 }
 
-.intro-box-4 {
-    right: 0;
-    width: 15%; 
-    background-color: #e0dfdf;
-    z-index: 3;
-    height: 70%; 
-    top: 0%;
-}
-
 .intro-box-5 {
     right: 0;
-    width: 30%;
+    width: 25%;
     background-color: #f5f5f5;
     z-index: 2;
-    height: 70%;
+    height: 100%;
     top: 0%;
 }
 
 .intro-box-6 {
     right: 0;
     width: 45%;
-    background-color: #e5e4e4;
+    background-color: #f5f5ed;
     z-index: 1;
-    height: 70%;
+    height: 100%;
     top: 0%;
 }
