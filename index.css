@@ -289,6 +289,7 @@ a {
 .landing-page .intro .three {
     display: block;
     max-width: 62%; /* or set a specific width */
+    padding-top: 15px;
 }
 /* ----------------------- */
 
@@ -325,7 +326,7 @@ a {
 
 .green-box-group {
     display: flex;
-    top: 5%;
+    padding-top: 4%;
     padding-left: 5%;
     position: relative; /* or absolute/fixed if needed */
     z-index: 9999;
@@ -335,9 +336,9 @@ a {
 .green-box,
 .green-box-two,
 .green-box-three {
-    width: 50px;
-    height: 200px;
-    transition: height 1s ease;
+    display: block;
+    transition: width 1s ease;
+    margin-bottom: 10px;
 }
 
 .green-box {
@@ -393,7 +394,6 @@ a {
     height: 68.5%;
 
 }
-
 
 
 
