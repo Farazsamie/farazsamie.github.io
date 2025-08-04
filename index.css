@@ -328,7 +328,7 @@ a {
     display: flex;
     padding-top: 4%;
     padding-left: 5%;
-    position: relative; /* or absolute/fixed if needed */
+    position: absolute; /* or absolute/fixed if needed */
     z-index: 9999;
     justify-content: flex-start; /* or center / space-between depending on layout needs */
 }
@@ -343,14 +343,17 @@ a {
 
 .green-box {
     background-color: #519672;
+    height: 4%;
 }
 
 .green-box-two {
     background-color: #52985b;
+    height: 8%;
 }
 
 .green-box-three {
     background-color: #4f944f;
+    height: 12%;
 }
 
 
@@ -361,25 +364,18 @@ a {
 
 
 
-.intro-box-1,
 .intro-box-2,
 .intro-box-3 {
     position: absolute;
     transition: height 1s ease;
     bottom: 0%;
-}
-
-.intro-box-1 {
-    right: 0;
-    width: 6%; 
-    background-color: #3d3b38;
-    z-index: 3;
-    height: 68.5%;
+    border-color: #0e0d0da0;
+    border-style: solid;
 }
 
 .intro-box-2 {
     right: 0;
-    width: 30%;
+    width: 10%;
     background-color: #3f3d3a;
     z-index: 2;
     height: 68.5%;
@@ -388,15 +384,12 @@ a {
 
 .intro-box-3 {
     right: 0;
-    width: 45%;
+    width: 40%;
     background-color: #403e3b;
     z-index: 1;
     height: 68.5%;
 
 }
-
-
-
 
 .intro-box-5,
 .intro-box-6 {
@@ -404,12 +397,13 @@ a {
     transition: height 1s ease;
     top: 0%;
     border: 1px ;
-    border-color: #3d3b38;
+    border-color: #0e0d0da0;
+    border-style: solid;
 }
 
 .intro-box-5 {
     right: 0;
-    width: 25%;
+    width: 10%;
     background-color: #f5f5f5;
     z-index: 2;
     height: 100%;
@@ -418,7 +412,7 @@ a {
 
 .intro-box-6 {
     right: 0;
-    width: 45%;
+    width: 40%;
     background-color: #f5f5ed;
     z-index: 1;
     height: 100%;
