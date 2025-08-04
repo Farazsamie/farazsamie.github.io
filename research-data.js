@@ -1,6 +1,14 @@
 const data = [
 
     {
+        itemName: "Bridgewater Associates: Forecasting Analysis ",
+        itemDescription: "Category: Forecasting Competition",
+        itemCopy: "", 
+        itemLink: "images/RP4P.pdf",
+        itemImg: ""
+    },
+
+    {
         itemName: "Texas Stock Exchange: Market Operations Analysis ",
         itemDescription: "Category: Research Analysis",
         itemCopy: "The paper examines the foundational systems supporting the TXSE, with a particular focus on trade support infrastructure, clearing and settlement processes, and regulatory compliance mechanisms. Leveraging market microstructure theory, execution analysis, and post-trade modeling, the authors develop an empirically informed framework designed to optimize TXSE’s performance and competitiveness. The study integrates Python-based monitoring tools and operational optimization models to evaluate TXSE’s capacity to handle high-volume trading environments. Set against the backdrop of shifting corporate geographies and evolving capital markets, this research makes a timely contribution to the discourse on regional stock exchanges and market infrastructure innovation. This overview aims to encapsulate the study’s objectives, methodological strategies, and principal insights, situating TXSE’s operational blueprint within the broader landscape of U.S. financial market structure and regulatory evolution.", // Optional copy for extra text
