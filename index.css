@@ -289,7 +289,7 @@ a {
 .landing-page .intro .three {
     display: block;
     max-width: 62%; /* or set a specific width */
-    padding-top: 15px;
+    padding-top: 25px;
 }
 /* ----------------------- */
 
@@ -361,6 +361,37 @@ a {
 
 
 
+.green-box-group-1 {
+    display: flex;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute; /* or absolute/fixed if needed */
+    z-index: 9999;
+    justify-content: flex-start; /* or center / space-between depending on layout needs */
+}
+
+.green-box-2,
+.green-box-two-2 {
+    display: block;
+    transition: width 1s ease;
+    margin-bottom: 10px;
+}
+
+.green-box-2 {
+    background-color: #519672;
+    height: 4%;
+}
+
+.green-box-two-2 {
+    background-color: #52985b;
+    height: 8%;
+}
+
+
+
+
+
+
 
 
 
@@ -375,7 +406,7 @@ a {
 
 .intro-box-2 {
     right: 0;
-    width: 10%;
+    width: 8%;
     background-color: #3f3d3a;
     z-index: 2;
     height: 68.5%;
@@ -384,7 +415,7 @@ a {
 
 .intro-box-3 {
     right: 0;
-    width: 40%;
+    width: 35%;
     background-color: #403e3b;
     z-index: 1;
     height: 68.5%;
@@ -403,7 +434,7 @@ a {
 
 .intro-box-5 {
     right: 0;
-    width: 10%;
+    width: 8%;
     background-color: #f5f5f5;
     z-index: 2;
     height: 100%;
@@ -412,7 +443,7 @@ a {
 
 .intro-box-6 {
     right: 0;
-    width: 40%;
+    width: 35%;
     background-color: #f5f5ed;
     z-index: 1;
     height: 100%;
