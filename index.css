@@ -452,8 +452,7 @@ a {
 
 
 
-/* Responsive adjustments 
-@media (min-width: ) {
+@media (min-width: 770) {
     .landing-page .intro .one{
         font-size: 20px;
     }
@@ -467,4 +466,3 @@ a {
     }
  
 } 
-*/
