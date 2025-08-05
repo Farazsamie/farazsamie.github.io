@@ -400,8 +400,6 @@ a {
     position: absolute;
     transition: height 1s ease;
     bottom: 0%;
-    border-color: #0e0d0da0;
-    border-style: solid;
 }
 
 .intro-box-2 {
@@ -435,7 +433,7 @@ a {
 .intro-box-5 {
     right: 0;
     width: 8%;
-    background-color: #f5f5f5;
+    background-color: #f5f5ed;
     z-index: 2;
     height: 100%;
     top: 0%;
@@ -444,7 +442,7 @@ a {
 .intro-box-6 {
     right: 0;
     width: 35%;
-    background-color: #f5f5ed;
+    background-color: #f5f5f5;
     z-index: 1;
     height: 100%;
     top: 0%;
