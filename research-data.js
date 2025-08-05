@@ -5,7 +5,7 @@ const data = [
         itemDescription: "Category: Forecasting Competition",
         itemCopy: "", 
         itemLink: "images/RP4P.pdf",
-        itemImg: ""
+        itemImg: "images/RP4P.png"
     },
 
     {
