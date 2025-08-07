@@ -10,8 +10,8 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    font-family: "Aenoik";
-    background-color: #4a4746b3;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fffff5;
     color: #000000;
 }
 
@@ -41,11 +41,11 @@ a {
     position: fixed;
     top: 0;
     width: 100vw;
-    padding: 1em;
+    padding:1em;
     display: flex;
     justify-content: space-between;
     z-index: 1000; /* Ensures the nav is on top */
-    background-color:#433f3fdd;
+    background-color:#272727dd;
 
 }
 
@@ -59,8 +59,8 @@ header nav {
     position: fixed;
     bottom: 0;
     right: 0;
-    padding: 2em;
-    background-color:#433f3fdd;
+    padding: 1.5em;
+    background-color:#272727dd;
 }
 
 .footer p {

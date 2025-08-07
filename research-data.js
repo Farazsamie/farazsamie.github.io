@@ -4,8 +4,7 @@ const data = [
         itemName: "Bridgewater Associates: Forecasting Analysis ",
         itemDescription: "Category: Forecasting Competition",
         itemCopy: "This report conducts a forward looking macroeconomic evaluation of shifting trade ecosystems and strategic positioning in the age of modern mercantilism. Focused on high probability geopolitical and economic forecasts, the analysis emphasizes U.S. economic trajectory, the evolution of multipolarity, and the technological arms race shaped by AI, rare earth elements, and supply chain sovereignty. Integrating constrained and unconstrained time series modeling, Monte Carlo simulations, and volatility diagnostics, I was able to construct a forecasting framework built in Python. These tools underpin probabilistic scenario planning across regions and commodities, including projections for the Texas Stock Exchange’s national prominence. Situated at the intersection of economic nationalism, regulatory pivoting, and macro cycles, the report offers a prescient synthesis of quantitative foresight and policy implications, mapping the contours of global realignment through 2035.", 
-        itemLink: "images/RP4P.pdf",
-        itemImg: "images/RP4P.png"
+        itemLink: "images/RP4P.pdf"
     },
 
     {
