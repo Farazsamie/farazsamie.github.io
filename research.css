@@ -60,7 +60,9 @@ header nav {
     bottom: 0;
     right: 0;
     padding: 1.5em;
+    width: 25%;
     background-color:#272727dd;
+    text-align:center;
 }
 
 .footer p {
