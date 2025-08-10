@@ -130,13 +130,6 @@ body {
     height: 100%;
 }
 
-.welcome-image {
-    padding-top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .img-container img {
     margin: 0;
     padding: 0;
@@ -180,14 +173,13 @@ body {
 
 img {
     width: 100%;
-    height: auto;
     display: block;
     object-fit: cover;
 }
 
 .hero {
   display: flex;
-  height: 100vh; /* Full viewport height */
+  height: 100%; /* Full viewport height */
   flex-direction: row;
   margin: 0;
   padding: 0;
@@ -195,7 +187,8 @@ img {
 
 .hero .img-container {
   width: 50%;
-  height: 100%;
+  height: 100%; /* Full viewport height */
+  position: relative;
   overflow: hidden;
 }
 
@@ -268,3 +261,17 @@ a {
   a:hover {
     color: #ff5733;         /* Changes the color to red when hovered */
   }
+
+
+/* Make the welcome image fill the hero height without overflow */
+.welcome-image img {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Ensures absolute positioning works correctly */
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
