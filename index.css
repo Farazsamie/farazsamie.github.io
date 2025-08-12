@@ -92,7 +92,7 @@ nav {
 .slide-link {
     position: absolute;
     top: 100%;
-    right: 0.25%;
+    right: 0%;
     transform: translate(-50%, -50%);
     font-size: 13px;
     color: #fffff5;
@@ -426,7 +426,7 @@ a {
 
 .section-nav {
     position: fixed;
-    right: 5%; /* right side */
+    right: 2%; /* right side */
     bottom: 5%;
     transform: translateY(-50%);
     z-index: 1000;
@@ -445,8 +445,9 @@ a {
 }
 
 .nav-title {
-    font-size: 12px;
-    color: #333536; /* light gray-blue color */
+    font-size: 13px;
+    font-weight: 600;
+    color: #332f2f; /* light gray-blue color */
     white-space: nowrap;
 }
 
@@ -454,19 +455,19 @@ a {
     width: 10px;
     height: 10px;
     border-radius: 25%;
-    background: #d7d3d333;
+    background: #332f2f;
     transition: all 0.3s ease;
 }
 
 body.light-mode .nav-dot {
-    background: #b0bec5;
+    background: #fffff5;
 }
 
 .nav-item.active .nav-dot {
-    background: #6a7074;
+    background: #fffff5;
     transform: scale(1);
 }
 
 .nav-item:hover .nav-title {
-    color: #ffffff;
+    color: #fffff5;
 }
