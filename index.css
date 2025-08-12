@@ -426,15 +426,15 @@ a {
 
 .section-nav {
     position: fixed;
-    right: 20px; /* right side */
-    top: 50%;
+    right: 5%; /* right side */
+    bottom: 5%;
     transform: translateY(-50%);
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* space between items */
+    gap: 2.5rem; /* space between items */
     align-items: flex-end; /* align to right edge */
-    font-family: "Poppins", sans-serif; /* change font */
+    font-family:Arial, Helvetica, sans-serif; /* change font */
 }
 
 .nav-item {
@@ -445,16 +445,16 @@ a {
 }
 
 .nav-title {
-    font-size: 14px;
-    color: #cfd8dc; /* light gray-blue color */
+    font-size: 12px;
+    color: #333536; /* light gray-blue color */
     white-space: nowrap;
 }
 
 .nav-dot {
     width: 10px;
     height: 10px;
-    border-radius: 50%;
-    background: #ffffff33;
+    border-radius: 25%;
+    background: #d7d3d333;
     transition: all 0.3s ease;
 }
 
@@ -464,7 +464,7 @@ body.light-mode .nav-dot {
 
 .nav-item.active .nav-dot {
     background: #6a7074;
-    transform: scale(1.2);
+    transform: scale(1);
 }
 
 .nav-item:hover .nav-title {
