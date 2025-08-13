@@ -261,7 +261,7 @@ a {
     font-size: 40px;
     color: #000000;
     display: block;
-    width: 62%; /* or set a specific width */
+    width: 65%; /* or set a specific width */
 } 
 /* ----------------------- */
 
@@ -269,7 +269,7 @@ a {
     font-size: 40px;
     color: #000000; 
     display: block;
-    width: 71%; /* or set a specific width */
+    width: 75%; /* or set a specific width */
 }
 
 /* ----------------------- */
@@ -278,7 +278,7 @@ a {
     color: #000000; 
     display: block;
     padding-top: 25px;
-    width: 60%; /* or set a specific width */
+    width: 62%; /* or set a specific width */
 }
 /* ----------------------- */
 
@@ -286,8 +286,7 @@ a {
     font-size: 16px;
     color: #000000; 
     display: block;
-    max-width: 50%; /* or set a specific width */
-    padding-right: 5%;
+    width: 50%; /* or set a specific width */
 }
 
 /* ----------------------- *//* ----------------------- */
