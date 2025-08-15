@@ -405,7 +405,9 @@ a {
     }
 } 
 
-
+.it-section {
+    left: 0;
+}
 
 
 /* Section Navigation */
