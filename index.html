@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Faraz Samie | Home Page</title>
@@ -480,27 +480,55 @@ function hideSlide(index, onComplete) {
 });
 
 
-    function checkScreenSize() {
-    const width = window.innerWidth;
-    const restrictionSign = document.getElementById('restriction-sign');
 
-    console.log("Window width:", width); // Log for debugging
 
-    if (width < 768) {
-        restrictionSign.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    } else {
-        restrictionSign.style.display = 'none';
-        document.body.style.overflow = 'auto';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Touch navigation for mobile devices
+let startY = 0;
+let isTouch = false;
+
+window.addEventListener("touchstart", (e) => {
+    startY = e.touches[0].clientY;
+    isTouch = true;
+}, { passive: true });
+
+window.addEventListener("touchend", (e) => {
+    if (!isTouch || isAnimating) return;
+    
+    const endY = e.changedTouches[0].clientY;
+    const deltaY = startY - endY;
+    const threshold = 50; // minimum swipe distance
+    
+    if (Math.abs(deltaY) > threshold) {
+        if (deltaY > 0 && currentSlideIndex < slides.length - 1) {
+            // Swipe up - next slide
+            showSlide(currentSlideIndex + 1);
+            currentSlideIndex++;
+        } else if (deltaY < 0 && currentSlideIndex > 0) {
+            // Swipe down - previous slide
+            hideSlide(currentSlideIndex, () => {
+                currentSlideIndex--;
+                showSlide(currentSlideIndex, true);
+            });
+        }
     }
-    }
-
-    window.addEventListener('load', checkScreenSize);
-    window.addEventListener('resize', checkScreenSize);
-
-
-
-
+    
+    isTouch = false;
+}, { passive: true });
     //function checkbigscreen() {
     //const width = window.innerWidth;
     //const restrictionSign = document.getElementById('big-sign');
