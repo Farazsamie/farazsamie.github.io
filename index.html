@@ -119,8 +119,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <script>
-
-
     /* page loading */
     gsap.from(".slider-content", {
     delay: 1,
@@ -130,34 +128,34 @@
     stagger: {
         amount: 0.5,
     }
-});
+    });
 
-gsap.to("header h1, header h2", {
+    gsap.to("header h1, header h2", {
     delay: 1.5,
     duration: 2,
     top: 0,
     ease: "power3.out"
-});
+    });
 
 // EDDD
 // Animate text to move to the right but stop before going off screen
 const isMobile = window.innerWidth <= 767;
-const moveDistance = isMobile ? 85 : 100; // Stop at 85% on mobile, 100% on desktop
+const moveDistance = isMobile ? 50 : 100; // Stop at 85% on mobile, 100% on desktop
 
-gsap.to(".landing-page .intro .one, .landing-page .intro .two, .landing-page .intro .three, .landing-page .intro .four", {
-    delay: 1,
-    duration: 2.5,
-    xPercent: moveDistance,
-    ease: "power4.inOut",
-});
+    gsap.to(".landing-page .intro .one, .landing-page .intro .two, .landing-page .intro .three, .landing-page .intro .four", {
+        delay: 1,
+        duration: 2.5,
+        xPercent: moveDistance,
+        ease: "power4.inOut",
+    });
 
-// Animate footer to move to the right
-gsap.to(".footer p", {
-    delay: 1,
-    duration: 2.5,
-    xPercent: moveDistance,
-    ease: "power4.inOut",
-});
+    // Animate footer to move to the right
+    gsap.to(".footer p", {
+        delay: 1,
+        duration: 2.5,
+        xPercent: moveDistance,
+        ease: "power4.inOut",
+    });
 
 
 
