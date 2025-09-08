@@ -181,11 +181,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 if (isMobile) {
-  const boxes = document.querySelectorAll(".intro-box-2, .intro-box-3, .intro-box-5, .intro-box-6");
-  const fullHeight = 100 / boxes.length; // divide screen equally
+  const boxes = document.querySelectorAll(".intro-box-2, .intro-box-3");
+  const fullWidth = 100 / boxes.length; // divide screen equally
 
   boxes.forEach(box => {
-    box.style.height = `${fullHeight}vh`; // each box takes a fraction of the viewport height
+    box.style.width = `${fullWidth}vh`; // each box takes a fraction of the viewport height
   });
 }
 
