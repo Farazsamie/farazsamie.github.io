@@ -403,33 +403,25 @@ a {
 
 
 /* Mobile Phones (320px - 767px) */
+/* Mobile Phones (320px - 767px) */
 @media (max-width: 767px) {
     .landing-page .intro .one,
     .landing-page .intro .two {
-        font-size: 28px;
+        font-size: 24px !important; /* CHANGE: Smaller text */
         width: 90%;
     }
     
     .landing-page .intro .three,
     .landing-page .intro .four {
-        font-size: 14px;
+        font-size: 12px !important; /* CHANGE: Smaller text */
         width: 85%;
     }
     
-    .slide-name {
-        left: 20%;
-        font-size: 14px;
-        line-height: 25px;
-    }
-    
-    .slide-link {
-        right: 15%;
-        font-size: 11px;
-    }
+    /* REMOVE: Delete all the slide-name and slide-link rules that have !important */
     
     .link a {
-        padding: 0.7em 3em;
-        font-size: 11px;
+        padding: 0.5em 2em;
+        font-size: 10px;
     }
     
     .intro-box-2 {
@@ -448,41 +440,41 @@ a {
         width: 45%;
     }
 
+    /* NEW: Proper mobile navigation positioning */
     .slide-name {
-        left: 8% !important; /* CHANGE: Move further left */
-        font-size: 11px !important; /* CHANGE: Smaller but visible */
-        line-height: 18px !important;
-        top: 85% !important; /* ADD: Position higher on screen */
+        left: 8%;
+        font-size: 12px;
+        line-height: 20px;
+        top: 85%;
     }
     
     .slide-link {
-        right: 8% !important; /* CHANGE: Move further from edge */
-        font-size: 9px !important; /* CHANGE: Smaller but readable */
-        top: 85% !important; /* ADD: Position higher on screen */
+        right: 8%;
+        font-size: 10px;
+        top: 85%;
     }
     
-    .link a {
-        padding: 0.4em 1.5em !important; /* CHANGE: Smaller padding */
-        font-size: 9px !important;
-        min-width: 60px !important; /* ADD: Ensure minimum button size */
+    /* Hide mouse trail on mobile */
+    .trail {
+        display: none !important;
     }
     
-    /* Ensure slider content doesn't block navigation */
-    .slider-content {
-        pointer-events: none !important; /* ADD: Let touches pass through */
+    /* Green box adjustments - REMOVE GAPS */
+    .green-box-group {
+        padding-left: 3%;
+        padding-top: 2%;
     }
     
-    /* But keep specific elements interactive */
-    .slide-name, .slide-link, .slide-button {
-        pointer-events: auto !important;
-        z-index: 1003 !important; /* ADD: Bring above other elements */
+    .green-box,
+    .green-box-two,
+    .green-box-three {
+        height: 35px;
+        margin-bottom: 0px; /* CHANGE: Remove gaps */
     }
     
-    /* Add background to make text more readable */
-    .slide-name, .slide-link {
-        background-color: rgba(0, 0, 0, 0.7) !important;
-        padding: 3px 6px !important;
-        border-radius: 3px !important;
+    /* Footer text size */
+    .footer {
+        font-size: 12px;
     }
 }
 
@@ -544,75 +536,11 @@ a {
 
 
 
-/* Mobile Phones (320px - 767px) */
-@media (max-width: 767px) {
-    /* ... your existing mobile rules ... */
-    
-    /* Green box adjustments for mobile */
-    .green-box-group {
-        padding-left: 3%;
-        padding-top: 2%;
-    }
-    
-    .green-box,
-    .green-box-two,
-    .green-box-three {
-        height: 35px; /* Smaller height on mobile */
-        margin-bottom: 8px; /* Less spacing between boxes */
-    }
-    
-}
 
 
 
 
 
-
-
-/* Mobile Phones (320px - 767px) */
-@media (max-width: 767px) {
-    /* Your existing mobile rules stay the same, ADD these: */
-    
-    /* Hide mouse trail on mobile */
-    .trail {
-        display: none !important;
-    }
-    
-    /* Make navigation labels visible on mobile */
-    .slide-name {
-        left: 5% !important;
-        font-size: 12px !important;
-        line-height: 20px !important;
-    }
-    
-    .slide-link {
-        right: 5% !important;
-        font-size: 10px !important;
-    }
-    
-    .link a {
-        padding: 0.5em 2em !important;
-        font-size: 10px !important;
-    }
-    
-    /* Ensure all intro text starts from left and moves right */
-    .landing-page .intro .one,
-    .landing-page .intro .two,
-    .landing-page .intro .three,
-    .landing-page .intro .four {
-        padding-left: 15px !important;
-    }
-    
-    /* Footer positioning for mobile */
-    .footer {
-        bottom: 5% !important;
-        font-size: 12px !important;
-    }
-    
-    .footer p {
-        padding-left: 15px !important;
-    }
-}
 /* Section Navigation */
 /*
 .section-nav {

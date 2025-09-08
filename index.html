@@ -137,10 +137,9 @@
     ease: "power3.out"
     });
 
-// EDDD
 // Animate text to move to the right but stop before going off screen
 const isMobile = window.innerWidth <= 767;
-const moveDistance = isMobile ? 50 : 100; // Stop at 85% on mobile, 100% on desktop
+const moveDistance = isMobile ? 150 : 100; // CHANGE: Move further right on mobile
 
     gsap.to(".landing-page .intro .one, .landing-page .intro .two, .landing-page .intro .three, .landing-page .intro .four", {
         delay: 1,
@@ -158,51 +157,19 @@ const moveDistance = isMobile ? 50 : 100; // Stop at 85% on mobile, 100% on desk
     });
 
 
-
-// Fix mobile interaction issues
-// Fix mobile interaction issues - UPDATE the existing function
+// Mobile-specific setup
 document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth <= 767) {
-        // Remove mouse trail on mobile
+        // Hide mouse trail on mobile
         const trail = document.querySelector('.trail');
         if (trail) {
             trail.style.display = 'none';
         }
         
-        // Fix navigation positioning and visibility
-        setTimeout(() => {
-            const slideNames = document.querySelector('.slide-name');
-            const slideLinks = document.querySelector('.slide-link');
-            
-            if (slideNames) {
-                slideNames.style.top = '85%';
-                slideNames.style.left = '8%';
-                slideNames.style.zIndex = '1003';
-            }
-            
-            if (slideLinks) {
-                slideLinks.style.top = '85%';
-                slideLinks.style.right = '8%';
-                slideLinks.style.zIndex = '1003';
-            }
-        }, 100);
-        
-        // Ensure slider content is properly interactive on mobile
-        const sliderContent = document.querySelector('.slider-content');
-        if (sliderContent) {
-            sliderContent.style.touchAction = 'pan-y';
-            sliderContent.style.pointerEvents = 'none'; // Let touches pass through
-        }
-        
-        // Make sure slide buttons work on mobile
+        // Ensure touch works for navigation
         const slideButtons = document.querySelectorAll('.slide-button');
         slideButtons.forEach(button => {
-            button.addEventListener('touchstart', function(e) {
-                e.stopPropagation();
-            });
-            button.style.pointerEvents = 'auto';
             button.style.touchAction = 'manipulation';
-            button.style.zIndex = '1003';
         });
     }
 });
