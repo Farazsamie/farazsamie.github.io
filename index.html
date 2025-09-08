@@ -139,11 +139,21 @@ gsap.to("header h1, header h2", {
     ease: "power3.out"
 });
 
-// Animate the <p> to disappear to the right
-gsap.to(".landing-page p", {
-    delay: 1 ,  // Adjust the delay if needed
-    duration: 2.5 ,  // Adjust the duration for the animation
-    xPercent: 100,  // Move the text completely out of view to the right
+// EDDD
+// Animate the <p> to disappear to the right - but keep "My Name's Faraz" visible on mobile
+gsap.to(".landing-page .intro .one, .landing-page .intro .three, .landing-page .intro .four", {
+    delay: 1,
+    duration: 2.5,
+    xPercent: 100,
+    ease: "power4.inOut",
+});
+
+// Keep "My Name's Faraz" visible on mobile, hide on desktop
+gsap.to(".landing-page .intro .two", {
+    delay: 1,
+    duration: 2.5,
+    xPercent: window.innerWidth <= 767 ? 0 : 100, // Don't move on mobile
+    opacity: window.innerWidth <= 767 ? 1 : 0, // Stay visible on mobile
     ease: "power4.inOut",
 });
 
@@ -192,61 +202,113 @@ gsap.to(".intro-box-6", {
 
 
 
-
-
-
 // GREEN BOX DRAFT
 document.addEventListener("DOMContentLoaded", () => {
   const greenBox = document.querySelector('.green-box');
 
   function resizeBox() {
-    const newWidth = 100 + Math.floor(Math.random() * 400); // 100–200px
+    const isMobile = window.innerWidth <= 767;
+    const maxWidth = isMobile ? 150 : 400; // Smaller expansion on mobile
+    const minWidth = isMobile ? 50 : 100;
+    const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
     greenBox.style.width = `${newWidth}px`;
-    // Width is fixed via CSS or set once
   }
 
-  // Optionally fix the width once here
   greenBox.style.height = '50px';
-
-  // Resize height every 2 seconds
   setInterval(resizeBox, 1200);
 });
-
 
 // GREEN BOX DRAFT TWO
 document.addEventListener("DOMContentLoaded", () => {
   const greenBox = document.querySelector('.green-box-two');
 
   function resizeBox() {
-    const newWidth = 100 + Math.floor(Math.random() * 400); // 100–200px
+    const isMobile = window.innerWidth <= 767;
+    const maxWidth = isMobile ? 150 : 400;
+    const minWidth = isMobile ? 50 : 100;
+    const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
     greenBox.style.width = `${newWidth}px`;
-    // Width is fixed via CSS or set once
   }
 
-  // Optionally fix the width once here
   greenBox.style.height = '50px';
-
-  // Resize height every 2 seconds
   setInterval(resizeBox, 999);
 });
-
 
 // GREEN BOX DRAFT THREE
 document.addEventListener("DOMContentLoaded", () => {
   const greenBox = document.querySelector('.green-box-three');
 
   function resizeBox() {
-    const newWidth = 100 + Math.floor(Math.random() * 300); // 100–200px
+    const isMobile = window.innerWidth <= 767;
+    const maxWidth = isMobile ? 120 : 300; // Even smaller for third box
+    const minWidth = isMobile ? 40 : 100;
+    const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
     greenBox.style.width = `${newWidth}px`;
-    // Width is fixed via CSS or set once
   }
 
-  // Optionally fix the width once here
   greenBox.style.height = '50px';
-
-  // Resize height every 2 seconds
   setInterval(resizeBox, 666);
 });
+
+
+
+
+
+
+
+
+// Handle window resize to adjust green boxes and text positioning
+window.addEventListener('resize', () => {
+    const isMobile = window.innerWidth <= 767;
+    const nameText = document.querySelector('.landing-page .intro .two');
+    
+    if (isMobile) {
+        // Ensure name stays visible on mobile
+        gsap.set(nameText, {
+            xPercent: 0,
+            opacity: 1,
+            position: 'fixed',
+            top: '45%',
+            left: '10px',
+            transform: 'translateY(-50%)',
+            zIndex: 1002
+        });
+    } else {
+        // Reset for desktop
+        gsap.set(nameText, {
+            position: 'relative',
+            top: 'auto',
+            left: 'auto',
+            transform: 'none',
+            zIndex: 'auto'
+        });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
