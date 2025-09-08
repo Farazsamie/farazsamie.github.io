@@ -396,13 +396,6 @@ a {
 }
 
 
-
-
-
-
-
-
-/* Mobile Phones (320px - 767px) */
 /* Mobile Phones (320px - 767px) */
 @media (max-width: 767px) {
     .landing-page .intro .one,
@@ -515,30 +508,6 @@ a {
         font-size: 40px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Section Navigation */
