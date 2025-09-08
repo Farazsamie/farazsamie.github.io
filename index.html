@@ -187,9 +187,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+// Animate intro text (same for all devices)
 gsap.to(".landing-page .intro-text", {
-  delay: 2.5 ,
-  duration: 2.5 ,
+  delay: 2.5,
+  duration: 2.5,
   xPercent: 100,
   opacity: 0,
   ease: "power4.inOut",
@@ -198,34 +201,30 @@ gsap.to(".landing-page .intro-text", {
   }
 });
 
+// Animation settings for boxes
+const boxAnimation = isMobile
+  ? { // Mobile: expand to full screen
+      duration: 2,
+      xPercent: 0,
+      width: "100%",
+      height: "100%",
+      ease: "power4.inOut",
+      position: "absolute", // make sure it covers screen
+      top: 0,
+      left: 0
+    }
+  : { // Desktop: slide right
+      duration: 2,
+      xPercent: 100,
+      ease: "power4.inOut"
+    };
 
-gsap.to(".intro-box-2", {
-    delay: 1,
-    duration: 2,
-    xPercent: 100,
-    ease: "power4.inOut",
-});
+// Apply to boxes
+gsap.to(".intro-box-2", { ...boxAnimation, delay: 1 });
+gsap.to(".intro-box-3", { ...boxAnimation, delay: 1.25 });
+gsap.to(".intro-box-5", { ...boxAnimation, delay: 1 });
+gsap.to(".intro-box-6", { ...boxAnimation, delay: 1.25 });
 
-gsap.to(".intro-box-3", {
-    delay: 1.25,
-    duration: 2,
-    xPercent: 100,
-    ease: "power4.inOut",
-});
-
-gsap.to(".intro-box-5", {
-    delay: 1,
-    duration: 2,
-    xPercent: 100,
-    ease: "power4.inOut",
-});
-
-gsap.to(".intro-box-6", {
-    delay: 1.25,
-    duration: 2,
-    xPercent: 100,
-    ease: "power4.inOut",
-});
 
 // EDD
 // GREEN BOX DRAFT
