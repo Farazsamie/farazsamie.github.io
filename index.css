@@ -400,13 +400,13 @@ a {
 @media (max-width: 767px) {
     .landing-page .intro .one,
     .landing-page .intro .two {
-        font-size: 24px !important; /* CHANGE: Smaller text */
+        font-size: 20px !important; /* CHANGE: Smaller text */
         width: 90%;
     }
     
     .landing-page .intro .three,
     .landing-page .intro .four {
-        font-size: 12px !important; /* CHANGE: Smaller text */
+        font-size: 8px !important; /* CHANGE: Smaller text */
         width: 85%;
     }
     
@@ -467,7 +467,7 @@ a {
     
     /* Footer text size */
     .footer {
-        font-size: 12px;
+        display: none !important;
     }
 }
 
