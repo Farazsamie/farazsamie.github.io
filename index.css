@@ -467,7 +467,7 @@ a {
     
     /* Footer text size */
     .footer {
-        display: none !important;
+        font-size: 10px;
     }
 }
 
