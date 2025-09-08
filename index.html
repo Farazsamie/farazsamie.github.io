@@ -141,12 +141,55 @@ gsap.to("header h1, header h2", {
 
 // EDDD
 // Animate the <p> to disappear to the right - but keep "My Name's Faraz" visible on mobile
-gsap.to(".landing-page .intro .one, .landing-page .intro .three, .landing-page .intro .four", {
+// Animate ALL text to move to the right uniformly
+gsap.to(".landing-page .intro .one, .landing-page .intro .two, .landing-page .intro .three, .landing-page .intro .four", {
     delay: 1,
     duration: 2.5,
     xPercent: 100,
     ease: "power4.inOut",
 });
+
+// Animate footer to move to the right and disappear
+gsap.to(".footer p", {
+    delay: 1,
+    duration: 2.5,
+    xPercent: 100,
+    ease: "power4.inOut",
+});
+
+
+
+// Fix mobile interaction issues
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 767) {
+        // Remove mouse trail on mobile
+        const trail = document.querySelector('.trail');
+        if (trail) {
+            trail.style.display = 'none';
+        }
+        
+        // Ensure slider content is properly interactive on mobile
+        const sliderContent = document.querySelector('.slider-content');
+        if (sliderContent) {
+            sliderContent.style.touchAction = 'pan-y';
+            sliderContent.style.pointerEvents = 'auto';
+        }
+        
+        // Make sure slide buttons work on mobile
+        const slideButtons = document.querySelectorAll('.slide-button');
+        slideButtons.forEach(button => {
+            button.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+            });
+            button.style.pointerEvents = 'auto';
+            button.style.touchAction = 'manipulation';
+        });
+    }
+});
+
+
+
+
 
 
 

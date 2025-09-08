@@ -526,6 +526,56 @@ a {
     
 }
 
+
+
+
+
+
+
+/* Mobile Phones (320px - 767px) */
+@media (max-width: 767px) {
+    /* Your existing mobile rules stay the same, ADD these: */
+    
+    /* Hide mouse trail on mobile */
+    .trail {
+        display: none !important;
+    }
+    
+    /* Make navigation labels visible on mobile */
+    .slide-name {
+        left: 5% !important;
+        font-size: 12px !important;
+        line-height: 20px !important;
+    }
+    
+    .slide-link {
+        right: 5% !important;
+        font-size: 10px !important;
+    }
+    
+    .link a {
+        padding: 0.5em 2em !important;
+        font-size: 10px !important;
+    }
+    
+    /* Ensure all intro text starts from left and moves right */
+    .landing-page .intro .one,
+    .landing-page .intro .two,
+    .landing-page .intro .three,
+    .landing-page .intro .four {
+        padding-left: 15px !important;
+    }
+    
+    /* Footer positioning for mobile */
+    .footer {
+        bottom: 5% !important;
+        font-size: 12px !important;
+    }
+    
+    .footer p {
+        padding-left: 15px !important;
+    }
+}
 /* Section Navigation */
 /*
 .section-nav {
