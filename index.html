@@ -183,7 +183,7 @@ if (isMobile) {
   const fullWidth = 90 / boxes.length; // divide screen equally
 
   boxes.forEach(box => {
-    box.style.width = `${fullWidth}vh`; // each box takes a fraction of the viewport height
+    box.style.width = `${fullWidth}vh`; // each box takes a fraction of the viewport width
   });
 }
 
@@ -199,7 +199,7 @@ gsap.to(".landing-page .intro-text", {
 });
 
 
-gsap.to(".intro-box-2", {
+/* gsap.to(".intro-box-2", {
     delay: 1,
     duration: 2,
     xPercent: 100,
@@ -211,7 +211,7 @@ gsap.to(".intro-box-3", {
     duration: 2,
     xPercent: 100,
     ease: "power4.inOut",
-});
+}); */
 
 gsap.to(".intro-box-5", {
     delay: 1,
