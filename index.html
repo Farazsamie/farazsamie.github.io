@@ -148,14 +148,7 @@ gsap.to(".landing-page .intro .one, .landing-page .intro .three, .landing-page .
     ease: "power4.inOut",
 });
 
-// Keep "My Name's Faraz" visible on mobile, hide on desktop
-gsap.to(".landing-page .intro .two", {
-    delay: 1,
-    duration: 2.5,
-    xPercent: window.innerWidth <= 767 ? 0 : 100, // Don't move on mobile
-    opacity: window.innerWidth <= 767 ? 1 : 0, // Stay visible on mobile
-    ease: "power4.inOut",
-});
+
 
 
 
@@ -249,35 +242,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(resizeBox, 666);
 });
 
-// EDD
-// Handle window resize to adjust green boxes and text positioning
-window.addEventListener('resize', () => {
-    const isMobile = window.innerWidth <= 767;
-    const nameText = document.querySelector('.landing-page .intro .two');
-    
-    if (isMobile) {
-        // Ensure name stays visible on mobile
-        gsap.set(nameText, {
-            xPercent: 0,
-            opacity: 1,
-            position: 'fixed',
-            top: '45%',
-            left: '10px',
-            transform: 'translateY(-50%)',
-            zIndex: 1002
-        });
-    } else {
-        // Reset for desktop
-        gsap.set(nameText, {
-            position: 'relative',
-            top: 'auto',
-            left: 'auto',
-            transform: 'none',
-            zIndex: 'auto'
-        });
-    }
-});
-// EDD END
     /* core slide logic */
     const slides = document.querySelectorAll(".slide");
     let currentSlideIndex = 0;
