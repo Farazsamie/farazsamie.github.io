@@ -447,6 +447,43 @@ a {
     .intro-box-6 {
         width: 45%;
     }
+
+    .slide-name {
+        left: 8% !important; /* CHANGE: Move further left */
+        font-size: 11px !important; /* CHANGE: Smaller but visible */
+        line-height: 18px !important;
+        top: 85% !important; /* ADD: Position higher on screen */
+    }
+    
+    .slide-link {
+        right: 8% !important; /* CHANGE: Move further from edge */
+        font-size: 9px !important; /* CHANGE: Smaller but readable */
+        top: 85% !important; /* ADD: Position higher on screen */
+    }
+    
+    .link a {
+        padding: 0.4em 1.5em !important; /* CHANGE: Smaller padding */
+        font-size: 9px !important;
+        min-width: 60px !important; /* ADD: Ensure minimum button size */
+    }
+    
+    /* Ensure slider content doesn't block navigation */
+    .slider-content {
+        pointer-events: none !important; /* ADD: Let touches pass through */
+    }
+    
+    /* But keep specific elements interactive */
+    .slide-name, .slide-link, .slide-button {
+        pointer-events: auto !important;
+        z-index: 1003 !important; /* ADD: Bring above other elements */
+    }
+    
+    /* Add background to make text more readable */
+    .slide-name, .slide-link {
+        background-color: rgba(0, 0, 0, 0.7) !important;
+        padding: 3px 6px !important;
+        border-radius: 3px !important;
+    }
 }
 
 /* Tablets (768px - 1024px) */

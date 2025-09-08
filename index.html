@@ -140,26 +140,29 @@ gsap.to("header h1, header h2", {
 });
 
 // EDDD
-// Animate the <p> to disappear to the right - but keep "My Name's Faraz" visible on mobile
-// Animate ALL text to move to the right uniformly
+// Animate text to move to the right but stop before going off screen
+const isMobile = window.innerWidth <= 767;
+const moveDistance = isMobile ? 85 : 100; // Stop at 85% on mobile, 100% on desktop
+
 gsap.to(".landing-page .intro .one, .landing-page .intro .two, .landing-page .intro .three, .landing-page .intro .four", {
     delay: 1,
     duration: 2.5,
-    xPercent: 100,
+    xPercent: moveDistance,
     ease: "power4.inOut",
 });
 
-// Animate footer to move to the right and disappear
+// Animate footer to move to the right
 gsap.to(".footer p", {
     delay: 1,
     duration: 2.5,
-    xPercent: 100,
+    xPercent: moveDistance,
     ease: "power4.inOut",
 });
 
 
 
 // Fix mobile interaction issues
+// Fix mobile interaction issues - UPDATE the existing function
 document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth <= 767) {
         // Remove mouse trail on mobile
@@ -168,11 +171,29 @@ document.addEventListener('DOMContentLoaded', function() {
             trail.style.display = 'none';
         }
         
+        // Fix navigation positioning and visibility
+        setTimeout(() => {
+            const slideNames = document.querySelector('.slide-name');
+            const slideLinks = document.querySelector('.slide-link');
+            
+            if (slideNames) {
+                slideNames.style.top = '85%';
+                slideNames.style.left = '8%';
+                slideNames.style.zIndex = '1003';
+            }
+            
+            if (slideLinks) {
+                slideLinks.style.top = '85%';
+                slideLinks.style.right = '8%';
+                slideLinks.style.zIndex = '1003';
+            }
+        }, 100);
+        
         // Ensure slider content is properly interactive on mobile
         const sliderContent = document.querySelector('.slider-content');
         if (sliderContent) {
             sliderContent.style.touchAction = 'pan-y';
-            sliderContent.style.pointerEvents = 'auto';
+            sliderContent.style.pointerEvents = 'none'; // Let touches pass through
         }
         
         // Make sure slide buttons work on mobile
@@ -183,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             button.style.pointerEvents = 'auto';
             button.style.touchAction = 'manipulation';
+            button.style.zIndex = '1003';
         });
     }
 });
