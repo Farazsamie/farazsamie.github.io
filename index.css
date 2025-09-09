@@ -367,7 +367,6 @@ a {
 
 .it-section {
     position: relative;
-    left: 0;          /* stick to left */
     max-width: 900px; /* optional, limits width so text wraps nicely */
 }
 
@@ -409,13 +408,105 @@ a {
 }
 
 
+/* Mobile Phones (320px - 750px) */
+@media (min-width: 320px) and (max-width: 474px) {
+
+    .landing-page .intro .one {
+        font-size: 15px !important; /* CHANGE: Smaller text */
+        width: 50%;
+    }
+    
+    .landing-page .intro .two {
+        font-size: 15px !important; /* CHANGE: Smaller text */
+        width: 60%;
+    }
+
+    .landing-page .intro .three,
+    .landing-page .intro .four {
+        display: none !important;
+    }
+    
+    .link a {
+        padding: 0.5em 2em;
+        font-size: 10px;
+        right:0%;
+    }
+    
+    .intro-box-2 {
+        width: 15%;
+    }
+    
+    .intro-box-3 {
+        width: 20%;
+    }
+    
+    .intro-box-5 {
+        width: 12%;
+    }
+    
+    .intro-box-6 {
+        width: 18%;
+    }
+
+    .slide-name {
+        font-size: 13px;
+        line-height: 20px;
+        padding-left: 5px;
+        position: absolute;
+        top: 100%;
+        left: 13%;
+        transform: translate(-30%, -50%);
+        color: #fffff5;
+        line-height: 30px;
+        clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
+        text-transform: uppercase;
+    }
+    
+    .slide-link {
+        font-size: 10px;
+        line-height: 10px;
+        padding-right: 5px;
+        position: absolute;
+        top: 100%;
+        right: 5%;
+        transform: translate(-50%, -50%);
+        gap: 25px;
+        color: #fffff5;
+        line-height: 30px;
+        clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
+        text-transform: uppercase;
+    }
+    
+    /* Hide mouse trail on mobile */
+    .trail {
+        display: none !important;
+    }
+    
+    /* Green box adjustments - REMOVE GAPS */
+    .green-box-group {
+        padding-left: 3%;
+        padding-top: 2%;
+    }
+    
+    .green-box,
+    .green-box-two,
+    .green-box-three {
+        height: 30px;
+        margin-bottom: 0px; /* CHANGE: Remove gaps */
+    }
+    
+    /* Footer text size */
+    .footer {
+        font-size: 10px;
+    }
+}
 
 
 
 
+/* Mobile Phones (320px - 750px) */
+@media (min-width: 475px) and (max-width: 749px) {
 
-/* Mobile Phones (320px - 767px) */
-@media (max-width: 767px) {
     .landing-page .intro .one {
         font-size: 15px !important; /* CHANGE: Smaller text */
         width: 60%;
@@ -430,8 +521,6 @@ a {
     .landing-page .intro .four {
         display: none !important;
     }
-    
-    /* REMOVE: Delete all the slide-name and slide-link rules that have !important */
     
     .link a {
         padding: 0.5em 2em;
@@ -455,17 +544,14 @@ a {
         width: 45%;
     }
 
-    /* NEW: Proper mobile navigation positioning */
     .slide-name {
         font-size: 13px;
         line-height: 20px;
         padding-left: 5px;
-
         position: absolute;
         top: 100%;
         left: 13%;
         transform: translate(-30%, -50%);
-
         color: #fffff5;
         line-height: 30px;
         clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
@@ -476,7 +562,6 @@ a {
         font-size: 10px;
         line-height: 10px;
         padding-right: 5px;
-
         position: absolute;
         top: 100%;
         right: 5%;
@@ -514,18 +599,26 @@ a {
 
 
 
-/* Tablets (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .landing-page .intro .one,
+/* Tablets (750px - 1025px) */
+@media (min-width: 750px) and (max-width: 1024px) {
+    .landing-page .intro .one {
+        font-size: 30px;
+        width: 52.5%;
+    }
+
     .landing-page .intro .two {
-        font-size: 35px;
-        width: 75%;
+        font-size: 30px;
+        width: 65%;
     }
     
-    .landing-page .intro .three,
+    .landing-page .intro .three {
+        font-size: 10px;
+        width: 50%;
+    }
+
     .landing-page .intro .four {
-        font-size: 15px;
-        width: 70%;
+        font-size: 10px;
+        width: 50%;
     }
     
     .slide-name {
@@ -545,10 +638,117 @@ a {
 }
 
 /* Large Screens (1025px+) - your current styles will apply here automatically */
-@media (min-width: 1025px) {
-    .landing-page .intro .one,
+@media (min-width: 1025px) and (max-width: 1700) {
+    .landing-page .intro .one {
+        font-size: 30px;
+        width: 30%;
+    }
+
     .landing-page .intro .two {
-        font-size: 40px;
+        font-size: 30px;
+        width: 20%;
+    }
+    
+    .landing-page .intro .three {
+        font-size: 10px;
+        width: 40%;
+    }
+
+    .landing-page .intro .four {
+        font-size: 10px;
+        width: 40%;
+    }
+    
+    .slide-name {
+        left: 25%;
+        font-size: 15px;
+    }
+    
+    .slide-link {
+        right: 8%;
+        font-size: 12px;
+    }
+    
+    .link a {
+        padding: 0.8em 4em;
+        font-size: 12px;
+    }
+}
+
+
+/* Large Screens (1025px+) - your current styles will apply here automatically */
+@media (min-width: 1700) and (max-width: 2269) {
+    .landing-page .intro .one {
+        font-size: 30px;
+        width: 52.5%;
+    }
+
+    .landing-page .intro .two {
+        font-size: 30px;
+        width: 65%;
+    }
+    
+    .landing-page .intro .three {
+        font-size: 10px;
+        width: 50%;
+    }
+
+    .landing-page .intro .four {
+        font-size: 10px;
+        width: 50%;
+    }
+    
+    .slide-name {
+        left: 25%;
+        font-size: 15px;
+    }
+    
+    .slide-link {
+        right: 8%;
+        font-size: 12px;
+    }
+    
+    .link a {
+        padding: 0.8em 4em;
+        font-size: 12px;
+    }
+}
+
+/* Large Screens (1025px+) - your current styles will apply here automatically */
+@media (min-width: 2270) {
+    .landing-page .intro .one {
+        font-size: 30px;
+        width: 52.5%;
+    }
+
+    .landing-page .intro .two {
+        font-size: 30px;
+        width: 65%;
+    }
+    
+    .landing-page .intro .three {
+        font-size: 10px;
+        width: 50%;
+    }
+
+    .landing-page .intro .four {
+        font-size: 10px;
+        width: 50%;
+    }
+    
+    .slide-name {
+        left: 25%;
+        font-size: 15px;
+    }
+    
+    .slide-link {
+        right: 8%;
+        font-size: 12px;
+    }
+    
+    .link a {
+        padding: 0.8em 4em;
+        font-size: 12px;
     }
 }
 
