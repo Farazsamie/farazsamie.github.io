@@ -152,7 +152,6 @@ gsap.to(".landing-page .intro .one, .landing-page .intro .two, .landing-page .in
     ease: "power4.inOut",
 });
 
-
 // Animate footer
 gsap.to(".footer p", {
     delay: 1,
@@ -198,30 +197,6 @@ gsap.to(".landing-page .intro-text", {
     document.querySelector(".landing-page .intro-text").style.display = "none";
   }
 });
-
-
-function fitTextToViewport() {
-    const paragraphs = document.querySelectorAll('.it-section p');
-    const viewportWidth = window.innerWidth;
-
-    paragraphs.forEach(p => {
-        // Reset width so we can measure natural width
-        p.style.width = 'auto';
-
-        // Get bounding width of the text
-        const textWidth = p.scrollWidth;
-
-        // Set width to either textWidth or viewport width, whichever is smaller
-        p.style.width = Math.min(textWidth, viewportWidth) + 'px';
-    });
-}
-
-// Run on page load
-window.addEventListener('load', fitTextToViewport);
-
-// Run on resize
-window.addEventListener('resize', fitTextToViewport);
-
 
 
 /* gsap.to(".intro-box-2", {
