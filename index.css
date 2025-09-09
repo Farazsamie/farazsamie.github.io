@@ -361,26 +361,17 @@ a {
 
 
 
-
-
-
-
 .it-section p {
-    display: inline-block;   /* let JS control the width */
-    text-align: left;
-    white-space: normal;     /* allow wrapping */
-    overflow-wrap: break-word; /* break long words if needed */
+    text-align: left;         /* left-aligned text */
+    display: inline-block;    /* width fits content */
+    white-space: normal;      /* allow wrapping normally */
 }
-
-
-
 
 /* ----------------------- *//* ----------------------- */
 .landing-page .intro .one{
     font-size: 40px;
     color: #000000;
     display: block;
-    width:100%;
 } 
 /* ----------------------- */
 
@@ -396,6 +387,7 @@ a {
     color: #000000; 
     display: block;
     padding-top: 25px;
+    word-wrap: break-word;    /* wrap if too long for screen */
 }
 /* ----------------------- */
 
@@ -403,6 +395,7 @@ a {
     font-size: 16px;
     color: #000000; 
     display: block;
+    word-wrap: break-word;    /* wrap if too long for screen */
 }
 
 
