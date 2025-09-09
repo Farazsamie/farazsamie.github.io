@@ -410,84 +410,17 @@ a {
 
 /* Mobile Phones (320px - 750px) */
 /* Small iPhones: SE, 12 Mini, 13 Mini */
-@media (max-width: 374px) {
-    .landing-page .intro .one {
-        font-size: 10px !important;
-        width: 70%;
-    }
-
-    .landing-page .intro .two {
-        font-size: 10px !important;
-        width: 50%;
-    }
-
-    .landing-page .intro .three,
-    .landing-page .intro .four {
-        display: none !important;
-    }
-
-    .link a {
-        padding: 0.5em 2em;
-        font-size: 10px;
-        right: 0%;
-    }
-
-    .intro-box-5 { width: 12%; }
-    .intro-box-6 { width: 18%; }
-
-    .slide-name {
-        font-size: 14px;
-        line-height: 40px; /* increased height */
-        padding-left: 5px;
-        position: absolute;
-        left: 13%;
-        transform: translate(-30%, -50%);
-        color: #fffff5;
-        clip-path: polygon(0 0, 100% 0, 100% 35px, 0 35px); /* taller */
-        text-transform: uppercase;
-    }
-
-    .slide-link {
-        font-size: 12px;
-        line-height: 40px; /* increased height */
-        padding-right: 5px;
-        position: absolute;
-        top: 80%;
-        right: 5%;
-        transform: translate(-50%, -50%);
-        gap: 25px;
-        color: #fffff5;
-        clip-path: polygon(0 0, 100% 0, 100% 35px, 0 35px); /* taller */
-        text-transform: uppercase;
-    }
-
-    .trail { display: none !important; }
-
-    .green-box-group {
-        padding-left: 3%;
-        padding-top: 2%;
-    }
-
-    .green-box,
-    .green-box-two,
-    .green-box-three {
-        height: 30px;
-        margin-bottom: 0px;
-    }
-
-    .footer { font-size: 10px; }
-}
-
 /* Larger iPhones: 12/13/14 Pro Max */
+
 @media (min-width: 376px) and (max-width: 480px) {
     .landing-page .intro .one {
-        font-size: 10px !important;
-        width: 90%;
+        font-size: 15px !important;
+        left:0%;
     }
 
     .landing-page .intro .two {
-        font-size: 10px !important;
-        width: 90%;
+        font-size: 15px !important;
+        left: 0%;
     }
 
     .landing-page .intro .three,
@@ -496,50 +429,36 @@ a {
     }
 
     .link a {
-        padding: 0.5em 2em;
-        font-size: 10px;
+        padding: 0.05em 0.5em;
         right: 0%;
     }
 
-    .intro-box-5 { width: 12%; }
-    .intro-box-6 { width: 18%; }
+    .slide-name,
+    .slide-link {
+        line-height: 40px; /* increased height */
+        position: absolute;
+        top: 90%;
+        transform: translate(-30%, -30%);
+        color: #fffff5;
+        clip-path: polygon(0 0, 100% 0, 100% 35px, 0 35px); /* taller */
+        text-transform: uppercase;
+    }
 
     .slide-name {
         font-size: 14px;
-        line-height: 40px; /* increased height */
         padding-left: 5px;
-        position: absolute;
         left: 20%;
-        top: 85%;
-        transform: translate(-30%, -50%);
-        color: #fffff5;
-        clip-path: polygon(0 0, 100% 0, 100% 35px, 0 35px); /* taller */
-        text-transform: uppercase;
     }
 
     .slide-link {
-        font-size: 12px;
-        line-height: 40px; /* increased height */
+        font-size: 6px;
         padding-right: 5px;
-        position: absolute;
-        top: 85%;
-        right: 0%;
-        transform: translate(-50%, -50%);
-        gap: 25px;
-        color: #fffff5;
-        clip-path: polygon(0 0, 100% 0, 100% 35px, 0 35px); /* taller */
-        text-transform: uppercase;
     }
 
     .trail { display: none !important; }
-
-    .green-box,
-    .green-box-two,
-    .green-box-three {
-        height: 10px;
-    }
-
     .footer p { font-size: 20px; }
+    .intro-box-5 { width: 12%; }
+    .intro-box-6 { width: 18%; }
 }
 
 
