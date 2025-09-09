@@ -257,39 +257,6 @@ a {
     }
 
 /* ----------------------- *//* ----------------------- */
-.landing-page .intro .one{
-    font-size: 40px;
-    color: #000000;
-    display: block;
-    width: 65%; /* or set a specific width */
-} 
-/* ----------------------- */
-
-.landing-page .intro .two{
-    font-size: 40px;
-    color: #000000; 
-    display: block;
-    width: 75%; /* or set a specific width */
-}
-
-/* ----------------------- */
-.landing-page .intro .three{
-    font-size: 16px;
-    color: #000000; 
-    display: block;
-    padding-top: 25px;
-    width: 62%; /* or set a specific width */
-}
-/* ----------------------- */
-
-.landing-page .intro .four{
-    font-size: 16px;
-    color: #000000; 
-    display: block;
-    width: 50%; /* or set a specific width */
-}
-
-/* ----------------------- *//* ----------------------- */
 
 .landing-page .footer {
     color: #000000;
@@ -391,16 +358,85 @@ a {
     top: 0%;
 }
 
+
+
+
+
+
+
+
 .it-section {
-    left: 0;
+    position: relative;
+    left: 0;          /* stick to left */
+    max-width: 900px; /* optional, limits width so text wraps nicely */
+    padding: 0 20px;  /* optional, small padding from edge of screen */
 }
+
+.it-section p {
+    margin: 0 0 10px 0;  /* spacing between paragraphs */
+    text-align: left;    /* ensure left-aligned */
+    word-wrap: break-word; /* wrap long words if needed */
+}
+
+/* Optional: differentiate styles for each paragraph */
+.it-section .one {
+    font-size: 36px;
+}
+
+.it-section .two {
+    font-size: 28px;
+}
+
+.it-section .three, 
+.it-section .four {
+    font-size: 18px;
+}
+
+
+
+/* ----------------------- *//* ----------------------- */
+.landing-page .intro .one{
+    font-size: 40px;
+    color: #000000;
+    display: block;
+} 
+/* ----------------------- */
+
+.landing-page .intro .two{
+    font-size: 40px;
+    color: #000000; 
+    display: block;
+    width: 75%; /* or set a specific width */
+}
+
+/* ----------------------- */
+.landing-page .intro .three{
+    font-size: 16px;
+    color: #000000; 
+    display: block;
+    padding-top: 25px;
+    width: 62%; /* or set a specific width */
+}
+/* ----------------------- */
+
+.landing-page .intro .four{
+    font-size: 16px;
+    color: #000000; 
+    display: block;
+    width: 50%; /* or set a specific width */
+}
+
+
+
+
+
 
 
 /* Mobile Phones (320px - 767px) */
 @media (max-width: 767px) {
     .landing-page .intro .one,
     .landing-page .intro .two {
-        font-size: 20px !important; /* CHANGE: Smaller text */
+        font-size: 15px !important; /* CHANGE: Smaller text */
         width: 90%;
     }
     
@@ -415,6 +451,7 @@ a {
     .link a {
         padding: 0.5em 2em;
         font-size: 10px;
+        right:0%;
     }
     
     .intro-box-2 {
@@ -435,16 +472,35 @@ a {
 
     /* NEW: Proper mobile navigation positioning */
     .slide-name {
-        left: 8%;
-        font-size: 12px;
+        font-size: 13px;
         line-height: 20px;
-        top: 85%;
+        padding-left: 5px;
+
+        position: absolute;
+        top: 100%;
+        left: 13%;
+        transform: translate(-30%, -50%);
+
+        color: #fffff5;
+        line-height: 30px;
+        clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
+        text-transform: uppercase;
     }
     
     .slide-link {
-        right: 8%;
         font-size: 10px;
-        top: 85%;
+        line-height: 10px;
+        padding-right: 5px;
+
+        position: absolute;
+        top: 100%;
+        right: 5%;
+        transform: translate(-50%, -50%);
+        gap: 25px;
+        color: #fffff5;
+        line-height: 30px;
+        clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
+        text-transform: uppercase;
     }
     
     /* Hide mouse trail on mobile */
@@ -470,6 +526,8 @@ a {
         font-size: 10px;
     }
 }
+
+
 
 /* Tablets (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
