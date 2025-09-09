@@ -367,7 +367,7 @@ a {
 
 .it-section {
     position: relative;
-    max-width: 900px; /* optional, limits width so text wraps nicely */
+    max-width: 900px; 
 }
 
 .it-section p {
@@ -378,93 +378,77 @@ a {
     white-space: normal;     
 }
 
-/* ----------------------- *//* ----------------------- */
 .landing-page .intro .one{
     font-size: 40px;
     color: #000000;
     display: block;
+    width:90%;
 } 
-/* ----------------------- */
 
 .landing-page .intro .two{
     font-size: 40px;
     color: #000000; 
     display: block;
+    width:90%;
 }
 
-/* ----------------------- */
 .landing-page .intro .three{
     font-size: 16px;
     color: #000000; 
     display: block;
     padding-top: 25px;
+    width:50%;
 }
-/* ----------------------- */
 
 .landing-page .intro .four{
     font-size: 16px;
     color: #000000; 
     display: block;
+    width:50%;
 }
 
 
 /* Mobile Phones (320px - 750px) */
-@media (min-width: 320px) and (max-width: 474px) {
-
-    .landing-page .intro .one {
-        font-size: 15px !important; /* CHANGE: Smaller text */
-        width: 50%;
-    }
-    
+/* Small iPhones: SE, 12 Mini, 13 Mini */
+@media (max-width: 375px) {
+    .landing-page .intro .one,
     .landing-page .intro .two {
-        font-size: 15px !important; /* CHANGE: Smaller text */
-        width: 60%;
+        font-size: 15px !important;
+        width: 50%;
     }
 
     .landing-page .intro .three,
     .landing-page .intro .four {
         display: none !important;
     }
-    
+
     .link a {
         padding: 0.5em 2em;
         font-size: 10px;
-        right:0%;
-    }
-    
-    .intro-box-2 {
-        width: 15%;
-    }
-    
-    .intro-box-3 {
-        width: 20%;
-    }
-    
-    .intro-box-5 {
-        width: 12%;
-    }
-    
-    .intro-box-6 {
-        width: 18%;
+        right: 0%;
     }
 
+    .intro-box-2 { width: 15%; }
+    .intro-box-3 { width: 20%; }
+    .intro-box-5 { width: 12%; }
+    .intro-box-6 { width: 18%; }
+
     .slide-name {
-        font-size: 13px;
-        line-height: 20px;
+        font-size: 14px;
+        line-height: 35px; /* increased height */
         padding-left: 5px;
         position: absolute;
         top: 100%;
         left: 13%;
         transform: translate(-30%, -50%);
         color: #fffff5;
-        line-height: 30px;
-        clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
+        clip-path: polygon(0 0, 100% 0, 100% 35px, 0 35px); /* taller */
         text-transform: uppercase;
     }
-    
+
     .slide-link {
-        font-size: 10px;
-        line-height: 10px;
+        font-size: 12px;
+        line-height: 35px; /* increased height */
         padding-right: 5px;
         position: absolute;
         top: 100%;
@@ -472,34 +456,95 @@ a {
         transform: translate(-50%, -50%);
         gap: 25px;
         color: #fffff5;
-        line-height: 30px;
-        clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
+        clip-path: polygon(0 0, 100% 0, 100% 35px, 0 35px); /* taller */
         text-transform: uppercase;
     }
-    
-    /* Hide mouse trail on mobile */
-    .trail {
-        display: none !important;
-    }
-    
-    /* Green box adjustments - REMOVE GAPS */
+
+    .trail { display: none !important; }
+
     .green-box-group {
         padding-left: 3%;
         padding-top: 2%;
     }
-    
+
     .green-box,
     .green-box-two,
     .green-box-three {
         height: 30px;
-        margin-bottom: 0px; /* CHANGE: Remove gaps */
+        margin-bottom: 0px;
     }
-    
-    /* Footer text size */
-    .footer {
-        font-size: 10px;
-    }
+
+    .footer { font-size: 10px; }
 }
+
+/* Larger iPhones: 12/13/14 Pro Max */
+@media (min-width: 376px) and (max-width: 480px) {
+    .landing-page .intro .one,
+    .landing-page .intro .two {
+        font-size: 16px !important;
+        width: 55%;
+    }
+
+    .landing-page .intro .three,
+    .landing-page .intro .four {
+        display: inline-block;
+    }
+
+    .link a {
+        padding: 0.7em 2.5em;
+        font-size: 12px;
+        right: 0%;
+    }
+
+    .intro-box-2 { width: 18%; }
+    .intro-box-3 { width: 22%; }
+    .intro-box-5 { width: 15%; }
+    .intro-box-6 { width: 20%; }
+
+    .slide-name {
+        font-size: 16px;
+        line-height: 40px; /* taller */
+        padding-left: 5px;
+        position: absolute;
+        top: 100%;
+        left: 13%;
+        transform: translate(-30%, -50%);
+        color: #fffff5;
+        clip-path: polygon(0 0, 100% 0, 100% 40px, 0 40px); /* taller */
+        text-transform: uppercase;
+    }
+
+    .slide-link {
+        font-size: 14px;
+        line-height: 40px; /* taller */
+        padding-right: 5px;
+        position: absolute;
+        top: 100%;
+        right: 5%;
+        transform: translate(-50%, -50%);
+        gap: 25px;
+        color: #fffff5;
+        clip-path: polygon(0 0, 100% 0, 100% 40px, 0 40px); /* taller */
+        text-transform: uppercase;
+    }
+
+    .trail { display: none !important; }
+
+    .green-box-group {
+        padding-left: 3%;
+        padding-top: 2%;
+    }
+
+    .green-box,
+    .green-box-two,
+    .green-box-three {
+        height: 35px;
+        margin-bottom: 0px;
+    }
+
+    .footer { font-size: 11px; }
+}
+
 
 
 
@@ -639,24 +684,14 @@ a {
 
 /* Large Screens (1025px+) - your current styles will apply here automatically */
 @media (min-width: 1025px) and (max-width: 1700) {
-    .landing-page .intro .one {
-        font-size: 30px;
-        width: 30%;
-    }
-
+    .landing-page .intro .one,
     .landing-page .intro .two {
         font-size: 30px;
-        width: 20%;
     }
     
-    .landing-page .intro .three {
-        font-size: 10px;
-        width: 40%;
-    }
-
+    .landing-page .intro .three,
     .landing-page .intro .four {
         font-size: 10px;
-        width: 40%;
     }
     
     .slide-name {
