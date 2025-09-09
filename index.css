@@ -408,11 +408,8 @@ a {
 }
 
 
-/* Mobile Phones (320px - 750px) */
-/* Small iPhones: SE, 12 Mini, 13 Mini */
-/* Larger iPhones: 12/13/14 Pro Max */
-
-@media (min-width: 376px) and (max-width: 480px) {
+/* Mobile Phones (320px - 480) */
+@media (min-width: 320px) and (max-width: 480px) {
     .landing-page .intro .one {
         font-size: 15px !important;
         left:0%;
@@ -429,7 +426,7 @@ a {
     }
 
     .link a {
-        padding: 0.05em 0.5em;
+        padding: 0.25em 0.1em;
         right: 0%;
     }
 
@@ -438,7 +435,7 @@ a {
         line-height: 40px; /* increased height */
         position: absolute;
         top: 90%;
-        transform: translate(-30%, -30%);
+        transform: translate(-25%, -25%);
         color: #fffff5;
         clip-path: polygon(0 0, 100% 0, 100% 35px, 0 35px); /* taller */
         text-transform: uppercase;
@@ -461,18 +458,17 @@ a {
     .intro-box-6 { width: 18%; }
 }
 
-
-/* Mobile Phones (320px - 750px) */
+/* Mobile Phones (481px - 749px) */
 @media (min-width: 481px) and (max-width: 749px) {
 
     .landing-page .intro .one {
         font-size: 15px !important; /* CHANGE: Smaller text */
-        width: 60%;
+        width: 90%;
     }
     
     .landing-page .intro .two {
         font-size: 15px !important; /* CHANGE: Smaller text */
-        width: 70%;
+        width: 90%;
     }
 
     .landing-page .intro .three,
@@ -484,14 +480,6 @@ a {
         padding: 0.5em 2em;
         font-size: 10px;
         right:0%;
-    }
-    
-    .intro-box-2 {
-        width: 15%;
-    }
-    
-    .intro-box-3 {
-        width: 45%;
     }
     
     .intro-box-5 {
@@ -536,12 +524,6 @@ a {
         display: none !important;
     }
     
-    /* Green box adjustments - REMOVE GAPS */
-    .green-box-group {
-        padding-left: 3%;
-        padding-top: 2%;
-    }
-    
     .green-box,
     .green-box-two,
     .green-box-three {
@@ -550,7 +532,7 @@ a {
     }
     
     /* Footer text size */
-    .footer {
+    .footer p {
         font-size: 10px;
     }
 }
@@ -622,45 +604,7 @@ a {
 }
 
 /* Large Screens (1025px+) - your current styles will apply here automatically */
-@media (min-width: 1700) and (max-width: 2269) {
-    .landing-page .intro .one {
-        font-size: 30px;
-        width: 52.5%;
-    }
-
-    .landing-page .intro .two {
-        font-size: 30px;
-        width: 65%;
-    }
-    
-    .landing-page .intro .three {
-        font-size: 10px;
-        width: 50%;
-    }
-
-    .landing-page .intro .four {
-        font-size: 10px;
-        width: 50%;
-    }
-    
-    .slide-name {
-        left: 25%;
-        font-size: 15px;
-    }
-    
-    .slide-link {
-        right: 8%;
-        font-size: 12px;
-    }
-    
-    .link a {
-        padding: 0.8em 4em;
-        font-size: 12px;
-    }
-}
-
-/* Large Screens (1025px+) - your current styles will apply here automatically */
-@media (min-width: 2270) {
+@media (min-width: 1700) {
     .landing-page .intro .one {
         font-size: 30px;
         width: 52.5%;
@@ -698,8 +642,8 @@ a {
 }
 
 
-/* Section Navigation */
-/*
+
+/* Section Navigation 
 .section-nav {
     position: fixed;
     right: 1%; /* right side 
@@ -711,7 +655,6 @@ a {
     gap: 2rem; /* space between items 
     align-items: flex-end; /* align to right edge 
     font-family:Arial, Helvetica, sans-serif; /* change font 
-
     border: #000000 1px solid; /* border around the section nav 
     border-radius: 15px; /* rounded corners
     background-color: #332f2f7d; /* background color 
@@ -753,12 +696,10 @@ body.light-mode .nav-dot {
     transform: scale(1);
 }
 
-
 .nav-item.active .nav-title {
     color: #fffff5;
     transform: scale(1);
 }
-
 
 .nav-item:hover .nav-title {
     color: #fffff5;
