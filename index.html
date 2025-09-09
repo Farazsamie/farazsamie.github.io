@@ -138,11 +138,11 @@
     });
 
 // Animate text to move to the right but stop before going off screen
-const isMobile = window.innerWidth <= 767;
+const isMobile = window.innerWidth <= 700;
 
 // Different move distances for intro and footer
 const introMoveDistance = isMobile ? 30 : 100; 
-const footerMoveDistance = isMobile ? 150 : 100;
+const footerMoveDistance = isMobile ? 100 : 100;
 
 // Animate intro elements
 gsap.to(".landing-page .intro .one, .landing-page .intro .two, .landing-page .intro .three, .landing-page .intro .four", {
@@ -368,7 +368,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, "<");
     }
 
-    // Wheel event listener to navigate slides
     // Wheel event listener to navigate slides
 window.addEventListener("wheel", (e) => {
     if (isAnimating) return;

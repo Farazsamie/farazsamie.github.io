@@ -374,9 +374,10 @@ a {
 .it-section p {
     margin: 0 0 0px 0;  /* spacing between paragraphs */
     text-align: left;    /* ensure left-aligned */
-    word-wrap: break-word; /* wrap long words if needed */
+    white-space: nowrap; /* Change from normal to nowrap to prevent line breaks */
+    display: inline-block;   
+    white-space: normal;     
 }
-
 
 /* ----------------------- *//* ----------------------- */
 .landing-page .intro .one{
@@ -415,16 +416,19 @@ a {
 
 /* Mobile Phones (320px - 767px) */
 @media (max-width: 767px) {
-    .landing-page .intro .one,
-    .landing-page .intro .two {
+    .landing-page .intro .one {
         font-size: 15px !important; /* CHANGE: Smaller text */
-        width: 90%;
+        width: 60%;
     }
     
+    .landing-page .intro .two {
+        font-size: 15px !important; /* CHANGE: Smaller text */
+        width: 70%;
+    }
+
     .landing-page .intro .three,
     .landing-page .intro .four {
-        font-size: 8px !important; /* CHANGE: Smaller text */
-        width: 85%;
+        display: none !important;
     }
     
     /* REMOVE: Delete all the slide-name and slide-link rules that have !important */
