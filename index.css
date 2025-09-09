@@ -365,18 +365,13 @@ a {
 
 
 
-.it-section {
-    position: relative;
-    left: 0;          /* stick to left */
-    max-width: 900px; /* optional, limits width so text wraps nicely */
-    padding: 0 20px;  /* optional, small padding from edge of screen */
+.it-section p {
+    display: inline-block;   /* let JS control the width */
+    text-align: left;
+    white-space: normal;     /* allow wrapping */
+    overflow-wrap: break-word; /* break long words if needed */
 }
 
-.it-section p {
-    margin: 0 0 0px 0;  /* spacing between paragraphs */
-    text-align: left;    /* ensure left-aligned */
-    word-wrap: break-word; /* wrap long words if needed */
-}
 
 
 
@@ -385,7 +380,7 @@ a {
     font-size: 40px;
     color: #000000;
     display: block;
-    width:min-content;
+    width:100%;
 } 
 /* ----------------------- */
 

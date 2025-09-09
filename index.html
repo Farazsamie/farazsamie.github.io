@@ -199,6 +199,30 @@ gsap.to(".landing-page .intro-text", {
 });
 
 
+function fitTextToViewport() {
+    const paragraphs = document.querySelectorAll('.it-section p');
+    const viewportWidth = window.innerWidth;
+
+    paragraphs.forEach(p => {
+        // Reset width so we can measure natural width
+        p.style.width = 'auto';
+
+        // Get bounding width of the text
+        const textWidth = p.scrollWidth;
+
+        // Set width to either textWidth or viewport width, whichever is smaller
+        p.style.width = Math.min(textWidth, viewportWidth) + 'px';
+    });
+}
+
+// Run on page load
+window.addEventListener('load', fitTextToViewport);
+
+// Run on resize
+window.addEventListener('resize', fitTextToViewport);
+
+
+
 /* gsap.to(".intro-box-2", {
     delay: 1,
     duration: 2,
