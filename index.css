@@ -440,32 +440,33 @@ a {
         display: none !important;
     }
 
-    .link a {
-        padding: 0.25em 0.1em;
-        right: 0%;
-    }
-
     .slide-name,
     .slide-link {
-        line-height: 50px; /* increased height */
+        line-height: 50px; /* Increased from 40px */
         position: absolute;
-        top: 90%;
-        transform: translate(-25%, -25%);
+        top: 85%; /* Moved up from 90% */
         color: #fffff5;
-        clip-path: polygon(0 0, 100% 0, 100% 45px, 0 45px); /* taller */
+        clip-path: polygon(0 0, 100% 0, 100% 45px, 0 45px); /* Increased from 35px */
         text-transform: uppercase;
     }
 
     .slide-name {
-        font-size: 14px;
-        padding-left: 5px;
+        font-size: 16px; /* Increased from 14px */
+        padding-left: 10px;
         left: 5%; /* Moved more to left */
+        width: 60%; /* Added width constraint */
     }
 
     .slide-link {
-        font-size: 6px;
-        padding-right: 5px;
+        font-size: 10px; /* Increased from 6px */
+        padding-right: 10px;
         right: 5%; /* Moved more to left */
+        width: 35%; /* Added width constraint */
+    }
+
+    .link a {
+        padding: 0.8em 1.5em; /* Increased padding */
+        font-size: 10px; /* Increased from previous */
     }
 
     .trail { display: none !important; }
