@@ -397,14 +397,12 @@ a {
     font-size: 40px;
     color: #000000;
     display: block;
-    width:90%;
 } 
 
 .landing-page .intro .two{
     font-size: 40px;
     color: #000000; 
     display: block;
-    width:90%;
 }
 
 .landing-page .intro .three{
@@ -412,14 +410,12 @@ a {
     color: #000000; 
     display: block;
     padding-top: 25px;
-    width:50%;
 }
 
 .landing-page .intro .four{
     font-size: 16px;
     color: #000000; 
     display: block;
-    width:50%;
 }
 
 
@@ -554,7 +550,7 @@ a {
 @media (min-width: 750px) and (max-width: 1024px) {
     .landing-page .intro .one {
         font-size: 30px;
-        padding-right: 2.5%;
+        padding-right: 90%;
     }
 
     .landing-page .intro .two {
@@ -595,7 +591,7 @@ a {
 @media (min-width: 1025px) and (max-width: 1700) {
     .landing-page .intro .one {
         font-size: 30px;
-        right: 5%;
+        padding-left: 80%;
     }
     
     .landing-page .intro .two {
