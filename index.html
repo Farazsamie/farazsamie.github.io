@@ -119,8 +119,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <script>
+
 const isMobile = window.innerWidth <= 700;
-const introMoveDistance = isMobile ? 60 : 80; 
+const introMoveDistance = isMobile ? 55 : 80; 
+const oneMoveDistance = isMobile ? 90 : 80; 
 const footerMoveDistance = isMobile ? 100 : 100;
 
 
@@ -175,6 +177,7 @@ const footerMoveDistance = isMobile ? 100 : 100;
         document.querySelector(".landing-page .intro-text").style.display = "none";
     }
     });
+
 
 // Mobile-specific setup
 document.addEventListener('DOMContentLoaded', function() {
