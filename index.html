@@ -328,7 +328,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (target) {
                 // On mobile, adjust animation to prevent cut-off
                 const isMobile = window.innerWidth <= 749;
-                const adjustedTopValue = isMobile ? currentTopValue * 0.7 : currentTopValue; // Reduce movement on mobile
+                const moveDistance = isMobile ? 15 : 30; // Smaller movement on mobile
+                currentTopValue -= moveDistance;
                 
                 gsap.to(target, {
                     y: `${adjustedTopValue}px`,
@@ -374,7 +375,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (target) {
                 // On mobile, adjust animation to prevent cut-off
                 const isMobile = window.innerWidth <= 749;
-                const adjustedTopValue = isMobile ? currentTopValue * 0.7 : currentTopValue; // Reduce movement on mobile
+                const moveDistance = isMobile ? 15 : 30; // Smaller movement on mobile
+                currentTopValue += moveDistance;
                 
                 gsap.to(target, {
                     y: `${adjustedTopValue}px`,
@@ -383,7 +385,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
         });
-        
+
         // Transition to hide image and slide
         gsap.to(img, {
             scale: 2,
