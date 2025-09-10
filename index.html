@@ -322,17 +322,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentTopValue -= 30; // position text lands on
 
-        // Move text elements
+        // Move text elements - use global selectors since they're outside slides
         elements.forEach((elem) => {
-        const target = slide.querySelector(elem.selector); // scoped to this slide
-        if (target) {
-            gsap.to(target, {
-                y: `${currentTopValue}px`,
-                duration: 1.75,
-                ease: "power4.inOut",
-            });
-        }
-    });
+            const target = document.querySelector(elem.selector);
+            if (target) {
+                // On mobile, adjust animation to prevent cut-off
+                const isMobile = window.innerWidth <= 749;
+                const adjustedTopValue = isMobile ? currentTopValue * 0.7 : currentTopValue; // Reduce movement on mobile
+                
+                gsap.to(target, {
+                    y: `${adjustedTopValue}px`,
+                    duration: isMobile ? 1.5 : 1.75, // Slightly faster on mobile
+                    ease: "power4.inOut",
+                });
+            }
+        });
 
 
         
@@ -364,15 +368,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentTopValue += 30;
 
-        // Move text elements
+        // Move text elements - use global selectors since they're outside slides
         elements.forEach((elem) => {
-            gsap.to(document.querySelector(elem.selector), {
-                y: `${currentTopValue}px`,
-                duration: 1,
-                ease: "power4.inOut",
-            });
+            const target = document.querySelector(elem.selector);
+            if (target) {
+                // On mobile, adjust animation to prevent cut-off
+                const isMobile = window.innerWidth <= 749;
+                const adjustedTopValue = isMobile ? currentTopValue * 0.7 : currentTopValue; // Reduce movement on mobile
+                
+                gsap.to(target, {
+                    y: `${adjustedTopValue}px`,
+                    duration: isMobile ? 1.5 : 1.75, // Slightly faster on mobile
+                    ease: "power4.inOut",
+                });
+            }
         });
-
+        
         // Transition to hide image and slide
         gsap.to(img, {
             scale: 2,
@@ -564,6 +575,26 @@ function fixMobileViewport() {
     if (window.innerWidth <= 749) {
         document.body.style.height = window.innerHeight + 'px';
         document.documentElement.style.height = window.innerHeight + 'px';
+    }
+}
+
+// Mobile navigation position fix - add this after your existing mobile detection
+if (window.innerWidth <= 749) {
+    // Ensure mobile navigation stays visible
+    const slideNames = document.querySelector('.slide-name');
+    const slideLinks = document.querySelector('.slide-link');
+    
+    if (slideNames && slideLinks) {
+        // Force correct positioning on mobile
+        slideNames.style.position = 'fixed';
+        slideNames.style.top = '80%';
+        slideNames.style.left = '3%';
+        slideNames.style.transform = 'translateY(-50%)';
+        
+        slideLinks.style.position = 'fixed';
+        slideLinks.style.top = '80%';
+        slideLinks.style.right = '3%';
+        slideLinks.style.transform = 'translateY(-50%)';
     }
 }
 
