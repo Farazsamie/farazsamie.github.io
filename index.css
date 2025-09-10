@@ -513,32 +513,31 @@ a {
     }
 
     .slide-name {
-        font-size: 13px;
-        line-height: 20px;
-        padding-left: 5px;
-        position: absolute;
-        top: 100%;
-        left: 13%;
-        transform: translate(-30%, -50%);
-        color: #fffff5;
-        line-height: 30px;
-        clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
-        text-transform: uppercase;
+    font-size: 15px; /* Increased */
+    line-height: 40px; /* Increased */
+    padding-left: 10px;
+    position: absolute;
+    top: 85%; /* Moved up */
+    left: 5%; /* Moved more to left */
+    transform: translate(0, -50%); /* Simplified transform */
+    color: #fffff5;
+    clip-path: polygon(0 0, 100% 0, 100% 40px, 0 40px); /* Increased height */
+    text-transform: uppercase;
+    width: 60%;
     }
     
-    .slide-link {
-        font-size: 10px;
-        line-height: 10px;
-        padding-right: 5px;
-        position: absolute;
-        top: 100%;
-        right: 5%;
-        transform: translate(-50%, -50%);
-        gap: 25px;
-        color: #fffff5;
-        line-height: 30px;
-        clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
-        text-transform: uppercase;
+   .slide-link {
+    font-size: 12px; /* Increased */
+    line-height: 40px; /* Increased */
+    padding-right: 10px;
+    position: absolute;
+    top: 85%; /* Moved up */
+    right: 5%; /* Moved more to left */
+    transform: translate(0, -50%); /* Simplified transform */
+    color: #fffff5;
+    clip-path: polygon(0 0, 100% 0, 100% 40px, 0 40px); /* Increased height */
+    text-transform: uppercase;
+    width: 35%;
     }
     
     /* Hide mouse trail on mobile */
