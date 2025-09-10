@@ -378,18 +378,10 @@ a {
     top: 0%;
 }
 
-
-
-
-
-
-
-
 .it-section {
     position: relative;
     max-width: 900px; 
     padding-left: 50px; /* Add padding for desktop */
-
 }
 
 .it-section p {
@@ -673,8 +665,6 @@ a {
         font-size: 12px;
     }
 }
-
-
 
 /* Section Navigation 
 .section-nav {
