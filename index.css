@@ -7,6 +7,10 @@
 html, body {
     height: 100%;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: fixed; /* Add this for mobile */
+    width: 100%;
 }
 
 /* font */
@@ -247,14 +251,30 @@ a {
 .landing-page {
     position: relative;
     background-color: #3d3b38;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide overflow content */
-
+    height: 100vh;
+    min-height: 100vh; /* Add minimum height */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+
+/* Add specific mobile fix */
+@media (max-width: 749px) {
+    html, body {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
     }
+    
+    .landing-page {
+        min-height: 100vh;
+        height: 100vh;
+    }
+}
 
 /* ----------------------- *//* ----------------------- */
 
