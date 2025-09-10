@@ -442,31 +442,32 @@ a {
 
     .slide-name,
     .slide-link {
-        line-height: 50px; /* Increased from 40px */
+        line-height: 60px; /* Increased height */
         position: absolute;
-        top: 85%; /* Moved up from 90% */
+        top: 80%; /* Moved higher up */
         color: #fffff5;
-        clip-path: polygon(0 0, 100% 0, 100% 45px, 0 45px); /* Increased from 35px */
+        clip-path: polygon(0 0, 100% 0, 100% 60px, 0 60px); /* Match line-height */
         text-transform: uppercase;
+        transform: translate(0, -50%); /* Center vertically */
     }
 
     .slide-name {
-        font-size: 16px; /* Increased from 14px */
+        font-size: 16px;
         padding-left: 10px;
-        left: 5%; /* Moved more to left */
-        width: 60%; /* Added width constraint */
+        left: 2%; /* Moved closer to edge */
+        width: 65%; /* Increased width */
     }
 
     .slide-link {
-        font-size: 10px; /* Increased from 6px */
+        font-size: 12px; /* Increased font size */
         padding-right: 10px;
-        right: 5%; /* Moved more to left */
-        width: 35%; /* Added width constraint */
+        right: 2%; /* Moved closer to edge */
+        width: 30%; /* Reduced width to fit */
     }
 
     .link a {
-        padding: 0.8em 1.5em; /* Increased padding */
-        font-size: 10px; /* Increased from previous */
+        padding: 1em 1.2em; /* Better padding */
+        font-size: 12px; /* Increased font size */
     }
 
     .trail { display: none !important; }
@@ -493,12 +494,6 @@ a {
         display: none !important;
     }
     
-    .link a {
-        padding: 0.5em 2em;
-        font-size: 10px;
-        right:0%;
-    }
-    
     .intro-box-5 {
         width: 15%;
     }
@@ -507,32 +502,34 @@ a {
         width: 45%;
     }
 
-    .slide-name {
-    font-size: 15px; /* Increased */
-    line-height: 40px; /* Increased */
-    padding-left: 10px;
-    position: absolute;
-    top: 85%; /* Moved up */
-    left: 5%; /* Moved more to left */
-    transform: translate(0, -50%); /* Simplified transform */
-    color: #fffff5;
-    clip-path: polygon(0 0, 100% 0, 100% 40px, 0 40px); /* Increased height */
-    text-transform: uppercase;
-    width: 60%;
+    .slide-name,
+    .slide-link {
+        line-height: 50px; /* Consistent height */
+        position: absolute;
+        top: 80%; /* Moved higher up */
+        color: #fffff5;
+        clip-path: polygon(0 0, 100% 0, 100% 50px, 0 50px); /* Match line-height */
+        text-transform: uppercase;
+        transform: translate(0, -50%); /* Center vertically */
     }
-    
-   .slide-link {
-    font-size: 12px; /* Increased */
-    line-height: 40px; /* Increased */
-    padding-right: 10px;
-    position: absolute;
-    top: 85%; /* Moved up */
-    right: 5%; /* Moved more to left */
-    transform: translate(0, -50%); /* Simplified transform */
-    color: #fffff5;
-    clip-path: polygon(0 0, 100% 0, 100% 40px, 0 40px); /* Increased height */
-    text-transform: uppercase;
-    width: 35%;
+
+    .slide-name {
+        font-size: 15px;
+        padding-left: 10px;
+        left: 3%; /* Moved closer to edge */
+        width: 65%; /* Increased width */
+    }
+
+    .slide-link {
+        font-size: 14px; /* Increased font size */
+        padding-right: 10px;
+        right: 3%; /* Moved closer to edge */
+        width: 30%; /* Reduced width to fit */
+    }
+
+    .link a {
+        padding: 0.8em 2em; /* Better padding */
+        font-size: 14px; /* Increased font size */
     }
     
     /* Hide mouse trail on mobile */
