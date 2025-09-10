@@ -530,6 +530,19 @@ window.addEventListener("touchend", (e) => {
     isTouch = false;
 }, { passive: true });
 
+// Mobile viewport fix - add this at the end of your script
+function fixMobileViewport() {
+    if (window.innerWidth <= 749) {
+        document.body.style.height = window.innerHeight + 'px';
+        document.documentElement.style.height = window.innerHeight + 'px';
+    }
+}
+
+window.addEventListener('load', fixMobileViewport);
+window.addEventListener('resize', fixMobileViewport);
+window.addEventListener('orientationchange', function() {
+    setTimeout(fixMobileViewport, 100);
+});
     //function checkbigscreen() {
     //const width = window.innerWidth;
     //const restrictionSign = document.getElementById('big-sign');
