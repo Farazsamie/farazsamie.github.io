@@ -389,15 +389,40 @@ a {
     position: relative;
     max-width: 900px; 
     padding-left: 50px; /* Add padding for desktop */
-
 }
 
 .it-section p {
-    margin: 0 0 0px 0;  /* spacing between paragraphs */
-    text-align: left;    /* ensure left-aligned */
-    white-space: nowrap; /* Change from normal to nowrap to prevent line breaks */
+    margin: 0 0 10px 0;
+    text-align: left;
     display: block;
-    white-space: normal;     
+}
+
+/* Desktop styles (1025px+) */
+@media (min-width: 1025px) {
+    .it-section {
+        padding-left: 100px; /* More padding for larger screens */
+        padding-top: 80px;   /* Add top padding */
+    }
+    
+    .landing-page .intro .one,
+    .landing-page .intro .two {
+        font-size: 40px; /* Keep original size */
+    }
+}
+
+/* Mobile styles - Update existing mobile media queries */
+@media (min-width: 320px) and (max-width: 480px) {
+    .it-section {
+        padding-left: 20px; /* Less padding for mobile */
+        padding-top: 40px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 749px) {
+    .it-section {
+        padding-left: 30px;
+        padding-top: 50px;
+    }
 }
 
 .landing-page .intro .one{
