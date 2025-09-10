@@ -400,34 +400,6 @@ a {
     white-space: normal;     
 }
 
-/* Desktop styles (1025px+) */
-@media (min-width: 1025px) {
-    .it-section {
-        padding-left: 100px; /* More padding for larger screens */
-        padding-top: 80px;   /* Add top padding */
-    }
-    
-    .landing-page .intro .one,
-    .landing-page .intro .two {
-        font-size: 40px; /* Keep original size */
-    }
-}
-
-/* Mobile styles - Update existing mobile media queries */
-@media (min-width: 320px) and (max-width: 480px) {
-    .it-section {
-        padding-left: 20px; /* Less padding for mobile */
-        padding-top: 40px;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 749px) {
-    .it-section {
-        padding-left: 30px;
-        padding-top: 50px;
-    }
-}
-
 .landing-page .intro .one{
     font-size: 40px;
     color: #000000;
