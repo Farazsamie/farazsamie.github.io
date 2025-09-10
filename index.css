@@ -448,8 +448,8 @@ a {
     }
 
     .link a {
-    padding: 0.8em 1.5em; /* Increased padding */
-    font-size: 10px; /* Increased from previous */
+        padding: 0.25em 0.1em;
+        right: 0%;
     }
 
     .slide-name,
@@ -475,7 +475,6 @@ a {
     right: 5%; /* Moved more to left */
     width: 35%; /* Added width constraint */
     }
-
 
     .trail { display: none !important; }
     .footer p { font-size: 20px; }
