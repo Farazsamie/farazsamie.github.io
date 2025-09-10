@@ -144,10 +144,32 @@ const footerMoveDistance = isMobile ? 100 : 100;
     ease: "power3.out"
     });
 
-    gsap.to(".landing-page .intro .one, .landing-page .intro .two, .landing-page .intro .three, .landing-page .intro .four", {
+    // Different movement distances per element
+    gsap.to(".landing-page .intro .one", {
         delay: 1,
         duration: 2.5,
-        xPercent: introMoveDistance,
+        xPercent: isMobile ? 50 : 100, // mobile vs desktop
+        ease: "power4.inOut",
+    });
+
+    gsap.to(".landing-page .intro .two", {
+        delay: 1,
+        duration: 2.5,
+        xPercent: isMobile ? 50 : 115, // custom starting pos for mobile
+        ease: "power4.inOut",
+    });
+
+    gsap.to(".landing-page .intro .three", {
+        delay: 1,
+        duration: 2.5,
+        xPercent: isMobile ? 60 : 90,
+        ease: "power4.inOut",
+    });
+
+    gsap.to(".landing-page .intro .four", {
+        delay: 1,
+        duration: 2.5,
+        xPercent: isMobile ? 40 : 70,
         ease: "power4.inOut",
     });
 
@@ -302,12 +324,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Move text elements
         elements.forEach((elem) => {
-            gsap.to(document.querySelector(elem.selector), {
+        const target = slide.querySelector(elem.selector); // scoped to this slide
+        if (target) {
+            gsap.to(target, {
                 y: `${currentTopValue}px`,
-                duration: 1.75, // speed of text
+                duration: 1.75,
                 ease: "power4.inOut",
             });
-        });
+        }
+    });
+
 
         
         // Transition the image scale and position
