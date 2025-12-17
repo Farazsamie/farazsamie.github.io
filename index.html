@@ -159,14 +159,14 @@ setTimeout(() => {
     gsap.to(".landing-page .intro .one", {
         delay: 1,
         duration: 2.5,
-        xPercent: isMobile ? 100 : 100, // Transition right on mobile too
+        xPercent: isMobile ? 20 : 100, // Slight movement on mobile, full on desktop
         ease: "power4.inOut",
     });
 
     gsap.to(".landing-page .intro .two", {
         delay: 1,
         duration: 2.5,
-        xPercent: isMobile ? 100 : 115, // Both transition right
+        xPercent: isMobile ? 20 : 115, // Slight movement on mobile, full on desktop
         ease: "power4.inOut",
     });
 
@@ -310,6 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentSlideIndex = 0;
     let isAnimating = false;
     let currentTopValue = 0;
+    const slideHeight = 30; // Fixed movement per slide
     const elements = [
         {selector: ".prefix", delay: 0},
         {selector: ".names", delay: 0.0000015},
@@ -325,33 +326,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Function to show a specific slide
-    function showSlide(index) {
+    function showSlide(index, isReverse = false) {
         if (isAnimating || index < 0 || index >= slides.length) return;
         isAnimating = true;
         const slide = slides[index];
         const img = slide.querySelector("img");
 
-        currentTopValue -= 30; // position text lands on
+        // Calculate the new position
+        if (!isReverse) {
+            currentTopValue -= slideHeight;
+        }
 
         // Move text elements - use global selectors since they're outside slides
         elements.forEach((elem) => {
             const target = document.querySelector(elem.selector);
             if (target) {
-                // On mobile, adjust animation to prevent cut-off
                 const isMobile = window.innerWidth <= 749;
-                const moveDistance = isMobile ? 15 : 30; // Smaller movement on mobile
-                currentTopValue -= moveDistance;
-                
                 gsap.to(target, {
-                    y: `${adjustedTopValue}px`,
-                    duration: isMobile ? 1.5 : 1.75, // Slightly faster on mobile
+                    y: `${currentTopValue}px`,
+                    duration: isMobile ? 1.5 : 1.75,
                     ease: "power4.inOut",
                 });
             }
         });
 
-
-        
         // Transition the image scale and position
         gsap.to(img, {
             scale: 1,
@@ -372,26 +370,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Function to hide a specific slide
-    function hideSlide(index) {
+    function hideSlide(index, onComplete) {
         if (isAnimating || index < 0 || index >= slides.length) return;
         isAnimating = true;
         const slide = slides[index];
         const img = slide.querySelector("img");
 
-        currentTopValue += 30;
+        currentTopValue += slideHeight;
 
         // Move text elements - use global selectors since they're outside slides
         elements.forEach((elem) => {
             const target = document.querySelector(elem.selector);
             if (target) {
-                // On mobile, adjust animation to prevent cut-off
                 const isMobile = window.innerWidth <= 749;
-                const moveDistance = isMobile ? 15 : 30; // Smaller movement on mobile
-                currentTopValue += moveDistance;
-                
                 gsap.to(target, {
-                    y: `${adjustedTopValue}px`,
-                    duration: isMobile ? 1.5 : 1.75, // Slightly faster on mobile
+                    y: `${currentTopValue}px`,
+                    duration: isMobile ? 1.5 : 1.75,
                     ease: "power4.inOut",
                 });
             }
@@ -411,6 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power4.inOut",
             onComplete: () => {
                 isAnimating = false;
+                if (onComplete) onComplete();
             },
         }, "<");
     }
@@ -458,81 +453,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Modified showSlide function to handle reverse animations
-function showSlide(index, isReverse = false) {
-    if (isAnimating || index < 0 || index >= slides.length) return;
-    isAnimating = true;
-    const slide = slides[index];
-    const img = slide.querySelector("img");
-
-    // Adjust text position only when moving forward
-    if (!isReverse) {
-        currentTopValue -= 30;
-    }
-
-    elements.forEach((elem) => {
-        gsap.to(document.querySelector(elem.selector), {
-            y: `${currentTopValue}px`,
-            duration: 1.75,
-            ease: "power4.inOut",
-        });
-    });
-
-    // Transition the image scale and position
-    gsap.to(img, {
-        scale: 1,
-        top: "0%",
-        duration: 1,
-        ease: "power3.inOut",
-    });
-
-    // Animate the slide reveal
-    gsap.to(slide, {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        duration: 1,
-        ease: "power4.inOut",
-        onComplete: () => {
-            isAnimating = false;
-        },
-    }, "<");
-}
-
-// Modified hideSlide function to accept callback
-function hideSlide(index, onComplete) {
-    if (isAnimating || index < 0 || index >= slides.length) return;
-    isAnimating = true;
-    const slide = slides[index];
-    const img = slide.querySelector("img");
-
-    currentTopValue += 30;
-
-    elements.forEach((elem) => {
-        gsap.to(document.querySelector(elem.selector), {
-            y: `${currentTopValue}px`,
-            duration: 1,
-            ease: "power4.inOut",
-        });
-    });
-
-    gsap.to(img, {
-        scale: 2,
-        top: "4em",
-        duration: 0.5,
-        ease: "power3.inOut",
-    });
-
-    gsap.to(slide, {
-        clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-        duration: 0.5,
-        ease: "power4.inOut",
-        onComplete: () => {
-            isAnimating = false;
-            if (onComplete) onComplete();
-        },
-    }, "<");
-}
-
-    // Mousetrail
+// Mousetrail
     document.addEventListener("DOMContentLoaded", function() {
             const trail = document.querySelector(".trail");
             const smoothPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
