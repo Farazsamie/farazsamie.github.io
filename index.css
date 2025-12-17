@@ -13,6 +13,74 @@ html, body {
     width: 100%;
 }
 
+/* Navigation Buttons */
+.nav-button {
+    position: fixed;
+    right: 0;
+    width: 4%;
+    background-color: #fffff5;
+    border: none;
+    cursor: pointer;
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+    
+}
+
+.nav-button.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-button:hover {
+    background-color: #eae2e2;
+}
+
+/* spacing variables */
+:root {
+    --nav-gap: 0.002vh;        /* very small gap between buttons */
+    --nav-margin: 2vh;        /* space from top & bottom */
+    --nav-right-gap: 0.5vw;   /* small gap from right edge */
+}
+
+.up-button {
+    top: var(--nav-margin);
+    height: calc(30vh - var(--nav-gap));
+    right: var(--nav-right-gap);
+    border: 1px solid #000;   /* black outline */
+    box-sizing: border-box;   /* prevents border from affecting width */
+}
+
+.down-button {
+    top: calc(30vh + var(--nav-gap));
+    height: calc(70vh - var(--nav-margin) - var(--nav-gap));
+    right: var(--nav-right-gap);
+    border: 1px solid #000;   /* black outline */
+    box-sizing: border-box;   /* prevents border from affecting width */
+}
+
+@media (max-width: 749px) {
+    .nav-button {
+        width: 8%;
+        right: 1vw;           /* slightly more space on mobile */
+    }
+}
+
+/* Up button: < */
+.up-button::before {
+    content: "<";
+}
+
+/* Down button: > */
+.down-button::before {
+    content: ">";
+}
+
+
+
+
 /* font */
 @font-face {
     font-family: 'McKinsey Sans';
@@ -421,6 +489,18 @@ a {
 
 /* Mobile Phones (320px - 480) */
 @media (min-width: 320px) and (max-width: 480px) {
+    .landing-page {
+        height: 100vh;
+        min-height: 100vh;
+    }
+    
+    .landing-page .intro {
+        padding-top: 80px;
+        padding-bottom: 60px;
+        height: auto;
+        min-height: 45vh;
+    }
+    
     .landing-page .intro .one {
         font-size: 15px !important;
         padding-left: 2.25%;
@@ -474,6 +554,18 @@ a {
 
 /* Mobile Phones (481px - 749px) */
 @media (min-width: 481px) and (max-width: 749px) {
+
+    .landing-page {
+        height: 100vh;
+        min-height: 100vh;
+    }
+    
+    .landing-page .intro {
+        padding-top: 100px;
+        padding-bottom: 80px;
+        height: auto;
+        min-height: 50vh;
+    }
 
     .landing-page .intro .one {
         font-size: 15px !important; /* CHANGE: Smaller text */

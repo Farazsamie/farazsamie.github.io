@@ -81,6 +81,10 @@
         <div class="slide" id="slide-5"></div>
     </div>
 
+    <!-- Navigation Buttons -->
+    <button class="nav-button up-button" id="btn-up" aria-label="Previous slide"></button>
+    <button class="nav-button down-button" id="btn-down" aria-label="Next slide"></button>
+
 
 </div>
 
@@ -125,6 +129,13 @@ const introMoveDistance = isMobile ? 55 : 80;
 const oneMoveDistance = isMobile ? 90 : 80; 
 const footerMoveDistance = isMobile ? 100 : 100;
 
+// Make buttons visible after transition completes
+setTimeout(() => {
+    const upBtn = document.getElementById('btn-up');
+    const downBtn = document.getElementById('btn-down');
+    if (upBtn) upBtn.classList.add('visible');
+    if (downBtn) downBtn.classList.add('visible');
+}, 3500); // 1s delay + 2.5s animation + 0.5s buffer
 
     /* page loading */
     gsap.from(".slider-content", {
@@ -148,14 +159,14 @@ const footerMoveDistance = isMobile ? 100 : 100;
     gsap.to(".landing-page .intro .one", {
         delay: 1,
         duration: 2.5,
-        xPercent: isMobile ? 50 : 100, // mobile vs desktop
+        xPercent: isMobile ? 0 : 100, // Start at same position on mobile
         ease: "power4.inOut",
     });
 
     gsap.to(".landing-page .intro .two", {
         delay: 1,
         duration: 2.5,
-        xPercent: isMobile ? 50 : 115, // custom starting pos for mobile
+        xPercent: isMobile ? 50 : 115, // Transition to Portfolio position
         ease: "power4.inOut",
     });
 
@@ -415,6 +426,34 @@ window.addEventListener("wheel", (e) => {
         hideSlide(currentSlideIndex, () => {
             currentSlideIndex--;
             showSlide(currentSlideIndex, true); // Pass a flag indicating reverse direction
+        });
+    }
+});
+
+// Button click handlers for navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const upBtn = document.getElementById('btn-up');
+    const downBtn = document.getElementById('btn-down');
+    
+    if (upBtn) {
+        upBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!isAnimating && currentSlideIndex > 0) {
+                hideSlide(currentSlideIndex, () => {
+                    currentSlideIndex--;
+                    showSlide(currentSlideIndex, true);
+                });
+            }
+        });
+    }
+    
+    if (downBtn) {
+        downBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!isAnimating && currentSlideIndex < slides.length - 1) {
+                showSlide(currentSlideIndex + 1);
+                currentSlideIndex++;
+            }
         });
     }
 });
