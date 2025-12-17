@@ -492,23 +492,32 @@ a {
     .landing-page {
         height: 100vh;
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
     
     .landing-page .intro {
-        padding-top: 80px;
-        padding-bottom: 60px;
-        height: auto;
-        min-height: 45vh;
+        height: 30vh;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        overflow: hidden;
+    }
+    
+    .introduction-page {
+        height: 70vh;
+        overflow: hidden;
     }
     
     .landing-page .intro .one {
-        font-size: 15px !important;
+        font-size: 14px !important;
         padding-left: 2.25%;
+        margin: 0;
     }
 
     .landing-page .intro .two {
-        font-size: 15px !important;
-        padding-left: 16%;
+        font-size: 14px !important;
+        padding-left: 0%;
+        margin: 0;
     }
 
     .landing-page .intro .three,
@@ -518,36 +527,34 @@ a {
 
     .slide-name,
     .slide-link {
-        line-height: 60px; /* Increased height */
-        position: absolute;
-        top: 80%; /* Moved higher up */
+        position: fixed;
+        bottom: 8%;
         color: #fffff5;
-        clip-path: polygon(0 0, 100% 0, 100% 60px, 0 60px); /* Match line-height */
         text-transform: uppercase;
-        transform: translate(0, -50%); /* Center vertically */
+        font-size: 11px;
+        line-height: 20px;
+        clip-path: polygon(0 0, 100% 0, 100% 20px, 0 20px);
     }
 
     .slide-name {
-        font-size: 16px;
-        padding-left: 10px;
-        left: 2%; /* Moved closer to edge */
-        width: 65%; /* Increased width */
+        left: 2%;
+        width: 50%;
+        padding-left: 0;
     }
 
     .slide-link {
-        font-size: 12px; /* Increased font size */
-        padding-right: 10px;
-        right: 2%; /* Moved closer to edge */
-        width: 30%; /* Reduced width to fit */
+        right: 2%;
+        width: 40%;
+        padding-right: 0;
     }
 
     .link a {
-        padding: 1em 1.2em; /* Better padding */
-        font-size: 12px; /* Increased font size */
+        padding: 0.5em 0.8em;
+        font-size: 10px;
     }
 
     .trail { display: none !important; }
-    .footer p { font-size: 20px; }
+    .footer p { font-size: 12px; }
     .intro-box-5 { width: 12%; }
     .intro-box-6 { width: 18%; }
 }
@@ -558,23 +565,32 @@ a {
     .landing-page {
         height: 100vh;
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
     
     .landing-page .intro {
-        padding-top: 100px;
-        padding-bottom: 80px;
-        height: auto;
-        min-height: 50vh;
+        height: 30vh;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        overflow: hidden;
+    }
+    
+    .introduction-page {
+        height: 70vh;
+        overflow: hidden;
     }
 
     .landing-page .intro .one {
-        font-size: 15px !important; /* CHANGE: Smaller text */
-        padding-left: 15%;
+        font-size: 14px !important;
+        padding-left: 0%;
+        margin: 0;
     }
     
     .landing-page .intro .two {
-        font-size: 15px !important; /* CHANGE: Smaller text */
-        padding-left: 25%;
+        font-size: 14px !important;
+        padding-left: 0%;
+        margin: 0;
     }
 
     .landing-page .intro .three,
@@ -592,13 +608,30 @@ a {
 
     .slide-name,
     .slide-link {
-        line-height: 50px; /* Consistent height */
-        position: absolute;
-        top: 80%; /* Moved higher up */
+        position: fixed;
+        bottom: 8%;
         color: #fffff5;
-        clip-path: polygon(0 0, 100% 0, 100% 50px, 0 50px); /* Match line-height */
         text-transform: uppercase;
-        transform: translate(0, -50%); /* Center vertically */
+        font-size: 12px;
+        line-height: 22px;
+        clip-path: polygon(0 0, 100% 0, 100% 22px, 0 22px);
+    }
+
+    .slide-name {
+        left: 2%;
+        width: 55%;
+        padding-left: 0;
+    }
+
+    .slide-link {
+        right: 2%;
+        width: 35%;
+        padding-right: 0;
+    }
+
+    .link a {
+        padding: 0.6em 1em;
+        font-size: 11px;
     }
 
     .slide-name {

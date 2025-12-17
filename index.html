@@ -159,14 +159,14 @@ setTimeout(() => {
     gsap.to(".landing-page .intro .one", {
         delay: 1,
         duration: 2.5,
-        xPercent: isMobile ? 0 : 100, // Start at same position on mobile
+        xPercent: isMobile ? 100 : 100, // Transition right on mobile too
         ease: "power4.inOut",
     });
 
     gsap.to(".landing-page .intro .two", {
         delay: 1,
         duration: 2.5,
-        xPercent: isMobile ? 50 : 115, // Transition to Portfolio position
+        xPercent: isMobile ? 100 : 115, // Both transition right
         ease: "power4.inOut",
     });
 
