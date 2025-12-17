@@ -155,18 +155,18 @@ setTimeout(() => {
     ease: "power3.out"
     });
 
-    // Different movement distances per element
+    // RTC: Different movement distances per element
     gsap.to(".landing-page .intro .one", {
         delay: 1,
         duration: 2.5,
-        xPercent: isMobile ? 20 : 100, // Slight movement on mobile, full on desktop
+        xPercent: isMobile ? 35 : 100, // Mobile moves slightly right, desktop full
         ease: "power4.inOut",
     });
 
     gsap.to(".landing-page .intro .two", {
         delay: 1,
         duration: 2.5,
-        xPercent: isMobile ? 20 : 115, // Slight movement on mobile, full on desktop
+        xPercent: isMobile ? 35 : 115, // Mobile moves slightly right, desktop full
         ease: "power4.inOut",
     });
 
@@ -305,13 +305,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* core slide logic */
+    // RTC: Core slide logic - elements to animate
     const slides = document.querySelectorAll(".slide");
     let currentSlideIndex = 0;
     let isAnimating = false;
     let currentTopValue = 0;
     const slideHeight = 30; // Fixed movement per slide
-    const elements = [
+    const isMobileView = window.innerWidth <= 749;
+    const elements = isMobileView ? [
+        {selector: ".prefix", delay: 0},
+        {selector: ".names", delay: 0.0000015},
+        // RTC: Exclude .link on mobile so slide-link stays fixed
+    ] : [
         {selector: ".prefix", delay: 0},
         {selector: ".names", delay: 0.0000015},
         {selector: ".link", delay: 0.0000003},

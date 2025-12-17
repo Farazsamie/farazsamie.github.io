@@ -159,7 +159,7 @@ nav {
     top: 100%;
     left: 13%;
     transform: translate(-50%, -50%);
-    font-size: 18px;
+    font-size: 16px;
     color: #fffff5;
     line-height: 30px;
     clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
@@ -171,7 +171,7 @@ nav {
     top: 100%;
     right: 0%;
     transform: translate(-50%, -50%);
-    font-size: 15px;
+    font-size: 13px;
     color: #fffff5;
     line-height: 30px;
     clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
@@ -194,10 +194,10 @@ nav {
 /* problem with button here*/ 
 .link a {
     background: #332f2f;
-    padding: 1em 7em;
-    padding-top: 8px;
+    padding: 0.9em 6em;
+    padding-top: 6px;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 200;
     color: #fffff5;
     border: 3px solid transparent;
@@ -532,6 +532,7 @@ a {
         display: none !important;
     }
 
+    /* RTC: Mobile slide navigation - slide-name transitions, slide-link stays fixed */
     .slide-name,
     .slide-link {
         position: fixed;
@@ -543,16 +544,23 @@ a {
         clip-path: polygon(0 0, 100% 0, 100% 24px, 0 24px);
     }
 
+    /* RTC: Slide name transitions with content */
     .slide-name {
         left: 2%;
         width: 50%;
         padding-left: 0;
+        position: fixed;
+        transition: transform 0s;
     }
 
+    /* RTC: Slide link stays fixed and doesn't transition */
     .slide-link {
         right: 2%;
         width: 40%;
         padding-right: 0;
+        position: fixed !important;
+        top: auto !important;
+        transform: none !important;
     }
 
     .link a {
@@ -613,6 +621,7 @@ a {
         width: 45%;
     }
 
+    /* RTC: Mobile slide navigation - slide-name transitions, slide-link stays fixed */
     .slide-name,
     .slide-link {
         position: fixed;
@@ -624,16 +633,23 @@ a {
         clip-path: polygon(0 0, 100% 0, 100% 26px, 0 26px);
     }
 
+    /* RTC: Slide name transitions with content */
     .slide-name {
         left: 2%;
         width: 55%;
         padding-left: 0;
+        position: fixed;
+        transition: transform 0s;
     }
 
+    /* RTC: Slide link stays fixed and doesn't transition */
     .slide-link {
         right: 2%;
         width: 35%;
         padding-right: 0;
+        position: fixed !important;
+        top: auto !important;
+        transform: none !important;
     }
 
     .link a {
