@@ -16,7 +16,7 @@
             <p class="one">Welcome To My Portfolio</p>
             <p class="two">My Name's Faraz</p>
             <p class="three">With foundational background in data analytics, finance and economics, </p>
-            <p class="four">I’m a continuous learner intrigued by how emerging technologies will transform these industries.</p> 
+            <p class="four">I'm a continuous learner intrigued by how emerging technologies will transform these industries.</p> 
         </div>
             <div class="intro-box-second">
                 <div class="intro-box-5"></div>
@@ -306,16 +306,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let isAnimating = false;
     let currentTopValue = 0;
     const slideHeight = 30; // Fixed movement per slide
-    // YYT: Causes slide-link to be misaligned and move weirdly on mobile - only animates prefix/names on mobile
+    // YYT: Only animate prefix and names - this keeps slide-name and slide-link in sync
     const isMobileView = window.innerWidth <= 749;
     const elements = isMobileView ? [
         {selector: ".prefix", delay: 0},
         {selector: ".names", delay: 0.0000015},
-        // RTC: Exclude .link on mobile so slide-link stays fixed
     ] : [
         {selector: ".prefix", delay: 0},
         {selector: ".names", delay: 0.0000015},
-        {selector: ".link", delay: 0.0000003},
     ];
 
     // Initialize the slide transforms and gsap set functions for all slides except the first
@@ -417,11 +415,15 @@ window.addEventListener("wheel", (e) => {
     if (e.deltaY > 0 && currentSlideIndex < slides.length - 1) {
         showSlide(currentSlideIndex + 1);
         currentSlideIndex++;
+        // YYT: Update active slide name/link visibility
+        updateActiveElements();
     } else if (e.deltaY < 0 && currentSlideIndex > 0) {
         // Hide current slide, then show previous slide
         hideSlide(currentSlideIndex, () => {
             currentSlideIndex--;
             showSlide(currentSlideIndex, true); // Pass a flag indicating reverse direction
+            // YYT: Update active slide name/link visibility
+            updateActiveElements();
         });
     }
 });
@@ -431,6 +433,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const upBtn = document.getElementById('btn-up');
     const downBtn = document.getElementById('btn-down');
     
+    // YYT: Helper function to update active slide-name and slide-link visibility
+    function updateActiveElements() {
+        // Get all slide-name divs (one for each page section)
+        const slideNameDivs = document.querySelectorAll('.slide-name .names > div');
+        const slideLinkDivs = document.querySelectorAll('.slide-link .link > div');
+        
+        // Hide all, then show only the active one
+        slideNameDivs.forEach((div, idx) => {
+            if (idx === currentSlideIndex) {
+                div.classList.add('active');
+            } else {
+                div.classList.remove('active');
+            }
+        });
+        
+        slideLinkDivs.forEach((div, idx) => {
+            if (idx === currentSlideIndex) {
+                div.classList.add('active');
+            } else {
+                div.classList.remove('active');
+            }
+        });
+    }
+    
+    // YYT: Flash button red for 2 seconds when at boundary
+    function flashButton(button) {
+        button.classList.add('flash');
+        setTimeout(() => {
+            button.classList.remove('flash');
+        }, 2000);
+    }
+    
     if (upBtn) {
         upBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -438,7 +472,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 hideSlide(currentSlideIndex, () => {
                     currentSlideIndex--;
                     showSlide(currentSlideIndex, true);
+                    updateActiveElements();
                 });
+            } else if (!isAnimating && currentSlideIndex === 0) {
+                // YYT: At first slide, flash button
+                flashButton(upBtn);
             }
         });
     }
@@ -449,9 +487,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isAnimating && currentSlideIndex < slides.length - 1) {
                 showSlide(currentSlideIndex + 1);
                 currentSlideIndex++;
+                updateActiveElements();
+            } else if (!isAnimating && currentSlideIndex === slides.length - 1) {
+                // YYT: At last slide, flash button
+                flashButton(downBtn);
             }
         });
     }
+    
+    // YYT: Initialize active elements on page load
+    updateActiveElements();
 });
 
 // Mousetrail
@@ -521,11 +566,15 @@ window.addEventListener("touchend", (e) => {
             // Swipe up - next slide
             showSlide(currentSlideIndex + 1);
             currentSlideIndex++;
+            // YYT: Update active slide name/link visibility
+            updateActiveElements();
         } else if (deltaY < 0 && currentSlideIndex > 0) {
             // Swipe down - previous slide
             hideSlide(currentSlideIndex, () => {
                 currentSlideIndex--;
                 showSlide(currentSlideIndex, true);
+                // YYT: Update active slide name/link visibility
+                updateActiveElements();
             });
         }
     }
@@ -587,4 +636,4 @@ window.addEventListener('orientationchange', function() {
 
 </script>
 </body>
-</html> 
+</html>

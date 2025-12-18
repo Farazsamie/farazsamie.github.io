@@ -167,15 +167,42 @@ nav {
 }
 
 .slide-link {
-    position: absolute;
-    top: 100%;
-    right: 0%;
-    transform: translate(-50%, -50%);
-    font-size: 13px;
+    position: fixed;
+    bottom: 8%;
+    right: 8%;
+    font-size: 14px;
     color: #fffff5;
     line-height: 30px;
-    clip-path: polygon(0 0, 100% 0, 100% 30px, 0 30px);
+    clip-path: none;
     text-transform: uppercase;
+    z-index: 100;
+    background: #332f2f;
+   
+    border: none;
+    display: inline-block;
+}
+
+/* YYT: Hide all slide-link children except active one */
+.slide-link .link > div {
+    display: none;
+}
+
+.slide-link .link > div.active {
+    display: block;
+}
+
+/* YYT: Red flash styling for button clicks at boundaries */
+.nav-button.flash {
+    animation: buttonFlash 3s ease-out;
+}
+
+@keyframes buttonFlash {
+    0% {
+        background-color: #851a1a;
+    }
+    100% {
+        background-color: #fffff5;
+    }
 }
 
 .slide-link:hover {
