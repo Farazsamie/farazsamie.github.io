@@ -172,12 +172,11 @@ nav {
     right: 8%;
     font-size: 14px;
     color: #fffff5;
-    line-height: 30px;
+    line-height: 20px;
     clip-path: none;
     text-transform: uppercase;
     z-index: 100;
     background: #332f2f;
-   
     border: none;
     display: inline-block;
 }

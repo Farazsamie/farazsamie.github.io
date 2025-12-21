@@ -3,6 +3,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --nav-gap: 0.002vh;        /* very small gap between buttons */
+    --nav-margin: 2vh;        /* space from top & bottom */
+    --nav-right-gap: 0.5vw;   /* small gap from right edge */
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -13,16 +19,76 @@ html, body {
     width: 150vh;
     height: 100vh;
     overflow: hidden;
+    position: relative;
 }
 
-footer {
+/* YYT: Sidebar styling - 1/3 width white box on left */
+.experience-sidebar {
     position: fixed;
-    font-size: 14px;
-    bottom: 5%;
-    width: 100%;
-    padding: 1em 2.75em;
-    z-index: 2;
-    background: transparent;
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 100vh;
+    background: #f8f8e8;
+    padding: 80px 20px 40px 20px;
+    z-index: 5;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 25px;
+}
+
+.sidebar-item {
+    padding: 12px 15px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0.25;
+    transition: all 0.5s ease;
+    color: #333;
+    border-left: 5px solid transparent;
+}
+
+.sidebar-item.active {
+    opacity: 1;
+    color: #000;
+    border-left-color: #000;
+}
+
+.up-button {
+    border: 1px solid #000;   /* black outline */
+    box-sizing: border-box;   /* prevents border from affecting width */
+}
+
+.down-button {
+
+    border: 1px solid #000;   /* black outline */
+    box-sizing: border-box;   /* prevents border from affecting width */
+}
+
+/* Up button: < */
+.up-button::before {
+    content: "<";
+}
+
+/* Down button: > */
+.down-button::before {
+    content: ">";
+}
+
+.slide-button {
+    position:relative;
+    border: none;
+}
+
+.slide-button:hover {
+    pointer-events: auto;
+    background-color: #292624;
+    color: #fffff5;
 }
  
 nav {
@@ -31,15 +97,13 @@ nav {
     padding: 2.75em;
     display: flex;
     justify-content: space-between;
-    z-index: 2;
+    z-index: 100;
+    top: 0;
+    background: transparent;
 }
 
-.slide-description,
-.slide-BP1,
-.slide-BP2 {
-  margin-right: 150px; 
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+.slide-title {
+    margin-left: 50%;
 }
 
 a {
@@ -48,12 +112,6 @@ a {
     font-size: 12px;
     font-weight: 500;
     color: black;  
-}
-
-footer a#title {
-    position: relative;
-    font-size: 100px;
-    font-weight: bold;
 }
 
 .bg-overlay {
@@ -65,6 +123,8 @@ footer a#title {
     background-color: #f0f8ff;
     filter: brightness(0.75);
     opacity: 0.5;
+    z-index: -1;
+    transition: background-color 0.5s ease;
 }
 
 .slider-nav {
@@ -122,30 +182,21 @@ footer a#title {
   align-items: center;
 }
 
-
-.slide {
-    width: 50%;
-    height: 50%;
-
-    position: absolute;
-    left: 0;
-}
-
 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-
 /* Style the slide title container */
 .slide-title {
+    margin-left: 50%;
     padding-top: 75px;
     text-align: left;
-    padding-left: 35px;
-    margin: 20px 0;
-    color: #000; /* Set the default color */
-    font-family: Arial, sans-serif; /* Set the font-family */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #000;
+    font-family: Arial, sans-serif;
 }
 
 /* Style individual rows of the title */
@@ -153,33 +204,19 @@ img {
     display: inline-block;
 }
 
-
-
 .slide-description{
-    font-size:15px; /* Adjust size for the position */
+    margin-left: 50%;
+    font-size:13px;
     font-family:Arial, Helvetica, sans-serif;
     font-weight:550;
     font-style:normal;
     text-align: left;
-    padding-left: 40px;
     padding-top: 10px;
-    max-width: 1500px; /* Set desired maximum width */
-    word-wrap: break-word; /* Ensures long words or URLs wrap properly */
-
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-.bg-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #785032; /* starting brown tone */
-    z-index: -1;
-    transition: background-color 0.5s ease;
-  }
-
-  #restriction-sign {
+#restriction-sign {
     display: none;
     justify-content: center;
     align-items: center;
@@ -192,48 +229,45 @@ img {
     background: #111;
     color: #fff;
     font-size: 1.5rem;
-    z-index: 9999;}
+    z-index: 9999;
+}
 
+.slide-BP1 {
+    margin-left: 50%;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-top: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
-    .slide-BP1 {
-        font-size: 14px; /* Adjust size for the position */
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: left;
-        padding-left: 40px;
-        padding-top: 5px;
-        max-width: 1500px; /* Set desired maximum width */
-        word-wrap: break-word; /* Ensures long words or URLs wrap properly */
-      }
-      
+.slide-BP2{
+    margin-left: 50%;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-top: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
-    .slide-BP2{
-        font-size: 14px; /* Adjust size for the position */
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: left;
-        padding-left: 40px;
-        padding-top: 5px;
-        max-width: 1500px; /* Set desired maximum width */
-        word-wrap: break-word; /* Ensures long words or URLs wrap properly */
-    }
+.slide-title-row.title {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 2.5px;
+    display: block;
+}
 
-    .slide-title-row.title {
-        font-size: 11px;
-        font-weight: bold;
-        margin-bottom: 2.5px; /* Increased spacing between title and subtitle */
-        display: block; /* Ensure title and subtitle stack vertically */
-    }
-
-
-    .slide-title-row.subtitle {
-        font-size: 10px; /* Adjust to desired size */
-        font-weight: lighter;
-        display: block; 
-        margin-top: 20px;
-    }
+.slide-title-row.subtitle {
+    font-size: 10px;
+    font-weight: lighter;
+    display: block; 
+    margin-top: 20px;
+}
 
 /* Add word spacing */
 .slide-title-row .word {
-    margin-right: 1.5em; /* Space between words */
     display: inline-block;
 }
 
@@ -242,7 +276,7 @@ img {
 }
 
 .slide-subtitle {
-    font-size: 38px; /* Adjust size for better readability */
+    font-size: 38px;
     font-weight: bold;
     text-decoration: wavy;
     text-align: left;
@@ -251,7 +285,7 @@ img {
 /* Style each letter */
 .slide-title-row .letter {
     display: inline-block;
-    font-size: inherit; /* Ensures it inherits from the parent */
+    font-size: inherit;
 }
 
 .slide-title-row:nth-child(2) {
@@ -268,21 +302,89 @@ img {
 
 /* Title Size */
 .slide-title-row.title .letter span {
-    font-size: 35px !important; /* Adjust to desired size */
+    font-size: 35px !important;
     color: #000;
 }
 
 /* Subtitle Size */
 .slide-title-row.subtitle .letter span {
-    font-size: 28px !important; /* Adjust to desired size */
+    font-size: 28px !important;
     color: black;
 }
 
 a:hover {
-    color: #ff5733; /* Example hover color */
+    color: #ff5733;
     transition: color 0.3s ease;
 }
 
+/* Navigation Buttons - Match index.html exactly */
+.nav-button {
+    position: fixed;
+    right: 0;
+    width: 4%;
+    background-color: #fffff5;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.nav-button.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-button:hover {
+    background-color: #eae2e2;
+}
+
+.up-button {
+    top: var(--nav-margin);
+    height: calc(30vh - var(--nav-gap));
+    right: var(--nav-right-gap);
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.up-button::before {
+    content: "<";
+}
+
+.down-button {
+    top: calc(30vh + var(--nav-gap));
+    height: calc(70vh - var(--nav-margin) - var(--nav-gap));
+    right: var(--nav-right-gap);
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.down-button::before {
+    content: ">";
+}
+
+@media (max-width: 749px) {
+    .nav-button {
+        width: 8%;
+        right: 1vw;
+    }
+}
+
+/* Flash animation for button boundary */
+@keyframes buttonFlash {
+    0%, 100% {
+        background: #fffff5;
+    }
+    50% {
+        background: #851a1a;
+        border-color: #851a1a;
+    }
+}
+
+.nav-button.flash {
+    animation: buttonFlash 2s ease-in-out;
+}
 
 @media (max-width: 56.25em) {
     .slider-nav {
@@ -294,43 +396,33 @@ a:hover {
         height: 75%;
     }
 
-
-
     .slide-title-row.title {
         position: relative;
-        top: 20px; /* Moves the title down */
-        left: 30px; /* Moves the title to the right */
+        top: 20px;
+        left: 30px;
     }
     
     .slide-subtitle {
         position: relative;
-        top: 40px; /* Moves the position lower */
-        left: 30px; /* Moves the position to the right */
+        top: 40px;
+        left: 30px;
     }
-    
 
     .letter span {
         font-size: 100px; 
     }
 }
 
-/* Existing CSS code remains unchanged... */
-
-/* Adding will-change for potential performance optimization */
+/* Performance optimization */
 .nav-item-wrapper,
 .nav-item {
-    will-change: transform; /* Optimizes the rendering of animations */
+    will-change: transform;
 }
 
-/* More responsive adjustments */
 @media (max-width: 800px) {
     .nav {
-        flex-direction: column; /* Stacks nav links vertically on small screens */
-        padding: 1.5em; /* Adjust padding for smaller devices */
-    }
-
-    footer {
-        padding: 1.5em; /* Same as above for footer */
+        flex-direction: column;
+        padding: 1.5em;
     }
 }
 
@@ -344,54 +436,28 @@ svg {
     z-index: 1000;
 } 
 
-.slide {
-  flex: 0 0 100vw;
-  width: 100vw;
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-}
-
+/* YYT: Image container - smaller sizing at title height */
 .slide-img-container {
   position: absolute;
-  top: 32.5%;
-  right: 75px; /* Position on right side */
-  height: 250px; /* Adjust height as needed */
-  width: 300px; /* Adjust width as needed */
+  top: 75px;
+  right: 75px;
+  height: 120px;
+  width: 100px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  z-index: 1; /* Make sure image is above background */
+  z-index: 1;
 }
 
 .slide-img-container img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
-  transition: opacity 0.5s ease; /* Smooth transition for opacity changes */
+  transition: opacity 0.5s ease;
 }
 
 .slide-title, .slide-description, .slide-BP1, .slide-BP2 {
-  max-width: calc(100% - 50px); /* Leave space for image on right */
+  max-width: calc(100% - 50px);
   position: relative;
   z-index: 2;
-}
-
-#restriction-sign {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #fffffA;
-    color: #000000;
-    display: flex;
-    align-items: left;
-    justify-content: center;
-    flex-direction: column;
-    display: none;
-    z-index: 9999;
-    font-size: 10px;
-    padding-left: 100px;
 }

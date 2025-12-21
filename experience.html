@@ -18,10 +18,19 @@
       <a href="resume.html">Resume</a>
     </nav>
 
-    <footer>
-      <h2 id="title">EXPERIENCE</h2> 
-      <p>Faraz Samie 2025</p>
-    </footer>
+    <!-- YYT: Left sidebar 1/3 width with experience list -->
+    <div class="experience-sidebar">
+      <div class="sidebar-content">
+        <div class="sidebar-item" data-index="0">Associate Banker @ J.P. Morgan Chase</div>
+        <div class="sidebar-item" data-index="1">Financial Economics Research Assistant @ UC San Diego</div>
+        <div class="sidebar-item" data-index="2">Private Equity Intern @ IGF</div>
+        <div class="sidebar-item" data-index="3">ESG Equity Analyst @ Sustainable Investment Group</div>
+        <div class="sidebar-item" data-index="4">Risk Management & Equity Analyst @ Hedge Fund Club UCSD</div>
+        <div class="sidebar-item" data-index="5">Sales Associate @ Adidas</div>
+        <div class="sidebar-item" data-index="6">Retail Employee @ Target Corporation</div>
+        <div class="sidebar-item" data-index="7">Retail Employee @ Starbucks Corporation</div>
+      </div>
+    </div>
 
     <div class="slides"></div> 
     <div class="slider-nav"></div>
@@ -30,6 +39,10 @@
     <div class="slide-BP1"></div>
     <div class="slide-BP2"></div>
     <div class="bg-overlay"></div>
+
+    <!-- YYT: Navigation buttons -->
+    <button class="nav-button up-button" id="btn-up" aria-label="Previous slide"></button>
+    <button class="nav-button down-button" id="btn-down" aria-label="Next slide"></button>
 
     <div id="restriction-sign">
       <p>Access Restricted:</p>
@@ -46,30 +59,83 @@
       gsap.registerPlugin(CustomEase);
       CustomEase.create("hop", "M0,0 C0.071,0.505 0.192,0.726 0.318,0.852 0.45,0.984 0.504,1 1,1");
 
+      // YYT: IMAGE CONFIGURATION - Easily change images and animation direction for each slide
+      // Format: { src: "image/path.jpg", direction: 1 (right) or -1 (left) }
+      const slideImages = [
+        { src: "images/jpmc.jpg", direction: -1 },      // Associate Banker - coming from right
+        { src: "images/ucsdlogo.jpg", direction: -1 },     // Financial Economics - coming from left
+        { src: " ", direction: -1 },      // Private Equity - coming from right
+        { src: " ", direction: -1 },     // ESG Analyst - coming from left
+        { src: " ", direction: -1 },      // Risk Management - coming from right
+        { src: "images/adidas.jpg", direction: -1 },     // Sales Associate - coming from left
+        { src: "images/target.jpg", direction: -1 },      // Retail Target - coming from right
+        { src: "images/starbucks.png", direction: -1 }      // Retail Starbucks - coming from left
+      ];
+
       const titles = [
+        [
+          "Associate Banker", "J.P. Morgan Chase",
+          "I serve as an Associate Banker at J.P. Morgan Chase, supporting relationship-driven sales efforts and delivering financial solutions aligned with the firm’s mission to build long-term wealth and opportunity for clients.",
+          "+ Build and maintained relationships with middle-market business clients by identifying lending, cash management, and financial solution needs, contributing to revenue growth and long-term client value.", 
+          "+ Partner with senior bankers to originate and support tailored financing solutions, translating client business objectives into actionable banking strategies while adhering to risk and compliance standards.",
+          // YYT: Background color for this slide
+          "#8B6F47"
+        ],
         [
           "Financial Economics Research Assistant", "UC San Diego",
           "I was a part of a research program within UC San Diego's Economics Department to collaborate on undergraduate research in financial economics. Our team analyzed consumer behavior and the impact of credit options such as BNPL and PDLs, focusing on their implications nationally. As a member of the data extraction and theoretical analysis teams, I played a key role in gathering and interpreting data. In the data extraction team, we leveraged Python libraries Pandas (pd) and BeautifulSoup (bs4) for web scraping and utilized Excel for data organization and extraction. On the theoretical team, we utilized Overleaf to conduct in depth reviews of financial research papers. Analyzing the mathematical models used in topics: asset pricing, markups, & IO.",
           "+ Leveraged Python libraries such as Pandas and BeautifulSoup to scrape, clean, and analyze real time large datasets, extracting key insights into consumer credit usage patterns, particularly in the context of emerging financial tools such as BNPL and PDLs services, ensuring accuracy and consistency for downstream analysis.",
-          "+ Developed and applied mathematical models to fully comprehend and quantify consumer behavior in the financial services space. These models drew on principles from asset pricing theory and were used to analyze market trends, price markups, and firm behavior within the framework of industrial organization (IO). "
-        ],
-        [
-          "Risk Management & Equity Analyst", "HFC UC San Diego",
-          "I was a Risk Management Analyst for UC San Diego's Hedge Fund Club, where we conducted equity research for a local hedge fund. In this role, I was responsible for assessing financial risks, analyzing market trends, and evaluating portfolio strategies to mitigate potential losses and maximize returns. I collaborated closely with the risk management team to analyze company financials, assess valuation models, and monitor market volatility. By leveraging both qualitative and quantitative techniques, I was able to identify potential investment risks and opportunities. Additionally, I helped design risk assessment frameworks, stress-tested various portfolio strategies under different market scenarios, and contributed to reports that guided strategic investment decisions.",
-          "+ Directed market research within the Healthcare group to evaluate financial statements, business models, and growth potential of targeted companies. This involved conducting qualitative and quantitative analyses to gain an understanding of each firm's financial health and competitive positioning. Insights generated informed data driven recommendations that supported investment strategies and shaped portfolio decisions.", 
-          "+ Developed and refined valuation models used to assess investment risk across multiple sectors, including stress testing portfolio strategies under macroeconomic conditions and analyzing market volatility to ensure resilience against threats and opportunities."
+          "+ Developed and applied mathematical models to fully comprehend and quantify consumer behavior in the financial services space. These models drew on principles from asset pricing theory and were used to analyze market trends, price markups, and firm behavior within the framework of industrial organization (IO).",
+          // YYT: Background color for this slide
+          "#6B5D4F"
         ],
         [
           "Private Equity Intern", "IGF",
           "As a Private Equity Associate Intern, I was responsible for identifying and evaluating acquisition opportunities within the lower middle market private equity and search fund space. I conducted comprehensive assessments of potential investment targets, focusing on both financial and operational performance. By leveraging industry databases, financial filings, and market research reports, I analyzed company financial statements and key performance indicators and examined industry trends and market positioning to identify critical factors influencing each target’s success and long term growth potential.",
           "+ Gained exposure to private markets by performing detailed financial analysis and market evaluations to identify strategic acquisition opportunities. This included reviewing company financials, assessing competitive positioning, and synthesizing data to support investment decisions within the lower middle market and search fund space.", 
-          "+ Conducted in-depth market research to evaluate potential acquisitions and assess investment opportunities across targeted industry sectors. This involved analyzing sector-specific trends, identifying key growth drivers, and preparing strategic insights to support deal sourcing and due diligence processes."
+          "+ Conducted in-depth market research to evaluate potential acquisitions and assess investment opportunities across targeted industry sectors. This involved analyzing sector-specific trends, identifying key growth drivers, and preparing strategic insights to support deal sourcing and due diligence processes.",
+          // YYT: Background color for this slide
+          "#7A6B52"
         ],
         [
           "ESG Equity Analyst", "Sustainable Investment Group",
           "I was an ESG Research Analyst, where I focused on integrating environmental, social, and governance (ESG) considerations into investment research and portfolio strategy. In this role, I evaluated the sustainability performance of companies, assessed risk exposure to non-financial factors, and identified opportunities aligned with responsible investing. By combining financial analysis with ESG metrics, I contributed to developing investment theses that balanced long-term returns with sustainable impact. I collaborated with analysts across sectors to refine research methodologies and applied quantitative tools to streamline the investment screening process.",
           "+ Applied Python-based screening algorithms to filter a universe of 500+ companies by ESG scores, reducing research time by 36 percent and enabling faster, more accurate decision-making.", 
-          "+ Evaluated 15+ sustainable companies using ESG metrics, identifying 5 opportunities that generated returns exceeding 13 percent and contributed to portfolio outperformance."
+          "+ Evaluated 15+ sustainable companies using ESG metrics, identifying 5 opportunities that generated returns exceeding 13 percent and contributed to portfolio outperformance.",
+          // YYT: Background color for this slide
+          "#6B7F5A"
+        ],
+        [
+          "Risk Management & Equity Analyst", "Hedge Fund Club UCSD",
+          "I was a Risk Management Analyst for UC San Diego's Hedge Fund Club, where we conducted equity research for a local hedge fund. In this role, I was responsible for assessing financial risks, analyzing market trends, and evaluating portfolio strategies to mitigate potential losses and maximize returns. I collaborated closely with the risk management team to analyze company financials, assess valuation models, and monitor market volatility. By leveraging both qualitative and quantitative techniques, I was able to identify potential investment risks and opportunities. Additionally, I helped design risk assessment frameworks, stress-tested various portfolio strategies under different market scenarios, and contributed to reports that guided strategic investment decisions.",
+          "+ Directed market research within the Healthcare group to evaluate financial statements, business models, and growth potential of targeted companies. This involved conducting qualitative and quantitative analyses to gain an understanding of each firm's financial health and competitive positioning. Insights generated informed data driven recommendations that supported investment strategies and shaped portfolio decisions.", 
+          "+ Developed and refined valuation models used to assess investment risk across multiple sectors, including stress testing portfolio strategies under macroeconomic conditions and analyzing market volatility to ensure resilience against threats and opportunities.",
+          // YYT: Background color for this slide
+          "#5A6B7F"
+        ],
+        [
+          "Sales Associate", "Adidas",
+          "I served as a Sales Associate at Adidas, where I supported daily retail operations while delivering high-quality customer experiences in a fast-paced environment. My role emphasized customer engagement, product knowledge, and sales optimization to drive store performance.",
+          "+ Drove incremental sales growth through proactive customer engagement, needs-based product recommendations, and effective upselling strategies.", 
+          "+ Leveraged product knowledge and brand positioning to align customer preferences with appropriate footwear and apparel solutions, contributing to revenue and customer satisfaction.",
+          // YYT: Background color for this slide
+          "#7F6B5A"
+        ],
+        [
+          "Retail Employee", "Target Corporation",
+          "I worked as a Retail Employee at Target Corporation, supporting store operations across multiple functional areas while maintaining efficiency and service quality during high-volume periods. ",
+          "+ Demonstrated adaptability by critically evaluating situational demands and selecting optimal courses of action to support team objectives and customer needs.", 
+          "+ Implemented effective time management and task prioritization strategies to consistently meet operational deadlines in a fast-paced retail environment.",
+          // YYT: Background color for this slide
+          "#6B7F5A"
+        ],
+        [
+          "Retail Employee", "Starbucks Corporation",
+          "I served as a Retail Employee at Starbucks Corporation, where I contributed to store performance by delivering efficient service, managing transactions, and fostering positive customer interactions in a high-traffic setting.",
+          "+ Exceeded expected sales performance through personalized customer interactions, product recommendations, and strategic upselling.", 
+          "+ Reduced customer wait times during peak traffic periods by processing transactions efficiently and maintaining operational flow under pressure. ",
+          // YYT: Background color for this slide
+          "#5A7F6B"
         ]
       ];
 
@@ -80,16 +146,16 @@
       const slideBP1 = document.querySelector(".slide-BP1");
       const slideBP2 = document.querySelector(".slide-BP2");
       const bgOverlay = document.querySelector(".bg-overlay");
+      const sidebarItems = document.querySelectorAll(".sidebar-item");
 
       let currentIndex = 0;
       const ANIMATION_DURATION = 1.5;
       const LETTER_STAGGER_DELAY = 0.125;
 
-      function getRandomColor() {
-        let r = 100 + Math.floor(Math.random() * 56);
-        let g = 60 + Math.floor(Math.random() * 56);
-        let b = 30 + Math.floor(Math.random() * 56);
-        return `rgb(${r}, ${g}, ${b})`;
+      // YYT: Get color for current slide instead of generating random
+      function getSlideColor(index) {
+        // Colors are the last element (index 5) in each title array
+        return titles[index][5];
       }
 
       function updateTitle(newIndex) {
@@ -142,6 +208,14 @@
         const bp2 = document.createElement("p");
         bp2.textContent = title[4];
         slideBP2.appendChild(bp2);
+
+        // YYT: Update sidebar active state
+        sidebarItems.forEach((item, idx) => {
+          item.classList.remove('active');
+          if (idx === newIndex) {
+            item.classList.add('active');
+          }
+        });
       }
 
       function createSlidesAndNav() {
@@ -161,14 +235,15 @@
         slide.classList.add("slide");
         if (i === 0) slide.classList.add("active");
 
-        // Create image container div
+        // YYT: Create image container div - smaller and at title height
         const imgContainer = document.createElement("div");
         imgContainer.classList.add("slide-img-container");
         
         const img = document.createElement("img");
-        img.src = `images/ucsdlogo.jpg`; // Replace with your image paths
+        // YYT: IMAGE SOURCE - Change the src property from slideImages array
+        img.src = slideImages[i].src;
         img.alt = `Slide ${i}`;
-        img.style.opacity = i === 0 ? "1" : "0"; // Only show first image initially
+        img.style.opacity = i === 0 ? "1" : "0";
         imgContainer.appendChild(img);
         
         slide.appendChild(imgContainer);
@@ -181,12 +256,13 @@
       document.querySelectorAll(".nav-item-wrapper")[index].classList.add("active");
 
       gsap.to(slidesContainer, {
-        x: '-${index * 100}vw',
+        x: `-${index * 100}vw`,
         duration: ANIMATION_DURATION,
         ease: "hop"
       });
 
-      const newColor = getRandomColor();
+      // YYT: Use selected color instead of random
+      const newColor = getSlideColor(index);
       gsap.to(bgOverlay, {
         backgroundColor: newColor,
         duration: ANIMATION_DURATION,
@@ -208,9 +284,11 @@
       const currentSlide = slidesContainer.children[index];
       const img = currentSlide.querySelector(".slide-img-container img");
       
-      // Set initial position for animation
-      const direction = index > currentIndex ? 100 : -100; // Coming from right if moving forward
-      gsap.set(img, { x: direction, opacity: 0 });
+      // YYT: IMAGE ANIMATION DIRECTION - Change direction by modifying slideImages[index].direction
+      // direction: 1 = animate from right (positive x)
+      // direction: -1 = animate from left (negative x)
+      const animationDirection = slideImages[index].direction * 100;
+      gsap.set(img, { x: animationDirection, opacity: 0 });
 
       currentIndex = index;
 
@@ -224,7 +302,8 @@
       });
     }
 
-      const initialColor = getRandomColor();
+      // YYT: Use selected color for first slide
+      const initialColor = getSlideColor(0);
       gsap.set(bgOverlay, { backgroundColor: initialColor });
       createSlidesAndNav();
       updateTitle(0);
@@ -256,6 +335,42 @@
 
       window.addEventListener('resize', checkScreenSize);
       window.addEventListener('load', checkScreenSize);
+
+      // YYT: Button click handlers for navigation
+      const upBtn = document.getElementById('btn-up');
+      const downBtn = document.getElementById('btn-down');
+      
+      // YYT: Flash button red for 2 seconds when at boundary
+      function flashButton(button) {
+        button.classList.add('flash');
+        setTimeout(() => {
+          button.classList.remove('flash');
+        }, 2000);
+      }
+      
+      if (upBtn) {
+        upBtn.classList.add('visible');
+        upBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (currentIndex > 0) {
+            handleNavClick(currentIndex - 1);
+          } else {
+            flashButton(upBtn);
+          }
+        });
+      }
+      
+      if (downBtn) {
+        downBtn.classList.add('visible');
+        downBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (currentIndex < titles.length - 1) {
+            handleNavClick(currentIndex + 1);
+          } else {
+            flashButton(downBtn);
+          }
+        });
+      }
     });
   </script>
 </body>

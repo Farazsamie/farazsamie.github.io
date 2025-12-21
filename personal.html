@@ -22,10 +22,10 @@
     
 <div class="hero">
         <div class="welcome-image">
-            <img src="images/loadin3.jpg">
+            <img src="images/78.jpg">
         </div>
         <div class="intro-text">
-             <p>Hi, my name is Faraz Samie. I’m an American Pakistani with a passion in exploring multiple different subjects, building ideas, and finding innovative solutions. I’m always looking for challenges that not only refine my skills, but also help me create meaningful impact.</p>
+             <p>Hi, my name is Faraz. I’m an American Pakistani with a passion in exploring topics, building ideas, and finding innovative solutions. I’m always looking for challenges that not only refine my skills, but also help create meaningful impact.</p>
         </div>
  </div>
 
@@ -37,7 +37,7 @@
             <p>Learning & Innovating</p>
         </div>
         <div class="text">
-            <p>Through my  mother’s immense creativity and father’s engineering mindset, I’ve developed a deep passion in exploring subjects to gain a better understanding of the world and creating innovative solutions. My passion for learning is driven by the exploration of new ideas, the process of trial and error, and the insights gained from failure, all of which help me refine and improve my understanding. <a href="projects.html">Click Here To View Publicly Shared Projects </a></p>
+            <p> Shaped through my mother’s creativity and father’s mindset, I have cultivated a deep passion for exploring ideas and developing solutions. My enthusiasm for learning is fueled by data analysis and by extracting lessons from failures. <a href="projects.html">Click Here To View Publicly Shared Projects </a></p>
         </div>
     </div>
 
@@ -49,7 +49,7 @@
         <p>Islam & Family</p>
         </div>
         <div class="text-2">
-        <p>Islam provides the foundation for core values such as discipline, gratitude, and integrity, which deeply influence my role within my family. Its principles guide me to lead with patience, respect, and compassion. For me, Islam and family are inseparable, each reinforcing a commitment.</p>
+        <p>Islam is a foundation for core values such as gratitude and integrity, which deeply influence my role within my family. Its principles guide me to lead with patience, respect, and compassion. For me, Islam and family are inseparable, each reinforcing a commitment.</p>
         </div>
     </div>
 
@@ -62,7 +62,69 @@
         <p>Weight Lifting & Sports</p>
         </div>
         <div class="text-2">
-            <p>Weightlifting has become a true passion of mine, not just for the physical strength it builds, but for the discipline and resilience it instills. Sports like basketball and cricket, which I’ve loved since childhood, bring back memories and a sense of joy. Together, these activities offer more than just performance and competition as they provide a way to challenge myself, clear my mind, and maintain balance.</p>
+            <p>Weightlifting is one of my favorite activities to participate in. It not only helps me build discipline but also encourages me to maintain a resilient mindset. Sports like basketball and cricket also bring back memories and a sense of enjoyment. Together, these activities provide a way to challenge myself, clear my mind, and maintain balance in my day to day activities.</p>
+        </div>
+    </div>
+
+    <div class="media-section">
+        <div class="subsection">
+            <h2>Favorite TV Shows</h2>
+            <div class="carousel-container">
+                <div class="media-grid" id="tvShowsCarousel">
+                    <figure class="media-item">
+                        <img src="images/peaky.jpg" alt="Peaky Blinders"/>
+                        <figcaption>Peaky Blinders</figcaption>
+                    </figure>
+                    <figure class="media-item">
+                        <img src="images/topboy.png" alt="Top Boy"/>
+                        <figcaption>Top Boy</figcaption>
+                    </figure>
+                    <figure class="media-item">
+                        <img src="images/mm.jpg" alt="MadMen"/>
+                        <figcaption>Mad Men</figcaption>
+                    </figure>
+                    <figure class="media-item">
+                        <img src="images/bb.webp" alt="Breaking Bad"/>
+                        <figcaption>Breaking Bad</figcaption>
+                    </figure>
+                    <figure class="media-item">
+                        <img src="images/bj.webp" alt="BoJack Horseman"/>
+                        <figcaption>BoJack Horseman</figcaption>
+                    </figure>
+                    <figure class="media-item">
+                        <img src="images/st.jpg" alt="Stranger Things"/>
+                        <figcaption>Stranger Things</figcaption>
+                    </figure>
+                    <figure class="media-item">
+                        <img src="images/rm.jpg" alt="Rick & Morty"/>
+                        <figcaption>Rick & Morty</figcaption>
+                    </figure>
+                </div>
+                <button class="carousel-btn carousel-right" onclick="scrollCarousel('tvShowsCarousel', 1)">›</button>
+            </div>
+        </div>
+        <div class="subsection">
+            <h2>Favorite Artist</h2>
+            <div class="carousel-container">
+                <div class="media-grid" id="artistCarousel">
+                    <figure class="media-item-2">
+                        <img src="images/durk.png" alt="Lil Durk"/>
+                        <figcaption>Lil Durk</figcaption>
+                    </figure>
+                    <figure class="media-item-2">
+                        <img src="images/cc.png" alt="Central Cee"/>
+                        <figcaption>Central Cee</figcaption>
+                    </figure>
+                    <figure class="media-item-2">
+                        <img src="images/tc.jpg" alt="Drake"/>
+                        <figcaption>Drake</figcaption>
+                    </figure>
+                    <figure class="media-item-2">
+                        <img src="images/aa.jpg" alt="Asim Azhar"/>
+                        <figcaption>Asim Azhar</figcaption>
+                    </figure>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -74,6 +136,17 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        function scrollCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const scrollAmount = 350; // Scroll by roughly one item width
+            carousel.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 
 
     <svg style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000;">
