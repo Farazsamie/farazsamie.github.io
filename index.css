@@ -172,7 +172,6 @@ nav {
     right: 8%;
     font-size: 14px;
     color: #fffff5;
-    line-height: 20px;
     clip-path: none;
     text-transform: uppercase;
     z-index: 100;
@@ -558,7 +557,6 @@ a {
         color: #fffff5;
         text-transform: uppercase;
         font-size: 12px;
-        line-height: 24px;
         clip-path: polygon(0 0, 100% 0, 100% 24px, 0 24px);
     }
 
