@@ -254,7 +254,7 @@ nav {
 a {
     color: #fffff5;
 }
-
+ 
 /**/
 @media (max-width: 900px) and (min-width: 768px) {
     .slide-name {
@@ -577,11 +577,11 @@ a {
     /* IP: Match heights for slide-name and slide-link */
     .slide-link {
         right: 2%;
-        width: 40%;
+        width: 50%;
         padding-right: 0;
-        position: fixed !important;
-        top: auto !important;
-        transform: none !important;
+        position: fixed;
+        top: auto;
+        transform: none;
         line-height: 24px;
     }
 
