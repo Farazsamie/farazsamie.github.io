@@ -580,7 +580,6 @@ a {
         position: fixed;
         top: auto;
         transform: none;
-        line-height: 40px;
     }
 
     .link a {
