@@ -532,28 +532,17 @@ a {
         overflow: hidden;
     }
     
-    /* IP: Animate text from left-aligned to right-aligned */
-    @keyframes slideTextRight {
-        0% {
-            padding-left: 2.25%;
-        }
-        100% {
-            padding-left: 40%;
-        }
-    }
-
+    /* IP: Align intro text at beginning and transition right */
     .landing-page .intro .one {
         font-size: 14px !important;
-        padding-left: 2.25%;
+        padding-left: 0%;
         margin: 0;
-        animation: slideTextRight 3s ease-in-out forwards;
     }
 
     .landing-page .intro .two {
         font-size: 14px !important;
         padding-left: 0%;
         margin: 0;
-        animation: slideTextRight 3s ease-in-out forwards;
     }
 
     .landing-page .intro .three,
@@ -574,16 +563,18 @@ a {
     }
 
     /* RTC: Slide name transitions with content */
+    /* IP: Match heights for slide-name and slide-link */
     .slide-name {
         left: 2%;
         width: 50%;
         padding-left: 0;
         position: fixed;
         transition: transform 0s;
+        line-height: 24px;
     }
 
-    /* IP: Fix slide-link and slide-name height alignment */
     /* RTC: Slide link stays fixed and doesn't transition */
+    /* IP: Match heights for slide-name and slide-link */
     .slide-link {
         right: 2%;
         width: 40%;
@@ -591,16 +582,12 @@ a {
         position: fixed !important;
         top: auto !important;
         transform: none !important;
-        display: flex;
-        align-items: center;
+        line-height: 24px;
     }
 
     .link a {
-        padding: 0.35em 1em;
+        padding: 0.6em 1em;
         font-size: 11px;
-        height: 24px;
-        display: flex;
-        align-items: center;
     }
 
     .trail { display: none !important; }
@@ -637,6 +624,7 @@ a {
         margin: 0;
     }
     
+    /* IP: Align intro text at beginning and transition right */
     .landing-page .intro .two {
         font-size: 14px !important;
         padding-left: 0%;
@@ -669,16 +657,18 @@ a {
     }
 
     /* RTC: Slide name transitions with content */
+    /* IP: Match heights for slide-name and slide-link */
     .slide-name {
         left: 2%;
         width: 55%;
         padding-left: 0;
         position: fixed;
         transition: transform 0s;
+        line-height: 26px;
     }
 
-    /* IP: Fix slide-link and slide-name height alignment */
     /* RTC: Slide link stays fixed and doesn't transition */
+    /* IP: Match heights for slide-name and slide-link */
     .slide-link {
         right: 2%;
         width: 35%;
@@ -686,16 +676,12 @@ a {
         position: fixed !important;
         top: auto !important;
         transform: none !important;
-        display: flex;
-        align-items: center;
+        line-height: 26px;
     }
 
     .link a {
-        padding: 0.35em 1.1em;
+        padding: 0.7em 1.1em;
         font-size: 12px;
-        height: 26px;
-        display: flex;
-        align-items: center;
     }
 
     .slide-name {
