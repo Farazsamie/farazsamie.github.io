@@ -582,7 +582,7 @@ a {
         position: fixed;
         top: auto;
         transform: none;
-        line-height: 30px;
+        line-height: 40px;
     }
 
     .link a {
@@ -652,7 +652,6 @@ a {
         color: #fffff5;
         text-transform: uppercase;
         font-size: 13px;
-        line-height: 26px;
         clip-path: polygon(0 0, 100% 0, 100% 26px, 0 26px);
     }
 
