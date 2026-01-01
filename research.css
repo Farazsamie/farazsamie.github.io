@@ -15,6 +15,53 @@ body {
     color: #000000;
 }
 
+.intro {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: fixed;
+    background-color: #ede7df;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.it-section {
+    position: relative;
+    max-width: 900px; 
+    z-index: 10;
+}
+
+.it-section p {
+    margin: 0 0 0px 0;
+    text-align: right;
+    display: block;
+    white-space: normal;
+    padding-right: 0px;
+    position: fixed;
+}
+
+.intro .one {
+    font-size: 40px;
+    color: #000000;
+    display: block;
+    right: 0px;
+    padding-top: 0px;
+    padding-right: 25px;
+
+} 
+
+.intro .two {
+    font-size: 40px;
+    color: #000000; 
+    display: block;
+    right: 0px;
+    padding-top: 35px;
+    padding-right: 25px;
+}
 
 h1{
     font-weight: 500;
@@ -29,8 +76,9 @@ a {
 
 .container {
     width: 100%;
-    height: 100%;
+    height: 80vh;
     position: fixed;
+    top: 30vh;
     justify-content: flex-end;
     align-items: flex-start;
     padding: 2em;
@@ -39,7 +87,7 @@ a {
 
 .nav {
     position: fixed;
-    top: 0;
+    top: 30vh;
     width: 100vw;
     padding:1em;
     display: flex;
@@ -76,7 +124,7 @@ header nav {
     width: 50%;
     display: flex;
     flex-direction: column;
-    bottom: 3em;
+    padding-top: 50px;
 }
 
 .item {
@@ -90,7 +138,7 @@ header nav {
 }
 
 .item-name {
-    flex: 2;
+    flex: 1;
 }
 
 #item-copy {
@@ -215,7 +263,7 @@ a:hover {
 /* Add these updates to your CSS */
 .item {
     display: flex;
-    padding: 1em 0.6em;
+    padding: 0.5em 0.6em;
     cursor: pointer;
     transition: all 0.3s ease;
     border-bottom: 0.25px solid #00000009;
@@ -227,14 +275,13 @@ a:hover {
 
 .item-name {
     flex: 2;
-    font-size: 1em;
+    font-size: 1.75em;
     font-weight: 500;
 }
 
 #item-title {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    padding-top: 10s0px; /* Set to 0 or a smaller value */
+    font-size: 1em;
+
 }
 
 .spacing {
@@ -279,4 +326,34 @@ a:hover {
 
 .spacing{
     padding-top: 50px;
+}
+
+.green-box-group {
+    padding-top: 2%;
+    padding-left: 5%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.green-box,
+.green-box-two,
+.green-box-three {
+    display: block;
+    transition: width 1s ease;
+}
+
+.green-box {
+    background-color: #519672;
+}
+
+.green-box-two {
+    background-color: #52985b;
+}
+
+.green-box-three {
+    background-color: #4f944f;
 }

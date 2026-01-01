@@ -11,6 +11,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
+        <div class="top">
+        <div class="intro">
+            <div class="it-section">
+                <p class="one">Welcome To The</p>
+                <p class="two">Research Publication Section</p>
+            </div>
+        </div>
+
+        <div class="green-box-group">
+            <div class="green-box"></div>
+            <div class="green-box-two"></div>
+            <div class="green-box-three"></div>
+        </div>
+    </div>
+
     <header>
         <div class="nav">
             <div>
@@ -123,7 +138,59 @@
         
         window.addEventListener('resize', checkScreenSize);
         window.addEventListener('load', checkScreenSize);
+
+    
+
+
+        // GREEN BOX DRAFT
+        document.addEventListener("DOMContentLoaded", () => {
+          const greenBox = document.querySelector('.green-box');
+          if (greenBox) {
+            function resizeBox() {
+              const isMobile = window.innerWidth <= 767;
+              const maxWidth = isMobile ? 150 : 400;
+              const minWidth = isMobile ? 50 : 100;
+              const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+              greenBox.style.width = `${newWidth}px`;
+            }
+            greenBox.style.height = '50px';
+            setInterval(resizeBox, 1200);
+          }
+        });
+
+        // GREEN BOX DRAFT TWO
+        document.addEventListener("DOMContentLoaded", () => {
+          const greenBox = document.querySelector('.green-box-two');
+          if (greenBox) {
+            function resizeBox() {
+              const isMobile = window.innerWidth <= 767;
+              const maxWidth = isMobile ? 150 : 400;
+              const minWidth = isMobile ? 50 : 100;
+              const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+              greenBox.style.width = `${newWidth}px`;
+            }
+            greenBox.style.height = '50px';
+            setInterval(resizeBox, 999);
+          }
+        });
+
+        // GREEN BOX DRAFT THREE
+        document.addEventListener("DOMContentLoaded", () => {
+          const greenBox = document.querySelector('.green-box-three');
+          if (greenBox) {
+            function resizeBox() {
+              const isMobile = window.innerWidth <= 767;
+              const maxWidth = isMobile ? 120 : 300;
+              const minWidth = isMobile ? 40 : 100;
+              const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+              greenBox.style.width = `${newWidth}px`;
+            }
+            greenBox.style.height = '50px';
+            setInterval(resizeBox, 666);
+          }
+        });
     </script>
+
 
 </body>
 </html>

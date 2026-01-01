@@ -11,20 +11,35 @@
 </head>
 
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html" id="logo">Home</a>
-            <a href="resume.html">Resume</a>
-        </nav>
-
-        <div class="title-wrapper">
-        <h2 id="title">PROJECT PORTFOLIO</h2>
+    <div class="top">
+        <div class="intro">
+            <div class="it-section">
+                <p class="one">Welcome To The</p>
+                <p class="two">Projects Portfolio Section</p>
+            </div>
         </div>
 
+        <div class="green-box-group">
+            <div class="green-box"></div>
+            <div class="green-box-two"></div>
+            <div class="green-box-three"></div>
+        </div>
+    </div>
 
-        <footer>
-            <p>Faraz Samie 2025</p> 
-        </footer>
+    <header>
+        <div class="nav">
+            <div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="resume.html">Resume</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+
 
         <div class="slides"></div>  <!-- Slide container -->
         <div class="slider-nav"></div>  <!-- Navigation container -->
@@ -241,6 +256,58 @@
         
         window.addEventListener('resize', checkScreenSize);
         window.addEventListener('load', checkScreenSize);
+
+
+
+
+
+        // GREEN BOX DRAFT
+        document.addEventListener("DOMContentLoaded", () => {
+          const greenBox = document.querySelector('.green-box');
+          if (greenBox) {
+            function resizeBox() {
+              const isMobile = window.innerWidth <= 767;
+              const maxWidth = isMobile ? 150 : 400;
+              const minWidth = isMobile ? 50 : 100;
+              const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+              greenBox.style.width = `${newWidth}px`;
+            }
+            greenBox.style.height = '50px';
+            setInterval(resizeBox, 1200);
+          }
+        });
+
+        // GREEN BOX DRAFT TWO
+        document.addEventListener("DOMContentLoaded", () => {
+          const greenBox = document.querySelector('.green-box-two');
+          if (greenBox) {
+            function resizeBox() {
+              const isMobile = window.innerWidth <= 767;
+              const maxWidth = isMobile ? 150 : 400;
+              const minWidth = isMobile ? 50 : 100;
+              const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+              greenBox.style.width = `${newWidth}px`;
+            }
+            greenBox.style.height = '50px';
+            setInterval(resizeBox, 999);
+          }
+        });
+
+        // GREEN BOX DRAFT THREE
+        document.addEventListener("DOMContentLoaded", () => {
+          const greenBox = document.querySelector('.green-box-three');
+          if (greenBox) {
+            function resizeBox() {
+              const isMobile = window.innerWidth <= 767;
+              const maxWidth = isMobile ? 120 : 300;
+              const minWidth = isMobile ? 40 : 100;
+              const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+              greenBox.style.width = `${newWidth}px`;
+            }
+            greenBox.style.height = '50px';
+            setInterval(resizeBox, 666);
+          }
+        });
     </script>
 </body>
 </html> 

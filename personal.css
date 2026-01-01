@@ -2,20 +2,71 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
-}
+} 
 
 html, body {
     width: 100%;
     height: 100%;
     background: #fffffA;
     font-family: "PP Supply Sans";
+    margin: 0;
+    padding: 0;
 }
+
+.intro {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: fixed;
+    background-color: #e6e3e0;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.it-section {
+    position: relative;
+    max-width: 900px; 
+    z-index: 10;
+}
+
+.it-section p {
+    margin: 0 0 0px 0;
+    text-align: right;
+    display: block;
+    white-space: normal;
+    padding-right: 0px;
+    position: fixed;
+}
+
+.intro .one {
+    font-size: 40px;
+    color: #000000;
+    display: block;
+    right: 0px;
+    padding-top: 0px;
+    padding-right: 25px;
+
+} 
+
+.intro .two {
+    font-size: 40px;
+    color: #000000; 
+    display: block;
+    right: 0px;
+    padding-top: 35px;
+    padding-right: 25px;
+}
+
 
 /**/
 
 .nav {
     position: fixed;
-    top: 0;
+    top: 30vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -40,7 +91,7 @@ header nav {
 .hero {
     display: flex;
     align-items: center;
-    height: 20vh;
+    height: 25vh;
     position: relative; /* Ensures absolute positioning works correctly */
 }
 
@@ -406,4 +457,34 @@ a {
 
 .carousel-btn:hover {
     background: #333333;
+}
+
+.green-box-group {
+    padding-top: 2%;
+    padding-left: 5%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.green-box,
+.green-box-two,
+.green-box-three {
+    display: block;
+    transition: width 1s ease;
+}
+
+.green-box {
+    background-color: #519672;
+}
+
+.green-box-two {
+    background-color: #52985b;
+}
+
+.green-box-three {
+    background-color: #4f944f;
 }

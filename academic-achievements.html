@@ -9,6 +9,21 @@
 </head>
 <body>
 
+    <div class="top">
+        <div class="intro">
+            <div class="it-section">
+                <p class="one">Welcome To The</p>
+                <p class="two">Academic Achievement Section</p>
+            </div>
+        </div>
+
+        <div class="green-box-group">
+            <div class="green-box"></div>
+            <div class="green-box-two"></div>
+            <div class="green-box-three"></div>
+        </div>
+    </div>
+
     <header>
         <div class="nav">
             <nav>
@@ -27,13 +42,13 @@
             </div>
             <div class="content">
                 <p>
-                    At UC San Diego, I was involved in a rigorous program offered jointly by a highly ranked Economics Department and the Rady School of Management. 
-                    In addition, I also attained a minor in Technology & Supply Chain Analytics. This interdisciplinary significantly deepened my understanding of economic theories and business concepts. 
+                    At UC San Diego, I was involved in a rigorous program offered jointly by the Economics Department and the Rady School of Management. 
+                    In addition, I also attained a minor in Technology & Supply Chain Analytics. This interdisciplinary deepened my understanding of economic theories and business concepts. 
                     The practical applications and rigorous coursework across these disciplines have advanced my analytical, critical, and problem solving skills. Whether learning how to create mathematical equations to represent consumer behavior or diving deep into business cases, my time at UC San Diego has not only deepened my understanding, but has been a memorable experience.
                 </p>
             </div>
 
-            <div  class="content-2">
+            <!-- <div  class="content-2">
                 <p2>
                     <u>Notable Coursework:</u>
                     <li> Econometrics Series</li>
@@ -41,7 +56,7 @@
                     <li> Project Management</li>
                     <li> Supply Chain</li>    
                 <p2>
-            </div>
+            </div> -->
         </section> 
 
 
@@ -224,7 +239,53 @@
     }
 });
 
+// GREEN BOX DRAFT
+document.addEventListener("DOMContentLoaded", () => {
+  const greenBox = document.querySelector('.green-box');
+  if (greenBox) {
+    function resizeBox() {
+      const isMobile = window.innerWidth <= 767;
+      const maxWidth = isMobile ? 150 : 400;
+      const minWidth = isMobile ? 50 : 100;
+      const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+      greenBox.style.width = `${newWidth}px`;
+    }
+    greenBox.style.height = '50px';
+    setInterval(resizeBox, 1200);
+  }
+});
 
+// GREEN BOX DRAFT TWO
+document.addEventListener("DOMContentLoaded", () => {
+  const greenBox = document.querySelector('.green-box-two');
+  if (greenBox) {
+    function resizeBox() {
+      const isMobile = window.innerWidth <= 767;
+      const maxWidth = isMobile ? 150 : 400;
+      const minWidth = isMobile ? 50 : 100;
+      const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+      greenBox.style.width = `${newWidth}px`;
+    }
+    greenBox.style.height = '50px';
+    setInterval(resizeBox, 999);
+  }
+});
+
+// GREEN BOX DRAFT THREE
+document.addEventListener("DOMContentLoaded", () => {
+  const greenBox = document.querySelector('.green-box-three');
+  if (greenBox) {
+    function resizeBox() {
+      const isMobile = window.innerWidth <= 767;
+      const maxWidth = isMobile ? 120 : 300;
+      const minWidth = isMobile ? 40 : 100;
+      const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+      greenBox.style.width = `${newWidth}px`;
+    }
+    greenBox.style.height = '50px';
+    setInterval(resizeBox, 666);
+  }
+});
 
 
 function checkScreenSize() {

@@ -12,25 +12,36 @@
 </head>
 
 <body>
-  <div class="container">
-    <nav>
-      <a href="index.html" id="logo">Home</a>
-      <a href="resume.html">Resume</a>
-    </nav>
 
-    <!-- YYT: Left sidebar 1/3 width with experience list -->
-    <div class="experience-sidebar">
-      <div class="sidebar-content">
-        <div class="sidebar-item" data-index="0">Associate Banker @ J.P. Morgan Chase</div>
-        <div class="sidebar-item" data-index="1">Financial Economics Research Assistant @ UC San Diego</div>
-        <div class="sidebar-item" data-index="2">Private Equity Intern @ IGF</div>
-        <div class="sidebar-item" data-index="3">ESG Equity Analyst @ Sustainable Investment Group</div>
-        <div class="sidebar-item" data-index="4">Risk Management & Equity Analyst @ Hedge Fund Club UCSD</div>
-        <div class="sidebar-item" data-index="5">Sales Associate @ Adidas</div>
-        <div class="sidebar-item" data-index="6">Retail Employee @ Target Corporation</div>
-        <div class="sidebar-item" data-index="7">Retail Employee @ Starbucks Corporation</div>
-      </div>
+<div class="top">
+        <div class="intro">
+            <div class="it-section">
+                <p class="one">Welcome To The</p>
+                <p class="two">Experience Section</p>
+            </div>
+        </div>
+
+        <div class="green-box-group">
+            <div class="green-box"></div>
+            <div class="green-box-two"></div>
+            <div class="green-box-three"></div>
+        </div>
     </div>
+
+    <header>
+        <div class="nav">
+            <div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="resume.html">Resume</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+  <div class="container">
+
+
 
     <div class="slides"></div> 
     <div class="slider-nav"></div>
@@ -39,10 +50,6 @@
     <div class="slide-BP1"></div>
     <div class="slide-BP2"></div>
     <div class="bg-overlay"></div>
-
-    <!-- YYT: Navigation buttons -->
-    <button class="nav-button up-button" id="btn-up" aria-label="Previous slide"></button>
-    <button class="nav-button down-button" id="btn-down" aria-label="Next slide"></button>
 
     <div id="restriction-sign">
       <p>Access Restricted:</p>
@@ -62,7 +69,7 @@
       // YYT: IMAGE CONFIGURATION - Easily change images and animation direction for each slide
       // Format: { src: "image/path.jpg", direction: 1 (right) or -1 (left) }
       const slideImages = [
-        { src: "images/jpmc.jpg", direction: -1 },      // Associate Banker - coming from right
+        { src: "", direction: -1 },      // Associate Banker - coming from right
         { src: "images/ucsdlogo.jpg", direction: -1 },     // Financial Economics - coming from left
         { src: " ", direction: -1 },      // Private Equity - coming from right
         { src: " ", direction: -1 },     // ESG Analyst - coming from left
@@ -370,6 +377,54 @@
             flashButton(downBtn);
           }
         });
+      }
+    });
+
+    // GREEN BOX DRAFT
+    document.addEventListener("DOMContentLoaded", () => {
+      const greenBox = document.querySelector('.green-box');
+      if (greenBox) {
+        function resizeBox() {
+          const isMobile = window.innerWidth <= 767;
+          const maxWidth = isMobile ? 150 : 400;
+          const minWidth = isMobile ? 50 : 100;
+          const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+          greenBox.style.width = `${newWidth}px`;
+        }
+        greenBox.style.height = '50px';
+        setInterval(resizeBox, 1200);
+      }
+    });
+
+    // GREEN BOX DRAFT TWO
+    document.addEventListener("DOMContentLoaded", () => {
+      const greenBox = document.querySelector('.green-box-two');
+      if (greenBox) {
+        function resizeBox() {
+          const isMobile = window.innerWidth <= 767;
+          const maxWidth = isMobile ? 150 : 400;
+          const minWidth = isMobile ? 50 : 100;
+          const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+          greenBox.style.width = `${newWidth}px`;
+        }
+        greenBox.style.height = '50px';
+        setInterval(resizeBox, 999);
+      }
+    });
+
+    // GREEN BOX DRAFT THREE
+    document.addEventListener("DOMContentLoaded", () => {
+      const greenBox = document.querySelector('.green-box-three');
+      if (greenBox) {
+        function resizeBox() {
+          const isMobile = window.innerWidth <= 767;
+          const maxWidth = isMobile ? 120 : 300;
+          const minWidth = isMobile ? 40 : 100;
+          const newWidth = minWidth + Math.floor(Math.random() * maxWidth);
+          greenBox.style.width = `${newWidth}px`;
+        }
+        greenBox.style.height = '50px';
+        setInterval(resizeBox, 666);
       }
     });
   </script>

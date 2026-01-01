@@ -1,21 +1,21 @@
 const data = [
 
     {
-        itemName: "Bridgewater Associates: Forecasting Analysis ",
+        itemName: "Bridgewater Associates Forecasting Analysis ",
         itemDescription: "Category: Forecasting Competition",
         itemCopy: "This report conducts a forward looking macroeconomic evaluation of shifting trade ecosystems and strategic positioning in the age of modern mercantilism. Focused on high probability geopolitical and economic forecasts, the analysis emphasizes U.S. economic trajectory, the evolution of multipolarity, and the technological arms race shaped by AI, rare earth elements, and supply chain sovereignty. Integrating constrained and unconstrained time series modeling, Monte Carlo simulations, and volatility diagnostics, I was able to construct a forecasting framework built in Python. These tools underpin probabilistic scenario planning across regions and commodities, including projections for the Texas Stock Exchange’s national prominence. Situated at the intersection of economic nationalism, regulatory pivoting, and macro cycles, the report offers a prescient synthesis of quantitative foresight and policy implications, mapping the contours of global realignment through 2035.", 
         itemLink: "images/RP4P.pdf"
     },
 
     {
-        itemName: "Texas Stock Exchange: Market Operations Analysis ",
+        itemName: "Texas Stock Exchange Market Operations Analysis ",
         itemDescription: "Category: Research Analysis",
         itemCopy: "The paper examines the foundational systems supporting the TXSE, with a particular focus on trade support infrastructure, clearing and settlement processes, and regulatory compliance mechanisms. Leveraging market microstructure theory, execution analysis, and post-trade modeling, the authors develop an empirically informed framework designed to optimize TXSE’s performance and competitiveness. The study integrates Python-based monitoring tools and operational optimization models to evaluate TXSE’s capacity to handle high-volume trading environments. Set against the backdrop of shifting corporate geographies and evolving capital markets, this research makes a timely contribution to the discourse on regional stock exchanges and market infrastructure innovation. This overview aims to encapsulate the study’s objectives, methodological strategies, and principal insights, situating TXSE’s operational blueprint within the broader landscape of U.S. financial market structure and regulatory evolution.", // Optional copy for extra text
         itemLink: "images/RP2P.pdf"
     },
 
     {
-        itemName: "Taiwan Semiconductor Manufacturing Company: Financial Cost Optimization ",
+        itemName: "TSMC Financial Cost Optimization ",
         itemDescription: "Category: Research Analysis",
         itemCopy: "This report examines cost optimization opportunities during the critical ramp up phase of Taiwan Semiconductor Manufacturing Company’s (TSMC) Arizona N4 fabrication facility. By presenting com- prehensive financial modeling and scenario analysis, we can identify key cost drivers including under- utilized capacity, which represents unused production capabilities, elevated U.S. labor costs, and yield optimization challenges which restricts the maximizing the output. Our driver based forecast model which link operational activities to financial outcomes ultimately demonstrates potential cost reductions of 15-25% through strategic interventions including automation investments, workforce optimization, and enhanced yield management. The analysis provides actionable recommendations for financial analysts to create measurable value.",
         itemLink: "images/RP3P.pdf"

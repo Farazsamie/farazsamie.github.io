@@ -3,108 +3,88 @@
     box-sizing: border-box;
 }
 
-:root {
-    --nav-gap: 0.002vh;        /* very small gap between buttons */
-    --nav-margin: 2vh;        /* space from top & bottom */
-    --nav-right-gap: 0.5vw;   /* small gap from right edge */
-}
-
 html, body {
     width: 100%;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.intro {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: fixed;
+    background-color: #ede7df;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.it-section {
+    position: relative;
+    max-width: 900px; 
+    z-index: 10;
+}
+
+.it-section p {
+    margin: 0 0 0px 0;
+    text-align: right;
+    display: block;
+    white-space: normal;
+    padding-right: 0px;
+    position: fixed;
+}
+
+.intro .one {
+    font-size: 40px;
+    color: #000000;
+    display: block;
+    right: 0px;
+    padding-top: 0px;
+    padding-right: 25px;
+} 
+
+.intro .two {
+    font-size: 40px;
+    color: #000000; 
+    display: block;
+    right: 0px;
+    padding-top: 35px;
+    padding-right: 25px;
 }
 
 .container {
-    width: 150vh;
-    height: 100vh;
+    width: 100vw;
+    height: 80vh;
     overflow: hidden;
     position: relative;
+    margin-top: 0;
+    top: 30vh;
 }
 
-/* YYT: Sidebar styling - 1/3 width white box on left */
-.experience-sidebar {
+.nav {
     position: fixed;
-    left: 0;
-    top: 0;
-    width: 20%;
-    height: 100vh;
-    background: #f8f8e8;
-    padding: 80px 20px 40px 20px;
-    z-index: 5;
-    box-shadow: 2px 0 8px #0000001a;
-    overflow-y: auto;
-}
-
-.sidebar-content {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding-top: 25px;
-}
-
-.sidebar-item {
-    padding: 12px 15px;
-    font-size: 12px;
-    cursor: pointer;
-    opacity: 0.25;
-    transition: all 0.5s ease;
-    color: #333;
-    border-left: 5px solid transparent;
-}
-
-.sidebar-item.active {
-    opacity: 1;
-    color: #000;
-    border-left-color: #000;
-}
-
-.up-button {
-    border: 1px solid #000;   /* black outline */
-    box-sizing: border-box;   /* prevents border from affecting width */
-}
-
-.down-button {
-
-    border: 1px solid #000;   /* black outline */
-    box-sizing: border-box;   /* prevents border from affecting width */
-}
-
-/* Up button: < */
-.up-button::before {
-    content: "<";
-}
-
-/* Down button: > */
-.down-button::before {
-    content: ">";
-}
-
-.slide-button {
-    position:relative;
-    border: none;
-}
-
-.slide-button:hover {
-    pointer-events: auto;
-    background-color: #292624;
-    color: #fffff5;
-}
- 
-nav {
-    position: fixed;
-    width: 190vh;
-    padding: 2.75em;
+    top: 30vh;
+    width: 100vw;
+    padding:1em;
     display: flex;
     justify-content: space-between;
-    z-index: 100;
-    top: 0;
-    background: transparent;
+    z-index: 1000; /* Ensures the nav is on top */
+    background-color:#272727dd;
 }
 
-.slide-title {
-    margin-left: 40%;
+header nav {
+    display: flex;
+    gap: 1300px;
+    padding-top: 10px;
 }
+
+
 
 a {
     text-decoration: none;
@@ -114,17 +94,21 @@ a {
     color: black;  
 }
 
+footer a#title {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .bg-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #f0f8ff;
+    background-color: #785032; /* Set initial color to avoid gray flash */;
     filter: brightness(0.75);
     opacity: 0.5;
-    z-index: -1;
-    transition: background-color 0.5s ease;
 }
 
 .slider-nav {
@@ -162,24 +146,26 @@ a {
 
 .slides {
     position: fixed;
-    width: 300vw;
-    transition: transform 0.25s ease-in-out;
-    overflow: hidden;
     top: 0;
     left: 0;
-    width: calc(100vw); 
+    width: calc(100vw); /* Or dynamically set in JS */
     height: 100vh;
     display: flex;
 }
 
 .slide {
-  flex: 0 0 100vw;
-  width: 100vw;
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    flex: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.slide .img {
+    width: 50%;
+    height: 50%;
+    opacity: 0.75;
 }
 
 img {
@@ -190,13 +176,32 @@ img {
 
 /* Style the slide title container */
 .slide-title {
-    margin-left: 40%;
-    padding-top: 75px;
+    padding-top: 50px;
     text-align: left;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #000;
-    font-family: Arial, sans-serif;
+    padding-left: 35px;
+    margin: 20px 0;
+    color: #000; /* Set the default color */
+    font-family: Arial, sans-serif; /* Set the font-family */
+}
+
+.slide-description {
+    padding-left: 40px;
+    padding-right: 20px;
+    max-width: 90vw;
+}
+
+.slide-description p {
+    max-width: 90%;
+    word-wrap: break-word;
+    white-space: normal;
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+
+.slide-link {
+    padding-left: 40px;
+    padding-top: 40px;
 }
 
 /* Style individual rows of the title */
@@ -204,70 +209,23 @@ img {
     display: inline-block;
 }
 
-.slide-description{
-    margin-left: 40%;
-    font-size:13px;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight:550;
-    font-style:normal;
-    text-align: left;
-    padding-top: 10px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-#restriction-sign {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #fff;
-    color: #fff;
-    font-size: 1.5rem;
-    z-index: 9999;
-}
-
-.slide-BP1 {
-    margin-left: 40%;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
-    padding-top: 5px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-.slide-BP2{
-    margin-left: 40%;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
-    padding-top: 5px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
 .slide-title-row.title {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: bold;
-    margin-bottom: 2.5px;
-    display: block;
+    margin-bottom: 20px; /* Increased spacing between title and subtitle */
+    display: block; /* Ensure title and subtitle stack vertically */
 }
 
 .slide-title-row.subtitle {
-    font-size: 10px;
-    font-weight: lighter;
-    display: block; 
-    margin-top: 20px;
+    font-size: 5px;
+    font-weight: bold;
+    display: block; /* Ensure subtitle appears below title */
+    margin-top: 10px; /* Additional spacing if needed */
 }
 
 /* Add word spacing */
 .slide-title-row .word {
+    margin-right: 1.5em; /* Space between words */
     display: inline-block;
 }
 
@@ -275,21 +233,22 @@ img {
     display: inline-block;
 }
 
-.slide-subtitle {
-    font-size: 38px;
-    font-weight: bold;
-    text-decoration: wavy;
-    text-align: left;
+.slide-title-row.subtitle {
+    font-size: 14px; /* Adjust size for the position */
+    font-weight: normal;
+    text-align: center;
 }
 
 /* Style each letter */
 .slide-title-row .letter {
     display: inline-block;
-    font-size: inherit;
+    font-size: inherit; /* Ensures it inherits from the parent */
+    margin: 0 2px; /* Add spacing between letters */
 }
 
 .slide-title-row:nth-child(2) {
     position: relative;
+    left: 4em;
 }
 
 .letter {
@@ -300,90 +259,21 @@ img {
     margin: 0 0.2em;
 }
 
-/* Title Size */
-.slide-title-row.title .letter span {
-    font-size: 35px !important;
-    color: #000;
-}
-
-/* Subtitle Size */
-.slide-title-row.subtitle .letter span {
-    font-size: 28px !important;
-    color: black;
+.letter span {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    filter: brightness(0.25) saturate(0.75);
 }
 
 a:hover {
-    color: #ff5733;
+    color: #ff5733; /* Example hover color */
     transition: color 0.3s ease;
 }
 
-/* Navigation Buttons - Match index.html exactly */
-.nav-button {
-    position: fixed;
-    right: 0;
-    width: 4%;
-    background-color: #fffff5;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-}
-
-.nav-button.visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.nav-button:hover {
-    background-color: #eae2e2;
-}
-
-.up-button {
-    top: var(--nav-margin);
-    height: calc(30vh - var(--nav-gap));
-    right: var(--nav-right-gap);
-    border: 1px solid #000;
-    box-sizing: border-box;
-}
-
-.up-button::before {
-    content: "<";
-}
-
-.down-button {
-    top: calc(30vh + var(--nav-gap));
-    height: calc(70vh - var(--nav-margin) - var(--nav-gap));
-    right: var(--nav-right-gap);
-    border: 1px solid #000;
-    box-sizing: border-box;
-}
-
-.down-button::before {
-    content: ">";
-} 
-
-@media (max-width: 749px) {
-    .nav-button {
-        width: 8%;
-        right: 1vw;
-    }
-}
-
-/* Flash animation for button boundary */
-@keyframes buttonFlash {
-    0%, 100% {
-        background: #fffff5;
-    }
-    50% {
-        background: #851a1a;
-        border-color: #851a1a;
-    }
-}
-
-.nav-button.flash {
-    animation: buttonFlash 2s ease-in-out;
+.slide-link:hover{
+    color: #ff5733; /* Example hover color */
+    transition: color 0.3s ease;
 }
 
 @media (max-width: 56.25em) {
@@ -391,21 +281,21 @@ a:hover {
         width: 40%; 
     }
 
-    .slide {
+    .slide .img {
         width: 80%;
         height: 75%;
     }
 
     .slide-title-row.title {
         position: relative;
-        top: 20px;
-        left: 30px;
+        top: 20px; /* Moves the title down */
+        left: 30px; /* Moves the title to the right */
     }
     
-    .slide-subtitle {
+    .slide-title-row.subtitle {
         position: relative;
-        top: 40px;
-        left: 30px;
+        top: 40px; /* Moves the position lower */
+        left: 30px; /* Moves the position to the right */
     }
 
     .letter span {
@@ -413,18 +303,24 @@ a:hover {
     }
 }
 
-/* Performance optimization */
+/* Adding will-change for potential performance optimization */
 .nav-item-wrapper,
 .nav-item {
-    will-change: transform;
+    will-change: transform; /* Optimizes the rendering of animations */
 }
 
-@media (max-width: 800px) {
+/* More responsive adjustments */ 
+@media (max-width: 768px) {
     .nav {
-        flex-direction: column;
-        padding: 1.5em;
+        flex-direction: column; 
+        padding: 1.5em; 
+    }
+
+    footer {
+        padding: 1.5em; 
     }
 }
+
 
 svg {
     position: fixed;
@@ -434,30 +330,99 @@ svg {
     height: 100vh;
     pointer-events: none;
     z-index: 1000;
-} 
-
-/* YYT: Image container - smaller sizing at title height */
-.slide-img-container {
-  position: absolute;
-  top: 75px;
-  right: 75px;
-  height: 120px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  z-index: 1;
 }
 
-.slide-img-container img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  transition: opacity 0.5s ease;
+.slide-title-row .word {
+    margin-right: 1.5em;
+    display: inline-block;
 }
 
-.slide-title, .slide-description, .slide-BP1, .slide-BP2 {
-  max-width: calc(100% - 50px);
-  position: relative;
-  z-index: 2;
+.slide-title-row .letter {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+/* Style for the Learn More link */
+.slide-link a {
+    text-decoration: none;
+    color: #000000; /* Default color */
+    transition: all 0.01s ease-in-out;
+    position: relative;
+    pointer-events: auto;
+    z-index: 10; /* Ensure it's above other elements */
+    font-size: 10px;
+}
+
+/* Hover effect */
+.slide-link a:hover {
+    color: #000000; /* Darker blue on hover */
+    font-weight: bolder;
+    transform: scale(1.05); /* Slightly enlarges the text */
+    text-decoration: underline;
+}
+
+
+#restriction-sign {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fffffA;
+    color: #000000;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+    z-index: 9999;
+    font-size: 10px;
+    padding-left: 100px;
+}
+
+.slide-BP1{
+    font-size:12px; /* Adjust size for the position */
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 5px;
+}
+
+.slide-BP2{
+    font-size:12px; /* Adjust size for the position */
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 5px;
+}
+
+.green-box-group {
+    padding-top: 2%;
+    padding-left: 5%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.green-box,
+.green-box-two,
+.green-box-three {
+    display: block;
+    transition: width 1s ease;
+}
+
+.green-box {
+    background-color: #519672;
+}
+
+.green-box-two {
+    background-color: #52985b;
+}
+
+.green-box-three {
+    background-color: #4f944f;
+    transition: opacity 0.5s ease;
 }
