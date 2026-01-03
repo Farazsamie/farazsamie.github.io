@@ -69,11 +69,11 @@
       // YYT: IMAGE CONFIGURATION - Easily change images and animation direction for each slide
       // Format: { src: "image/path.jpg", direction: 1 (right) or -1 (left) }
       const slideImages = [
-        { src: "", direction: -1 },      // Associate Banker - coming from right
+        { src: "images/jpmorgan.jpg", direction: -1 },      // Associate Banker - coming from right
         { src: "images/ucsdlogo.jpg", direction: -1 },     // Financial Economics - coming from left
-        { src: " ", direction: -1 },      // Private Equity - coming from right
-        { src: " ", direction: -1 },     // ESG Analyst - coming from left
-        { src: " ", direction: -1 },      // Risk Management - coming from right
+        { src: "images/igf.jpg", direction: -1 },      // Private Equity - coming from right
+        { src: "images/esg.png", direction: -1 },     // ESG Analyst - coming from left
+        { src: "images/risk.png", direction: -1 },      // Risk Management - coming from right
         { src: "images/adidas.jpg", direction: -1 },     // Sales Associate - coming from left
         { src: "images/target.jpg", direction: -1 },      // Retail Target - coming from right
         { src: "images/starbucks.png", direction: -1 }      // Retail Starbucks - coming from left
@@ -201,8 +201,8 @@
           return row;
         };
 
-        slideTitle.appendChild(createRow(title[0], "title"));
-        slideTitle.appendChild(createRow(title[1], "subtitle"));
+        slideTitle.appendChild(createRow(title[1], "title"));
+        slideTitle.appendChild(createRow(title[0], "subtitle"));
 
         const desc = document.createElement("p");
         desc.textContent = title[2];
